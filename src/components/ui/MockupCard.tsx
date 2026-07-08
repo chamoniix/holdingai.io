@@ -1,6 +1,6 @@
 export function MockupCard({ title, category, color }: { title: string, category: string, color: string }) {
   return (
-    <div className={`relative w-[280px] h-[560px] md:w-[320px] md:h-[640px] rounded-[2.5rem] border-8 border-brand-graphite overflow-hidden bg-black shadow-2xl flex-shrink-0 group`}>
+    <div className={`relative w-[240px] h-[480px] md:w-[320px] md:h-[640px] rounded-[2rem] border-8 border-brand-graphite overflow-hidden bg-black shadow-2xl flex-shrink-0 group`}>
       {/* Dynamic Background Gradient */}
       <div className={`absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 bg-gradient-to-br ${color}`} />
       

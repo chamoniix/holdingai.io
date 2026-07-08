@@ -8,11 +8,11 @@ export default function Footer() {
       {/* Background ambient glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-cyan/5 blur-[150px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
           
           {/* Column 1: Brand & Info */}
-          <div className="md:col-span-1 space-y-6">
+          <div className="lg:col-span-2 space-y-6">
             <h3 className="text-3xl font-bold tracking-tighter text-white">
               HOLDING<span className="text-brand-cyan">AI</span>
             </h3>

@@ -42,7 +42,7 @@ export default function ContactSection() {
 
           {/* Right Column: Form */}
           <motion.div 
-            className="glass-panel p-8 md:p-12 rounded-3xl"
+            className="bg-[#0a0a0a] border border-white/10 shadow-2xl p-8 md:p-12 rounded-3xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -97,11 +97,11 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div className="pt-4 flex justify-end">
-                <MagneticButton className="group">
-                  <div className="relative overflow-hidden rounded-full p-[1px]">
+              <div className="pt-4 flex justify-start md:justify-end">
+                <MagneticButton className="group w-full md:w-auto">
+                  <div className="relative overflow-hidden rounded-full p-[1px] w-full md:w-auto">
                     <span className="absolute inset-0 bg-gradient-to-r from-brand-neon to-brand-purple rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative bg-black px-12 py-4 rounded-full transition-transform duration-300 group-hover:scale-[0.98]">
+                    <div className="relative bg-black px-12 py-4 rounded-full transition-transform duration-300 group-hover:scale-[0.98] w-full text-center">
                       <span className="text-lg font-bold text-white tracking-wide">Send Message</span>
                     </div>
                   </div>
