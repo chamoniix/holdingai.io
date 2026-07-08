@@ -4,6 +4,7 @@ import ShowcaseSection from "@/components/ShowcaseSection";
 import TechnologySection from "@/components/TechnologySection";
 import ProcessSection from "@/components/ProcessSection";
 import NumbersSection from "@/components/NumbersSection";
+import ContactSection from "@/components/ContactSection";
 import FinalCTASection from "@/components/FinalCTASection";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <TechnologySection />
       <ProcessSection />
       <NumbersSection />
+      <ContactSection />
       <FinalCTASection />
     </main>
   );

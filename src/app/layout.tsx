@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased bg-black text-white selection:bg-brand-purple/30 selection:text-white`}>
         <SmoothScroll>
           {children}
+          <Footer />
         </SmoothScroll>
       </body>
     </html>
