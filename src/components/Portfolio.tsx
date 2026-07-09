@@ -4,15 +4,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
 const projects = [
-  { id: 1, title: 'AI Dashboard', category: 'Web App', image: '/images/saas_platform.jpg' },
-  { id: 2, title: 'Brand Identity', category: 'Branding', image: '/images/ai_mobile_app.jpg' },
-  { id: 3, title: 'Mobile App', category: 'Mobile', image: '/images/ai_mobile_app.jpg' },
-  { id: 4, title: 'E-commerce', category: 'Web App', image: '/images/autonomous_agents.jpg' },
-  { id: 5, title: 'Logo Design', category: 'Branding', image: '/images/saas_platform.jpg' },
-  { id: 6, title: 'SaaS Platform', category: 'Web App', image: '/images/saas_platform.jpg' }
+  { id: 1, title: 'AI Dashboard for Healthcare', category: 'HealthTech', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800' },
+  { id: 2, title: 'E-commerce Personalization Engine', category: 'Retail', image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800' },
+  { id: 3, title: 'Financial Predictive Analytics', category: 'FinTech', image: 'https://images.unsplash.com/photo-1620674159522-7b2b2e8e8b9e?w=800' },
+  { id: 4, title: 'NLP Customer Service Chatbot', category: 'Enterprise', image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800' },
+  { id: 5, title: 'Computer Vision Quality Control', category: 'Industry', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800' },
+  { id: 6, title: 'Autonomous Agent Orchestrator', category: 'SaaS', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab3c?w=800' }
 ]
 
-const categories = ['All', 'Web App', 'Mobile', 'Branding']
+const categories = ['All', 'HealthTech', 'Retail', 'FinTech', 'Enterprise', 'Industry', 'SaaS']
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('All')

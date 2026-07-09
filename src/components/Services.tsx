@@ -2,35 +2,9 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { servicesData } from '@/data/services-data'
 
-const services = [
-  {
-    icon: '⚡',
-    title: 'AI Strategy',
-    description: 'Transform your business with intelligent automation and machine learning solutions.',
-    gradient: 'from-blue-500/20 to-cyan-500/20'
-  },
-  {
-    icon: '🎨',
-    title: 'Product Design',
-    description: 'Craft world-class digital experiences with user-centered design methodology.',
-    gradient: 'from-purple-500/20 to-pink-500/20'
-  },
-  {
-    icon: '🚀',
-    title: 'Development',
-    description: 'Full-stack engineering with cutting-edge technologies and frameworks.',
-    gradient: 'from-orange-500/20 to-red-500/20'
-  },
-  {
-    icon: '📊',
-    title: 'Data & Analytics',
-    description: 'Turn data into actionable insights with advanced analytics and visualization.',
-    gradient: 'from-green-500/20 to-emerald-500/20'
-  }
-]
-
-function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
+function ServiceCard({ service, index }: { service: typeof servicesData[0]; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null)
   
   const x = useMotionValue(0)
@@ -78,8 +52,14 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       }}
       className="group relative p-8 rounded-3xl bg-[#0F0F11] border border-white/5 overflow-hidden"
     >
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img src={service.image} alt={service.title} className="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0F11] via-[#0F0F11]/80 to-transparent" />
+      </div>
+
       {/* Gradient glow */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-10 group-hover:opacity-80 transition-opacity duration-700 z-0`} />
       
       {/* Animated border */}
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/0 via-white/10 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
@@ -170,7 +150,7 @@ export default function Services() {
         </motion.div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
         </div>

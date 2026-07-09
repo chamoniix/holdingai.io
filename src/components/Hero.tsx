@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
+import { heroData } from '@/data/hero-data'
 
 const Canvas = dynamic(() => import('@react-three/fiber').then(m => m.Canvas), { ssr: false })
 
@@ -123,9 +124,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
           className="mt-8 text-xl md:text-2xl lg:text-3xl text-gray-400 max-w-3xl text-center font-light leading-relaxed"
         >
-          We craft digital experiences that redefine possibility.
-          <br />
-          <span className="text-gray-500">Where strategy, design, and technology converge.</span>
+          {heroData.subheadline}
         </motion.p>
         
         {/* CTA Buttons */}
@@ -145,7 +144,7 @@ export default function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-              Start Your Project
+              {heroData.cta}
             </span>
           </motion.button>
           
@@ -157,7 +156,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             className="px-10 py-5 border border-white/20 text-white font-semibold rounded-full hover:bg-white/5 transition-all backdrop-blur-sm"
           >
-            Watch Showreel
+            {heroData.ctaSecondary}
           </motion.button>
         </motion.div>
         
