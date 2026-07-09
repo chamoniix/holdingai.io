@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Smartphone, Cloud, Building2, Cpu, Bot, LineChart } from 'lucide-react';
+import { motionTokens } from '@/lib/design-system';
 
 const cards = [
   { title: "AI Mobile Apps", icon: Smartphone, color: "from-blue-500/20 to-purple-500/20" },
@@ -19,10 +20,10 @@ export default function WhatWeBuildSection() {
         
         <motion.div 
           className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          variants={motionTokens.presets.slideUp}
         >
           <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">
             WHAT WE <span className="text-gradient-neon">BUILD</span>
@@ -32,15 +33,24 @@ export default function WhatWeBuildSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={motionTokens.presets.staggerChildren}
+        >
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-[#0a0a0a] p-8 md:p-10 rounded-[2rem] bg-gradient-to-br ${card.color} border border-white/10 shadow-2xl hover:-translate-y-2 transition-transform duration-500`}
+              variants={motionTokens.presets.staggerItemSlideUp}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.02,
+                boxShadow: "0 20px 40px rgba(0,0,0,0.4)" 
+              }}
+              transition={{ ease: motionTokens.easing.apple }}
+              className={`bg-[#0a0a0a] p-8 md:p-10 rounded-[2rem] bg-gradient-to-br ${card.color} border border-white/10 shadow-2xl transition-colors duration-500`}
             >
               <card.icon className="w-14 h-14 text-white mb-8" />
               <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
@@ -49,7 +59,7 @@ export default function WhatWeBuildSection() {
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

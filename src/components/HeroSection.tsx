@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
+import { motionTokens } from '@/lib/design-system';
 
 import { MagneticButton } from './ui/MagneticButton';
 
@@ -10,59 +11,100 @@ import { MagneticButton } from './ui/MagneticButton';
 const HeroScene = dynamic(() => import('./HeroScene'), { ssr: false });
 
 export default function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Stagger variants for the headline
+  const containerVariants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const textVariants = {
+    initial: { opacity: 0, y: 50, rotateX: 20 },
+    animate: { 
+      opacity: 1, 
+      y: 0, 
+      rotateX: 0,
+      transition: { 
+        duration: motionTokens.duration.long, 
+        ease: motionTokens.easing.appleSpring 
+      }
+    }
+  };
+
   return (
-    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
+    <section ref={containerRef} className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-black perspective-[1000px]">
       {/* 3D Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 opacity-80">
         <Suspense fallback={<div className="w-full h-full bg-black/90" />}>
           <HeroScene />
         </Suspense>
       </div>
 
+      {/* Subtle overlay gradient to pop text */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/20 via-transparent to-black/80 pointer-events-none" />
+
       {/* Foreground Content */}
       <div className="relative z-10 container mx-auto px-6 pt-20 pb-32 h-full flex flex-col justify-center pointer-events-none">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-5xl"
-        >
+        <div className="max-w-5xl">
           <motion.h1 
-            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] text-white"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+            className="text-6xl md:text-8xl lg:text-[10rem] font-bold tracking-tighter leading-[0.85] text-white"
+            variants={containerVariants}
+            initial="initial"
+            animate="animate"
           >
-            WE BUILD<br />
-            <span className="text-gradient-neon">THE NEXT</span><br />
-            GENERATION<br />
-            OF AI PRODUCTS.
+            <motion.div className="overflow-hidden" variants={textVariants}>
+              <span className="block transform-gpu">WE BUILD</span>
+            </motion.div>
+            <motion.div className="overflow-hidden" variants={textVariants}>
+              <span className="block text-gradient-neon transform-gpu">THE NEXT</span>
+            </motion.div>
+            <motion.div className="overflow-hidden" variants={textVariants}>
+              <span className="block transform-gpu">GENERATION</span>
+            </motion.div>
+            <motion.div className="overflow-hidden" variants={textVariants}>
+              <span className="block transform-gpu text-white/80">OF AI.</span>
+            </motion.div>
           </motion.h1>
           
           <motion.p 
-            className="mt-8 text-xl md:text-2xl text-white/60 font-light max-w-2xl text-balance"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            className="mt-12 text-xl md:text-3xl text-white/60 font-light max-w-2xl text-balance"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: motionTokens.duration.long, 
+              delay: 0.8,
+              ease: motionTokens.easing.apple
+            }}
           >
-            We design, build and launch premium AI-powered mobile apps, SaaS platforms, internal tools, and custom software for startups and enterprises.
+            Crafted with precision. Engineered for scale. Animated with purpose.
           </motion.p>
-        </motion.div>
+        </div>
 
         {/* CTAs */}
         <motion.div 
           className="mt-16 flex flex-col sm:flex-row gap-6 pointer-events-auto items-start"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ 
+            duration: motionTokens.duration.medium, 
+            delay: 1.2,
+            ease: motionTokens.easing.apple
+          }}
         >
           <MagneticButton>
-            <div className="px-8 py-4 rounded-full bg-white text-black font-semibold tracking-wide hover:scale-105 transition-transform duration-300">
+            <div className="px-8 py-4 rounded-full bg-white text-black font-semibold tracking-wide hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-shadow duration-500">
               Build my product
             </div>
           </MagneticButton>
           <MagneticButton>
-            <div className="px-8 py-4 rounded-full glass-panel text-white font-semibold tracking-wide hover:bg-white/10 transition-colors duration-300">
+            <div className="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-semibold tracking-wide hover:bg-white/10 transition-colors duration-300">
               Watch our work
             </div>
           </MagneticButton>

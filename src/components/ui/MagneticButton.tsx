@@ -2,6 +2,7 @@
 
 import { useRef, useState, ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import { motionTokens } from '@/lib/design-system';
 
 export function MagneticButton({ children, className = "" }: { children: ReactNode, className?: string }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -12,7 +13,7 @@ export function MagneticButton({ children, className = "" }: { children: ReactNo
     const { height, width, left, top } = ref.current!.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
+    setPosition({ x: middleX * 0.3, y: middleY * 0.3 }); // Increased magnetism slightly
   };
 
   const reset = () => {
@@ -27,7 +28,8 @@ export function MagneticButton({ children, className = "" }: { children: ReactNo
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      whileTap={{ scale: 0.95 }} // Added tap micro-interaction
+      transition={motionTokens.spring.magnetic}
       className={`relative ${className}`}
     >
       {children}

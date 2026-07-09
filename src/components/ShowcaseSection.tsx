@@ -4,6 +4,8 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { MockupCard } from './ui/MockupCard';
 
+import { motionTokens } from '@/lib/design-system';
+
 const projects = [
   { title: "Aura", category: "Luxury Banking", color: "from-amber-500 to-orange-600" },
   { title: "Vitals", category: "Healthcare AI", color: "from-blue-500 to-cyan-500" },
@@ -41,8 +43,8 @@ export default function ShowcaseSection() {
             <motion.div 
               key={index} 
               className="flex-shrink-0"
-              whileHover={{ y: -20, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              whileHover={{ y: -20, scale: 1.02, rotateY: 5 }}
+              transition={motionTokens.spring.bouncy}
             >
               <MockupCard {...project} />
             </motion.div>

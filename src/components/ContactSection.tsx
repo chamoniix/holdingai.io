@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { MagneticButton } from './ui/MagneticButton';
 import { useState } from 'react';
+import { motionTokens } from '@/lib/design-system';
 
 export default function ContactSection() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -16,10 +17,10 @@ export default function ContactSection() {
           
           {/* Left Column: Text */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            variants={motionTokens.presets.slideUp}
           >
             <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
               READY TO <span className="text-gradient-neon">BUILD?</span>
@@ -43,10 +44,10 @@ export default function ContactSection() {
           {/* Right Column: Form */}
           <motion.div 
             className="bg-[#0a0a0a] border border-white/10 shadow-2xl p-8 md:p-12 rounded-3xl"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={motionTokens.presets.slideUp}
           >
             <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
               <div className="relative">
