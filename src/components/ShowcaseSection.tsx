@@ -21,10 +21,10 @@ export default function ShowcaseSection() {
     offset: ["start start", "end end"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["calc(0% + 0vw)", "calc(-100% + 100vw)"]);
 
   return (
-    <section ref={targetRef} className="relative h-[400vh] bg-black">
+    <section ref={targetRef} className="relative h-[200vh] bg-black">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         
         {/* Background gradient hint */}
@@ -36,7 +36,7 @@ export default function ShowcaseSection() {
           </h2>
         </div>
 
-        <motion.div style={{ x }} className="flex gap-12 px-6 md:px-20 mt-20">
+        <motion.div style={{ x }} className="flex w-max gap-12 px-6 md:px-20 mt-20">
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
