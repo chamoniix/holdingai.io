@@ -29,11 +29,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="text-white text-center font-bold"
+          className="text-white text-center font-bold text-balance"
           style={{ 
             fontSize: 'clamp(4rem, 12vw, 15rem)', 
             letterSpacing: '-0.04em',
-            lineHeight: 0.85
+            lineHeight: 0.95
           }}
         >
           {heroData.headline}

@@ -26,11 +26,10 @@ export default function Home() {
         
         <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
           <h2 
-            className="text-white font-bold tracking-tight mb-8 leading-[1.1]"
+            className="text-white font-bold tracking-tight mb-8 leading-[1.1] text-balance"
             style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', letterSpacing: '-0.04em' }}
           >
-            Ready to Lead the <br />
-            <span className="text-gradient-accent">AI Revolution?</span>
+            Ready to Lead the <span className="text-gradient-accent">AI Revolution?</span>
           </h2>
           
           <p className="text-xl md:text-2xl text-[#86868B] mb-12 font-light max-w-2xl">
