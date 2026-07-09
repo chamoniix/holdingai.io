@@ -20,9 +20,9 @@ export const motionTokens = {
 
   // Physics Spring (Framer Motion native springs)
   spring: {
-    magnetic: { type: "spring", stiffness: 150, damping: 15, mass: 0.1 },
-    snappy: { type: "spring", stiffness: 400, damping: 25 },
-    bouncy: { type: "spring", stiffness: 300, damping: 15 }
+    magnetic: { type: "spring" as const, stiffness: 150, damping: 15, mass: 0.1 },
+    snappy: { type: "spring" as const, stiffness: 400, damping: 25 },
+    bouncy: { type: "spring" as const, stiffness: 300, damping: 15 }
   },
   
   // Animations presets
