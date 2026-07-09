@@ -8,7 +8,7 @@ import Portfolio from "@/components/Portfolio";
 export default function Home() {
   
   return (
-    <main className="w-full bg-[#030304] overflow-hidden">
+    <main className="w-full bg-transparent overflow-hidden">
       
       {/* Scene 1: The Ignition */}
       <Hero />
@@ -20,7 +20,7 @@ export default function Home() {
       <Portfolio />
       
       {/* Scene 4: The Ultimatum (Final CTA) */}
-      <section className="relative py-40 px-6 bg-[#030304] z-10 overflow-hidden">
+      <section className="relative py-40 px-6 bg-transparent z-10 overflow-hidden">
         {/* Background Ambient Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#2997FF30,transparent_60%)] pointer-events-none" />
         

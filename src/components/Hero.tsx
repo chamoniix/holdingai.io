@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { heroData } from '@/data/hero-data'
-import MonolithScene from './canvas/MonolithScene'
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null)
@@ -13,7 +12,6 @@ export default function Hero() {
     offset: ['start start', 'end start']
   })
   
-  // Apple Pro typography animations
   const textY = useTransform(scrollYProgress, [0, 1], [0, -400])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const blur = useTransform(scrollYProgress, [0, 0.5], [0, 20])
@@ -21,22 +19,16 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen overflow-hidden bg-[#030304]"
+      className="relative w-full h-screen overflow-hidden bg-transparent"
     >
-      {/* 3D WebGL Background */}
-      <MonolithScene />
-      
-      {/* Main content layer */}
       <motion.div 
         style={{ y: textY, opacity, filter: useTransform(blur, (b: number) => `blur(${b}px)`) }}
-        className="relative z-10 flex flex-col items-center justify-center h-full px-6 pointer-events-none"
+        className="relative z-10 flex flex-col items-center justify-center h-full px-6"
       >
-        
-        {/* Entrance unmasking text */}
         <motion.h1
-          initial={{ opacity: 0, scale: 1.1, filter: 'blur(20px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }} // Apple Spring
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-white text-center font-bold"
           style={{ 
             fontSize: 'clamp(4rem, 12vw, 15rem)', 
@@ -48,21 +40,20 @@ export default function Hero() {
         </motion.h1>
         
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
           className="mt-8 text-xl md:text-2xl text-[#86868B] max-w-3xl text-center font-light"
           style={{ letterSpacing: '0em', lineHeight: 1.6 }}
         >
           {heroData.subheadline}
         </motion.p>
         
-        {/* CTA Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1 }}
-          className="mt-16 flex gap-6 pointer-events-auto"
+          className="mt-16 flex gap-6"
         >
           <motion.button
             whileHover={{ scale: 0.98 }}
@@ -70,7 +61,6 @@ export default function Hero() {
           >
             {heroData.cta}
           </motion.button>
-          
           <motion.button
             whileHover={{ scale: 0.98 }}
             className="px-8 py-4 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] backdrop-blur-[40px] text-white font-semibold rounded-full hover:bg-[rgba(255,255,255,0.05)] transition-all"
@@ -79,9 +69,6 @@ export default function Hero() {
           </motion.button>
         </motion.div>
       </motion.div>
-
-      {/* Volumetric white overlay lighting (CSS fallback) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#030304] via-transparent to-transparent z-0 pointer-events-none" />
     </section>
   )
 }

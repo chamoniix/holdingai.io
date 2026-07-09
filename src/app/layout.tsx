@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
+import PersistentMonolith from "@/components/canvas/PersistentMonolith";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -19,12 +20,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased bg-[#030304] text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white`}>
+      <body className={`${inter.variable} antialiased bg-[#030304] text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
         <CustomCursor />
-        <SmoothScroll>
-          {children}
-          <Footer />
-        </SmoothScroll>
+        <PersistentMonolith />
+        <div className="relative z-10 pointer-events-none">
+          <SmoothScroll>
+            <div className="pointer-events-auto">
+              {children}
+            </div>
+            <div className="pointer-events-auto">
+              <Footer />
+            </div>
+          </SmoothScroll>
+        </div>
       </body>
     </html>
   );
