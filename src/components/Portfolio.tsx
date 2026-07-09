@@ -1,110 +1,94 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useRef } from 'react'
+import { motion } from 'framer-motion'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP)
+}
 
 const projects = [
-  { id: 1, title: 'AI Dashboard for Healthcare', category: 'HealthTech', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800' },
-  { id: 2, title: 'E-commerce Personalization Engine', category: 'Retail', image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800' },
-  { id: 3, title: 'Financial Predictive Analytics', category: 'FinTech', image: 'https://images.unsplash.com/photo-1620674159522-7b2b2e8e8b9e?w=800' },
-  { id: 4, title: 'NLP Customer Service Chatbot', category: 'Enterprise', image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800' },
-  { id: 5, title: 'Computer Vision Quality Control', category: 'Industry', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800' },
-  { id: 6, title: 'Autonomous Agent Orchestrator', category: 'SaaS', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab3c?w=800' }
+  { id: 1, title: 'AI Dashboard for Healthcare', category: 'HealthTech', image: '/images/assets/IMG_Portfolio_01.avif' },
+  { id: 2, title: 'E-commerce Personalization Engine', category: 'Retail', image: '/images/assets/IMG_Portfolio_02.avif' },
+  { id: 3, title: 'Financial Predictive Analytics', category: 'FinTech', image: '/images/assets/IMG_Portfolio_03.avif' },
+  { id: 4, title: 'NLP Customer Service Chatbot', category: 'Enterprise', image: '/images/assets/IMG_Portfolio_04.avif' },
+  { id: 5, title: 'Computer Vision Quality Control', category: 'Industry', image: '/images/assets/IMG_Portfolio_05.avif' },
 ]
 
-const categories = ['All', 'HealthTech', 'Retail', 'FinTech', 'Enterprise', 'Industry', 'SaaS']
-
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState('All')
-  
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
-    : projects.filter(p => p.category === activeCategory)
-  
+  const containerRef = useRef<HTMLElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(() => {
+    if (!containerRef.current || !trackRef.current) return
+
+    // Calculate total scroll distance based on track width vs viewport width
+    const trackWidth = trackRef.current.offsetWidth
+    const viewportWidth = window.innerWidth
+    const amountToScroll = trackWidth - viewportWidth + 100 // add padding
+
+    gsap.to(trackRef.current, {
+      x: -amountToScroll,
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: `+=${amountToScroll}`, // Pin for the exact duration of the scroll
+        pin: true,
+        scrub: 1, // Smooth scrubbing
+        invalidateOnRefresh: true
+      }
+    })
+  }, { scope: containerRef })
+
   return (
-    <section className="py-32 px-6 bg-[#0A0A0C]">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Selected Work
-          </h2>
-          <p className="text-xl text-gray-400">
-            Projects that push boundaries
-          </p>
-        </motion.div>
-        
-        {/* Filter buttons */}
-        <div className="flex justify-center gap-4 mb-16 flex-wrap">
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all ${
-                activeCategory === category
-                  ? 'bg-white text-black'
-                  : 'bg-white/5 text-white/60 hover:bg-white/10'
-              }`}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </div>
-        
-        {/* Projects grid */}
-        <motion.div 
-          layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <AnimatePresence>
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
-                whileHover={{ 
-                  y: -12,
-                  transition: { duration: 0.3 }
-                }}
-                className="group relative rounded-2xl overflow-hidden bg-[#0F0F11] border border-white/5"
-              >
-                {/* Image */}
-                <div className="aspect-[4/3] overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                {/* Overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
-                >
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-sm text-white/60 mb-2">{project.category}</p>
-                    <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+    <section ref={containerRef} className="relative h-screen bg-[#030304] overflow-hidden flex items-center">
+      
+      {/* Background Lighting */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#2997FF20,transparent_50%)] pointer-events-none" />
+
+      {/* Header that pins with the container */}
+      <div className="absolute top-24 left-12 z-20">
+        <h2 className="text-sm font-bold tracking-[0.1em] text-[#86868B] uppercase mb-2">The Proof</h2>
+        <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+          Digital Monuments
+        </h3>
+      </div>
+
+      {/* Horizontal Scroll Track */}
+      <div ref={trackRef} className="flex gap-12 px-12 pt-32 w-max h-full items-center">
+        {projects.map((project) => (
+          <motion.div 
+            key={project.id} 
+            whileHover={{ scale: 0.98 }}
+            transition={{ ease: [0.16, 1, 0.3, 1] }}
+            className="group relative w-[70vw] md:w-[50vw] lg:w-[40vw] h-[60vh] glass-panel overflow-hidden shrink-0 cursor-none"
+          >
+            {/* Image Placeholder */}
+            <div className="absolute inset-0">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                loading={project.id <= 2 ? "eager" : "lazy"} // Priority lazy loading
+                className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1.5s] ease-[0.16,1,0.3,1]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030304] via-[#030304]/20 to-transparent" />
+            </div>
+            
+            {/* Content */}
+            <div className="absolute bottom-0 left-0 p-10 z-10">
+              <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-wider text-white bg-white/10 backdrop-blur-md rounded-full border border-white/10">
+                {project.category}
+              </span>
+              <h4 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+                {project.title}
+              </h4>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   )

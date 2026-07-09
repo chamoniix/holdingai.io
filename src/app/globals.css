@@ -1,20 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-neon: #00f0ff;
-  --color-brand-cyan: #00b8ff;
-  --color-brand-purple: #7000ff;
-  --color-brand-dark: #050505;
-  --color-brand-graphite: #111111;
-  --color-brand-glass: rgba(255, 255, 255, 0.05);
-  --color-brand-glass-border: rgba(255, 255, 255, 0.1);
+  --color-brand-void: #030304;
+  --color-brand-text: #F5F5F7;
+  --color-brand-accent-blue: #2997FF;
+  --color-brand-accent-pink: #BF5AF2;
+  --color-brand-glass: rgba(255, 255, 255, 0.02);
+  --color-brand-glass-border: rgba(255, 255, 255, 0.08);
   --font-sans: var(--font-inter);
 }
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
+    --background: #030304;
+    --foreground: #F5F5F7;
   }
 
   body {
@@ -23,6 +22,7 @@
     font-family: var(--font-sans), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    cursor: none; /* We use a custom magnetic cursor */
   }
 }
 
@@ -30,27 +30,47 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Glassmorphism 3.0 */
   .glass-panel {
     background: var(--color-brand-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(40px) saturate(150%);
+    -webkit-backdrop-filter: blur(40px) saturate(150%);
     border: 1px solid var(--color-brand-glass-border);
+    border-radius: 32px;
   }
-  .text-gradient {
-    background: linear-gradient(to right, #fff, #888);
+  
+  .glass-panel-sm {
+    background: var(--color-brand-glass);
+    backdrop-filter: blur(40px) saturate(150%);
+    -webkit-backdrop-filter: blur(40px) saturate(150%);
+    border: 1px solid var(--color-brand-glass-border);
+    border-radius: 16px;
+  }
+
+  .text-gradient-apple {
+    background: linear-gradient(135deg, #FFFFFF 0%, #86868B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .text-gradient-neon {
-    background: linear-gradient(to right, var(--color-brand-neon), var(--color-brand-purple));
+
+  .text-gradient-accent {
+    background: radial-gradient(circle at 50% 50%, var(--color-brand-accent-blue), var(--color-brand-accent-pink));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  /* 24-column grid */
+  .grid-24 {
+    display: grid;
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+    gap: 1.5rem; /* 24px gap */
   }
 }
 
-/* Lenis recommended CSS */
+/* Lenis smooth scroll recommended CSS */
 html.lenis, html.lenis body {
   height: auto;
 }

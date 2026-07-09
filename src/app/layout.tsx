@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -18,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased bg-black text-white selection:bg-brand-purple/30 selection:text-white`}>
+      <body className={`${inter.variable} antialiased bg-[#030304] text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white`}>
+        <CustomCursor />
         <SmoothScroll>
           {children}
           <Footer />
