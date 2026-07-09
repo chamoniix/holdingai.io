@@ -11,17 +11,17 @@ const services = [
   { 
     title: "AI Mobile Apps", 
     desc: "Intelligent, predictive, and wildly fluid native experiences.", 
-    img: "https://images.unsplash.com/photo-1618228399718-494025b3997e?q=80&w=1200&auto=format&fit=crop" 
+    img: "/images/ai_mobile_app.jpg" 
   },
   { 
     title: "SaaS Platforms", 
     desc: "Enterprise-grade architecture with consumer-grade aesthetics.", 
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" 
+    img: "/images/saas_platform.jpg" 
   },
   { 
     title: "Autonomous Agents", 
     desc: "Systems that think, act, and scale beyond human limits.", 
-    img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1200&auto=format&fit=crop" 
+    img: "/images/autonomous_agents.jpg" 
   }
 ];
 
@@ -101,22 +101,22 @@ export default function WhatWeBuildSection() {
           {/* Right Column: Scrolling Images */}
           <div ref={rightColRef} className="lg:w-2/3 flex flex-col gap-32 pb-32">
             {services.map((service, idx) => (
-              <div key={idx} className="service-card relative h-[70vh] rounded-[2rem] overflow-hidden group">
-                <div className="absolute inset-0 bg-black">
+              <div key={idx} className="service-card relative h-[70vh] rounded-[2.5rem] overflow-hidden group shadow-2xl border border-white/10 bg-[#0a0a0a]">
+                <div className="absolute inset-0">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src={service.img} 
                     alt={service.title}
-                    className="service-img w-full h-[120%] object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700"
+                    className="service-img w-full h-[120%] object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                   />
                 </div>
                 
                 {/* Gradient Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
                 
-                <div className="service-text absolute bottom-12 left-12 right-12 z-10">
-                  <h3 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">{service.title}</h3>
-                  <p className="text-2xl text-white/70 font-light">{service.desc}</p>
+                <div className="service-text absolute bottom-12 left-12 right-12 z-10 backdrop-blur-md bg-white/5 border border-white/10 p-8 rounded-3xl shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+                  <h3 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-[-0.02em]">{service.title}</h3>
+                  <p className="text-xl text-white/70 font-light">{service.desc}</p>
                 </div>
               </div>
             ))}

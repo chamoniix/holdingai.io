@@ -80,13 +80,13 @@ export default function HeroSection() {
         
         <h1 
           ref={textRef}
-          className="text-6xl md:text-8xl lg:text-[11rem] font-bold tracking-tighter leading-[0.85] text-white text-center mix-blend-difference"
+          className="text-6xl md:text-8xl lg:text-[12rem] font-bold tracking-[-0.04em] leading-[0.85] text-white text-center mix-blend-difference"
         >
           <div className="overflow-hidden pb-4">
             <span className="block reveal-line transform-gpu">HOLDING</span>
           </div>
           <div className="overflow-hidden pb-4">
-            <span className="block reveal-line text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple transform-gpu">AURA</span>
+            <span className="block reveal-line text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500 transform-gpu">AI</span>
           </div>
         </h1>
         
