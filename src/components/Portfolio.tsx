@@ -13,7 +13,7 @@ export default function Portfolio() {
     <section className="relative w-full py-[30vh] bg-transparent pointer-events-none">
       <div className="max-w-5xl mx-auto px-6 pointer-events-auto">
         <div className="mb-32 text-center">
-          <h2 className="text-sm font-bold tracking-[0.2em] text-[#86868B] uppercase mb-8">The Proof</h2>
+          <h2 className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">The Proof</h2>
           <h3 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
             Digital Monuments
           </h3>
@@ -26,7 +26,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-20%" }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               className="relative w-full aspect-[16/9] md:aspect-[21/9] glass-panel overflow-hidden group"
             >
               <img 
@@ -36,10 +36,13 @@ export default function Portfolio() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#030304] via-transparent to-transparent" />
               
-              <div className="absolute bottom-0 left-0 p-12">
-                <span className="text-[#2997FF] font-mono text-sm tracking-widest mb-4 block">
-                  // {project.category}
-                </span>
+              <div className="absolute bottom-0 left-0 p-8 md:p-12">
+                <div className="flex items-center gap-4 text-[#86868B] mb-4">
+                  <div className="w-8 h-[1px] bg-[#86868B]/30" />
+                  <span className="font-mono text-[11px] tracking-widest uppercase">
+                    {project.category}
+                  </span>
+                </div>
                 <h4 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
                   {project.title}
                 </h4>

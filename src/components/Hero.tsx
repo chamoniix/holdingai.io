@@ -28,7 +28,7 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           className="text-white text-center font-bold text-balance"
           style={{ 
             fontSize: 'clamp(4rem, 12vw, 15rem)', 
@@ -42,7 +42,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
+          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.8 }}
           className="mt-8 text-xl md:text-2xl text-[#86868B] max-w-3xl text-center font-light"
           style={{ letterSpacing: '0em', lineHeight: 1.6 }}
         >
@@ -52,7 +52,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 1 }}
           className="mt-16 flex gap-6"
         >
           <motion.button
