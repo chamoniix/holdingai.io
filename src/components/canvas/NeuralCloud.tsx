@@ -1,12 +1,12 @@
 'use client'
 
-import { useRef, useMemo, useEffect } from 'react'
+import { useRef, useMemo, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useScrollStore } from '@/store/scrollStore'
 
 // --------------------------------------------------------
-// MATH UTILS
+// MATH & TEXT UTILS
 // --------------------------------------------------------
 function randomGaussian() {
   let u = 0, v = 0;
@@ -15,48 +15,89 @@ function randomGaussian() {
   return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
 }
 
-function getPointInH() {
-  const r = Math.random();
-  let x, y, z = (Math.random() - 0.5) * 0.2; // very thin Z for sharp typography
-  if (r < 0.4) {
-    x = -1.5 + Math.random() * 0.6;
-    y = -1.5 + Math.random() * 3.0;
-  } else if (r < 0.8) {
-    x = 0.9 + Math.random() * 0.6;
-    y = -1.5 + Math.random() * 3.0;
-  } else {
-    x = -0.9 + Math.random() * 1.8;
-    y = -0.3 + Math.random() * 0.6;
+// Generate points from an invisible canvas for precise typography
+function getPointsFromText(text: string, count: number, scale: number, yOffset = 0) {
+  const positions = new Float32Array(count * 3);
+  if (typeof window === 'undefined') return positions; // Return empty on SSR
+  
+  const canvas = document.createElement('canvas');
+  canvas.width = 1024;
+  canvas.height = 256;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return positions;
+  
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, 1024, 256);
+  ctx.fillStyle = '#fff';
+  ctx.font = '900 180px Inter, system-ui, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 512, 128);
+  
+  const imgData = ctx.getImageData(0, 0, 1024, 256).data;
+  const validPixels = [];
+  for (let y = 0; y < 256; y++) {
+      for (let x = 0; x < 1024; x++) {
+          const i = (y * 1024 + x) * 4;
+          if (imgData[i] > 128) {
+              validPixels.push({x: x - 512, y: 128 - y});
+          }
+      }
   }
-  // Add slight noise
-  x += (Math.random() - 0.5) * 0.1;
-  y += (Math.random() - 0.5) * 0.1;
-  return {x, y, z};
+  
+  if (validPixels.length === 0) return positions;
+
+  for(let i=0; i<count; i++) {
+      const p = validPixels[Math.floor(Math.random() * validPixels.length)];
+      positions[i*3] = (p.x * scale) + (Math.random() - 0.5) * 0.1;
+      positions[i*3+1] = (p.y * scale) + yOffset + (Math.random() - 0.5) * 0.1;
+      positions[i*3+2] = (Math.random() - 0.5) * 0.2;
+  }
+  return positions;
 }
 
-function getPointInAI() {
-  const r = Math.random();
-  let x, y, z = (Math.random() - 0.5) * 0.2;
-  if (r < 0.25) {
-    x = -2.5 + Math.random() * 0.5;
-    y = -1.5 + Math.random() * 3.0;
-  } else if (r < 0.5) {
-    x = -1.0 + Math.random() * 0.5;
-    y = -1.5 + Math.random() * 3.0;
-  } else if (r < 0.65) {
-    x = -2.0 + Math.random() * 1.0;
-    y = 1.0 + Math.random() * 0.5;
-  } else if (r < 0.8) {
-    x = -2.0 + Math.random() * 1.0;
-    y = -0.25 + Math.random() * 0.5;
-  } else {
-    x = 1.0 + Math.random() * 0.5;
-    y = -1.5 + Math.random() * 3.0;
+// Trace logo points (similar to text but arranged as outline)
+function getPointsFromTrace(text: string, count: number, scale: number, yOffset = 0) {
+  const positions = new Float32Array(count * 3);
+  if (typeof window === 'undefined') return positions;
+  
+  const canvas = document.createElement('canvas');
+  canvas.width = 1024;
+  canvas.height = 256;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return positions;
+  
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, 1024, 256);
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 4;
+  ctx.font = '900 180px Inter, system-ui, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.strokeText(text, 512, 128);
+  
+  const imgData = ctx.getImageData(0, 0, 1024, 256).data;
+  const validPixels = [];
+  for (let y = 0; y < 256; y++) {
+      for (let x = 0; x < 1024; x++) {
+          const i = (y * 1024 + x) * 4;
+          if (imgData[i] > 128) {
+              validPixels.push({x: x - 512, y: 128 - y});
+          }
+      }
   }
-  x += (Math.random() - 0.5) * 0.1;
-  y += (Math.random() - 0.5) * 0.1;
-  return {x, y, z};
+  
+  if (validPixels.length === 0) return positions;
+
+  for(let i=0; i<count; i++) {
+      const p = validPixels[Math.floor(Math.random() * validPixels.length)];
+      positions[i*3] = (p.x * scale) + (Math.random() - 0.5) * 0.05;
+      positions[i*3+1] = (p.y * scale) + yOffset + (Math.random() - 0.5) * 0.05;
+      positions[i*3+2] = (Math.random() - 0.5) * 0.05;
+  }
+  return positions;
 }
+
 
 // --------------------------------------------------------
 // SHADER CHUNKS
@@ -83,7 +124,7 @@ float snoise(vec3 v) {
              i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
            + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))
            + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
-  float n_ = 0.142857142857; // 1.0/7.0
+  float n_ = 0.142857142857;
   vec3  ns = n_ * D.wyz - D.xzx;
   vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
   vec4 x_ = floor(j * ns.z);
@@ -103,10 +144,7 @@ float snoise(vec3 v) {
   vec3 p2 = vec3(a1.xy,h.z);
   vec3 p3 = vec3(a1.zw,h.w);
   vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
-  p0 *= norm.x;
-  p1 *= norm.y;
-  p2 *= norm.z;
-  p3 *= norm.w;
+  p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
   vec4 m = max(0.5 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
   m = m * m;
   return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3) ) );
@@ -128,47 +166,65 @@ vec3 curlNoise(vec3 p) {
     return normalize(vec3(x, y, z)) * 0.5;
 }
 
-// Function to calculate a morphed position perfectly
-vec3 calculateMorph(vec3 pCompact, vec3 pBridges, vec3 pLobes, vec3 pCollapsed, vec3 pH, vec3 pAI, float t, float time, vec2 mouse) {
+// Function to calculate morphed position perfectly
+vec3 calculateMorph(
+  vec3 pCompact, vec3 pBridges, vec3 pLobes, vec3 pCollapsed, 
+  vec3 pTarget, float tTargetMix,
+  vec3 pRibbon, vec3 pText, vec3 pTrace, vec3 pSphere,
+  float t, float time, vec2 mouse, out float isTextShape
+) {
   vec3 pos = pCompact;
+  isTextShape = 0.0;
   
-  // Primary Topology Sequence
+  // 1. Organic Base Topologies (0.0 to 0.7)
   if (t < 0.33) {
-    float localT = smoothstep(0.0, 0.33, t);
-    pos = mix(pCompact, pBridges, localT);
+    pos = mix(pCompact, pBridges, smoothstep(0.0, 0.33, t));
   } else if (t < 0.66) {
-    float localT = smoothstep(0.33, 0.66, t);
-    pos = mix(pBridges, pLobes, localT);
+    pos = mix(pBridges, pLobes, smoothstep(0.33, 0.66, t));
   } else {
-    float localT = smoothstep(0.66, 1.0, t);
-    pos = mix(pLobes, pCollapsed, localT);
+    pos = mix(pLobes, pCollapsed, smoothstep(0.66, 1.0, t));
   }
 
-  // --- THE SECRET SIGNATURE MOMENT ---
-  // H appears between 0.64 and 0.67
-  float mixH = smoothstep(0.64, 0.655, t) * (1.0 - smoothstep(0.66, 0.675, t));
-  pos = mix(pos, pH, mixH);
-  
-  // AI appears between 0.67 and 0.70
-  float mixAI = smoothstep(0.67, 0.685, t) * (1.0 - smoothstep(0.69, 0.705, t));
-  pos = mix(pos, pAI, mixAI);
-  // -----------------------------------
+  // 2. Dynamic Typography Target (A, P, D, etc.)
+  // The JS swap logic ensures pTarget is already holding the correct letter for this scroll region
+  pos = mix(pos, pTarget, tTargetMix);
 
-  // Organic Breathing / Deformation using Curl Noise - SLOWER for premium feel
-  // Suppress noise completely during the signature moment to keep the letters perfectly crisp
-  float suppression = 1.0 - max(mixH, mixAI);
+  // 3. The Footer Choreography (0.75 to 1.0)
+  // Step 1: Descend and form Ribbon (0.78 to 0.82)
+  float mixRibbon = smoothstep(0.78, 0.81, t) * (1.0 - smoothstep(0.83, 0.85, t));
+  // Step 2: Morph to HOLDING AI (0.84 to 0.88)
+  float mixText = smoothstep(0.84, 0.86, t) * (1.0 - smoothstep(0.89, 0.91, t));
+  // Step 3: Detach and Trace Logo (0.90 to 0.94)
+  float mixTrace = smoothstep(0.90, 0.92, t) * (1.0 - smoothstep(0.95, 0.97, t));
+  // Step 4: Collapse to Sphere (0.96 to 1.0)
+  float mixSphere = smoothstep(0.96, 1.0, t);
+  
+  pos = mix(pos, pRibbon, mixRibbon);
+  pos = mix(pos, pText, mixText);
+  pos = mix(pos, pTrace, mixTrace);
+  pos = mix(pos, pSphere, mixSphere);
+
+  // Move the entire cloud down into the footer gracefully when t > 0.75
+  float footerDownshift = smoothstep(0.75, 1.0, t) * -2.5; 
+  pos.y += footerDownshift;
+
+  // Track if we are currently forming ANY perfect shape (to suppress organic noise)
+  isTextShape = max(tTargetMix, max(mixText, max(mixTrace, mixSphere)));
+
+  // Organic Breathing / Deformation using Curl Noise - SLOWED DOWN
+  float suppression = 1.0 - isTextShape;
   float deformationStrength = (0.2 + (sin(t * 3.14159) * 1.0)) * suppression;
-  vec3 noise = curlNoise(pos * 0.4 + time * 0.08);
+  vec3 noise = curlNoise(pos * 0.4 + time * 0.04); // Reduced noise speed
   pos += noise * deformationStrength;
 
-  // Extremely slow majestic rotation (almost unnoticeable)
-  float rotY = time * 0.02 + (t * 0.5);
+  // Majestic slow rotation
+  float rotY = time * 0.01 + (t * 0.2); // Reduced rotation speed
   mat2 rot = mat2(cos(rotY), -sin(rotY), sin(rotY), cos(rotY));
   
-  // Don't rotate the letters!
+  // Don't rotate text or trace!
   vec3 rotatedXZ = vec3(pos.x, pos.y, pos.z);
   rotatedXZ.xz = rot * pos.xz;
-  pos = mix(rotatedXZ, pos, max(mixH, mixAI));
+  pos = mix(rotatedXZ, pos, isTextShape);
 
   // Mouse Repulsion
   vec3 mouseWorld = vec3(mouse.x * 12.0, mouse.y * 12.0, 0.0);
@@ -179,8 +235,8 @@ vec3 calculateMorph(vec3 pCompact, vec3 pBridges, vec3 pLobes, vec3 pCollapsed, 
     pos += dir * repulsion;
   }
 
-  // Very subtle breathing scale (5 seconds roughly)
-  float breath = 1.0 + sin(time * 1.25) * 0.025 * suppression; 
+  // Slow breathing
+  float breath = 1.0 + sin(time * 0.8) * 0.02 * suppression; 
   pos *= breath;
   
   return pos;
@@ -200,8 +256,15 @@ attribute vec3 aPositionCompact;
 attribute vec3 aPositionBridges;
 attribute vec3 aPositionLobes;
 attribute vec3 aPositionCollapsed;
-attribute vec3 aPositionH;
-attribute vec3 aPositionAI;
+
+attribute vec3 aPositionTarget;
+uniform float uTargetMix;
+
+attribute vec3 aPositionRibbon;
+attribute vec3 aPositionText;
+attribute vec3 aPositionTrace;
+attribute vec3 aPositionSphere;
+
 attribute float aRandomSeed;
 
 varying float vDepth;
@@ -214,29 +277,27 @@ ${noiseChunk}
 
 void main() {
   float t = clamp(uScrollProgress, 0.0, 1.0);
-  vec3 finalPos = calculateMorph(aPositionCompact, aPositionBridges, aPositionLobes, aPositionCollapsed, aPositionH, aPositionAI, t, uTime, uMouse);
+  float isTextShape = 0.0;
+  
+  vec3 finalPos = calculateMorph(
+    aPositionCompact, aPositionBridges, aPositionLobes, aPositionCollapsed, 
+    aPositionTarget, uTargetMix,
+    aPositionRibbon, aPositionText, aPositionTrace, aPositionSphere,
+    t, uTime, uMouse, isTextShape
+  );
 
   vec4 viewPosition = modelViewMatrix * vec4(finalPos, 1.0);
   gl_Position = projectionMatrix * viewPosition;
   
-  // Point size based on depth and pixel ratio
   gl_PointSize = (12.0 * uDevicePixelRatio) / -viewPosition.z;
-
-  // Pass depth for fragment shader fading
   vDepth = -viewPosition.z;
-  
-  // Brightness based on distance from center of its local cluster
   vIntensity = 1.0 - smoothstep(0.0, 5.0, length(finalPos));
 
-  // Mouse illumination
   vec3 mouseWorld = vec3(uMouse.x * 12.0, uMouse.y * 12.0, 0.0);
   vMouseDist = length(finalPos.xy - mouseWorld.xy);
 
   vRandom = aRandomSeed;
-  
-  float mixH = smoothstep(0.64, 0.655, t) * (1.0 - smoothstep(0.66, 0.675, t));
-  float mixAI = smoothstep(0.67, 0.685, t) * (1.0 - smoothstep(0.69, 0.705, t));
-  vIsSignature = max(mixH, mixAI);
+  vIsSignature = isTextShape;
 }
 `
 
@@ -258,23 +319,19 @@ void main() {
   
   float alpha = smoothstep(0.5, 0.1, dist);
 
-  // Severe Depth of Field
   float depthFade = smoothstep(0.5, 3.0, vDepth) * (1.0 - smoothstep(12.0, 18.0, vDepth));
   alpha *= depthFade;
 
-  // Make signature moment incredibly bright white
   vec3 finalColor = mix(uColorEdge, uColorCore, vIntensity);
   finalColor = mix(finalColor, vec3(1.0, 1.0, 1.0), vIsSignature);
   alpha = mix(alpha, 1.0, vIsSignature);
 
-  // Pulse highlights for ~5% of nodes
   if (vRandom > 0.95 && vIsSignature < 0.5) {
     float pulse = (sin(uTime * 2.0 + vRandom * 100.0) + 1.0) * 0.5;
     finalColor = mix(finalColor, uColorHighlight, pulse);
     alpha += pulse * 0.5;
   }
 
-  // Boost brightness near mouse
   float mouseGlow = 1.0 - smoothstep(0.0, 3.0, vMouseDist);
   finalColor += uColorHighlight * mouseGlow * 0.8;
   alpha += mouseGlow * 0.4;
@@ -284,82 +341,33 @@ void main() {
 `
 
 // --------------------------------------------------------
-// GHOST LINES SHADERS
-// --------------------------------------------------------
-const lineVertexShader = `
-uniform float uTime;
-uniform float uScrollProgress;
-uniform vec2 uMouse;
-
-attribute vec3 aPositionCompact;
-attribute vec3 aPositionBridges;
-attribute vec3 aPositionLobes;
-attribute vec3 aPositionCollapsed;
-attribute vec3 aPositionH;
-attribute vec3 aPositionAI;
-
-attribute vec3 aOtherCompact;
-attribute vec3 aOtherBridges;
-attribute vec3 aOtherLobes;
-attribute vec3 aOtherCollapsed;
-attribute vec3 aOtherH;
-attribute vec3 aOtherAI;
-
-varying float vOpacity;
-
-${noiseChunk}
-
-void main() {
-  float t = clamp(uScrollProgress, 0.0, 1.0);
-  
-  vec3 myPos = calculateMorph(aPositionCompact, aPositionBridges, aPositionLobes, aPositionCollapsed, aPositionH, aPositionAI, t, uTime, uMouse);
-  vec3 partnerPos = calculateMorph(aOtherCompact, aOtherBridges, aOtherLobes, aOtherCollapsed, aOtherH, aOtherAI, t, uTime, uMouse);
-
-  // Real-time GPU Distance Check
-  float currentDistance = length(myPos - partnerPos);
-  
-  // STRICT LOCALIZED THRESHOLD
-  float threshold = 0.4 + (sin(t * 3.14159) * 0.3);
-  
-  // Fade in sharply only if very close
-  vOpacity = 1.0 - smoothstep(threshold * 0.5, threshold, currentDistance);
-
-  // Depth fade
-  vec4 viewPosition = modelViewMatrix * vec4(myPos, 1.0);
-  float depthFade = smoothstep(1.0, 3.0, -viewPosition.z) * (1.0 - smoothstep(10.0, 16.0, -viewPosition.z));
-  vOpacity *= depthFade;
-  
-  // Break all lines during signature moment to make letters pure
-  float mixH = smoothstep(0.64, 0.655, t) * (1.0 - smoothstep(0.66, 0.675, t));
-  float mixAI = smoothstep(0.67, 0.685, t) * (1.0 - smoothstep(0.69, 0.705, t));
-  vOpacity *= (1.0 - max(mixH, mixAI));
-
-  gl_Position = projectionMatrix * viewPosition;
-}
-`
-
-const lineFragmentShader = `
-varying float vOpacity;
-uniform vec3 uColorLine;
-
-void main() {
-  if (vOpacity <= 0.01) discard;
-  gl_FragColor = vec4(uColorLine, vOpacity * 0.2);
-}
-`
-
-// --------------------------------------------------------
 // REACT COMPONENT
 // --------------------------------------------------------
 function NeuralScene() {
+  const pointsGeoRef = useRef<THREE.BufferGeometry>(null)
   const pointsMatRef = useRef<THREE.ShaderMaterial>(null)
-  const linesMatRef = useRef<THREE.ShaderMaterial>(null)
   
   const scrollProgress = useScrollStore(state => state.progress)
   const smoothedScroll = useRef(0)
-  
   const mouseRef = useRef(new THREE.Vector2(0, 0))
   const targetMouse = useRef(new THREE.Vector2(0, 0))
+
+  const activeTypoIndex = useRef(-1)
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  const count = isMobile ? 6000 : 25000
+
+  // Pre-generate all typography buffers once
+  const typoBuffers = useMemo(() => {
+    return [
+      getPointsFromText("A", count, 0.02), // 0: AI Strategy
+      getPointsFromText("P", count, 0.02), // 1: Product Design
+      getPointsFromText("D", count, 0.02), // 2: Development
+      getPointsFromText("A", count, 0.02), // 3: Analytics
+      getPointsFromText("H", count, 0.02), // 4: HealthTech
+      getPointsFromText("E", count, 0.02), // 5: E-commerce
+      getPointsFromText("F", count, 0.02), // 6: FinTech
+    ]
+  }, [count])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -371,76 +379,115 @@ function NeuralScene() {
   }, [])
 
   useFrame((state, delta) => {
-    smoothedScroll.current = THREE.MathUtils.lerp(smoothedScroll.current, scrollProgress, delta * 3.0)
+    // Smoother scroll interpolation for cinematic feel
+    smoothedScroll.current = THREE.MathUtils.lerp(smoothedScroll.current, scrollProgress, delta * 2.0)
     mouseRef.current.lerp(targetMouse.current, delta * 4.0)
     
+    const t = smoothedScroll.current
+
+    // Determine target mix and buffer swapping
+    // We open windows where a specific letter appears
+    let targetIndex = -1
+    let tMix = 0.0
+    
+    // Define windows for each letter [start, peakStart, peakEnd, end]
+    const windows = [
+      [0.08, 0.10, 0.12, 0.14], // A
+      [0.17, 0.19, 0.21, 0.23], // P
+      [0.26, 0.28, 0.30, 0.32], // D
+      [0.35, 0.37, 0.39, 0.41], // A
+      [0.46, 0.48, 0.50, 0.52], // H
+      [0.55, 0.57, 0.59, 0.61], // E
+      [0.64, 0.66, 0.68, 0.70]  // F
+    ]
+
+    for (let i = 0; i < windows.length; i++) {
+      const [s, ps, pe, e] = windows[i]
+      if (t > s && t < e) {
+        targetIndex = i
+        // Calculate smoothstep mix
+        tMix = THREE.MathUtils.smoothstep(t, s, ps) * (1.0 - THREE.MathUtils.smoothstep(t, pe, e))
+        break
+      }
+    }
+
+    // Dynamic Buffer Swapping
+    if (targetIndex !== -1 && targetIndex !== activeTypoIndex.current && pointsGeoRef.current) {
+      const attr = pointsGeoRef.current.attributes.aPositionTarget as THREE.BufferAttribute
+      attr.array.set(typoBuffers[targetIndex])
+      attr.needsUpdate = true
+      activeTypoIndex.current = targetIndex
+    }
+
     if (pointsMatRef.current) {
       pointsMatRef.current.uniforms.uTime.value = state.clock.elapsedTime
       pointsMatRef.current.uniforms.uScrollProgress.value = smoothedScroll.current
       pointsMatRef.current.uniforms.uMouse.value = mouseRef.current
-    }
-    if (linesMatRef.current) {
-      linesMatRef.current.uniforms.uTime.value = state.clock.elapsedTime
-      linesMatRef.current.uniforms.uScrollProgress.value = smoothedScroll.current
-      linesMatRef.current.uniforms.uMouse.value = mouseRef.current
+      pointsMatRef.current.uniforms.uTargetMix.value = tMix
     }
   })
 
-  // Generate Geometry
-  const { pointGeometry, lineGeometry } = useMemo(() => {
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
-    const count = isMobile ? 5000 : 22000
-    
+  // Generate Initial Geometry
+  const pointGeometry = useMemo(() => {
+    // Core shapes
     const posCompact = new Float32Array(count * 3)
     const posBridges = new Float32Array(count * 3)
     const posLobes = new Float32Array(count * 3)
     const posCollapsed = new Float32Array(count * 3)
-    const posH = new Float32Array(count * 3)
-    const posAI = new Float32Array(count * 3)
+    const posTarget = new Float32Array(count * 3) // Dynamic buffer
     const randomSeeds = new Float32Array(count)
+
+    // Footer shapes
+    const pRibbon = new Float32Array(count * 3)
+    const pText = getPointsFromText("HOLDING AI", count, 0.012)
+    const pTrace = getPointsFromTrace("HOLDING AI", count, 0.012)
+    const pSphere = new Float32Array(count * 3)
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3
       randomSeeds[i] = Math.random()
       
       // 1. Compact Core
-      const gX1 = randomGaussian() * 0.8
-      const gY1 = randomGaussian() * 0.8
-      const gZ1 = randomGaussian() * 0.8
-      posCompact[i3] = gX1; posCompact[i3+1] = gY1; posCompact[i3+2] = gZ1;
+      posCompact[i3] = randomGaussian() * 0.8
+      posCompact[i3+1] = randomGaussian() * 0.8
+      posCompact[i3+2] = randomGaussian() * 0.8
 
       // 2. Bridges
       const organism2 = i % 2 === 0 ? 1 : -1
-      const gX2 = (randomGaussian() * 0.6) + (2.0 * organism2)
-      const gY2 = (randomGaussian() * 0.5) + (1.0 * organism2)
-      const gZ2 = randomGaussian() * 0.7
-      posBridges[i3] = gX2; posBridges[i3+1] = gY2; posBridges[i3+2] = gZ2;
+      posBridges[i3] = (randomGaussian() * 0.6) + (2.0 * organism2)
+      posBridges[i3+1] = (randomGaussian() * 0.5) + (1.0 * organism2)
+      posBridges[i3+2] = randomGaussian() * 0.7
 
-      // 3. Multi-Lobe Network
+      // 3. Multi-Lobe
       const lobeId = i % 3
       const centers3 = [
         new THREE.Vector3(-2.5, 1.5, 1),
         new THREE.Vector3(2.5, 1.0, -1),
         new THREE.Vector3(0, -2.5, 0)
       ]
-      const c3 = centers3[lobeId]
       const spread = 0.7 + (Math.random() * 0.3)
-      posLobes[i3] = c3.x + (randomGaussian() * spread)
-      posLobes[i3+1] = c3.y + (randomGaussian() * spread)
-      posLobes[i3+2] = c3.z + (randomGaussian() * spread)
+      posLobes[i3] = centers3[lobeId].x + (randomGaussian() * spread)
+      posLobes[i3+1] = centers3[lobeId].y + (randomGaussian() * spread)
+      posLobes[i3+2] = centers3[lobeId].z + (randomGaussian() * spread)
 
-      // 4. Refined Core
+      // 4. Collapsed
       const organism4 = i % 2 === 0 ? 1 : -1
       posCollapsed[i3] = (randomGaussian() * 0.4) + (0.5 * organism4)
       posCollapsed[i3+1] = (randomGaussian() * 1.5)
       posCollapsed[i3+2] = (randomGaussian() * 0.4) - (0.5 * organism4)
 
-      // SIGNATURE BUFFERS
-      const p_H = getPointInH()
-      posH[i3] = p_H.x; posH[i3+1] = p_H.y; posH[i3+2] = p_H.z;
+      // Initialize target with zeros or first typo
+      posTarget[i3] = 0; posTarget[i3+1] = 0; posTarget[i3+2] = 0;
 
-      const p_AI = getPointInAI()
-      posAI[i3] = p_AI.x; posAI[i3+1] = p_AI.y; posAI[i3+2] = p_AI.z;
+      // Footer Ribbon (Horizontal flowing energy)
+      pRibbon[i3] = (Math.random() - 0.5) * 16.0
+      pRibbon[i3+1] = randomGaussian() * 0.1
+      pRibbon[i3+2] = randomGaussian() * 0.5
+
+      // Footer Sphere (Dense resting ball)
+      pSphere[i3] = randomGaussian() * 0.3
+      pSphere[i3+1] = randomGaussian() * 0.3
+      pSphere[i3+2] = randomGaussian() * 0.3
     }
 
     const pGeo = new THREE.BufferGeometry()
@@ -449,89 +496,23 @@ function NeuralScene() {
     pGeo.setAttribute('aPositionBridges', new THREE.BufferAttribute(posBridges, 3))
     pGeo.setAttribute('aPositionLobes', new THREE.BufferAttribute(posLobes, 3))
     pGeo.setAttribute('aPositionCollapsed', new THREE.BufferAttribute(posCollapsed, 3))
-    pGeo.setAttribute('aPositionH', new THREE.BufferAttribute(posH, 3))
-    pGeo.setAttribute('aPositionAI', new THREE.BufferAttribute(posAI, 3))
+    
+    // Dynamic Buffer
+    pGeo.setAttribute('aPositionTarget', new THREE.BufferAttribute(posTarget, 3))
+
+    pGeo.setAttribute('aPositionRibbon', new THREE.BufferAttribute(pRibbon, 3))
+    pGeo.setAttribute('aPositionText', new THREE.BufferAttribute(pText, 3))
+    pGeo.setAttribute('aPositionTrace', new THREE.BufferAttribute(pTrace, 3))
+    pGeo.setAttribute('aPositionSphere', new THREE.BufferAttribute(pSphere, 3))
+
     pGeo.setAttribute('aRandomSeed', new THREE.BufferAttribute(randomSeeds, 1))
 
-    // Generate Ghost Lines
-    const lineCount = isMobile ? 3000 : 18000
-    const lPosComp = new Float32Array(lineCount * 2 * 3)
-    const lPosBri = new Float32Array(lineCount * 2 * 3)
-    const lPosLob = new Float32Array(lineCount * 2 * 3)
-    const lPosCol = new Float32Array(lineCount * 2 * 3)
-    const lPosH = new Float32Array(lineCount * 2 * 3)
-    const lPosAI = new Float32Array(lineCount * 2 * 3)
-    
-    const lOtherComp = new Float32Array(lineCount * 2 * 3)
-    const lOtherBri = new Float32Array(lineCount * 2 * 3)
-    const lOtherLob = new Float32Array(lineCount * 2 * 3)
-    const lOtherCol = new Float32Array(lineCount * 2 * 3)
-    const lOtherH = new Float32Array(lineCount * 2 * 3)
-    const lOtherAI = new Float32Array(lineCount * 2 * 3)
-
-    for(let i = 0; i < lineCount; i++) {
-      const idxA = Math.floor(Math.random() * count)
-      const offset = Math.floor(Math.random() * 20) * 3
-      const idxB = (idxA + offset) % count
-      
-      const vA = i * 6
-      const vB = i * 6 + 3
-      const iA = idxA * 3
-      const iB = idxB * 3
-
-      // Vertex A data
-      lPosComp[vA] = posCompact[iA]; lPosComp[vA+1] = posCompact[iA+1]; lPosComp[vA+2] = posCompact[iA+2];
-      lPosBri[vA] = posBridges[iA]; lPosBri[vA+1] = posBridges[iA+1]; lPosBri[vA+2] = posBridges[iA+2];
-      lPosLob[vA] = posLobes[iA]; lPosLob[vA+1] = posLobes[iA+1]; lPosLob[vA+2] = posLobes[iA+2];
-      lPosCol[vA] = posCollapsed[iA]; lPosCol[vA+1] = posCollapsed[iA+1]; lPosCol[vA+2] = posCollapsed[iA+2];
-      lPosH[vA] = posH[iA]; lPosH[vA+1] = posH[iA+1]; lPosH[vA+2] = posH[iA+2];
-      lPosAI[vA] = posAI[iA]; lPosAI[vA+1] = posAI[iA+1]; lPosAI[vA+2] = posAI[iA+2];
-
-      lOtherComp[vA] = posCompact[iB]; lOtherComp[vA+1] = posCompact[iB+1]; lOtherComp[vA+2] = posCompact[iB+2];
-      lOtherBri[vA] = posBridges[iB]; lOtherBri[vA+1] = posBridges[iB+1]; lOtherBri[vA+2] = posBridges[iB+2];
-      lOtherLob[vA] = posLobes[iB]; lOtherLob[vA+1] = posLobes[iB+1]; lOtherLob[vA+2] = posLobes[iB+2];
-      lOtherCol[vA] = posCollapsed[iB]; lOtherCol[vA+1] = posCollapsed[iB+1]; lOtherCol[vA+2] = posCollapsed[iB+2];
-      lOtherH[vA] = posH[iB]; lOtherH[vA+1] = posH[iB+1]; lOtherH[vA+2] = posH[iB+2];
-      lOtherAI[vA] = posAI[iB]; lOtherAI[vA+1] = posAI[iB+1]; lOtherAI[vA+2] = posAI[iB+2];
-
-      // Vertex B data
-      lPosComp[vB] = posCompact[iB]; lPosComp[vB+1] = posCompact[iB+1]; lPosComp[vB+2] = posCompact[iB+2];
-      lPosBri[vB] = posBridges[iB]; lPosBri[vB+1] = posBridges[iB+1]; lPosBri[vB+2] = posBridges[iB+2];
-      lPosLob[vB] = posLobes[iB]; lPosLob[vB+1] = posLobes[iB+1]; lPosLob[vB+2] = posLobes[iB+2];
-      lPosCol[vB] = posCollapsed[iB]; lPosCol[vB+1] = posCollapsed[iB+1]; lPosCol[vB+2] = posCollapsed[iB+2];
-      lPosH[vB] = posH[iB]; lPosH[vB+1] = posH[iB+1]; lPosH[vB+2] = posH[iB+2];
-      lPosAI[vB] = posAI[iB]; lPosAI[vB+1] = posAI[iB+1]; lPosAI[vB+2] = posAI[iB+2];
-
-      lOtherComp[vB] = posCompact[iA]; lOtherComp[vB+1] = posCompact[iA+1]; lOtherComp[vB+2] = posCompact[iA+2];
-      lOtherBri[vB] = posBridges[iA]; lOtherBri[vB+1] = posBridges[iA+1]; lOtherBri[vB+2] = posBridges[iA+2];
-      lOtherLob[vB] = posLobes[iA]; lOtherLob[vB+1] = posLobes[iA+1]; lOtherLob[vB+2] = posLobes[iA+2];
-      lOtherCol[vB] = posCollapsed[iA]; lOtherCol[vB+1] = posCollapsed[iA+1]; lOtherCol[vB+2] = posCollapsed[iA+2];
-      lOtherH[vB] = posH[iA]; lOtherH[vB+1] = posH[iA+1]; lOtherH[vB+2] = posH[iA+2];
-      lOtherAI[vB] = posAI[iA]; lOtherAI[vB+1] = posAI[iA+1]; lOtherAI[vB+2] = posAI[iA+2];
-    }
-
-    const lGeo = new THREE.BufferGeometry()
-    lGeo.setAttribute('position', new THREE.BufferAttribute(lPosComp, 3))
-    lGeo.setAttribute('aPositionCompact', new THREE.BufferAttribute(lPosComp, 3))
-    lGeo.setAttribute('aPositionBridges', new THREE.BufferAttribute(lPosBri, 3))
-    lGeo.setAttribute('aPositionLobes', new THREE.BufferAttribute(lPosLob, 3))
-    lGeo.setAttribute('aPositionCollapsed', new THREE.BufferAttribute(lPosCol, 3))
-    lGeo.setAttribute('aPositionH', new THREE.BufferAttribute(lPosH, 3))
-    lGeo.setAttribute('aPositionAI', new THREE.BufferAttribute(lPosAI, 3))
-
-    lGeo.setAttribute('aOtherCompact', new THREE.BufferAttribute(lOtherComp, 3))
-    lGeo.setAttribute('aOtherBridges', new THREE.BufferAttribute(lOtherBri, 3))
-    lGeo.setAttribute('aOtherLobes', new THREE.BufferAttribute(lOtherLob, 3))
-    lGeo.setAttribute('aOtherCollapsed', new THREE.BufferAttribute(lOtherCol, 3))
-    lGeo.setAttribute('aOtherH', new THREE.BufferAttribute(lOtherH, 3))
-    lGeo.setAttribute('aOtherAI', new THREE.BufferAttribute(lOtherAI, 3))
-
-    return { pointGeometry: pGeo, lineGeometry: lGeo }
-  }, [])
+    return pGeo
+  }, [count])
 
   return (
     <group position={[0, 0, -3]}>
-      <points geometry={pointGeometry}>
+      <points ref={pointsGeoRef} geometry={pointGeometry}>
         <shaderMaterial
           ref={pointsMatRef}
           vertexShader={pointsVertexShader}
@@ -539,6 +520,7 @@ function NeuralScene() {
           uniforms={{
             uTime: { value: 0 },
             uScrollProgress: { value: 0 },
+            uTargetMix: { value: 0 },
             uMouse: { value: new THREE.Vector2(0, 0) },
             uDevicePixelRatio: { value: typeof window !== 'undefined' ? Math.min(window.devicePixelRatio, 1.5) : 1.0 },
             uColorCore: { value: new THREE.Color('#FFFFFF') },
@@ -550,29 +532,22 @@ function NeuralScene() {
           blending={THREE.AdditiveBlending}
         />
       </points>
-      <lineSegments geometry={lineGeometry}>
-        <shaderMaterial
-          ref={linesMatRef}
-          vertexShader={lineVertexShader}
-          fragmentShader={lineFragmentShader}
-          uniforms={{
-            uTime: { value: 0 },
-            uScrollProgress: { value: 0 },
-            uMouse: { value: new THREE.Vector2(0, 0) },
-            uColorLine: { value: new THREE.Color('#2997FF') }
-          }}
-          transparent
-          depthWrite={false}
-          blending={THREE.AdditiveBlending}
-        />
-      </lineSegments>
     </group>
   )
 }
 
 export default function NeuralCloud() {
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
   return (
-    <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
+    // Note: z-50 to hover above the footer
+    <div className="fixed inset-0 w-full h-full pointer-events-none z-50">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 45 }}
         gl={{ alpha: true, antialias: false, powerPreference: 'high-performance' }}
