@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import NeuralCloud from "@/components/canvas/NeuralCloud";
 import ScrollManager from "@/components/ScrollManager";
+import Navigation from "@/components/Navigation";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -21,10 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased bg-[#050D24] text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
+      <body className={`${inter.variable} antialiased bg-[#050608] text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
         <CustomCursor />
         <ScrollManager />
         <NeuralCloud />
+        <Navigation />
         <div className="relative z-10 pointer-events-none">
           <SmoothScroll>
             <div className="pointer-events-auto">

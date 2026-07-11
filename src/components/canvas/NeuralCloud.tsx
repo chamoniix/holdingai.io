@@ -6,6 +6,16 @@ import * as THREE from 'three'
 import { useScrollStore } from '@/store/scrollStore'
 
 // --------------------------------------------------------
+// MATH UTILS
+// --------------------------------------------------------
+function randomGaussian() {
+  let u = 0, v = 0;
+  while (u === 0) u = Math.random();
+  while (v === 0) v = Math.random();
+  return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+}
+
+// --------------------------------------------------------
 // SHADER CHUNKS
 // --------------------------------------------------------
 const noiseChunk = `
@@ -76,42 +86,41 @@ vec3 curlNoise(vec3 p) {
 }
 
 // Function to calculate a morphed position perfectly
-vec3 calculateMorph(vec3 pCompact, vec3 pSphere, vec3 pNetwork, vec3 pCollapsed, float t, float time, vec2 mouse) {
+vec3 calculateMorph(vec3 pCompact, vec3 pBridges, vec3 pLobes, vec3 pCollapsed, float t, float time, vec2 mouse) {
   vec3 pos = pCompact;
   
   if (t < 0.33) {
     float localT = smoothstep(0.0, 0.33, t);
-    pos = mix(pCompact, pSphere, localT);
+    pos = mix(pCompact, pBridges, localT);
   } else if (t < 0.66) {
     float localT = smoothstep(0.33, 0.66, t);
-    pos = mix(pSphere, pNetwork, localT);
+    pos = mix(pBridges, pLobes, localT);
   } else {
     float localT = smoothstep(0.66, 1.0, t);
-    pos = mix(pNetwork, pCollapsed, localT);
+    pos = mix(pLobes, pCollapsed, localT);
   }
 
-  // Organic Breathing / Deformation using Curl Noise
-  float deformationStrength = 0.5 + (sin(t * 3.14159) * 2.0); // More chaotic in the middle
-  vec3 noise = curlNoise(pos * 0.3 + time * 0.15);
+  // Organic Breathing / Deformation using Curl Noise - SLOWER for premium feel
+  float deformationStrength = 0.2 + (sin(t * 3.14159) * 1.0);
+  vec3 noise = curlNoise(pos * 0.4 + time * 0.08);
   pos += noise * deformationStrength;
 
-  // Add slow majestic rotation
-  float rotY = time * 0.05 + (t * 1.5);
+  // Extremely slow majestic rotation (almost unnoticeable)
+  float rotY = time * 0.02 + (t * 0.5);
   mat2 rot = mat2(cos(rotY), -sin(rotY), sin(rotY), cos(rotY));
   pos.xz = rot * pos.xz;
 
   // Mouse Repulsion
-  // Convert mouse (-1 to 1) to world space roughly
-  vec3 mouseWorld = vec3(mouse.x * 10.0, mouse.y * 10.0, 0.0);
+  vec3 mouseWorld = vec3(mouse.x * 12.0, mouse.y * 12.0, 0.0);
   float distToMouse = length(pos.xy - mouseWorld.xy);
-  if (distToMouse < 4.0) {
-    float repulsion = (4.0 - distToMouse) * 0.2;
+  if (distToMouse < 3.0) {
+    float repulsion = (3.0 - distToMouse) * 0.15;
     vec3 dir = normalize(pos - mouseWorld);
     pos += dir * repulsion;
   }
 
-  // Subtle breathing scale
-  float breath = 1.0 + sin(time * 1.2) * 0.02;
+  // Very subtle breathing scale (5 seconds roughly)
+  float breath = 1.0 + sin(time * 1.25) * 0.025; // Scale 0.975 to 1.025
   pos *= breath;
   
   return pos;
@@ -128,35 +137,39 @@ uniform float uDevicePixelRatio;
 uniform vec2 uMouse;
 
 attribute vec3 aPositionCompact;
-attribute vec3 aPositionSphere;
-attribute vec3 aPositionNetwork;
+attribute vec3 aPositionBridges;
+attribute vec3 aPositionLobes;
 attribute vec3 aPositionCollapsed;
+attribute float aRandomSeed;
 
 varying float vDepth;
 varying float vIntensity;
 varying float vMouseDist;
+varying float vRandom;
 
 ${noiseChunk}
 
 void main() {
   float t = clamp(uScrollProgress, 0.0, 1.0);
-  vec3 finalPos = calculateMorph(aPositionCompact, aPositionSphere, aPositionNetwork, aPositionCollapsed, t, uTime, uMouse);
+  vec3 finalPos = calculateMorph(aPositionCompact, aPositionBridges, aPositionLobes, aPositionCollapsed, t, uTime, uMouse);
 
   vec4 viewPosition = modelViewMatrix * vec4(finalPos, 1.0);
   gl_Position = projectionMatrix * viewPosition;
   
   // Point size based on depth and pixel ratio
-  gl_PointSize = (18.0 * uDevicePixelRatio) / -viewPosition.z;
+  gl_PointSize = (12.0 * uDevicePixelRatio) / -viewPosition.z;
 
   // Pass depth for fragment shader fading
   vDepth = -viewPosition.z;
   
-  // Brightness based on distance from center
-  vIntensity = 1.0 - smoothstep(0.0, 6.0, length(finalPos));
+  // Brightness based on distance from center of its local cluster (approximate via absolute distance for now)
+  vIntensity = 1.0 - smoothstep(0.0, 5.0, length(finalPos));
 
   // Mouse illumination
-  vec3 mouseWorld = vec3(uMouse.x * 10.0, uMouse.y * 10.0, 0.0);
+  vec3 mouseWorld = vec3(uMouse.x * 12.0, uMouse.y * 12.0, 0.0);
   vMouseDist = length(finalPos.xy - mouseWorld.xy);
+
+  vRandom = aRandomSeed;
 }
 `
 
@@ -164,31 +177,37 @@ const pointsFragmentShader = `
 varying float vDepth;
 varying float vIntensity;
 varying float vMouseDist;
+varying float vRandom;
 
 uniform vec3 uColorCore;
 uniform vec3 uColorEdge;
+uniform vec3 uColorHighlight;
+uniform float uTime;
 
 void main() {
-  // Circular soft particle
   float dist = length(gl_PointCoord - vec2(0.5));
   if (dist > 0.5) discard;
   
-  // Soft glow edge
   float alpha = smoothstep(0.5, 0.1, dist);
 
-  // Depth of Field (fade out if too close or too far)
-  float depthFade = smoothstep(1.0, 4.0, vDepth) * (1.0 - smoothstep(12.0, 20.0, vDepth));
+  // Severe Depth of Field
+  float depthFade = smoothstep(0.5, 3.0, vDepth) * (1.0 - smoothstep(12.0, 18.0, vDepth));
   alpha *= depthFade;
 
-  // Intensity color mix
+  // Core vs Edge color mix
   vec3 finalColor = mix(uColorEdge, uColorCore, vIntensity);
+
+  // Pulse highlights for ~5% of nodes
+  if (vRandom > 0.95) {
+    float pulse = (sin(uTime * 2.0 + vRandom * 100.0) + 1.0) * 0.5;
+    finalColor = mix(finalColor, uColorHighlight, pulse);
+    alpha += pulse * 0.5;
+  }
 
   // Boost brightness near mouse
   float mouseGlow = 1.0 - smoothstep(0.0, 3.0, vMouseDist);
-  finalColor += vec3(0.5, 0.8, 1.0) * mouseGlow * 0.5;
-
-  // Boost alpha for the core nodes
-  alpha += vIntensity * 0.4 + (mouseGlow * 0.3);
+  finalColor += uColorHighlight * mouseGlow * 0.8;
+  alpha += mouseGlow * 0.4;
 
   gl_FragColor = vec4(finalColor, min(alpha, 1.0));
 }
@@ -203,13 +222,13 @@ uniform float uScrollProgress;
 uniform vec2 uMouse;
 
 attribute vec3 aPositionCompact;
-attribute vec3 aPositionSphere;
-attribute vec3 aPositionNetwork;
+attribute vec3 aPositionBridges;
+attribute vec3 aPositionLobes;
 attribute vec3 aPositionCollapsed;
 
 attribute vec3 aOtherCompact;
-attribute vec3 aOtherSphere;
-attribute vec3 aOtherNetwork;
+attribute vec3 aOtherBridges;
+attribute vec3 aOtherLobes;
 attribute vec3 aOtherCollapsed;
 
 varying float vOpacity;
@@ -219,30 +238,27 @@ ${noiseChunk}
 void main() {
   float t = clamp(uScrollProgress, 0.0, 1.0);
   
-  // Calculate my position
-  vec3 myPos = calculateMorph(aPositionCompact, aPositionSphere, aPositionNetwork, aPositionCollapsed, t, uTime, uMouse);
-  
-  // Calculate partner position
-  vec3 partnerPos = calculateMorph(aOtherCompact, aOtherSphere, aOtherNetwork, aOtherCollapsed, t, uTime, uMouse);
+  vec3 myPos = calculateMorph(aPositionCompact, aPositionBridges, aPositionLobes, aPositionCollapsed, t, uTime, uMouse);
+  vec3 partnerPos = calculateMorph(aOtherCompact, aOtherBridges, aOtherLobes, aOtherCollapsed, t, uTime, uMouse);
 
   // Real-time GPU Distance Check
   float currentDistance = length(myPos - partnerPos);
   
-  // Dynamic threshold based on scroll (more connections in middle)
-  float threshold = 1.5 + (sin(t * 3.14159) * 1.5);
+  // STRICT LOCALIZED THRESHOLD (No long messy lines)
+  float threshold = 0.4 + (sin(t * 3.14159) * 0.3); // Widens slightly in the middle chapters
   
-  // If close enough, fade in line!
-  vOpacity = 1.0 - smoothstep(threshold * 0.2, threshold, currentDistance);
+  // Fade in sharply only if very close
+  vOpacity = 1.0 - smoothstep(threshold * 0.5, threshold, currentDistance);
 
-  // Fade out lines at extreme depth
+  // Depth fade
   vec4 viewPosition = modelViewMatrix * vec4(myPos, 1.0);
-  float depthFade = smoothstep(1.0, 4.0, -viewPosition.z) * (1.0 - smoothstep(10.0, 18.0, -viewPosition.z));
+  float depthFade = smoothstep(1.0, 3.0, -viewPosition.z) * (1.0 - smoothstep(10.0, 16.0, -viewPosition.z));
   vOpacity *= depthFade;
 
-  // Mouse illumination for lines
-  vec3 mouseWorld = vec3(uMouse.x * 10.0, uMouse.y * 10.0, 0.0);
-  float mouseGlow = 1.0 - smoothstep(0.0, 4.0, length(myPos.xy - mouseWorld.xy));
-  vOpacity += mouseGlow * 0.3;
+  // Mouse illumination
+  vec3 mouseWorld = vec3(uMouse.x * 12.0, uMouse.y * 12.0, 0.0);
+  float mouseGlow = 1.0 - smoothstep(0.0, 3.0, length(myPos.xy - mouseWorld.xy));
+  vOpacity += mouseGlow * 0.4;
 
   gl_Position = projectionMatrix * viewPosition;
 }
@@ -253,8 +269,8 @@ varying float vOpacity;
 uniform vec3 uColorLine;
 
 void main() {
-  if (vOpacity <= 0.01) discard; // Optimization
-  gl_FragColor = vec4(uColorLine, vOpacity * 0.3); 
+  if (vOpacity <= 0.01) discard;
+  gl_FragColor = vec4(uColorLine, vOpacity * 0.2); // Very subtle
 }
 `
 
@@ -269,13 +285,11 @@ function NeuralScene() {
   const scrollProgress = useScrollStore(state => state.progress)
   const smoothedScroll = useRef(0)
   
-  // Global Mouse tracking
   const mouseRef = useRef(new THREE.Vector2(0, 0))
   const targetMouse = useRef(new THREE.Vector2(0, 0))
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Normalize from -1 to 1
       targetMouse.current.x = (e.clientX / window.innerWidth) * 2 - 1
       targetMouse.current.y = -(e.clientY / window.innerHeight) * 2 + 1
     }
@@ -284,11 +298,8 @@ function NeuralScene() {
   }, [])
 
   useFrame((state, delta) => {
-    // Lerp scroll
-    smoothedScroll.current = THREE.MathUtils.lerp(smoothedScroll.current, scrollProgress, delta * 4.0)
-    
-    // Lerp mouse
-    mouseRef.current.lerp(targetMouse.current, delta * 5.0)
+    smoothedScroll.current = THREE.MathUtils.lerp(smoothedScroll.current, scrollProgress, delta * 3.0)
+    mouseRef.current.lerp(targetMouse.current, delta * 4.0)
     
     if (pointsMatRef.current) {
       pointsMatRef.current.uniforms.uTime.value = state.clock.elapsedTime
@@ -305,115 +316,120 @@ function NeuralScene() {
   // Generate Geometry
   const { pointGeometry, lineGeometry } = useMemo(() => {
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
-    const count = isMobile ? 5000 : 25000
+    const count = isMobile ? 5000 : 22000
     
     const posCompact = new Float32Array(count * 3)
-    const posSphere = new Float32Array(count * 3)
-    const posNetwork = new Float32Array(count * 3)
+    const posBridges = new Float32Array(count * 3)
+    const posLobes = new Float32Array(count * 3)
     const posCollapsed = new Float32Array(count * 3)
+    const randomSeeds = new Float32Array(count)
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3
+      randomSeeds[i] = Math.random()
       
-      // 1. Compact Core (Dense, spherical, tight)
-      const u1 = Math.random()
-      const v1 = Math.random()
-      const theta1 = u1 * 2.0 * Math.PI
-      const phi1 = Math.acos(2.0 * v1 - 1.0)
-      const r1 = Math.cbrt(Math.random()) * 2.5 // Volume distribution
-      posCompact[i3] = r1 * Math.sin(phi1) * Math.cos(theta1)
-      posCompact[i3+1] = r1 * Math.sin(phi1) * Math.sin(theta1)
-      posCompact[i3+2] = r1 * Math.cos(phi1)
+      // GAUSSIAN DISTRIBUTION FOR DENSE ORGANIC CLUSTERS
+      
+      // 1. Compact Core (1 dense organism)
+      const gX1 = randomGaussian() * 0.8
+      const gY1 = randomGaussian() * 0.8
+      const gZ1 = randomGaussian() * 0.8
+      posCompact[i3] = gX1; posCompact[i3+1] = gY1; posCompact[i3+2] = gZ1;
 
-      // 2. Bridges/Expands (Hollowed sphere / torus feeling)
-      const r2 = 4.0 + (Math.random() * 2.0)
-      posSphere[i3] = r2 * Math.sin(phi1) * Math.cos(theta1)
-      posSphere[i3+1] = r2 * Math.cos(phi1) * 0.5 // flattened
-      posSphere[i3+2] = r2 * Math.sin(phi1) * Math.sin(theta1)
+      // 2. Bridges (2 connected organisms spreading out)
+      const organism2 = i % 2 === 0 ? 1 : -1
+      const gX2 = (randomGaussian() * 0.6) + (2.0 * organism2)
+      const gY2 = (randomGaussian() * 0.5) + (1.0 * organism2)
+      const gZ2 = randomGaussian() * 0.7
+      posBridges[i3] = gX2; posBridges[i3+1] = gY2; posBridges[i3+2] = gZ2;
 
-      // 3. Multi-Lobe Network
-      const lobe = Math.floor(Math.random() * 4)
-      const centers = [
-        new THREE.Vector3(3, 2, -1),
-        new THREE.Vector3(-3, -2, 1),
-        new THREE.Vector3(-2, 3, 2),
-        new THREE.Vector3(2, -3, -2)
+      // 3. Multi-Lobe Network (3 interacting organisms)
+      const lobeId = i % 3
+      const centers3 = [
+        new THREE.Vector3(-2.5, 1.5, 1),
+        new THREE.Vector3(2.5, 1.0, -1),
+        new THREE.Vector3(0, -2.5, 0)
       ]
-      const c = centers[lobe]
-      const r3 = Math.cbrt(Math.random()) * 3.0
-      posNetwork[i3] = c.x + r3 * Math.sin(phi1) * Math.cos(theta1)
-      posNetwork[i3+1] = c.y + r3 * Math.sin(phi1) * Math.sin(theta1)
-      posNetwork[i3+2] = c.z + r3 * Math.cos(phi1)
+      const c3 = centers3[lobeId]
+      const spread = 0.7 + (Math.random() * 0.3)
+      posLobes[i3] = c3.x + (randomGaussian() * spread)
+      posLobes[i3+1] = c3.y + (randomGaussian() * spread)
+      posLobes[i3+2] = c3.z + (randomGaussian() * spread)
 
-      // 4. Refined Core (Collapsed but elegant)
-      const r4 = Math.cbrt(Math.random()) * 1.5
-      posCollapsed[i3] = r4 * Math.sin(phi1) * Math.cos(theta1)
-      posCollapsed[i3+1] = r4 * Math.sin(phi1) * Math.sin(theta1) * 4.0 // Vertical stretch
-      posCollapsed[i3+2] = r4 * Math.cos(phi1)
+      // 4. Refined Core (Collapse into 2 vertical organisms)
+      const organism4 = i % 2 === 0 ? 1 : -1
+      posCollapsed[i3] = (randomGaussian() * 0.4) + (0.5 * organism4)
+      posCollapsed[i3+1] = (randomGaussian() * 1.5)
+      posCollapsed[i3+2] = (randomGaussian() * 0.4) - (0.5 * organism4)
     }
 
     const pGeo = new THREE.BufferGeometry()
-    pGeo.setAttribute('position', new THREE.BufferAttribute(posCompact, 3)) // initial
+    pGeo.setAttribute('position', new THREE.BufferAttribute(posCompact, 3))
     pGeo.setAttribute('aPositionCompact', new THREE.BufferAttribute(posCompact, 3))
-    pGeo.setAttribute('aPositionSphere', new THREE.BufferAttribute(posSphere, 3))
-    pGeo.setAttribute('aPositionNetwork', new THREE.BufferAttribute(posNetwork, 3))
+    pGeo.setAttribute('aPositionBridges', new THREE.BufferAttribute(posBridges, 3))
+    pGeo.setAttribute('aPositionLobes', new THREE.BufferAttribute(posLobes, 3))
     pGeo.setAttribute('aPositionCollapsed', new THREE.BufferAttribute(posCollapsed, 3))
+    pGeo.setAttribute('aRandomSeed', new THREE.BufferAttribute(randomSeeds, 1))
 
-    // Generate Ghost Lines
-    const lineCount = isMobile ? 2000 : 15000
+    // Generate Ghost Lines (Restricted to strictly local indices to prevent long messy lines)
+    const lineCount = isMobile ? 3000 : 18000
     const lPosComp = new Float32Array(lineCount * 2 * 3)
-    const lPosSph = new Float32Array(lineCount * 2 * 3)
-    const lPosNet = new Float32Array(lineCount * 2 * 3)
+    const lPosBri = new Float32Array(lineCount * 2 * 3)
+    const lPosLob = new Float32Array(lineCount * 2 * 3)
     const lPosCol = new Float32Array(lineCount * 2 * 3)
     
     const lOtherComp = new Float32Array(lineCount * 2 * 3)
-    const lOtherSph = new Float32Array(lineCount * 2 * 3)
-    const lOtherNet = new Float32Array(lineCount * 2 * 3)
+    const lOtherBri = new Float32Array(lineCount * 2 * 3)
+    const lOtherLob = new Float32Array(lineCount * 2 * 3)
     const lOtherCol = new Float32Array(lineCount * 2 * 3)
 
     for(let i = 0; i < lineCount; i++) {
       const idxA = Math.floor(Math.random() * count)
-      const idxB = Math.floor(Math.random() * count)
+      // Only pick a partner that is very close in the array index.
+      // Since array is divided by modulo for lobes, consecutive indices are often in different lobes.
+      // Wait, if consecutive indices are in different lobes (i%3), they will be far apart!
+      // To ensure they are in the same lobe, we pick `idxB` such that `idxB % 3 === idxA % 3`.
+      const offset = Math.floor(Math.random() * 20) * 3 // ensures same modulo 3
+      const idxB = (idxA + offset) % count
       
       const vA = i * 6
       const vB = i * 6 + 3
-
       const iA = idxA * 3
       const iB = idxB * 3
 
       // Vertex A data
       lPosComp[vA] = posCompact[iA]; lPosComp[vA+1] = posCompact[iA+1]; lPosComp[vA+2] = posCompact[iA+2];
-      lPosSph[vA] = posSphere[iA]; lPosSph[vA+1] = posSphere[iA+1]; lPosSph[vA+2] = posSphere[iA+2];
-      lPosNet[vA] = posNetwork[iA]; lPosNet[vA+1] = posNetwork[iA+1]; lPosNet[vA+2] = posNetwork[iA+2];
+      lPosBri[vA] = posBridges[iA]; lPosBri[vA+1] = posBridges[iA+1]; lPosBri[vA+2] = posBridges[iA+2];
+      lPosLob[vA] = posLobes[iA]; lPosLob[vA+1] = posLobes[iA+1]; lPosLob[vA+2] = posLobes[iA+2];
       lPosCol[vA] = posCollapsed[iA]; lPosCol[vA+1] = posCollapsed[iA+1]; lPosCol[vA+2] = posCollapsed[iA+2];
 
       lOtherComp[vA] = posCompact[iB]; lOtherComp[vA+1] = posCompact[iB+1]; lOtherComp[vA+2] = posCompact[iB+2];
-      lOtherSph[vA] = posSphere[iB]; lOtherSph[vA+1] = posSphere[iB+1]; lOtherSph[vA+2] = posSphere[iB+2];
-      lOtherNet[vA] = posNetwork[iB]; lOtherNet[vA+1] = posNetwork[iB+1]; lOtherNet[vA+2] = posNetwork[iB+2];
+      lOtherBri[vA] = posBridges[iB]; lOtherBri[vA+1] = posBridges[iB+1]; lOtherBri[vA+2] = posBridges[iB+2];
+      lOtherLob[vA] = posLobes[iB]; lOtherLob[vA+1] = posLobes[iB+1]; lOtherLob[vA+2] = posLobes[iB+2];
       lOtherCol[vA] = posCollapsed[iB]; lOtherCol[vA+1] = posCollapsed[iB+1]; lOtherCol[vA+2] = posCollapsed[iB+2];
 
       // Vertex B data
       lPosComp[vB] = posCompact[iB]; lPosComp[vB+1] = posCompact[iB+1]; lPosComp[vB+2] = posCompact[iB+2];
-      lPosSph[vB] = posSphere[iB]; lPosSph[vB+1] = posSphere[iB+1]; lPosSph[vB+2] = posSphere[iB+2];
-      lPosNet[vB] = posNetwork[iB]; lPosNet[vB+1] = posNetwork[iB+1]; lPosNet[vB+2] = posNetwork[iB+2];
+      lPosBri[vB] = posBridges[iB]; lPosBri[vB+1] = posBridges[iB+1]; lPosBri[vB+2] = posBridges[iB+2];
+      lPosLob[vB] = posLobes[iB]; lPosLob[vB+1] = posLobes[iB+1]; lPosLob[vB+2] = posLobes[iB+2];
       lPosCol[vB] = posCollapsed[iB]; lPosCol[vB+1] = posCollapsed[iB+1]; lPosCol[vB+2] = posCollapsed[iB+2];
 
       lOtherComp[vB] = posCompact[iA]; lOtherComp[vB+1] = posCompact[iA+1]; lOtherComp[vB+2] = posCompact[iA+2];
-      lOtherSph[vB] = posSphere[iA]; lOtherSph[vB+1] = posSphere[iA+1]; lOtherSph[vB+2] = posSphere[iA+2];
-      lOtherNet[vB] = posNetwork[iA]; lOtherNet[vB+1] = posNetwork[iA+1]; lOtherNet[vB+2] = posNetwork[iA+2];
+      lOtherBri[vB] = posBridges[iA]; lOtherBri[vB+1] = posBridges[iA+1]; lOtherBri[vB+2] = posBridges[iA+2];
+      lOtherLob[vB] = posLobes[iA]; lOtherLob[vB+1] = posLobes[iA+1]; lOtherLob[vB+2] = posLobes[iA+2];
       lOtherCol[vB] = posCollapsed[iA]; lOtherCol[vB+1] = posCollapsed[iA+1]; lOtherCol[vB+2] = posCollapsed[iA+2];
     }
 
     const lGeo = new THREE.BufferGeometry()
-    lGeo.setAttribute('position', new THREE.BufferAttribute(lPosComp, 3)) // default
+    lGeo.setAttribute('position', new THREE.BufferAttribute(lPosComp, 3))
     lGeo.setAttribute('aPositionCompact', new THREE.BufferAttribute(lPosComp, 3))
-    lGeo.setAttribute('aPositionSphere', new THREE.BufferAttribute(lPosSph, 3))
-    lGeo.setAttribute('aPositionNetwork', new THREE.BufferAttribute(lPosNet, 3))
+    lGeo.setAttribute('aPositionBridges', new THREE.BufferAttribute(lPosBri, 3))
+    lGeo.setAttribute('aPositionLobes', new THREE.BufferAttribute(lPosLob, 3))
     lGeo.setAttribute('aPositionCollapsed', new THREE.BufferAttribute(lPosCol, 3))
 
     lGeo.setAttribute('aOtherCompact', new THREE.BufferAttribute(lOtherComp, 3))
-    lGeo.setAttribute('aOtherSphere', new THREE.BufferAttribute(lOtherSph, 3))
-    lGeo.setAttribute('aOtherNetwork', new THREE.BufferAttribute(lOtherNet, 3))
+    lGeo.setAttribute('aOtherBridges', new THREE.BufferAttribute(lOtherBri, 3))
+    lGeo.setAttribute('aOtherLobes', new THREE.BufferAttribute(lOtherLob, 3))
     lGeo.setAttribute('aOtherCollapsed', new THREE.BufferAttribute(lOtherCol, 3))
 
     return { pointGeometry: pGeo, lineGeometry: lGeo }
@@ -432,7 +448,8 @@ function NeuralScene() {
             uMouse: { value: new THREE.Vector2(0, 0) },
             uDevicePixelRatio: { value: typeof window !== 'undefined' ? Math.min(window.devicePixelRatio, 1.5) : 1.0 },
             uColorCore: { value: new THREE.Color('#FFFFFF') },
-            uColorEdge: { value: new THREE.Color('#7DA9FF') }
+            uColorEdge: { value: new THREE.Color('#2997FF') },
+            uColorHighlight: { value: new THREE.Color('#85E0FF') }
           }}
           transparent
           depthWrite={false}
@@ -448,7 +465,7 @@ function NeuralScene() {
             uTime: { value: 0 },
             uScrollProgress: { value: 0 },
             uMouse: { value: new THREE.Vector2(0, 0) },
-            uColorLine: { value: new THREE.Color('#DDEAFF') }
+            uColorLine: { value: new THREE.Color('#2997FF') }
           }}
           transparent
           depthWrite={false}
