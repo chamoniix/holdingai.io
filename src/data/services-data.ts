@@ -3,7 +3,7 @@ export const servicesData = [
     icon: 'BrainCircuit',
     title: 'AI Strategy',
     description: 'Transform your business with intelligent automation, machine learning models, and AI-first thinking.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800',
+    image: '/images/assets/IMG_Services_01.jpg',
     gradient: 'from-blue-500/20 to-cyan-500/20'
   },
   {
