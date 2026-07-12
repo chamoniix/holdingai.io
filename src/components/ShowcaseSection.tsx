@@ -10,11 +10,11 @@ import { motionTokens } from '@/lib/design-system';
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { title: "Aura", category: "Luxury Banking", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" },
-  { title: "Vitals", category: "Healthcare AI", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" },
-  { title: "Nomad", category: "Travel Platform", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=800&auto=format&fit=crop" },
-  { title: "Estate", category: "Property CRM", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" },
-  { title: "Lumina", category: "Education Platform", img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop" },
+  { title: "Aura", category: "Luxury Banking", img: "/images/assets/IMG_Showcase_Aura.jpg" },
+  { title: "Vitals", category: "Healthcare AI", img: "/images/assets/IMG_Showcase_Vitals.jpg" },
+  { title: "Nomad", category: "Travel Platform", img: "/images/assets/IMG_Showcase_Nomad.jpg" },
+  { title: "Estate", category: "Property CRM", img: "/images/assets/IMG_Showcase_Estate.jpg" },
+  { title: "Lumina", category: "Education Platform", img: "/images/assets/IMG_Showcase_Lumina.jpg" },
 ];
 
 export default function ShowcaseSection() {
