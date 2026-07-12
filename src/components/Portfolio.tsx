@@ -6,7 +6,7 @@ import LuxuryText from './ui/LuxuryText'
 const projects = [
   { id: 1, title: 'AI Dashboard for Healthcare', category: 'HealthTech', image: '/images/assets/IMG_Portfolio_01.jpg' },
   { id: 2, title: 'E-commerce Personalization Engine', category: 'Retail', image: '/images/assets/IMG_Portfolio_02.jpg' },
-  { id: 3, title: 'Financial Predictive Analytics', category: 'FinTech', image: '/images/assets/IMG_Portfolio_03.avif' },
+  { id: 3, title: 'Financial Predictive Analytics', category: 'FinTech', image: '/images/assets/IMG_Portfolio_03.jpg' },
 ]
 
 export default function Portfolio() {
