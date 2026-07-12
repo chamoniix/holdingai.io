@@ -10,7 +10,7 @@ export const servicesData = [
     icon: 'PenTool',
     title: 'Product Design',
     description: 'World-class UX/UI design powered by AI insights and user research.',
-    image: 'https://images.unsplash.com/photo-1586717791821-3f44a5638d48?w=800',
+    image: '/images/assets/IMG_Services_02.jpg',
     gradient: 'from-purple-500/20 to-pink-500/20'
   },
   {
