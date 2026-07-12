@@ -22,7 +22,6 @@
     font-family: var(--font-sans), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: none; /* We use a custom magnetic cursor */
   }
 }
 

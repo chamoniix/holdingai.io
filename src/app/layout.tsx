@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
 import NeuralCloud from "@/components/canvas/NeuralCloud";
 import ScrollManager from "@/components/ScrollManager";
 import Navigation from "@/components/Navigation";
@@ -25,7 +24,6 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${inter.variable} antialiased bg-transparent text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
         <Atmosphere />
-        <CustomCursor />
         <ScrollManager />
         <NeuralCloud />
         <Navigation />
