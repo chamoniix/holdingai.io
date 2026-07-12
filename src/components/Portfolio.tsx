@@ -1,10 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import LuxuryText from './ui/LuxuryText'
 
 const projects = [
-  { id: 1, title: 'AI Dashboard for Healthcare', category: 'HealthTech', image: '/images/assets/IMG_Portfolio_01.avif' },
-  { id: 2, title: 'E-commerce Personalization Engine', category: 'Retail', image: '/images/assets/IMG_Portfolio_02.avif' },
+  { id: 1, title: 'AI Dashboard for Healthcare', category: 'HealthTech', image: '/images/assets/IMG_Portfolio_01.jpg' },
+  { id: 2, title: 'E-commerce Personalization Engine', category: 'Retail', image: '/images/assets/IMG_Portfolio_02.jpg' },
   { id: 3, title: 'Financial Predictive Analytics', category: 'FinTech', image: '/images/assets/IMG_Portfolio_03.avif' },
 ]
 
@@ -13,10 +14,12 @@ export default function Portfolio() {
     <section className="relative w-full py-[30vh] bg-transparent pointer-events-none">
       <div className="max-w-5xl mx-auto px-6 pointer-events-auto">
         <div className="mb-32 text-center">
-          <h2 className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">The Proof</h2>
-          <h3 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+          <LuxuryText as="h2" delay={0.1} className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">
+            The Proof
+          </LuxuryText>
+          <LuxuryText as="h3" delay={0.3} className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
             Digital Monuments
-          </h3>
+          </LuxuryText>
         </div>
 
         <div className="flex flex-col gap-32">

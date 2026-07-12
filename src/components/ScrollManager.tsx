@@ -11,6 +11,7 @@ if (typeof window !== 'undefined') {
 
 export default function ScrollManager() {
   const setProgress = useScrollStore((state) => state.setProgress)
+  const setVelocity = useScrollStore((state) => state.setVelocity)
 
   useEffect(() => {
     // This updates the Zustand store purely based on window scroll
@@ -21,12 +22,13 @@ export default function ScrollManager() {
       setProgress(progress)
     }
 
-    // Use GSAP ScrollTrigger for smooth scrubbed updates
+    // Use GSAP ScrollTrigger for smooth scrubbed updates and velocity
     const st = ScrollTrigger.create({
       start: 0,
       end: 'max',
       onUpdate: (self) => {
         setProgress(self.progress)
+        setVelocity(self.getVelocity())
       }
     })
 
@@ -38,7 +40,7 @@ export default function ScrollManager() {
       st.kill()
       window.removeEventListener('scroll', updateScroll)
     }
-  }, [setProgress])
+  }, [setProgress, setVelocity])
 
   return null
 }

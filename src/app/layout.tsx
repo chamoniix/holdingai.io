@@ -7,6 +7,7 @@ import CustomCursor from "@/components/CustomCursor";
 import NeuralCloud from "@/components/canvas/NeuralCloud";
 import ScrollManager from "@/components/ScrollManager";
 import Navigation from "@/components/Navigation";
+import Atmosphere from "@/components/ui/Atmosphere";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -22,7 +23,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased bg-[#050608] text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
+      <body className={`${inter.variable} antialiased bg-transparent text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
+        <Atmosphere />
         <CustomCursor />
         <ScrollManager />
         <NeuralCloud />

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import LuxuryText from './ui/LuxuryText'
 import { servicesData } from '@/data/services-data'
 import { BrainCircuit, PenTool, Code2, LineChart, LucideIcon } from 'lucide-react'
 
@@ -16,11 +17,13 @@ export default function Services() {
     <section className="relative w-full py-[30vh] px-6 bg-transparent z-10 pointer-events-none">
       <div className="max-w-7xl mx-auto pointer-events-auto">
         <div className="mb-40 text-center">
-          <h2 className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">The Architecture</h2>
-          <h3 className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.1]">
-            We build systems that <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#86868B]">redefine industries.</span>
-          </h3>
+          <LuxuryText as="h2" delay={0.1} className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">
+            The Architecture
+          </LuxuryText>
+          <br />
+          <LuxuryText as="h3" delay={0.3} className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.1]">
+            We build systems that redefine industries.
+          </LuxuryText>
         </div>
         
         {/* Editorial Layout: Alternating massive text blocks */}
@@ -50,14 +53,11 @@ export default function Services() {
                   </p>
                 </div>
               
-              <div className="w-full md:w-1/2 aspect-square relative glass-panel flex items-center justify-center overflow-hidden">
-                <video 
-                  src="/images/assets/VID_DataViz_Loop.webm" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50"
+              <div className="w-full md:w-1/2 aspect-[4/3] md:aspect-square relative glass-panel flex items-center justify-center overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50 transition-opacity duration-700 hover:opacity-80"
                 />
               </div>
             </motion.div>

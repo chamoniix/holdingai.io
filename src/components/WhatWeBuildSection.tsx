@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LuxuryText from './ui/LuxuryText';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,16 +83,16 @@ export default function WhatWeBuildSection() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative bg-[#050505] pt-32">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section ref={containerRef} className="relative bg-transparent pt-32 z-10 pointer-events-none">
+      <div className="container mx-auto px-6 max-w-7xl pointer-events-auto">
         <div className="flex flex-col lg:flex-row gap-20 relative">
           
           {/* Left Column: Pinned Text */}
           <div className="lg:w-1/3 relative">
             <div ref={leftColRef} className="lg:h-screen flex flex-col justify-center sticky top-0 lg:static">
-              <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-none mb-6">
-                WHAT<br/>WE<br/><span className="text-brand-cyan">BUILD</span>
-              </h2>
+              <LuxuryText as="h2" className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-none mb-6">
+                WHAT WE BUILD
+              </LuxuryText>
               <p className="text-xl text-white/50 max-w-sm">
                 We craft digital ecosystems that redefine industries. From predictive mobile apps to massive enterprise platforms, our architecture is flawless.
               </p>

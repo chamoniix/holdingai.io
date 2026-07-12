@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LuxuryText from './ui/LuxuryText';
 import { motionTokens } from '@/lib/design-system';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,7 +57,7 @@ export default function ShowcaseSection() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative h-screen bg-[#050505] overflow-hidden">
+    <section ref={containerRef} className="relative h-screen bg-transparent pointer-events-none overflow-hidden z-10">
       
       {/* Massive Background Typography */}
       <h2 
@@ -68,13 +69,13 @@ export default function ShowcaseSection() {
 
       {/* Title Overlay */}
       <div className="absolute top-20 left-12 md:left-20 z-20 pointer-events-none mix-blend-difference">
-        <h3 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
-          RECENT<br/><span className="text-brand-purple">PROJECTS</span>
-        </h3>
+        <LuxuryText as="h3" className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+          Recent Projects
+        </LuxuryText>
       </div>
 
       {/* Horizontal Scroll Gallery */}
-      <div className="absolute inset-0 flex items-center z-10">
+      <div className="absolute inset-0 flex items-center z-10 pointer-events-auto">
         <div ref={scrollWrapperRef} className="flex gap-12 md:gap-24 px-12 md:px-[20vw] items-center h-full">
           {projects.map((project, index) => (
             <div 

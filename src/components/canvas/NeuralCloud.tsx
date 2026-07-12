@@ -164,6 +164,7 @@ vec3 calculateMorph(
 const pointsVertexShader = `
 uniform float uTime;
 uniform float uScrollProgress;
+uniform float uScrollVelocity;
 uniform float uDevicePixelRatio;
 uniform vec2 uMouse;
 
@@ -196,6 +197,23 @@ void main() {
     aPositionRibbon, aPositionSphere,
     t, uTime, uMouse, aSwarmType
   );
+
+  // Apply scroll velocity swirl/stretch
+  // Normal velocity ranges roughly from -2000 to +2000 during fast scrolls
+  float normalizedVelocity = clamp(uScrollVelocity * 0.0005, -1.0, 1.0);
+  
+  // Stretch along Y axis based on scroll speed
+  finalPos.y += finalPos.y * abs(normalizedVelocity) * 1.5;
+  
+  // Swirl effect based on distance from center
+  float distFromCenter = length(finalPos.xz);
+  float swirlAngle = normalizedVelocity * distFromCenter * 0.5;
+  mat2 swirlRot = mat2(cos(swirlAngle), -sin(swirlAngle), sin(swirlAngle), cos(swirlAngle));
+  finalPos.xz = swirlRot * finalPos.xz;
+
+  // Add horizontal wave during middle sections
+  float waveStrength = smoothstep(0.3, 0.5, t) * (1.0 - smoothstep(0.7, 0.9, t));
+  finalPos.x += sin(finalPos.y * 2.0 + uTime * 2.0) * waveStrength * 0.8;
 
   vec4 viewPosition = modelViewMatrix * vec4(finalPos, 1.0);
   gl_Position = projectionMatrix * viewPosition;
@@ -337,6 +355,14 @@ function NeuralScene() {
     if (pointsMatRef.current) {
       pointsMatRef.current.uniforms.uTime.value = state.clock.elapsedTime
       pointsMatRef.current.uniforms.uScrollProgress.value = smoothedScroll.current
+      // Velocity is read directly from store
+      const vel = useScrollStore.getState().velocity
+      // Smooth out the velocity slightly
+      pointsMatRef.current.uniforms.uScrollVelocity.value = THREE.MathUtils.lerp(
+        pointsMatRef.current.uniforms.uScrollVelocity.value || 0,
+        vel,
+        delta * 5.0
+      )
       pointsMatRef.current.uniforms.uMouse.value = mouseRef.current
     }
   })
@@ -425,6 +451,7 @@ function NeuralScene() {
           uniforms={{
             uTime: { value: 0 },
             uScrollProgress: { value: 0 },
+            uScrollVelocity: { value: 0 },
             uMouse: { value: new THREE.Vector2(0, 0) },
             uDevicePixelRatio: { value: typeof window !== 'undefined' ? Math.min(window.devicePixelRatio, 1.5) : 1.0 },
             uColorCore: { value: new THREE.Color('#FFFFFF') },

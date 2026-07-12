@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import LuxuryText from './ui/LuxuryText';
 
 const processSteps = [
   { title: "Discover", desc: "Understanding the problem, user needs, and business objectives." },
@@ -22,12 +23,12 @@ export default function ProcessSection() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} className="py-40 bg-brand-graphite relative">
-      <div className="container mx-auto px-6 max-w-4xl">
+    <section ref={containerRef} className="py-40 bg-transparent relative z-10 pointer-events-none">
+      <div className="container mx-auto px-6 max-w-4xl pointer-events-auto">
         <div className="text-center mb-32">
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
-            OUR <span className="text-brand-purple">PROCESS</span>
-          </h2>
+          <LuxuryText as="h2" className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+            Our Process
+          </LuxuryText>
         </div>
 
         <div className="relative">

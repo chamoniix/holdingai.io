@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { MagneticButton } from './ui/MagneticButton';
 import { useState } from 'react';
 import { motionTokens } from '@/lib/design-system';
+import LuxuryText from './ui/LuxuryText';
 
 export default function ContactSection() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -11,8 +12,8 @@ export default function ContactSection() {
   const inputClasses = "w-full bg-transparent border-b border-white/20 px-0 py-4 text-white text-xl md:text-2xl font-light placeholder:text-white/20 focus:outline-none focus:border-brand-neon transition-colors duration-300";
 
   return (
-    <section className="relative py-40 bg-brand-graphite overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+    <section className="relative py-40 bg-transparent overflow-hidden pointer-events-none z-10">
+      <div className="container mx-auto px-6 relative z-10 max-w-6xl pointer-events-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           
           {/* Left Column: Text */}
@@ -22,9 +23,9 @@ export default function ContactSection() {
             viewport={{ once: true }}
             variants={motionTokens.presets.slideUp}
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
-              READY TO <span className="text-gradient-neon">BUILD?</span>
-            </h2>
+            <LuxuryText as="h2" className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
+              READY TO BUILD?
+            </LuxuryText>
             <p className="text-xl text-white/60 mb-12 max-w-md">
               Whether you need a massive enterprise platform or an award-winning mobile app, we are the partner you trust to deliver.
             </p>
@@ -43,7 +44,7 @@ export default function ContactSection() {
 
           {/* Right Column: Form */}
           <motion.div 
-            className="bg-[#0a0a0a] border border-white/10 shadow-2xl p-8 md:p-12 rounded-3xl"
+            className="glass-panel p-8 md:p-12"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
