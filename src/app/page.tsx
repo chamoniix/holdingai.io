@@ -24,7 +24,7 @@ export default function Home() {
       <ShowcaseSection />
       
       {/* Scene 5: The Ultimatum (Final CTA) */}
-      <section className="relative py-40 px-6 bg-transparent z-10 overflow-hidden">
+      <section className="relative py-20 md:py-24 px-6 bg-transparent z-10 overflow-hidden">
         {/* Background Ambient Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#2997FF30,transparent_60%)] pointer-events-none" />
         

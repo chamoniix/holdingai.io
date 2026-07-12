@@ -14,9 +14,9 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Services() {
   return (
-    <section className="relative w-full py-[30vh] px-6 bg-transparent z-10 pointer-events-none">
-      <div className="max-w-7xl mx-auto pointer-events-auto">
-        <div className="mb-40 text-center">
+    <section id="services" className="relative py-16 md:py-20 px-6 bg-transparent z-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 md:mb-24 relative z-10 mix-blend-difference">
           <LuxuryText as="h2" delay={0.1} className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">
             The Architecture
           </LuxuryText>
@@ -31,7 +31,7 @@ export default function Services() {
         </div>
         
         {/* Editorial Layout: Alternating massive text blocks */}
-        <div className="flex flex-col gap-[30vh]">
+        <div className="w-full flex flex-col space-y-16 md:space-y-24 relative z-10">
           {servicesData.map((service, index) => {
             const IconComponent = iconMap[service.icon];
             return (
@@ -44,12 +44,9 @@ export default function Services() {
                 className={`flex flex-col md:flex-row gap-12 md:gap-24 items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className="w-full md:w-1/2">
-                  <LuxuryText 
-                    as="h4" 
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-8 leading-[1.1] text-transparent bg-clip-text bg-gradient-to-br from-white via-[#E2E2E8] to-[#86868B]"
-                  >
+                  <h4 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-8 leading-[1.1] text-transparent bg-clip-text bg-gradient-to-br from-white via-[#E2E2E8] to-[#86868B]">
                     {service.title}
-                  </LuxuryText>
+                  </h4>
                   <p className="text-lg md:text-xl text-[#86868B] font-light leading-[1.6] max-w-lg">
                     {service.description}
                   </p>

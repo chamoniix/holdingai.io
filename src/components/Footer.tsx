@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050608] pt-40 pb-12 relative overflow-hidden pointer-events-auto">
+    <footer className="bg-[#050608] pt-20 md:pt-24 pb-12 relative overflow-hidden pointer-events-auto">
       {/* Background ambient glow - extremely subtle */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#2997FF]/5 blur-[120px] pointer-events-none" />
 
@@ -12,14 +12,14 @@ export default function Footer() {
         
         {/* Massive Signature */}
         <h2 
-          className="text-white font-bold tracking-tighter text-center mb-24 opacity-90"
+          className="text-white font-bold tracking-tighter text-center mb-12 md:mb-16 opacity-90"
           style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', letterSpacing: '-0.06em' }}
         >
           HOLDING AI
         </h2>
 
         {/* Minimalist 2-column on tablet, single stack on mobile */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-24">
+        <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-12 md:mb-16">
           
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
             <p className="text-white text-sm font-semibold tracking-widest uppercase mb-4">London</p>

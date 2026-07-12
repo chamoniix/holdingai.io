@@ -11,9 +11,9 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section className="relative w-full py-[30vh] bg-transparent pointer-events-none">
-      <div className="max-w-5xl mx-auto px-6 pointer-events-auto">
-        <div className="mb-32 text-center">
+    <section id="portfolio" className="relative py-16 md:py-20 px-6 bg-transparent z-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12 md:mb-16">
           <LuxuryText as="h2" delay={0.1} className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">
             The Proof
           </LuxuryText>
@@ -26,7 +26,7 @@ export default function Portfolio() {
           </LuxuryText>
         </div>
 
-        <div className="flex flex-col gap-32">
+        <div className="space-y-16 md:space-y-24">
           {projects.map((project, index) => (
             <motion.div 
               key={project.id}
