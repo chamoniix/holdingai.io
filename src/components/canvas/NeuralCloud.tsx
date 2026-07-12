@@ -385,8 +385,9 @@ void main() {
 function NeuralScene() {
   const pointsGeoRef = useRef<THREE.BufferGeometry>(null)
   const pointsMatRef = useRef<THREE.ShaderMaterial>(null)
+  const groupRef = useRef<THREE.Group>(null)
   
-  const scrollProgress = useScrollStore(state => state.progress)
+  // NOTE: We do NOT subscribe to the store here to prevent React from re-rendering on every scroll tick.
   const smoothedScroll = useRef(0)
   const mouseRef = useRef(new THREE.Vector2(0, 0))
   const targetMouse = useRef(new THREE.Vector2(0, 0))
@@ -418,18 +419,51 @@ function NeuralScene() {
   }, [])
 
   useFrame((state, delta) => {
+    // Read directly from store to avoid React re-renders!
+    const rawProgress = useScrollStore.getState().progress
+    
     // Smoother scroll interpolation for cinematic feel
-    smoothedScroll.current = THREE.MathUtils.lerp(smoothedScroll.current, scrollProgress, delta * 2.0)
+    smoothedScroll.current = THREE.MathUtils.lerp(smoothedScroll.current, rawProgress, delta * 2.0)
     mouseRef.current.lerp(targetMouse.current, delta * 4.0)
     
     const t = smoothedScroll.current
 
+    // Spatial Choreography (The Wandering Creature)
+    if (groupRef.current) {
+      let targetX = 0;
+      let targetY = 0;
+      let targetZ = -3;
+
+      if (t < 0.2) {
+        targetX = THREE.MathUtils.lerp(0, 5, t / 0.2);
+        targetZ = THREE.MathUtils.lerp(-3, -5, t / 0.2);
+      } else if (t < 0.45) {
+        const localT = (t - 0.2) / 0.25;
+        targetX = THREE.MathUtils.lerp(5, -6, localT);
+        targetZ = THREE.MathUtils.lerp(-5, -8, localT);
+      } else if (t < 0.75) {
+        const localT = (t - 0.45) / 0.3;
+        targetX = THREE.MathUtils.lerp(-6, 3, localT);
+        targetZ = THREE.MathUtils.lerp(-8, -4, localT);
+      } else if (t < 0.85) {
+        const localT = (t - 0.75) / 0.1;
+        targetX = THREE.MathUtils.lerp(3, 0, localT);
+        targetZ = THREE.MathUtils.lerp(-4, -3, localT);
+      } else {
+        targetX = 0;
+        targetZ = -3;
+      }
+
+      // We smoothly pull the group towards the target coordinates
+      groupRef.current.position.x = THREE.MathUtils.lerp(groupRef.current.position.x, targetX, delta * 2.0);
+      groupRef.current.position.y = THREE.MathUtils.lerp(groupRef.current.position.y, targetY, delta * 2.0);
+      groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, targetZ, delta * 2.0);
+    }
+
     // Determine target mix and buffer swapping
-    // We open windows where a specific letter appears
     let targetIndex = -1
     let tMix = 0.0
     
-    // Define windows for each letter [start, peakStart, peakEnd, end]
     const windows = [
       [0.08, 0.10, 0.12, 0.14], // A
       [0.17, 0.19, 0.21, 0.23], // P
@@ -444,7 +478,6 @@ function NeuralScene() {
       const [s, ps, pe, e] = windows[i]
       if (t > s && t < e) {
         targetIndex = i
-        // Calculate smoothstep mix
         tMix = THREE.MathUtils.smoothstep(t, s, ps) * (1.0 - THREE.MathUtils.smoothstep(t, pe, e))
         break
       }
@@ -468,17 +501,15 @@ function NeuralScene() {
 
   // Generate Initial Geometry
   const pointGeometry = useMemo(() => {
-    // Core shapes
     const posCompact = new Float32Array(count * 3)
     const posBridges = new Float32Array(count * 3)
     const posLobes = new Float32Array(count * 3)
     const posCollapsed = new Float32Array(count * 3)
-    const posTarget = new Float32Array(count * 3) // Dynamic buffer
+    const posTarget = new Float32Array(count * 3)
     const randomSeeds = new Float32Array(count)
     const swarmTypes = new Float32Array(count)
     const flowOffsets = new Float32Array(count)
 
-    // Footer shapes
     const pRibbon = new Float32Array(count * 3)
     const pTrace = getPointsFromTrace("HOLDING AI", count, 0.012)
     const pSphere = new Float32Array(count * 3)
@@ -487,29 +518,23 @@ function NeuralScene() {
       const i3 = i * 3
       randomSeeds[i] = Math.random()
       
-      // Assign Swarm Types: 60% Main (0), 20% Sat1 (1), 20% Sat2 (2)
       const rSwarm = Math.random()
       let sType = 0
       if (rSwarm > 0.8) sType = 2
       else if (rSwarm > 0.6) sType = 1
       swarmTypes[i] = sType
       
-      // Assign a flow offset for the energy pulses.
-      // This spreads the pulse out along the network logically.
       flowOffsets[i] = (i / count) + (Math.random() * 0.1)
 
-      // 1. Compact Core
       posCompact[i3] = randomGaussian() * 0.8
       posCompact[i3+1] = randomGaussian() * 0.8
       posCompact[i3+2] = randomGaussian() * 0.8
 
-      // 2. Bridges
       const organism2 = i % 2 === 0 ? 1 : -1
       posBridges[i3] = (randomGaussian() * 0.6) + (2.0 * organism2)
       posBridges[i3+1] = (randomGaussian() * 0.5) + (1.0 * organism2)
       posBridges[i3+2] = randomGaussian() * 0.7
 
-      // 3. Multi-Lobe
       const lobeId = i % 3
       const centers3 = [
         new THREE.Vector3(-2.5, 1.5, 1),
@@ -521,21 +546,17 @@ function NeuralScene() {
       posLobes[i3+1] = centers3[lobeId].y + (randomGaussian() * spread)
       posLobes[i3+2] = centers3[lobeId].z + (randomGaussian() * spread)
 
-      // 4. Collapsed
       const organism4 = i % 2 === 0 ? 1 : -1
       posCollapsed[i3] = (randomGaussian() * 0.4) + (0.5 * organism4)
       posCollapsed[i3+1] = (randomGaussian() * 1.5)
       posCollapsed[i3+2] = (randomGaussian() * 0.4) - (0.5 * organism4)
 
-      // Initialize target with zeros or first typo
       posTarget[i3] = 0; posTarget[i3+1] = 0; posTarget[i3+2] = 0;
 
-      // Footer Ribbon (Horizontal flowing energy)
       pRibbon[i3] = (Math.random() - 0.5) * 16.0
       pRibbon[i3+1] = randomGaussian() * 0.1
       pRibbon[i3+2] = randomGaussian() * 0.5
 
-      // Footer Sphere (Dense resting ball)
       pSphere[i3] = randomGaussian() * 0.3
       pSphere[i3+1] = randomGaussian() * 0.3
       pSphere[i3+2] = randomGaussian() * 0.3
@@ -547,14 +568,10 @@ function NeuralScene() {
     pGeo.setAttribute('aPositionBridges', new THREE.BufferAttribute(posBridges, 3))
     pGeo.setAttribute('aPositionLobes', new THREE.BufferAttribute(posLobes, 3))
     pGeo.setAttribute('aPositionCollapsed', new THREE.BufferAttribute(posCollapsed, 3))
-    
-    // Dynamic Buffer
     pGeo.setAttribute('aPositionTarget', new THREE.BufferAttribute(posTarget, 3))
-
     pGeo.setAttribute('aPositionRibbon', new THREE.BufferAttribute(pRibbon, 3))
     pGeo.setAttribute('aPositionTrace', new THREE.BufferAttribute(pTrace, 3))
     pGeo.setAttribute('aPositionSphere', new THREE.BufferAttribute(pSphere, 3))
-
     pGeo.setAttribute('aRandomSeed', new THREE.BufferAttribute(randomSeeds, 1))
     pGeo.setAttribute('aSwarmType', new THREE.BufferAttribute(swarmTypes, 1))
     pGeo.setAttribute('aFlowOffset', new THREE.BufferAttribute(flowOffsets, 1))
@@ -563,7 +580,7 @@ function NeuralScene() {
   }, [count])
 
   return (
-    <group position={[0, 0, -3]}>
+    <group ref={groupRef} position={[0, 0, -3]}>
       <points ref={pointsGeoRef} geometry={pointGeometry}>
         <shaderMaterial
           ref={pointsMatRef}
