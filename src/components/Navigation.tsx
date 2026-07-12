@@ -9,26 +9,32 @@ export default function Navigation() {
         {/* Logo */}
         <div className="flex items-center gap-4">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4V20M20 4V20M4 12H20" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M8 4V20M16 4V20" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
+            <path d="M4 4V20M20 4V20M4 12H20" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M8 4V20M16 4V20" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#2997FF" />
+                <stop offset="1" stopColor="#BF5AF2" />
+              </linearGradient>
+            </defs>
           </svg>
-          <span className="font-bold tracking-[0.2em] text-xs text-white drop-shadow-md">
+          <span className="font-bold tracking-[0.2em] text-xs text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 drop-shadow-md">
             HOLDING AI
           </span>
         </div>
 
         {/* Center Links (Desktop only) */}
-        <div className="hidden lg:flex items-center gap-8 glass-panel-sm px-8 py-3">
-          <Link href="#agents" className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-300">
+        <div className="hidden lg:flex items-center gap-8 glass-panel-sm px-8 py-3 bg-white/[0.02] border border-white/[0.05] shadow-[0_0_15px_rgba(41,151,255,0.05)] rounded-full">
+          <Link href="#agents" className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
             AI AGENTS
           </Link>
-          <Link href="#saas" className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-300">
+          <Link href="#saas" className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
             SAAS
           </Link>
-          <Link href="#automation" className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-300">
+          <Link href="#automation" className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
             AUTOMATION
           </Link>
-          <Link href="#work" className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-300">
+          <Link href="#work" className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
             OUR WORK
           </Link>
         </div>

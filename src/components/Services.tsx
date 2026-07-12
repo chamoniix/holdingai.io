@@ -21,7 +21,11 @@ export default function Services() {
             The Architecture
           </LuxuryText>
           <br />
-          <LuxuryText as="h3" delay={0.3} className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-[1.1]">
+          <LuxuryText 
+            as="h3" 
+            delay={0.3} 
+            className="text-5xl md:text-7xl font-bold tracking-tight max-w-4xl mx-auto leading-[1.1] text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40"
+          >
             We build systems that redefine industries.
           </LuxuryText>
         </div>
@@ -40,14 +44,12 @@ export default function Services() {
                 className={`flex flex-col md:flex-row gap-12 md:gap-24 items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className="w-full md:w-1/2">
-                  <div className="flex items-center gap-4 text-[#86868B] mb-6">
-                    <span className="font-mono text-[11px] tracking-widest">0{index + 1}</span>
-                    <div className="w-8 h-[1px] bg-[#86868B]/30" />
-                    {IconComponent && <IconComponent size={16} strokeWidth={1.5} />}
-                  </div>
-                  <h4 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-8 leading-[1.1]">
+                  <LuxuryText 
+                    as="h4" 
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-8 leading-[1.1] text-transparent bg-clip-text bg-gradient-to-br from-white via-[#E2E2E8] to-[#86868B]"
+                  >
                     {service.title}
-                  </h4>
+                  </LuxuryText>
                   <p className="text-lg md:text-xl text-[#86868B] font-light leading-[1.6] max-w-lg">
                     {service.description}
                   </p>

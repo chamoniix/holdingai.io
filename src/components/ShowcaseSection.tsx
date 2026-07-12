@@ -20,8 +20,6 @@ const projects = [
 export default function ShowcaseSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollWrapperRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLHeadingElement>(null);
-
   useGSAP(() => {
     const wrapper = scrollWrapperRef.current;
     if (!wrapper) return;
@@ -42,34 +40,19 @@ export default function ShowcaseSection() {
       }
     });
 
-    // Animate the large background text based on the same horizontal scroll
-    gsap.to(textRef.current, {
-      x: window.innerWidth * -0.5,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: () => `+=${scrollAmount}`,
-        scrub: 1,
-      }
-    });
-
   }, { scope: containerRef });
 
   return (
     <section ref={containerRef} className="relative h-screen bg-transparent pointer-events-none overflow-hidden z-10">
       
-      {/* Massive Background Typography */}
-      <h2 
-        ref={textRef}
-        className="absolute top-1/2 -translate-y-1/2 left-0 text-[15rem] md:text-[25rem] font-bold text-white/5 tracking-tighter whitespace-nowrap pointer-events-none select-none z-0"
-      >
-        SELECTED WORK
-      </h2>
+      {/* Background elements removed per user request */}
 
       {/* Title Overlay */}
       <div className="absolute top-20 left-12 md:left-20 z-20 pointer-events-none mix-blend-difference">
-        <LuxuryText as="h3" className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+        <LuxuryText 
+          as="h3" 
+          className="text-4xl md:text-6xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-[#E2E2E8] to-[#86868B]"
+        >
           Recent Projects
         </LuxuryText>
       </div>

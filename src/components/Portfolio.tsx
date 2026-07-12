@@ -17,7 +17,11 @@ export default function Portfolio() {
           <LuxuryText as="h2" delay={0.1} className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">
             The Proof
           </LuxuryText>
-          <LuxuryText as="h3" delay={0.3} className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+          <LuxuryText 
+            as="h3" 
+            delay={0.3} 
+            className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-br from-white via-[#E2E2E8] to-[#86868B]"
+          >
             Digital Monuments
           </LuxuryText>
         </div>
