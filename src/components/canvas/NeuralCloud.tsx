@@ -18,7 +18,7 @@ function randomGaussian() {
 // Generate points from an invisible canvas for precise typography
 function getPointsFromText(text: string, count: number, scale: number, yOffset = 0) {
   const positions = new Float32Array(count * 3);
-  if (typeof window === 'undefined') return positions; // Return empty on SSR
+  if (typeof window === 'undefined') return positions; 
   
   const canvas = document.createElement('canvas');
   canvas.width = 1024;
@@ -98,7 +98,6 @@ function getPointsFromTrace(text: string, count: number, scale: number, yOffset 
   return positions;
 }
 
-
 // --------------------------------------------------------
 // SHADER CHUNKS
 // --------------------------------------------------------
@@ -170,8 +169,8 @@ vec3 curlNoise(vec3 p) {
 vec3 calculateMorph(
   vec3 pCompact, vec3 pBridges, vec3 pLobes, vec3 pCollapsed, 
   vec3 pTarget, float tTargetMix,
-  vec3 pRibbon, vec3 pText, vec3 pTrace, vec3 pSphere,
-  float t, float time, vec2 mouse, out float isTextShape
+  vec3 pRibbon, vec3 pTrace, vec3 pSphere,
+  float t, float time, vec2 mouse, float swarmType, out float isTextShape
 ) {
   vec3 pos = pCompact;
   isTextShape = 0.0;
@@ -185,22 +184,40 @@ vec3 calculateMorph(
     pos = mix(pLobes, pCollapsed, smoothstep(0.66, 1.0, t));
   }
 
-  // 2. Dynamic Typography Target (A, P, D, etc.)
-  // The JS swap logic ensures pTarget is already holding the correct letter for this scroll region
-  pos = mix(pos, pTarget, tTargetMix);
+  // --- MULTIPLE SWARMS MECHANIC ---
+  // Satellite swarms orbit the main core, merging and separating based on slow sine waves
+  if (swarmType == 1.0) {
+    // Satellite 1
+    float orbitDist = 1.5 + sin(time * 0.4) * 1.5; // distance from core
+    pos.x += cos(time * 0.3) * orbitDist;
+    pos.z += sin(time * 0.3) * orbitDist;
+    pos.y += sin(time * 0.5) * 0.5;
+  } else if (swarmType == 2.0) {
+    // Satellite 2
+    float orbitDist = 2.0 + cos(time * 0.35) * 1.0; 
+    pos.x += sin(time * 0.25) * orbitDist;
+    pos.z += cos(time * 0.25) * orbitDist;
+    pos.y += cos(time * 0.4) * 0.8;
+  }
+
+  // 2. Dynamic Typography Suggestion (A, P, D, etc.)
+  // We NEVER fully mix to the text shape. Max mix is 0.65 to ensure it's just an ethereal suggestion.
+  float effectiveMix = tTargetMix * 0.65;
+  
+  // Add noise to the typography target itself so it wiggles
+  vec3 noisyTarget = pTarget + curlNoise(pTarget * 0.8 + time * 0.2) * 0.2;
+  
+  pos = mix(pos, noisyTarget, effectiveMix);
 
   // 3. The Footer Choreography (0.75 to 1.0)
-  // Step 1: Descend and form Ribbon (0.78 to 0.82)
-  float mixRibbon = smoothstep(0.78, 0.81, t) * (1.0 - smoothstep(0.83, 0.85, t));
-  // Step 2: Morph to HOLDING AI (0.84 to 0.88)
-  float mixText = smoothstep(0.84, 0.86, t) * (1.0 - smoothstep(0.89, 0.91, t));
-  // Step 3: Detach and Trace Logo (0.90 to 0.94)
-  float mixTrace = smoothstep(0.90, 0.92, t) * (1.0 - smoothstep(0.95, 0.97, t));
-  // Step 4: Collapse to Sphere (0.96 to 1.0)
-  float mixSphere = smoothstep(0.96, 1.0, t);
+  // Step 1: Ribbon (0.75 to 0.82)
+  float mixRibbon = smoothstep(0.75, 0.78, t) * (1.0 - smoothstep(0.80, 0.83, t));
+  // Step 2: Trace Logo (0.83 to 0.90)
+  float mixTrace = smoothstep(0.83, 0.85, t) * (1.0 - smoothstep(0.92, 0.95, t));
+  // Step 3: Collapse to Sphere (0.95 to 1.0)
+  float mixSphere = smoothstep(0.95, 1.0, t);
   
   pos = mix(pos, pRibbon, mixRibbon);
-  pos = mix(pos, pText, mixText);
   pos = mix(pos, pTrace, mixTrace);
   pos = mix(pos, pSphere, mixSphere);
 
@@ -208,35 +225,38 @@ vec3 calculateMorph(
   float footerDownshift = smoothstep(0.75, 1.0, t) * -2.5; 
   pos.y += footerDownshift;
 
-  // Track if we are currently forming ANY perfect shape (to suppress organic noise)
-  isTextShape = max(tTargetMix, max(mixText, max(mixTrace, mixSphere)));
-
-  // Organic Breathing / Deformation using Curl Noise - SLOWED DOWN
-  float suppression = 1.0 - isTextShape;
-  float deformationStrength = (0.2 + (sin(t * 3.14159) * 1.0)) * suppression;
-  vec3 noise = curlNoise(pos * 0.4 + time * 0.04); // Reduced noise speed
-  pos += noise * deformationStrength;
+  // Organic Breathing / Deformation using Curl Noise
+  // WE NEVER SUPPRESS THE NOISE ENTIRELY. The organism is always boiling.
+  float deformationStrength = 0.3 + (sin(t * 3.14159) * 0.5);
+  // Increase flow speed around the trace to simulate flowing water
+  float flowSpeed = mix(0.04, 0.2, mixTrace);
+  vec3 noise = curlNoise(pos * 0.4 + time * flowSpeed);
+  
+  // Apply the noise. If we are forming a letter, reduce noise SLIGHTLY so it's readable, but keep it alive.
+  float noiseDampener = 1.0 - (effectiveMix * 0.3) - (mixTrace * 0.4);
+  pos += noise * deformationStrength * noiseDampener;
 
   // Majestic slow rotation
-  float rotY = time * 0.01 + (t * 0.2); // Reduced rotation speed
+  float rotY = time * 0.05 + (t * 0.2); 
   mat2 rot = mat2(cos(rotY), -sin(rotY), sin(rotY), cos(rotY));
   
-  // Don't rotate text or trace!
+  // Rotate the base shapes, but don't rotate the typography suggestions or traces
+  float lockShape = max(tTargetMix, mixTrace);
   vec3 rotatedXZ = vec3(pos.x, pos.y, pos.z);
   rotatedXZ.xz = rot * pos.xz;
-  pos = mix(rotatedXZ, pos, isTextShape);
+  pos = mix(rotatedXZ, pos, lockShape);
 
   // Mouse Repulsion
   vec3 mouseWorld = vec3(mouse.x * 12.0, mouse.y * 12.0, 0.0);
   float distToMouse = length(pos.xy - mouseWorld.xy);
   if (distToMouse < 3.0) {
-    float repulsion = (3.0 - distToMouse) * 0.15 * suppression;
+    float repulsion = (3.0 - distToMouse) * 0.15;
     vec3 dir = normalize(pos - mouseWorld);
     pos += dir * repulsion;
   }
 
   // Slow breathing
-  float breath = 1.0 + sin(time * 0.8) * 0.02 * suppression; 
+  float breath = 1.0 + sin(time * 0.8) * 0.02; 
   pos *= breath;
   
   return pos;
@@ -261,17 +281,19 @@ attribute vec3 aPositionTarget;
 uniform float uTargetMix;
 
 attribute vec3 aPositionRibbon;
-attribute vec3 aPositionText;
 attribute vec3 aPositionTrace;
 attribute vec3 aPositionSphere;
 
 attribute float aRandomSeed;
+attribute float aSwarmType;
+attribute float aFlowOffset;
 
 varying float vDepth;
 varying float vIntensity;
 varying float vMouseDist;
 varying float vRandom;
-varying float vIsSignature;
+varying float vSwarmType;
+varying float vFlowOffset;
 
 ${noiseChunk}
 
@@ -282,8 +304,8 @@ void main() {
   vec3 finalPos = calculateMorph(
     aPositionCompact, aPositionBridges, aPositionLobes, aPositionCollapsed, 
     aPositionTarget, uTargetMix,
-    aPositionRibbon, aPositionText, aPositionTrace, aPositionSphere,
-    t, uTime, uMouse, isTextShape
+    aPositionRibbon, aPositionTrace, aPositionSphere,
+    t, uTime, uMouse, aSwarmType, isTextShape
   );
 
   vec4 viewPosition = modelViewMatrix * vec4(finalPos, 1.0);
@@ -297,7 +319,8 @@ void main() {
   vMouseDist = length(finalPos.xy - mouseWorld.xy);
 
   vRandom = aRandomSeed;
-  vIsSignature = isTextShape;
+  vSwarmType = aSwarmType;
+  vFlowOffset = aFlowOffset;
 }
 `
 
@@ -306,7 +329,8 @@ varying float vDepth;
 varying float vIntensity;
 varying float vMouseDist;
 varying float vRandom;
-varying float vIsSignature;
+varying float vSwarmType;
+varying float vFlowOffset;
 
 uniform vec3 uColorCore;
 uniform vec3 uColorEdge;
@@ -322,16 +346,31 @@ void main() {
   float depthFade = smoothstep(0.5, 3.0, vDepth) * (1.0 - smoothstep(12.0, 18.0, vDepth));
   alpha *= depthFade;
 
+  // Base colors
   vec3 finalColor = mix(uColorEdge, uColorCore, vIntensity);
-  finalColor = mix(finalColor, vec3(1.0, 1.0, 1.0), vIsSignature);
-  alpha = mix(alpha, 1.0, vIsSignature);
 
-  if (vRandom > 0.95 && vIsSignature < 0.5) {
+  // Highlight satellites slightly
+  if (vSwarmType > 0.5) {
+      finalColor = mix(finalColor, uColorHighlight, 0.2);
+  }
+
+  // Energy Circulation: Rapid light pulses flowing through the network
+  // The flow travels along the 'vFlowOffset' which maps to particle indices
+  float pulseSpeed = uTime * 0.4 + vFlowOffset * 15.0; 
+  float energyPulse = smoothstep(0.98, 1.0, fract(pulseSpeed)); // Very sharp and rare pulse
+  
+  // Make the pulse bright white/highlight
+  finalColor = mix(finalColor, uColorHighlight * 1.5, energyPulse);
+  alpha += energyPulse * 0.8;
+
+  // Generic random pulse highlights for a few nodes
+  if (vRandom > 0.95) {
     float pulse = (sin(uTime * 2.0 + vRandom * 100.0) + 1.0) * 0.5;
     finalColor = mix(finalColor, uColorHighlight, pulse);
     alpha += pulse * 0.5;
   }
 
+  // Boost brightness near mouse
   float mouseGlow = 1.0 - smoothstep(0.0, 3.0, vMouseDist);
   finalColor += uColorHighlight * mouseGlow * 0.8;
   alpha += mouseGlow * 0.4;
@@ -436,10 +475,11 @@ function NeuralScene() {
     const posCollapsed = new Float32Array(count * 3)
     const posTarget = new Float32Array(count * 3) // Dynamic buffer
     const randomSeeds = new Float32Array(count)
+    const swarmTypes = new Float32Array(count)
+    const flowOffsets = new Float32Array(count)
 
     // Footer shapes
     const pRibbon = new Float32Array(count * 3)
-    const pText = getPointsFromText("HOLDING AI", count, 0.012)
     const pTrace = getPointsFromTrace("HOLDING AI", count, 0.012)
     const pSphere = new Float32Array(count * 3)
 
@@ -447,6 +487,17 @@ function NeuralScene() {
       const i3 = i * 3
       randomSeeds[i] = Math.random()
       
+      // Assign Swarm Types: 60% Main (0), 20% Sat1 (1), 20% Sat2 (2)
+      const rSwarm = Math.random()
+      let sType = 0
+      if (rSwarm > 0.8) sType = 2
+      else if (rSwarm > 0.6) sType = 1
+      swarmTypes[i] = sType
+      
+      // Assign a flow offset for the energy pulses.
+      // This spreads the pulse out along the network logically.
+      flowOffsets[i] = (i / count) + (Math.random() * 0.1)
+
       // 1. Compact Core
       posCompact[i3] = randomGaussian() * 0.8
       posCompact[i3+1] = randomGaussian() * 0.8
@@ -501,11 +552,12 @@ function NeuralScene() {
     pGeo.setAttribute('aPositionTarget', new THREE.BufferAttribute(posTarget, 3))
 
     pGeo.setAttribute('aPositionRibbon', new THREE.BufferAttribute(pRibbon, 3))
-    pGeo.setAttribute('aPositionText', new THREE.BufferAttribute(pText, 3))
     pGeo.setAttribute('aPositionTrace', new THREE.BufferAttribute(pTrace, 3))
     pGeo.setAttribute('aPositionSphere', new THREE.BufferAttribute(pSphere, 3))
 
     pGeo.setAttribute('aRandomSeed', new THREE.BufferAttribute(randomSeeds, 1))
+    pGeo.setAttribute('aSwarmType', new THREE.BufferAttribute(swarmTypes, 1))
+    pGeo.setAttribute('aFlowOffset', new THREE.BufferAttribute(flowOffsets, 1))
 
     return pGeo
   }, [count])
