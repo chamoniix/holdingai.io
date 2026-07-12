@@ -26,17 +26,39 @@ export default function Hero() {
         className="relative z-10 flex flex-col items-center justify-center h-full px-6"
       >
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-white text-center font-bold text-balance"
+          className="text-center font-bold text-balance flex flex-wrap justify-center overflow-visible"
           style={{ 
             fontSize: 'clamp(4rem, 12vw, 15rem)', 
             letterSpacing: '-0.04em',
             lineHeight: 0.95
           }}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.05, delayChildren: 0.2 }
+            }
+          }}
         >
-          {heroData.headline}
+          {Array.from(heroData.headline).map((char, index) => (
+            <motion.span
+              key={index}
+              className="text-transparent bg-clip-text bg-gradient-to-r from-[#2997FF] to-[#BF5AF2] inline-block"
+              variants={{
+                hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
+                visible: {
+                  opacity: 1, 
+                  y: 0, 
+                  filter: 'blur(0px)',
+                  transition: { type: 'spring', damping: 12, stiffness: 100 }
+                }
+              }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </motion.span>
+          ))}
         </motion.h1>
         
         <motion.p
