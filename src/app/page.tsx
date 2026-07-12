@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
+import ShowcaseSection from "@/components/ShowcaseSection";
 
 export default function Home() {
   
@@ -19,7 +20,10 @@ export default function Home() {
       {/* Scene 3: The Proof */}
       <Portfolio />
       
-      {/* Scene 4: The Ultimatum (Final CTA) */}
+      {/* Scene 4: Selected Work (Horizontal Carousel) */}
+      <ShowcaseSection />
+      
+      {/* Scene 5: The Ultimatum (Final CTA) */}
       <section className="relative py-40 px-6 bg-transparent z-10 overflow-hidden">
         {/* Background Ambient Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#2997FF30,transparent_60%)] pointer-events-none" />
