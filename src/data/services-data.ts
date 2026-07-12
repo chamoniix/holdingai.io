@@ -17,14 +17,14 @@ export const servicesData = [
     icon: 'Code2',
     title: 'Development',
     description: 'Full-stack engineering with cutting-edge AI integration (LLMs, computer vision, NLP).',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab3c?w=800',
+    image: '/images/assets/IMG_Services_03.jpg',
     gradient: 'from-orange-500/20 to-red-500/20'
   },
   {
     icon: 'LineChart',
     title: 'Data & Analytics',
     description: 'Turn data into decisions with predictive analytics and real-time dashboards.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
+    image: '/images/assets/IMG_Services_04.jpg',
     gradient: 'from-green-500/20 to-emerald-500/20'
   }
 ]
