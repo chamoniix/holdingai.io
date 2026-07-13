@@ -27,35 +27,65 @@
     "rights": "© 2026 HoldingAI LTD. Tous droits réservés."
   },
   "about": {
-    "title": "À Propos",
-    "description": "HoldingAI est un studio de création premium dédié à l'ingénierie du futur. Nous collaborons avec des visionnaires pour concevoir des agents IA, des plateformes SaaS et des systèmes d'automatisation de pointe.",
-    "mission": "Notre Mission",
-    "missionText": "Combler le fossé entre l'intelligence artificielle de pointe et le design centré sur l'humain, en créant des monuments numériques conçus pour durer."
+    "title": "Une vision au-delà du code",
+    "description": "HoldingAI n'est pas une simple agence digitale. Nous sommes un laboratoire d'ingénierie et de design dédié à construire la prochaine génération de plateformes intelligentes. Nous allions l'esthétique du luxe à la puissance brute de l'intelligence artificielle.",
+    "mission": "Notre Philosophie",
+    "missionText": "Nous croyons que la technologie la plus avancée doit être invisible. Nos systèmes sont conçus pour fonctionner avec une fluidité absolue, offrant à vos utilisateurs une expérience à la frontière de la magie. De l'architecture des données jusqu'au moindre pixel, chaque détail est obsessionnellement perfectionné.",
+    "stats": [
+      { "label": "Projets Livrés", "value": "40+" },
+      { "label": "Agents Déployés", "value": "1M+" },
+      { "label": "Lignes de Code", "value": "2.5M" },
+      { "label": "Années d'Excellence", "value": "5+" }
+    ]
   },
   "work": {
     "title": "Nos Réalisations",
-    "description": "Découvrez notre portfolio de monuments numériques. Nous construisons des produits qui redéfinissent les industries et établissent de nouvelles normes d'excellence."
+    "description": "Découvrez nos monuments numériques. Des applications web de qualité Apple aux systèmes d'IA de qualité entreprise, nous redéfinissons les standards de l'industrie.",
+    "projects": [
+      { "title": "Aura Network", "category": "AI Agent Platform", "year": "2026" },
+      { "title": "Nexus Cloud", "category": "SaaS Infrastructure", "year": "2025" },
+      { "title": "Prism", "category": "Enterprise Automation", "year": "2025" },
+      { "title": "Onyx Protocol", "category": "Machine Learning", "year": "2024" }
+    ]
   },
   "contact": {
     "title": "Construisons Ensemble",
-    "description": "Prêt à mener la révolution de l'IA ? Contactez-nous pour discuter de votre prochain grand projet.",
+    "description": "Prêt à mener la révolution de l'IA ? Décrivez-nous votre projet et notre équipe d'ingénieurs vous contactera sous 24 heures.",
     "nameLabel": "Votre Nom",
     "emailLabel": "Adresse Email",
-    "messageLabel": "Message",
+    "messageLabel": "Votre Projet",
     "submit": "Envoyer le message"
   },
   "services": {
     "aiAgents": {
-      "title": "Agents IA",
-      "description": "Des agents autonomes sur mesure qui apprennent, raisonnent et agissent pour développer vos opérations de manière exponentielle."
+      "title": "Agents IA Autonomes",
+      "description": "Nous développons des agents intelligents capables de raisonner, d'apprendre et d'exécuter des tâches complexes de manière autonome.",
+      "feature1": "Apprentissage Continu",
+      "feature1Desc": "Nos agents s'adaptent et s'améliorent à chaque interaction, garantissant une évolution constante de vos performances.",
+      "feature2": "Raisonnement Logique",
+      "feature2Desc": "Au-delà de la simple génération de texte, nos systèmes intègrent des capacités de raisonnement avancé pour résoudre des problèmes métiers.",
+      "feature3": "Exécution d'Actions",
+      "feature3Desc": "Intégration transparente avec vos API pour permettre aux agents d'agir directement sur votre écosystème."
     },
     "saas": {
-      "title": "Développement SaaS",
-      "description": "Architecture, conception et ingénierie logicielle de bout en bout pour des plateformes évolutives et performantes."
+      "title": "Développement SaaS Évolutif",
+      "description": "Des architectures logicielles de pointe, conçues pour supporter des millions d'utilisateurs tout en offrant une expérience fluide.",
+      "feature1": "Haute Disponibilité",
+      "feature1Desc": "Infrastructure cloud native garantie à 99.99% d'uptime, conçue pour l'hyper-croissance.",
+      "feature2": "Sécurité Militaire",
+      "feature2Desc": "Chiffrement de bout en bout et conformité totale avec les normes de sécurité les plus strictes (RGPD, SOC2).",
+      "feature3": "Design UX/UI Premium",
+      "feature3Desc": "Des interfaces épurées, intuitives et visuellement époustouflantes qui fidélisent vos utilisateurs."
     },
     "automation": {
       "title": "Automatisation d'Entreprise",
-      "description": "Des flux de travail intelligents qui éliminent les tâches manuelles et optimisent l'efficacité de l'entreprise."
+      "description": "Éliminez les frictions. Nous transformons vos processus manuels en flux de travail automatisés, rapides et sans erreur.",
+      "feature1": "Intégration Systèmes",
+      "feature1Desc": "Nous connectons vos outils existants (CRM, ERP, bases de données) pour créer une synergie parfaite.",
+      "feature2": "Optimisation des Coûts",
+      "feature2Desc": "Réduisez drastiquement vos coûts opérationnels en automatisant les tâches chronophages.",
+      "feature3": "Supervision en Temps Réel",
+      "feature3Desc": "Tableaux de bord analytiques pour monitorer l'efficacité de vos automatisations."
     }
   },
   "legal": {

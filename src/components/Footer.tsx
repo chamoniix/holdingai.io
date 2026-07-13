@@ -7,7 +7,7 @@ export default function Footer() {
   const { lang, dict } = useTranslation();
 
   return (
-    <footer className="bg-[#050608] pt-20 md:pt-24 pb-12 relative overflow-hidden pointer-events-auto border-t border-white/5">
+    <footer className="bg-[#050608]/50 backdrop-blur-2xl pt-20 md:pt-24 pb-12 relative overflow-hidden pointer-events-auto border-t border-white/10">
       {/* Background ambient glow - extremely subtle */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#2997FF]/5 blur-[120px] pointer-events-none" />
 

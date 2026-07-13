@@ -4,16 +4,16 @@
     "saas": "SAAS",
     "automation": "AUTOMATION",
     "work": "OUR WORK",
-    "letsBuild": "LET'S BUILD"
+    "letsBuild": "LET's BUILD"
   },
   "hero": {
-    "headline": "Building the Future of AI",
-    "subheadline": "We craft digital experiences where artificial intelligence meets human ambition.",
-    "cta1": "Start Your Project",
+    "headline": "Engineering the Future of AI",
+    "subheadline": "We craft digital experiences where cutting-edge artificial intelligence meets human ambition.",
+    "cta1": "Initiate Project",
     "cta2": "Watch Showreel"
   },
   "footer": {
-    "london": "London",
+    "london": "LONDON",
     "address1": "Lytchett House, Freeland Park",
     "address2": "Wareham Road, Poole, Dorset",
     "email": "info@holdingai.io",
@@ -27,35 +27,65 @@
     "rights": "© 2026 HoldingAI LTD. All rights reserved."
   },
   "about": {
-    "title": "About Us",
-    "description": "HoldingAI is a premium product studio dedicated to engineering the future. We partner with visionaries to build world-class AI agents, SaaS platforms, and enterprise automation systems.",
-    "mission": "Our Mission",
-    "missionText": "To bridge the gap between cutting-edge artificial intelligence and human-centric design, creating digital monuments that stand the test of time."
+    "title": "A Vision Beyond Code",
+    "description": "HoldingAI is not a typical digital agency. We are an engineering and design lab dedicated to building the next generation of intelligent platforms. We merge luxury aesthetics with the raw power of artificial intelligence.",
+    "mission": "Our Philosophy",
+    "missionText": "We believe the most advanced technology should feel invisible. Our systems are designed to operate with absolute fluidity, offering your users an experience bordering on magic. From data architecture to the finest pixel, every detail is obsessively perfected.",
+    "stats": [
+      { "label": "Projects Delivered", "value": "40+" },
+      { "label": "Agents Deployed", "value": "1M+" },
+      { "label": "Lines of Code", "value": "2.5M" },
+      { "label": "Years of Excellence", "value": "5+" }
+    ]
   },
   "work": {
     "title": "Our Work",
-    "description": "Explore our portfolio of digital monuments. We build products that redefine industries and set new standards for excellence."
+    "description": "Discover our digital monuments. From Apple-quality web applications to enterprise-grade AI systems, we redefine industry standards.",
+    "projects": [
+      { "title": "Aura Network", "category": "AI Agent Platform", "year": "2026" },
+      { "title": "Nexus Cloud", "category": "SaaS Infrastructure", "year": "2025" },
+      { "title": "Prism", "category": "Enterprise Automation", "year": "2025" },
+      { "title": "Onyx Protocol", "category": "Machine Learning", "year": "2024" }
+    ]
   },
   "contact": {
-    "title": "Let's Build Together",
-    "description": "Ready to lead the AI revolution? Contact us to discuss your next big project.",
+    "title": "Let's Build",
+    "description": "Ready to lead the AI revolution? Describe your project and our engineering team will contact you within 24 hours.",
     "nameLabel": "Your Name",
     "emailLabel": "Email Address",
-    "messageLabel": "Message",
+    "messageLabel": "Your Project",
     "submit": "Send Message"
   },
   "services": {
     "aiAgents": {
-      "title": "AI Agents",
-      "description": "Custom autonomous agents that learn, reason, and act on your behalf to scale operations exponentially."
+      "title": "Autonomous AI Agents",
+      "description": "We develop intelligent agents capable of reasoning, learning, and executing complex tasks autonomously.",
+      "feature1": "Continuous Learning",
+      "feature1Desc": "Our agents adapt and improve with every interaction, guaranteeing constant evolution of your performance.",
+      "feature2": "Logical Reasoning",
+      "feature2Desc": "Beyond simple text generation, our systems integrate advanced reasoning capabilities to solve business problems.",
+      "feature3": "Action Execution",
+      "feature3Desc": "Seamless integration with your APIs allowing agents to act directly within your ecosystem."
     },
     "saas": {
-      "title": "SaaS Development",
-      "description": "End-to-end software architecture, design, and engineering for high-performance, scalable platforms."
+      "title": "Scalable SaaS Development",
+      "description": "Cutting-edge software architectures designed to support millions of users while providing a fluid experience.",
+      "feature1": "High Availability",
+      "feature1Desc": "Cloud-native infrastructure guaranteed at 99.99% uptime, built for hyper-growth.",
+      "feature2": "Military-Grade Security",
+      "feature2Desc": "End-to-end encryption and total compliance with the strictest security standards (GDPR, SOC2).",
+      "feature3": "Premium UX/UI Design",
+      "feature3Desc": "Clean, intuitive, and visually stunning interfaces that retain your users."
     },
     "automation": {
       "title": "Enterprise Automation",
-      "description": "Intelligent workflows that eliminate manual tasks and optimize business efficiency."
+      "description": "Eliminate friction. We transform your manual processes into automated, fast, and error-free workflows.",
+      "feature1": "Systems Integration",
+      "feature1Desc": "We connect your existing tools (CRM, ERP, databases) to create perfect synergy.",
+      "feature2": "Cost Optimization",
+      "feature2Desc": "Drastically reduce your operational costs by automating time-consuming tasks.",
+      "feature3": "Real-time Monitoring",
+      "feature3Desc": "Analytical dashboards to monitor the efficiency of your automations."
     }
   },
   "legal": {
