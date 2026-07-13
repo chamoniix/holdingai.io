@@ -61,15 +61,15 @@
   "legal": {
     "privacy": {
       "title": "Privacy Policy",
-      "content": "This is a placeholder for the Privacy Policy. Please consult legal counsel to draft the official document."
+      "content": "At HoldingAI LTD, we take your privacy seriously. We collect minimal data necessary to provide our services. This includes your name, email, and project details submitted via our contact form. We do not sell or share your data with third parties. To request the deletion of your data, please contact us at info@holdingai.io."
     },
     "terms": {
       "title": "Terms & Conditions",
-      "content": "This is a placeholder for the Terms and Conditions. Please consult legal counsel to draft the official document."
+      "content": "By using our services, you agree to these terms. HoldingAI LTD provides software development and AI engineering services 'as is'. We are not liable for data loss or service interruptions. All intellectual property rights to the deliverables are transferred to you only upon full payment of invoices."
     },
     "mentions": {
       "title": "Legal Mentions",
-      "content": "HoldingAI LTD. Registered in England & Wales. Lytchett House, Freeland Park, Wareham Road, Poole, Dorset."
+      "content": "Site Publisher: HoldingAI LTD, registered in England & Wales. Registered Office: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, UK. Contact: info@holdingai.io | +44 7537106967. Hosted by: Vercel Inc."
     }
   }
 }

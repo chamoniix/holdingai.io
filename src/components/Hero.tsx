@@ -3,10 +3,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { useTranslation } from '@/i18n/LanguageContext'
+import Link from 'next/link'
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null)
-  const { dict } = useTranslation()
+  const { lang, dict } = useTranslation()
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -75,18 +76,22 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 1 }}
           className="mt-16 flex gap-6"
         >
-          <motion.button
-            whileHover={{ scale: 0.98 }}
-            className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
-          >
-            {dict?.hero?.cta1 || "Start Your Project"}
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 0.98 }}
-            className="px-8 py-4 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] backdrop-blur-[40px] text-white font-semibold rounded-full hover:bg-[rgba(255,255,255,0.05)] transition-all"
-          >
-            {dict?.hero?.cta2 || "Watch Showreel"}
-          </motion.button>
+          <Link href={`/${lang}/contact`}>
+            <motion.button
+              whileHover={{ scale: 0.98 }}
+              className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
+            >
+              {dict?.hero?.cta1 || "Start Your Project"}
+            </motion.button>
+          </Link>
+          <Link href={`/${lang}/work`}>
+            <motion.button
+              whileHover={{ scale: 0.98 }}
+              className="px-8 py-4 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] backdrop-blur-[40px] text-white font-semibold rounded-full hover:bg-[rgba(255,255,255,0.05)] transition-all"
+            >
+              {dict?.hero?.cta2 || "Watch Showreel"}
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

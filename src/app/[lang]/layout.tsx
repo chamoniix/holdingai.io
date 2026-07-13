@@ -36,14 +36,10 @@ export default async function RootLayout({
           <ScrollManager />
           <NeuralCloud />
           <Navigation />
-          <div className="relative z-10 pointer-events-none">
+          <div className="relative z-10">
             <SmoothScroll>
-              <div className="pointer-events-auto">
-                {children}
-              </div>
-              <div className="pointer-events-auto">
-                <Footer />
-              </div>
+              {children}
+              <Footer />
             </SmoothScroll>
           </div>
         </LanguageProvider>
