@@ -34,12 +34,12 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full aspect-[16/9] md:aspect-[21/9] glass-panel overflow-hidden group"
+              className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden group rounded-3xl border border-white/10 bg-white/[0.02] shadow-2xl"
             >
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-1000"
+                className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#030304] via-transparent to-transparent" />
               

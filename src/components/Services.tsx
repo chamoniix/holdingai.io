@@ -52,12 +52,14 @@ export default function Services() {
                   </p>
                 </div>
               
-              <div className="w-full md:w-1/2 aspect-[4/3] md:aspect-square relative glass-panel flex items-center justify-center overflow-hidden">
+              <div className="w-full md:w-1/2 aspect-[4/3] md:aspect-square relative flex items-center justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.02] shadow-2xl">
                 <img 
                   src={service.image} 
                   alt={service.title}
-                  className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50 transition-opacity duration-700 hover:opacity-80"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                 />
+                {/* Subtle overlay gradient to blend edges if needed, or just let the image shine */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               </div>
             </motion.div>
             );

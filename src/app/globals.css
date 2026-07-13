@@ -12,8 +12,10 @@
 
 @layer base {
   :root {
-    --background: #050608;
-    --foreground: #F5F5F7;
+    --background: #0A0A0C;
+    --foreground: #ffffff;
+    --color-background: #0A0A0C;
+    --color-foreground: #ffffff;
   }
 
   body {

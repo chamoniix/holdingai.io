@@ -63,9 +63,9 @@ export default function ShowcaseSection() {
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="group relative flex-shrink-0 w-[300px] h-[450px] md:w-[500px] md:h-[700px] overflow-hidden cursor-pointer"
+              className="group relative flex-shrink-0 w-[300px] h-[450px] md:w-[500px] md:h-[700px] overflow-hidden cursor-pointer rounded-3xl border border-white/10 bg-white/[0.02] shadow-[0_0_40px_rgba(255,255,255,0.05)]"
             >
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500 z-10 pointer-events-none" />
               
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 

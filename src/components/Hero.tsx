@@ -19,12 +19,9 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen overflow-hidden bg-transparent"
+      className="relative w-full min-h-[75vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-transparent"
     >
-      <motion.div 
-        style={{ y: textY, opacity, filter: useTransform(blur, (b: number) => `blur(${b}px)`) }}
-        className="relative z-10 flex flex-col items-center justify-center h-full px-6"
-      >
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 w-full mt-24">
         <motion.h1
           className="text-center font-bold text-balance flex flex-wrap justify-center overflow-visible"
           style={{ 
@@ -45,7 +42,7 @@ export default function Hero() {
           {Array.from(heroData.headline).map((char, index) => (
             <motion.span
               key={index}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-[#2997FF] to-[#BF5AF2] inline-block"
+              className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 inline-block drop-shadow-sm"
               variants={{
                 hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
                 visible: {
@@ -90,7 +87,7 @@ export default function Hero() {
             {heroData.ctaSecondary}
           </motion.button>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   )
 }
