@@ -8,8 +8,32 @@ import LuxuryText from './ui/LuxuryText';
 
 export default function ContactSection() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const inputClasses = "w-full bg-transparent border-b border-white/20 px-0 py-4 text-white text-xl md:text-2xl font-light placeholder:text-white/20 focus:outline-none focus:border-brand-neon transition-colors duration-300";
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "5047e6e2-ede1-4dbe-a14b-54a7d333d0cd");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
 
   return (
     <section className="relative py-40 bg-transparent overflow-hidden pointer-events-none z-10">
@@ -50,10 +74,12 @@ export default function ContactSection() {
             viewport={{ once: true }}
             variants={motionTokens.presets.slideUp}
           >
-            <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-12" onSubmit={handleSubmit}>
               <div className="relative">
                 <input 
+                  name="name"
                   type="text" 
+                  required
                   placeholder="Your Name" 
                   className={inputClasses}
                   onFocus={() => setFocusedField('name')}
@@ -69,7 +95,9 @@ export default function ContactSection() {
 
               <div className="relative">
                 <input 
+                  name="email"
                   type="email" 
+                  required
                   placeholder="Email Address" 
                   className={inputClasses}
                   onFocus={() => setFocusedField('email')}
@@ -85,6 +113,8 @@ export default function ContactSection() {
 
               <div className="relative">
                 <textarea 
+                  name="message"
+                  required
                   placeholder="Tell us about your project..." 
                   rows={4}
                   className={`${inputClasses} resize-none`}
@@ -99,19 +129,25 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div className="pt-4 flex justify-start md:justify-end">
-                <MagneticButton className="group w-full md:w-auto">
-                  <div className="relative overflow-hidden rounded-full p-[1px] w-full md:w-auto">
-                    <span className="absolute inset-0 bg-gradient-to-r from-brand-neon to-brand-purple rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative bg-black px-12 py-4 rounded-full transition-transform duration-300 group-hover:scale-[0.98] w-full text-center">
-                      <span className="text-lg font-bold text-white tracking-wide">Send Message</span>
+              <div className="pt-4 flex flex-col md:flex-row items-center gap-6 justify-start md:justify-end">
+                {status === 'error' && (
+                  <p className="text-red-400 text-sm">Something went wrong.</p>
+                )}
+                <button type="submit" disabled={status === 'submitting' || status === 'success'} className="w-full md:w-auto">
+                  <MagneticButton className="group w-full md:w-auto">
+                    <div className="relative overflow-hidden rounded-full p-[1px] w-full md:w-auto">
+                      <span className="absolute inset-0 bg-gradient-to-r from-brand-neon to-brand-purple rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative bg-black px-12 py-4 rounded-full transition-transform duration-300 group-hover:scale-[0.98] w-full text-center">
+                        <span className="text-lg font-bold text-white tracking-wide">
+                          {status === 'submitting' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message'}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </MagneticButton>
+                  </MagneticButton>
+                </button>
               </div>
             </form>
           </motion.div>
-
         </div>
       </div>
     </section>

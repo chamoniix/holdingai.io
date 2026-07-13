@@ -12,8 +12,8 @@ export default function ContactPage() {
     setStatus('submitting');
     
     const formData = new FormData(e.currentTarget);
-    // Add Web3Forms Access Key here (User needs to add this to .env.local)
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY_HERE");
+    // Web3Forms Access Key
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "5047e6e2-ede1-4dbe-a14b-54a7d333d0cd");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
