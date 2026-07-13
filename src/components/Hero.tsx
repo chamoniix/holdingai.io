@@ -27,7 +27,7 @@ export default function Hero() {
         <motion.h1
           className="text-center font-bold text-balance flex flex-wrap justify-center overflow-visible"
           style={{ 
-            fontSize: 'clamp(4rem, 12vw, 15rem)', 
+            fontSize: 'clamp(3rem, 9vw, 9rem)', 
             letterSpacing: '-0.04em',
             lineHeight: 0.95
           }}
@@ -41,22 +41,26 @@ export default function Hero() {
             }
           }}
         >
-          {Array.from((dict?.hero?.headline as string) || "Building the Future of AI").map((char, index) => (
-            <motion.span
-              key={index}
-              className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 inline-block drop-shadow-sm"
-              variants={{
-                hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
-                visible: {
-                  opacity: 1, 
-                  y: 0, 
-                  filter: 'blur(0px)',
-                  transition: { type: 'spring', damping: 12, stiffness: 100 }
-                }
-              }}
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </motion.span>
+          {((dict?.hero?.headline as string) || "Building the Future of AI").split(" ").map((word, wordIndex) => (
+            <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.25em]">
+              {Array.from(word).map((char, charIndex) => (
+                <motion.span
+                  key={`${wordIndex}-${charIndex}`}
+                  className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 inline-block drop-shadow-sm"
+                  variants={{
+                    hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
+                    visible: {
+                      opacity: 1, 
+                      y: 0, 
+                      filter: 'blur(0px)',
+                      transition: { type: 'spring', damping: 12, stiffness: 100 }
+                    }
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
           ))}
         </motion.h1>
         
