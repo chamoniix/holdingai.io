@@ -43,6 +43,49 @@ export default function AutomationPage() {
           })}
         </div>
 
+        {/* Carousel Block for App Previews */}
+        <motion.div variants={itemVariants} className="w-full glass-panel rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl overflow-hidden relative mb-24 py-12">
+          <div className="absolute top-0 left-0 bottom-0 w-24 bg-gradient-to-r from-[#000000] to-transparent z-10" />
+          <div className="absolute top-0 right-0 bottom-0 w-24 bg-gradient-to-l from-[#000000] to-transparent z-10" />
+          
+          <h3 className="text-2xl font-bold text-white mb-10 px-10 relative z-20">Interfaces en Action</h3>
+          
+          <div className="flex w-full overflow-hidden">
+            <motion.div
+              className="flex gap-6 px-6"
+              animate={{ x: [0, -1500] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 25,
+                  ease: "linear",
+                },
+              }}
+            >
+              {[
+                "/images/assets/IMG_Showcase_Aura.jpg",
+                "/images/assets/IMG_Showcase_Vitals.jpg",
+                "/images/assets/IMG_Showcase_Nomad.jpg",
+                "/images/assets/IMG_Showcase_Estate.jpg",
+                "/images/assets/IMG_Showcase_Lumina.jpg",
+                // Duplicate for infinite scroll
+                "/images/assets/IMG_Showcase_Aura.jpg",
+                "/images/assets/IMG_Showcase_Vitals.jpg",
+                "/images/assets/IMG_Showcase_Nomad.jpg",
+                "/images/assets/IMG_Showcase_Estate.jpg",
+                "/images/assets/IMG_Showcase_Lumina.jpg"
+              ].map((imgSrc, idx) => (
+                <div key={idx} className="w-[300px] h-[200px] md:w-[400px] md:h-[260px] flex-shrink-0 rounded-2xl overflow-hidden border border-white/10 relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={imgSrc} alt="App Preview" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors duration-300" />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+
       </motion.div>
     </main>
   );

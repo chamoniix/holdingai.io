@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Hero from "@/components/Hero";
+import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import ShowcaseSection from "@/components/ShowcaseSection";
@@ -14,6 +15,8 @@ export default function Home() {
       {/* Scene 1: The Ignition */}
       <Hero />
       
+      <TrustBar />
+
       {/* Scene 2: The Architecture */}
       <Services />
       
