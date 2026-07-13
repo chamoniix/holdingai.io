@@ -322,34 +322,19 @@ function NeuralScene() {
 
     // Spatial Choreography (The Wandering Creature)
     if (groupRef.current) {
-      let targetX = 0;
-      let targetY = 0;
-      let targetZ = -3;
-
-      if (t < 0.2) {
-        targetX = THREE.MathUtils.lerp(0, 5, t / 0.2);
-        targetZ = THREE.MathUtils.lerp(-3, -5, t / 0.2);
-      } else if (t < 0.45) {
-        const localT = (t - 0.2) / 0.25;
-        targetX = THREE.MathUtils.lerp(5, -6, localT);
-        targetZ = THREE.MathUtils.lerp(-5, -8, localT);
-      } else if (t < 0.75) {
-        const localT = (t - 0.45) / 0.3;
-        targetX = THREE.MathUtils.lerp(-6, 3, localT);
-        targetZ = THREE.MathUtils.lerp(-8, -4, localT);
-      } else if (t < 0.85) {
-        const localT = (t - 0.75) / 0.1;
-        targetX = THREE.MathUtils.lerp(3, 0, localT);
-        targetZ = THREE.MathUtils.lerp(-4, -3, localT);
-      } else {
-        targetX = 0;
-        targetZ = -3;
-      }
+      // Keep it on the right side to avoid overlapping text
+      const targetX = 4.5;
+      const targetY = 0;
+      const targetZ = -4;
 
       // We smoothly pull the group towards the target coordinates
       groupRef.current.position.x = THREE.MathUtils.lerp(groupRef.current.position.x, targetX, delta * 2.0);
       groupRef.current.position.y = THREE.MathUtils.lerp(groupRef.current.position.y, targetY, delta * 2.0);
       groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, targetZ, delta * 2.0);
+      
+      // Rotate in place slowly
+      groupRef.current.rotation.y += delta * 0.1;
+      groupRef.current.rotation.x += delta * 0.05;
     }
 
     if (pointsMatRef.current) {
@@ -477,8 +462,8 @@ export default function NeuralCloud() {
   if (!mounted) return null
 
   return (
-    // Note: z-50 to hover above the footer
-    <div className="fixed inset-0 w-full h-full pointer-events-none z-50">
+    // Note: z-0 to stay in the background
+    <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 45 }}
         gl={{ alpha: true, antialias: false, powerPreference: 'high-performance' }}
