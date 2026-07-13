@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "agents": "AGENTI IA",
+    "saas": "SAAS",
+    "automation": "AUTOMAZIONE",
+    "work": "PORTFOLIO",
+    "letsBuild": "INIZIAMO"
+  },
+  "hero": {
+    "headline": "Costruiamo il Futuro dell'IA",
+    "subheadline": "Creiamo esperienze digitali in cui l'intelligenza artificiale incontra l'ambizione umana.",
+    "cta1": "Inizia Progetto",
+    "cta2": "Guarda Demo"
+  },
+  "footer": {
+    "london": "Londra",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "email": "info@holdingai.io",
+    "phone": "+44 7537106967",
+    "ourWork": "Portfolio",
+    "services": "Servizi",
+    "about": "Chi Siamo",
+    "legal": "Note Legali",
+    "privacy": "Privacy Policy",
+    "terms": "Termini e Condizioni",
+    "rights": "© 2026 HoldingAI LTD. Tutti i diritti riservati."
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "description": "HoldingAI è uno studio di prodotti premium dedicato a progettare il futuro. Collaboriamo con visionari per costruire agenti IA di livello mondiale, piattaforme SaaS e sistemi di automazione aziendale.",
+    "mission": "La Nostra Missione",
+    "missionText": "Colmare il divario tra intelligenza artificiale all'avanguardia e design incentrato sull'uomo, creando monumenti digitali destinati a durare nel tempo."
+  },
+  "work": {
+    "title": "Il Nostro Portfolio",
+    "description": "Esplora il nostro portfolio di monumenti digitali. Costruiamo prodotti che ridefiniscono i settori e stabiliscono nuovi standard di eccellenza."
+  },
+  "contact": {
+    "title": "Costruiamo Insieme",
+    "description": "Pronto a guidare la rivoluzione dell'IA? Contattaci per discutere del tuo prossimo grande progetto.",
+    "nameLabel": "Il tuo nome",
+    "emailLabel": "Indirizzo Email",
+    "messageLabel": "Messaggio",
+    "submit": "Invia Messaggio"
+  },
+  "services": {
+    "aiAgents": {
+      "title": "Agenti IA",
+      "description": "Agenti autonomi personalizzati che apprendono, ragionano e agiscono per tuo conto per scalare le operazioni in modo esponenziale."
+    },
+    "saas": {
+      "title": "Sviluppo SaaS",
+      "description": "Architettura software end-to-end, design e ingegneria per piattaforme scalabili e ad alte prestazioni."
+    },
+    "automation": {
+      "title": "Automazione Aziendale",
+      "description": "Flussi di lavoro intelligenti che eliminano le attività manuali e ottimizzano l'efficienza aziendale."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": "Questo è un segnaposto per la Privacy Policy. Si prega di consultare un consulente legale per redigere il documento ufficiale."
+    },
+    "terms": {
+      "title": "Termini e Condizioni",
+      "content": "Questo è un segnaposto per i Termini e Condizioni. Si prega di consultare un consulente legale per redigere il documento ufficiale."
+    },
+    "mentions": {
+      "title": "Note Legali",
+      "content": "HoldingAI LTD. Registrato in Inghilterra e Galles. Lytchett House, Freeland Park, Wareham Road, Poole, Dorset."
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "agents": "AI AGENTS",
+    "saas": "SAAS",
+    "automation": "AUTOMATION",
+    "work": "OUR WORK",
+    "letsBuild": "LET'S BUILD"
+  },
+  "hero": {
+    "headline": "Building the Future of AI",
+    "subheadline": "We craft digital experiences where artificial intelligence meets human ambition.",
+    "cta1": "Start Your Project",
+    "cta2": "Watch Showreel"
+  },
+  "footer": {
+    "london": "London",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "email": "info@holdingai.io",
+    "phone": "+44 7537106967",
+    "ourWork": "Our Work",
+    "services": "Services",
+    "about": "About Us",
+    "legal": "Legal Mentions",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "rights": "© 2026 HoldingAI LTD. All rights reserved."
+  },
+  "about": {
+    "title": "About Us",
+    "description": "HoldingAI is a premium product studio dedicated to engineering the future. We partner with visionaries to build world-class AI agents, SaaS platforms, and enterprise automation systems.",
+    "mission": "Our Mission",
+    "missionText": "To bridge the gap between cutting-edge artificial intelligence and human-centric design, creating digital monuments that stand the test of time."
+  },
+  "work": {
+    "title": "Our Work",
+    "description": "Explore our portfolio of digital monuments. We build products that redefine industries and set new standards for excellence."
+  },
+  "contact": {
+    "title": "Let's Build Together",
+    "description": "Ready to lead the AI revolution? Contact us to discuss your next big project.",
+    "nameLabel": "Your Name",
+    "emailLabel": "Email Address",
+    "messageLabel": "Message",
+    "submit": "Send Message"
+  },
+  "services": {
+    "aiAgents": {
+      "title": "AI Agents",
+      "description": "Custom autonomous agents that learn, reason, and act on your behalf to scale operations exponentially."
+    },
+    "saas": {
+      "title": "SaaS Development",
+      "description": "End-to-end software architecture, design, and engineering for high-performance, scalable platforms."
+    },
+    "automation": {
+      "title": "Enterprise Automation",
+      "description": "Intelligent workflows that eliminate manual tasks and optimize business efficiency."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": "This is a placeholder for the Privacy Policy. Please consult legal counsel to draft the official document."
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "content": "This is a placeholder for the Terms and Conditions. Please consult legal counsel to draft the official document."
+    },
+    "mentions": {
+      "title": "Legal Mentions",
+      "content": "HoldingAI LTD. Registered in England & Wales. Lytchett House, Freeland Park, Wareham Road, Poole, Dorset."
+    }
+  }
+}

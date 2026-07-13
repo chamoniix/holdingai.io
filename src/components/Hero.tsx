@@ -2,10 +2,11 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { heroData } from '@/data/hero-data'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null)
+  const { dict } = useTranslation()
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -39,7 +40,7 @@ export default function Hero() {
             }
           }}
         >
-          {Array.from(heroData.headline).map((char, index) => (
+          {Array.from((dict?.hero?.headline as string) || "Building the Future of AI").map((char, index) => (
             <motion.span
               key={index}
               className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 inline-block drop-shadow-sm"
@@ -65,7 +66,7 @@ export default function Hero() {
           className="mt-8 text-xl md:text-2xl text-[#86868B] max-w-3xl text-center font-light"
           style={{ letterSpacing: '0em', lineHeight: 1.6 }}
         >
-          {heroData.subheadline}
+          {dict?.hero?.subheadline || "We craft digital experiences where artificial intelligence meets human ambition."}
         </motion.p>
         
         <motion.div
@@ -78,13 +79,13 @@ export default function Hero() {
             whileHover={{ scale: 0.98 }}
             className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
           >
-            {heroData.cta}
+            {dict?.hero?.cta1 || "Start Your Project"}
           </motion.button>
           <motion.button
             whileHover={{ scale: 0.98 }}
             className="px-8 py-4 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] backdrop-blur-[40px] text-white font-semibold rounded-full hover:bg-[rgba(255,255,255,0.05)] transition-all"
           >
-            {heroData.ctaSecondary}
+            {dict?.hero?.cta2 || "Watch Showreel"}
           </motion.button>
         </motion.div>
       </div>

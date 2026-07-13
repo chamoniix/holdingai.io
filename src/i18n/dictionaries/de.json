@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "agents": "KI AGENTEN",
+    "saas": "SAAS",
+    "automation": "AUTOMATISIERUNG",
+    "work": "UNSERE ARBEIT",
+    "letsBuild": "LASS UNS BAUEN"
+  },
+  "hero": {
+    "headline": "Die Zukunft der KI gestalten",
+    "subheadline": "Wir schaffen digitale Erlebnisse, bei denen künstliche Intelligenz auf menschlichen Ehrgeiz trifft.",
+    "cta1": "Projekt starten",
+    "cta2": "Showreel ansehen"
+  },
+  "footer": {
+    "london": "London",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "email": "info@holdingai.io",
+    "phone": "+44 7537106967",
+    "ourWork": "Unsere Arbeit",
+    "services": "Dienstleistungen",
+    "about": "Über uns",
+    "legal": "Impressum",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Allgemeine Geschäftsbedingungen",
+    "rights": "© 2026 HoldingAI LTD. Alle Rechte vorbehalten."
+  },
+  "about": {
+    "title": "Über uns",
+    "description": "HoldingAI ist ein Premium-Produktstudio, das sich der Gestaltung der Zukunft verschrieben hat. Wir arbeiten mit Visionären zusammen, um erstklassige KI-Agenten, SaaS-Plattformen und Automatisierungssysteme für Unternehmen zu entwickeln.",
+    "mission": "Unsere Mission",
+    "missionText": "Die Lücke zwischen hochmoderner künstlicher Intelligenz und menschenzentriertem Design zu schließen und digitale Monumente zu schaffen, die die Zeit überdauern."
+  },
+  "work": {
+    "title": "Unsere Arbeit",
+    "description": "Entdecken Sie unser Portfolio an digitalen Monumenten. Wir bauen Produkte, die Branchen neu definieren und neue Maßstäbe für Exzellenz setzen."
+  },
+  "contact": {
+    "title": "Lass uns gemeinsam bauen",
+    "description": "Bereit, die KI-Revolution anzuführen? Kontaktieren Sie uns, um Ihr nächstes großes Projekt zu besprechen.",
+    "nameLabel": "Ihr Name",
+    "emailLabel": "E-Mail-Adresse",
+    "messageLabel": "Nachricht",
+    "submit": "Nachricht senden"
+  },
+  "services": {
+    "aiAgents": {
+      "title": "KI-Agenten",
+      "description": "Maßgeschneiderte autonome Agenten, die lernen, schlussfolgern und in Ihrem Namen handeln, um Operationen exponentiell zu skalieren."
+    },
+    "saas": {
+      "title": "SaaS-Entwicklung",
+      "description": "End-to-End-Softwarearchitektur, Design und Engineering für leistungsstarke, skalierbare Plattformen."
+    },
+    "automation": {
+      "title": "Unternehmensautomatisierung",
+      "description": "Intelligente Workflows, die manuelle Aufgaben eliminieren und die Unternehmenseffizienz optimieren."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Datenschutzrichtlinie",
+      "content": "Dies ist ein Platzhalter für die Datenschutzrichtlinie. Bitte wenden Sie sich an einen Rechtsbeistand, um das offizielle Dokument zu entwerfen."
+    },
+    "terms": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "content": "Dies ist ein Platzhalter für die Allgemeinen Geschäftsbedingungen. Bitte wenden Sie sich an einen Rechtsbeistand, um das offizielle Dokument zu entwerfen."
+    },
+    "mentions": {
+      "title": "Impressum",
+      "content": "HoldingAI LTD. Registriert in England & Wales. Lytchett House, Freeland Park, Wareham Road, Poole, Dorset."
+    }
+  }
+}

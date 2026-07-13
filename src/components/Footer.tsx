@@ -1,10 +1,13 @@
 "use client";
 
 import Link from 'next/link';
+import { useTranslation } from '@/i18n/LanguageContext';
 
 export default function Footer() {
+  const { lang, dict } = useTranslation();
+
   return (
-    <footer className="bg-[#050608] pt-20 md:pt-24 pb-12 relative overflow-hidden pointer-events-auto">
+    <footer className="bg-[#050608] pt-20 md:pt-24 pb-12 relative overflow-hidden pointer-events-auto border-t border-white/5">
       {/* Background ambient glow - extremely subtle */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#2997FF]/5 blur-[120px] pointer-events-none" />
 
@@ -12,47 +15,48 @@ export default function Footer() {
         
         {/* Massive Signature */}
         <h2 
-          className="text-white font-bold tracking-tighter text-center mb-12 md:mb-16 opacity-90"
-          style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', letterSpacing: '-0.06em' }}
+          className="font-bold tracking-tighter text-center mb-16 md:mb-20 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20"
+          style={{ fontSize: 'clamp(3rem, 12vw, 10rem)', letterSpacing: '-0.06em', lineHeight: 0.8 }}
         >
           HOLDING AI
         </h2>
 
-        {/* Minimalist 2-column on tablet, single stack on mobile */}
-        <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-12 md:mb-16">
+        {/* Minimalist layout */}
+        <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-16 mb-16 md:mb-24">
           
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
-            <p className="text-white text-sm font-semibold tracking-widest uppercase mb-4">London</p>
-            <p className="text-[#86868B] text-sm">Lytchett House, Freeland Park</p>
-            <p className="text-[#86868B] text-sm">Wareham Road, Poole, Dorset</p>
-            <p className="text-[#86868B] text-sm mt-4">info@holdingai.io</p>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-1">
+            <p className="text-white text-xs font-bold tracking-[0.2em] uppercase mb-6 opacity-90">{dict.footer?.london || "London"}</p>
+            <p className="text-[#86868B] text-sm font-light">{dict.footer?.address1 || "Lytchett House, Freeland Park"}</p>
+            <p className="text-[#86868B] text-sm font-light">{dict.footer?.address2 || "Wareham Road, Poole, Dorset"}</p>
+            <div className="pt-6 flex flex-col space-y-2">
+              <a href="mailto:info@holdingai.io" className="text-white text-sm font-light hover:text-[#2997FF] transition-colors">{dict.footer?.email || "info@holdingai.io"}</a>
+              <a href="tel:+447537106967" className="text-white text-sm font-light hover:text-[#2997FF] transition-colors">{dict.footer?.phone || "+44 7537106967"}</a>
+            </div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center md:items-start text-center md:text-left">
-            <div className="flex flex-col space-y-4">
-              <Link href="#work" className="text-[#86868B] hover:text-white transition-colors text-sm font-medium">Our Work</Link>
-              <Link href="#services" className="text-[#86868B] hover:text-white transition-colors text-sm font-medium">Services</Link>
-              <Link href="#about" className="text-[#86868B] hover:text-white transition-colors text-sm font-medium">About Us</Link>
+          <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col space-y-5">
+              <Link href={`/${lang}/work`} className="text-[#86868B] hover:text-white transition-colors text-sm font-light tracking-wide">{dict.footer?.ourWork || "Our Work"}</Link>
+              <Link href={`/${lang}/services/ai-agents`} className="text-[#86868B] hover:text-white transition-colors text-sm font-light tracking-wide">{dict.footer?.services || "Services"}</Link>
+              <Link href={`/${lang}/about`} className="text-[#86868B] hover:text-white transition-colors text-sm font-light tracking-wide">{dict.footer?.about || "About Us"}</Link>
             </div>
-            <div className="flex flex-col space-y-4">
-              <Link href="https://twitter.com" target="_blank" className="text-[#86868B] hover:text-white transition-colors text-sm font-medium">X (Twitter)</Link>
-              <Link href="https://linkedin.com" target="_blank" className="text-[#86868B] hover:text-white transition-colors text-sm font-medium">LinkedIn</Link>
-              <Link href="https://github.com" target="_blank" className="text-[#86868B] hover:text-white transition-colors text-sm font-medium">GitHub</Link>
+            <div className="flex flex-col space-y-5">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#86868B] hover:text-white transition-colors text-sm font-light tracking-wide">X (Twitter)</a>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar: Centered, perfectly balanced */}
+        {/* Bottom Bar */}
         <div className="w-full pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[#86868B] text-[11px] uppercase tracking-widest">
-            © {new Date().getFullYear()} HoldingAI LTD.
+          <p className="text-[#86868B] text-[10px] uppercase tracking-[0.15em]">
+            {dict.footer?.rights || `© ${new Date().getFullYear()} HoldingAI LTD.`}
           </p>
           
-          <div className="flex gap-6">
-            <Link href="/legal/mentions-legales" className="text-[#86868B] hover:text-white transition-colors text-[11px] uppercase tracking-widest">Legal Mentions</Link>
-            <Link href="/legal/privacy" className="text-[#86868B] hover:text-white transition-colors text-[11px] uppercase tracking-widest">Privacy Policy</Link>
-            <Link href="/legal/terms" className="text-[#86868B] hover:text-white transition-colors text-[11px] uppercase tracking-widest">Terms</Link>
+          <div className="flex gap-8">
+            <Link href={`/${lang}/legal/mentions-legales`} className="text-[#86868B] hover:text-white transition-colors text-[10px] uppercase tracking-[0.15em]">{dict.footer?.legal || "Legal Mentions"}</Link>
+            <Link href={`/${lang}/legal/privacy`} className="text-[#86868B] hover:text-white transition-colors text-[10px] uppercase tracking-[0.15em]">{dict.footer?.privacy || "Privacy Policy"}</Link>
+            <Link href={`/${lang}/legal/terms`} className="text-[#86868B] hover:text-white transition-colors text-[10px] uppercase tracking-[0.15em]">{dict.footer?.terms || "Terms"}</Link>
           </div>
         </div>
 
