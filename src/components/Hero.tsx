@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.8 }}
-          className="mt-8 text-xl md:text-2xl text-[#86868B] max-w-3xl text-center font-light"
+          className="mt-8 text-xl md:text-2xl text-gray-200 max-w-3xl text-center font-normal drop-shadow-lg relative z-20"
           style={{ letterSpacing: '0em', lineHeight: 1.6 }}
         >
           {dict?.hero?.subheadline || "We craft digital experiences where artificial intelligence meets human ambition."}

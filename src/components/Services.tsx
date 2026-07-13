@@ -14,9 +14,9 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-16 md:py-20 px-6 bg-transparent z-10">
+    <section id="services" className="relative pt-8 pb-16 md:pt-10 md:pb-20 px-6 bg-transparent z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 md:mb-24 relative z-10 mix-blend-difference">
+        <div className="text-center mb-12 md:mb-16 relative z-10 mix-blend-difference">
           <LuxuryText as="h2" delay={0.1} className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">
             The Architecture
           </LuxuryText>

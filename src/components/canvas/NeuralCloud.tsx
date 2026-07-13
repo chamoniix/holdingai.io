@@ -84,62 +84,37 @@ vec3 curlNoise(vec3 p) {
 
 // Function to calculate morphed position perfectly
 vec3 calculateMorph(
-  vec3 pCompact, vec3 pBridges, vec3 pLobes, vec3 pCollapsed, 
-  vec3 pRibbon, vec3 pSphere,
-  float t, float time, vec2 mouse, float swarmType
+  vec3 pHero, vec3 pWave, vec3 pTrail, vec3 pPuddle, vec3 pDrop,
+  float t, float time, vec2 mouse, float random
 ) {
-  vec3 pos = pCompact;
+  vec3 pos = pHero;
   
-  // 1. Organic Base Topologies (0.0 to 0.7)
-  if (t < 0.33) {
-    pos = mix(pCompact, pBridges, smoothstep(0.0, 0.33, t));
-  } else if (t < 0.66) {
-    pos = mix(pBridges, pLobes, smoothstep(0.33, 0.66, t));
-  } else {
-    pos = mix(pLobes, pCollapsed, smoothstep(0.66, 1.0, t));
+  // 1. Hero -> Wave (0.0 to 0.25)
+  if (t < 0.25) {
+    pos = mix(pHero, pWave, smoothstep(0.0, 0.25, t));
+  } 
+  // 2. Wave -> Trail / Hole (0.25 to 0.8)
+  else if (t < 0.8) {
+    pos = mix(pWave, pTrail, smoothstep(0.25, 0.8, t));
+  } 
+  // 3. Trail -> Puddle (0.8 to 1.0)
+  else {
+    pos = mix(pTrail, pPuddle, smoothstep(0.8, 1.0, t));
   }
-
-  // --- MULTIPLE SWARMS MECHANIC ---
-  if (swarmType == 1.0) {
-    float orbitDist = 1.5 + sin(time * 0.4) * 1.5;
-    pos.x += cos(time * 0.3) * orbitDist;
-    pos.z += sin(time * 0.3) * orbitDist;
-    pos.y += sin(time * 0.5) * 0.5;
-  } else if (swarmType == 2.0) {
-    float orbitDist = 2.0 + cos(time * 0.35) * 1.0; 
-    pos.x += sin(time * 0.25) * orbitDist;
-    pos.z += cos(time * 0.25) * orbitDist;
-    pos.y += cos(time * 0.4) * 0.8;
-  }
-
-  // 3. The Footer Choreography (0.75 to 1.0)
-  // Step 1: Ribbon (0.75 to 0.85)
-  float mixRibbon = smoothstep(0.75, 0.80, t) * (1.0 - smoothstep(0.85, 0.90, t));
-  // Step 2: Collapse to Sphere (0.90 to 1.0)
-  float mixSphere = smoothstep(0.90, 1.0, t);
-  
-  pos = mix(pos, pRibbon, mixRibbon);
-  pos = mix(pos, pSphere, mixSphere);
-
-  // Move the entire cloud down into the footer gracefully when t > 0.75
-  float footerDownshift = smoothstep(0.75, 1.0, t) * -2.5; 
-  pos.y += footerDownshift;
 
   // Organic Breathing / Deformation using Curl Noise
-  float deformationStrength = 0.3 + (sin(t * 3.14159) * 0.5);
-  float flowSpeed = 0.04;
-  vec3 noise = curlNoise(pos * 0.4 + time * flowSpeed);
+  float deformationStrength = 0.2 + (sin(t * 3.14159) * 0.2);
+  vec3 noise = curlNoise(pos * 0.5 + time * 0.05);
   pos += noise * deformationStrength;
 
-  // Majestic slow rotation
-  float rotY = time * 0.05 + (t * 0.2); 
+  // Majestic slow rotation, mostly active in the first sections
+  float rotY = time * 0.05; 
   mat2 rot = mat2(cos(rotY), -sin(rotY), sin(rotY), cos(rotY));
   
-  // Rotate the base shapes, but don't rotate the ribbon (keep it perfectly horizontal)
-  float lockShape = mixRibbon;
+  float lockShape = 1.0 - smoothstep(0.8, 1.0, t);
   vec3 rotatedXZ = vec3(pos.x, pos.y, pos.z);
   rotatedXZ.xz = rot * pos.xz;
-  pos = mix(rotatedXZ, pos, lockShape);
+  pos = mix(pos, rotatedXZ, lockShape);
 
   // Mouse Repulsion
   vec3 mouseWorld = vec3(mouse.x * 12.0, mouse.y * 12.0, 0.0);
@@ -149,10 +124,6 @@ vec3 calculateMorph(
     vec3 dir = normalize(pos - mouseWorld);
     pos += dir * repulsion;
   }
-
-  // Slow breathing
-  float breath = 1.0 + sin(time * 0.8) * 0.02; 
-  pos *= breath;
   
   return pos;
 }
@@ -168,23 +139,19 @@ uniform float uScrollVelocity;
 uniform float uDevicePixelRatio;
 uniform vec2 uMouse;
 
-attribute vec3 aPositionCompact;
-attribute vec3 aPositionBridges;
-attribute vec3 aPositionLobes;
-attribute vec3 aPositionCollapsed;
-
-attribute vec3 aPositionRibbon;
-attribute vec3 aPositionSphere;
+attribute vec3 aPositionHero;
+attribute vec3 aPositionWave;
+attribute vec3 aPositionTrail;
+attribute vec3 aPositionPuddle;
+attribute vec3 aPositionDrop;
 
 attribute float aRandomSeed;
-attribute float aSwarmType;
 attribute float aFlowOffset;
 
 varying float vDepth;
 varying float vIntensity;
 varying float vMouseDist;
 varying float vRandom;
-varying float vSwarmType;
 varying float vFlowOffset;
 
 ${noiseChunk}
@@ -193,27 +160,32 @@ void main() {
   float t = clamp(uScrollProgress, 0.0, 1.0);
   
   vec3 finalPos = calculateMorph(
-    aPositionCompact, aPositionBridges, aPositionLobes, aPositionCollapsed, 
-    aPositionRibbon, aPositionSphere,
-    t, uTime, uMouse, aSwarmType
+    aPositionHero, aPositionWave, aPositionTrail, aPositionPuddle, aPositionDrop,
+    t, uTime, uMouse, aRandomSeed
   );
 
-  // Apply scroll velocity swirl/stretch
-  // Normal velocity ranges roughly from -2000 to +2000 during fast scrolls
-  float normalizedVelocity = clamp(uScrollVelocity * 0.0005, -1.0, 1.0);
-  
-  // Stretch along Y axis based on scroll speed
-  finalPos.y += finalPos.y * abs(normalizedVelocity) * 1.5;
-  
-  // Swirl effect based on distance from center
-  float distFromCenter = length(finalPos.xz);
-  float swirlAngle = normalizedVelocity * distFromCenter * 0.5;
-  mat2 swirlRot = mat2(cos(swirlAngle), -sin(swirlAngle), sin(swirlAngle), cos(swirlAngle));
-  finalPos.xz = swirlRot * finalPos.xz;
+  // The Footer Choreography: Puddle + Infinite Drop
+  if (t > 0.85) {
+    if (aRandomSeed < 0.1) {
+      // 10% of particles become the falling drop
+      float dropFall = fract(uTime * 0.4 + aFlowOffset) * 15.0; // falling down infinitely
+      vec3 dropPos = aPositionDrop - vec3(0.0, dropFall, 0.0);
+      finalPos = mix(finalPos, dropPos, smoothstep(0.85, 1.0, t));
+    }
+  }
 
-  // Add horizontal wave during middle sections
-  float waveStrength = smoothstep(0.3, 0.5, t) * (1.0 - smoothstep(0.7, 0.9, t));
-  finalPos.x += sin(finalPos.y * 2.0 + uTime * 2.0) * waveStrength * 0.8;
+  // Scroll Velocity: Falling into a hole with a trail
+  // When scrolling down, uScrollVelocity is positive. 
+  float normalizedVelocity = clamp(uScrollVelocity * 0.0015, -1.0, 1.0);
+  
+  // Stretch particles upwards when scrolling down to create a trail
+  if (abs(normalizedVelocity) > 0.01) {
+    finalPos.y += normalizedVelocity * (aRandomSeed * 12.0);
+    // Slight pinch towards center (funnel effect)
+    float pinch = 1.0 - (abs(normalizedVelocity) * aRandomSeed * 0.5);
+    finalPos.x *= pinch;
+    finalPos.z *= pinch;
+  }
 
   vec4 viewPosition = modelViewMatrix * vec4(finalPos, 1.0);
   gl_Position = projectionMatrix * viewPosition;
@@ -226,7 +198,6 @@ void main() {
   vMouseDist = length(finalPos.xy - mouseWorld.xy);
 
   vRandom = aRandomSeed;
-  vSwarmType = aSwarmType;
   vFlowOffset = aFlowOffset;
 }
 `
@@ -236,7 +207,6 @@ varying float vDepth;
 varying float vIntensity;
 varying float vMouseDist;
 varying float vRandom;
-varying float vSwarmType;
 varying float vFlowOffset;
 
 uniform vec3 uColorCore;
@@ -249,27 +219,19 @@ void main() {
   if (dist > 0.5) discard;
   
   float alpha = smoothstep(0.5, 0.1, dist);
-
   float depthFade = smoothstep(0.5, 3.0, vDepth) * (1.0 - smoothstep(12.0, 18.0, vDepth));
   alpha *= depthFade;
 
-  // Base colors
   vec3 finalColor = mix(uColorEdge, uColorCore, vIntensity);
 
-  // Highlight satellites slightly
-  if (vSwarmType > 0.5) {
-      finalColor = mix(finalColor, uColorHighlight, 0.2);
-  }
-
-  // Energy Circulation: Rapid light pulses flowing through the network
+  // Energy Circulation: Rapid light pulses
   float pulseSpeed = uTime * 0.4 + vFlowOffset * 15.0; 
-  float energyPulse = smoothstep(0.98, 1.0, fract(pulseSpeed)); // Very sharp and rare pulse
+  float energyPulse = smoothstep(0.98, 1.0, fract(pulseSpeed)); 
   
-  // Make the pulse bright white/highlight
   finalColor = mix(finalColor, uColorHighlight * 1.5, energyPulse);
   alpha += energyPulse * 0.8;
 
-  // Generic random pulse highlights for a few nodes
+  // Generic random pulse highlights
   if (vRandom > 0.95) {
     float pulse = (sin(uTime * 2.0 + vRandom * 100.0) + 1.0) * 0.5;
     finalColor = mix(finalColor, uColorHighlight, pulse);
@@ -293,7 +255,6 @@ function NeuralScene() {
   const pointsMatRef = useRef<THREE.ShaderMaterial>(null)
   const groupRef = useRef<THREE.Group>(null)
   
-  // NOTE: We do NOT subscribe to the store here to prevent React from re-rendering on every scroll tick.
   const smoothedScroll = useRef(0)
   const mouseRef = useRef(new THREE.Vector2(0, 0))
   const targetMouse = useRef(new THREE.Vector2(0, 0))
@@ -311,42 +272,33 @@ function NeuralScene() {
   }, [])
 
   useFrame((state, delta) => {
-    // Read directly from store to avoid React re-renders!
     const rawProgress = useScrollStore.getState().progress
-    
-    // Smoother scroll interpolation for cinematic feel
     smoothedScroll.current = THREE.MathUtils.lerp(smoothedScroll.current, rawProgress, delta * 2.0)
     mouseRef.current.lerp(targetMouse.current, delta * 4.0)
     
     const t = smoothedScroll.current
 
-    // Spatial Choreography (The Wandering Creature)
+    // Spatial Choreography
     if (groupRef.current) {
       let targetX = 0;
       let targetY = 0;
-      let targetZ = -3;
+      let targetZ = -4;
 
-      if (t < 0.2) {
-        targetX = THREE.MathUtils.lerp(0, 5, t / 0.2);
-        targetZ = THREE.MathUtils.lerp(-3, -5, t / 0.2);
-      } else if (t < 0.45) {
-        const localT = (t - 0.2) / 0.25;
-        targetX = THREE.MathUtils.lerp(5, -6, localT);
-        targetZ = THREE.MathUtils.lerp(-5, -8, localT);
-      } else if (t < 0.75) {
-        const localT = (t - 0.45) / 0.3;
-        targetX = THREE.MathUtils.lerp(-6, 3, localT);
-        targetZ = THREE.MathUtils.lerp(-8, -4, localT);
-      } else if (t < 0.85) {
-        const localT = (t - 0.75) / 0.1;
-        targetX = THREE.MathUtils.lerp(3, 0, localT);
-        targetZ = THREE.MathUtils.lerp(-4, -3, localT);
+      if (t < 0.1) {
+        // Start center top, move down
+        targetY = THREE.MathUtils.lerp(3.5, 0, t / 0.1);
+        targetZ = -4;
+      } else if (t < 0.3) {
+        // Between header and trustbar (Wave)
+        targetY = 0;
+      } else if (t < 0.8) {
+        // Scroll through blocks
+        targetY = 0;
       } else {
-        targetX = 0;
-        targetZ = -3;
+        // Footer puddle
+        targetY = -3;
       }
 
-      // We smoothly pull the group towards the target coordinates
       groupRef.current.position.x = THREE.MathUtils.lerp(groupRef.current.position.x, targetX, delta * 2.0);
       groupRef.current.position.y = THREE.MathUtils.lerp(groupRef.current.position.y, targetY, delta * 2.0);
       groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, targetZ, delta * 2.0);
@@ -355,9 +307,7 @@ function NeuralScene() {
     if (pointsMatRef.current) {
       pointsMatRef.current.uniforms.uTime.value = state.clock.elapsedTime
       pointsMatRef.current.uniforms.uScrollProgress.value = smoothedScroll.current
-      // Velocity is read directly from store
       const vel = useScrollStore.getState().velocity
-      // Smooth out the velocity slightly
       pointsMatRef.current.uniforms.uScrollVelocity.value = THREE.MathUtils.lerp(
         pointsMatRef.current.uniforms.uScrollVelocity.value || 0,
         vel,
@@ -367,82 +317,77 @@ function NeuralScene() {
     }
   })
 
-  // Generate Initial Geometry (PURE GPU - Run Once)
+  // Generate Initial Geometry
   const pointGeometry = useMemo(() => {
-    const posCompact = new Float32Array(count * 3)
-    const posBridges = new Float32Array(count * 3)
-    const posLobes = new Float32Array(count * 3)
-    const posCollapsed = new Float32Array(count * 3)
+    const pHero = new Float32Array(count * 3)
+    const pWave = new Float32Array(count * 3)
+    const pTrail = new Float32Array(count * 3)
+    const pPuddle = new Float32Array(count * 3)
+    const pDrop = new Float32Array(count * 3)
+    
     const randomSeeds = new Float32Array(count)
-    const swarmTypes = new Float32Array(count)
     const flowOffsets = new Float32Array(count)
-
-    const pRibbon = new Float32Array(count * 3)
-    const pSphere = new Float32Array(count * 3)
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3
       randomSeeds[i] = Math.random()
-      
-      const rSwarm = Math.random()
-      let sType = 0
-      if (rSwarm > 0.8) sType = 2
-      else if (rSwarm > 0.6) sType = 1
-      swarmTypes[i] = sType
-      
       flowOffsets[i] = (i / count) + (Math.random() * 0.1)
 
-      posCompact[i3] = randomGaussian() * 0.8
-      posCompact[i3+1] = randomGaussian() * 0.8
-      posCompact[i3+2] = randomGaussian() * 0.8
+      // 1. Hero: Rounded, tight cloud (less scattered)
+      const u = Math.random();
+      const v = Math.random();
+      const theta = u * 2.0 * Math.PI;
+      const phi = Math.acos(2.0 * v - 1.0);
+      const r = Math.cbrt(Math.random()) * 2.0; 
+      const sinPhi = Math.sin(phi);
+      pHero[i3] = r * sinPhi * Math.cos(theta);
+      pHero[i3+1] = r * sinPhi * Math.sin(theta) * 0.8; // slightly squashed
+      pHero[i3+2] = r * Math.cos(phi);
 
-      const organism2 = i % 2 === 0 ? 1 : -1
-      posBridges[i3] = (randomGaussian() * 0.6) + (2.0 * organism2)
-      posBridges[i3+1] = (randomGaussian() * 0.5) + (1.0 * organism2)
-      posBridges[i3+2] = randomGaussian() * 0.7
+      // 2. Wave: Horizontal wave
+      const wx = (Math.random() - 0.5) * 18.0;
+      const wy = Math.sin(wx * 0.5) * 1.5 + (randomGaussian() * 0.3);
+      const wz = randomGaussian() * 0.5;
+      pWave[i3] = wx;
+      pWave[i3+1] = wy;
+      pWave[i3+2] = wz;
 
-      const lobeId = i % 3
-      const centers3 = [
-        new THREE.Vector3(-2.5, 1.5, 1),
-        new THREE.Vector3(2.5, 1.0, -1),
-        new THREE.Vector3(0, -2.5, 0)
-      ]
-      const spread = 0.7 + (Math.random() * 0.3)
-      posLobes[i3] = centers3[lobeId].x + (randomGaussian() * spread)
-      posLobes[i3+1] = centers3[lobeId].y + (randomGaussian() * spread)
-      posLobes[i3+2] = centers3[lobeId].z + (randomGaussian() * spread)
+      // 3. Trail/Hole: Vertical funnel
+      const fr = Math.random() * 2.5;
+      const fa = Math.random() * Math.PI * 2.0;
+      const fy = (Math.random() - 0.5) * -12.0; 
+      pTrail[i3] = Math.cos(fa) * (fr * (1.0 + fy * 0.05));
+      pTrail[i3+1] = fy;
+      pTrail[i3+2] = Math.sin(fa) * (fr * (1.0 + fy * 0.05));
 
-      const organism4 = i % 2 === 0 ? 1 : -1
-      posCollapsed[i3] = (randomGaussian() * 0.4) + (0.5 * organism4)
-      posCollapsed[i3+1] = (randomGaussian() * 1.5)
-      posCollapsed[i3+2] = (randomGaussian() * 0.4) - (0.5 * organism4)
+      // 4. Puddle: Flat round puddle on the ground
+      const pr = Math.sqrt(Math.random()) * 5.0;
+      const pa = Math.random() * Math.PI * 2.0;
+      pPuddle[i3] = Math.cos(pa) * pr;
+      pPuddle[i3+1] = randomGaussian() * 0.05; // extremely flat
+      pPuddle[i3+2] = Math.sin(pa) * pr;
 
-      pRibbon[i3] = (Math.random() - 0.5) * 16.0
-      pRibbon[i3+1] = randomGaussian() * 0.1
-      pRibbon[i3+2] = randomGaussian() * 0.5
-
-      pSphere[i3] = randomGaussian() * 0.3
-      pSphere[i3+1] = randomGaussian() * 0.3
-      pSphere[i3+2] = randomGaussian() * 0.3
+      // 5. Drop: A small tight cluster that will fall
+      pDrop[i3] = randomGaussian() * 0.1;
+      pDrop[i3+1] = 2.0 + randomGaussian() * 0.2; // start slightly high
+      pDrop[i3+2] = randomGaussian() * 0.1;
     }
 
     const pGeo = new THREE.BufferGeometry()
-    pGeo.setAttribute('position', new THREE.BufferAttribute(posCompact, 3))
-    pGeo.setAttribute('aPositionCompact', new THREE.BufferAttribute(posCompact, 3))
-    pGeo.setAttribute('aPositionBridges', new THREE.BufferAttribute(posBridges, 3))
-    pGeo.setAttribute('aPositionLobes', new THREE.BufferAttribute(posLobes, 3))
-    pGeo.setAttribute('aPositionCollapsed', new THREE.BufferAttribute(posCollapsed, 3))
-    pGeo.setAttribute('aPositionRibbon', new THREE.BufferAttribute(pRibbon, 3))
-    pGeo.setAttribute('aPositionSphere', new THREE.BufferAttribute(pSphere, 3))
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pHero, 3))
+    pGeo.setAttribute('aPositionHero', new THREE.BufferAttribute(pHero, 3))
+    pGeo.setAttribute('aPositionWave', new THREE.BufferAttribute(pWave, 3))
+    pGeo.setAttribute('aPositionTrail', new THREE.BufferAttribute(pTrail, 3))
+    pGeo.setAttribute('aPositionPuddle', new THREE.BufferAttribute(pPuddle, 3))
+    pGeo.setAttribute('aPositionDrop', new THREE.BufferAttribute(pDrop, 3))
     pGeo.setAttribute('aRandomSeed', new THREE.BufferAttribute(randomSeeds, 1))
-    pGeo.setAttribute('aSwarmType', new THREE.BufferAttribute(swarmTypes, 1))
     pGeo.setAttribute('aFlowOffset', new THREE.BufferAttribute(flowOffsets, 1))
 
     return pGeo
   }, [count])
 
   return (
-    <group ref={groupRef} position={[0, 0, -3]}>
+    <group ref={groupRef} position={[0, 0, -4]}>
       <points ref={pointsGeoRef} geometry={pointGeometry}>
         <shaderMaterial
           ref={pointsMatRef}
@@ -477,7 +422,6 @@ export default function NeuralCloud() {
   if (!mounted) return null
 
   return (
-    // Note: z-0 to stay in the background
     <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 45 }}

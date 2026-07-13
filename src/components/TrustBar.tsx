@@ -15,8 +15,8 @@ const logos = [
 
 export default function TrustBar() {
   return (
-    <section className="w-full py-12 md:py-20 bg-transparent relative z-10 overflow-hidden flex flex-col items-center">
-      <p className="text-sm md:text-base text-[#86868B] uppercase tracking-widest font-semibold mb-10 text-center">
+    <section className="w-full py-4 md:py-8 bg-transparent relative z-10 overflow-hidden flex flex-col items-center">
+      <p className="text-sm md:text-base text-[#86868B] uppercase tracking-widest font-semibold mb-6 text-center">
         Ils nous font confiance
       </p>
       
