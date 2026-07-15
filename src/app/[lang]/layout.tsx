@@ -15,6 +15,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "HoldingAI.io - Premium AI Product Studio",
   description: "We build the next generation of AI products. HoldingAI.io designs and engineers world-class mobile applications, SaaS platforms, and AI agents.",
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default async function RootLayout({
