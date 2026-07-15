@@ -124,6 +124,16 @@ vec3 calculateMorph(
     vec3 dir = normalize(pos - mouseWorld);
     pos += dir * repulsion;
   }
+
+  // Beating Heart Effect in Header
+  if (t < 0.15) {
+    float beat = fract(time * 0.8);
+    // Double pulse: lub-dub
+    float pulse = exp(-beat * 15.0) + exp(-abs(beat - 0.15) * 15.0);
+    // Smooth transition out of heartbeat when scrolling down
+    float beatIntensity = 1.0 - smoothstep(0.0, 0.15, t);
+    pos *= 1.0 + (pulse * 0.15 * beatIntensity);
+  }
   
   return pos;
 }
@@ -170,27 +180,13 @@ void main() {
   // Apply ripple softly to base structure
   finalPos.y += ripple * (1.0 - smoothstep(0.8, 1.0, t));
 
-  // The Footer Choreography: Puddle + Infinite Drop
-  if (t > 0.85) {
-    if (aRandomSeed < 0.1) {
-      // 10% of particles become the falling drop
-      float dropFall = fract(uTime * 0.4 + aFlowOffset) * 15.0; // falling down infinitely
-      vec3 dropPos = aPositionDrop - vec3(0.0, dropFall, 0.0);
-      finalPos = mix(finalPos, dropPos, smoothstep(0.85, 1.0, t));
-    }
-  }
-
   // Scroll Velocity: Falling into a hole with a trail
   // When scrolling down, uScrollVelocity is positive. 
-  float normalizedVelocity = clamp(uScrollVelocity * 0.0015, -1.0, 1.0);
+  float normalizedVelocity = clamp(uScrollVelocity * 0.0008, -1.0, 1.0);
   
-  // Stretch particles upwards when scrolling down to create a trail
+  // Stretch particles upwards slightly when scrolling down to create a tight trail
   if (abs(normalizedVelocity) > 0.01) {
-    finalPos.y += normalizedVelocity * (aRandomSeed * 12.0);
-    // Slight pinch towards center (funnel effect)
-    float pinch = 1.0 - (abs(normalizedVelocity) * aRandomSeed * 0.5);
-    finalPos.x *= pinch;
-    finalPos.z *= pinch;
+    finalPos.y += normalizedVelocity * (aRandomSeed * 5.0);
   }
 
   vec4 viewPosition = modelViewMatrix * vec4(finalPos, 1.0);
