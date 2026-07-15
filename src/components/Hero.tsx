@@ -29,7 +29,7 @@ export default function Hero() {
           style={{ 
             fontSize: 'clamp(3rem, 9vw, 9rem)', 
             letterSpacing: '-0.04em',
-            lineHeight: 0.95
+            lineHeight: 1.1
           }}
           initial="hidden"
           animate="visible"
@@ -46,7 +46,7 @@ export default function Hero() {
               {Array.from(word).map((char, charIndex) => (
                 <motion.span
                   key={`${wordIndex}-${charIndex}`}
-                  className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#E2E2E8] to-[#606060] inline-block drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"
+                  className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#E2E2E8] to-[#606060] inline-block drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] pb-2"
                   variants={{
                     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
                     visible: {

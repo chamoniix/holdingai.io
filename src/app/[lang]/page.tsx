@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
-import Portfolio from "@/components/Portfolio";
 import ShowcaseSection from "@/components/ShowcaseSection";
 
 export default function Home() {
@@ -20,10 +19,7 @@ export default function Home() {
       {/* Scene 2: The Architecture */}
       <Services />
       
-      {/* Scene 3: The Proof */}
-      <Portfolio />
-      
-      {/* Scene 4: Selected Work (Horizontal Carousel) */}
+      {/* Scene 3: Selected Work (Horizontal Carousel) */}
       <ShowcaseSection />
       
       {/* Scene 5: The Ultimatum (Final CTA) */}
