@@ -125,16 +125,14 @@ vec3 calculateMorph(
     pos += dir * repulsion;
   }
 
-  // Neurons Attaching/Detaching Effect in Header
+  // Firefly / Light Painting Effect in Header
   if (t < 0.15) {
-    // Define imaginary spatial grid cells (nodes)
-    vec3 clusterCenter = floor(pos * 1.5) / 1.5; 
-    vec3 dirToCenter = clusterCenter - pos;
-    // Oscillating attraction to the center (attaching/detaching rhythm)
-    float attraction = (sin(time * 2.0 + snoise(clusterCenter) * 10.0) + 1.0) * 0.5;
-    // Apply attraction smoothly
-    float intensity = 1.0 - smoothstep(0.0, 0.15, t);
-    pos += dirToCenter * (attraction * 0.7 * intensity);
+    // Gentle sweeping paths like long exposure lights or fireflies
+    float flowIntensity = 1.0 - smoothstep(0.0, 0.15, t);
+    vec3 flow = curlNoise(pos * 0.8 + time * 0.2);
+    // Add a slow horizontal drift
+    flow.x += sin(time * 0.5 + pos.y) * 0.5;
+    pos += flow * (0.6 * flowIntensity);
   }
   
   return pos;
@@ -182,19 +180,21 @@ void main() {
   // Apply ripple softly to base structure
   finalPos.y += ripple * (1.0 - smoothstep(0.8, 1.0, t));
 
-  // Scroll Velocity: Shooting Star Effect
-  // When scrolling down, uScrollVelocity is positive. 
-  float normalizedVelocity = clamp(uScrollVelocity * 0.001, -1.0, 1.0);
+  // Scroll Velocity: Long Exposure Light Trails
+  float normalizedVelocity = clamp(uScrollVelocity * 0.002, -1.5, 1.5);
   
-  // Create a concentrated shooting star with a short trail
+  // Create beautiful, smooth light trails like cars at night
   if (abs(normalizedVelocity) > 0.01) {
-    // 1. Extreme pinch on XZ to make it concentrated like a shooting star
-    float pinch = 1.0 - (abs(normalizedVelocity) * 0.95);
-    finalPos.x *= pinch;
-    finalPos.z *= pinch;
+    // Smooth uniform vertical stretch (no random spikiness)
+    // We add a slight curl noise to the trail so it looks like curved light paths
+    vec3 trailCurve = curlNoise(finalPos * 0.5 + uTime * 0.1) * 0.5;
     
-    // 2. Short trail behind on the Y axis
-    finalPos.y += normalizedVelocity * (aRandomSeed * 3.0);
+    // Stretch cleanly on the Y axis 
+    finalPos.y += normalizedVelocity * 3.0;
+    
+    // Add the curve to the XZ movement based on velocity strength
+    finalPos.x += trailCurve.x * abs(normalizedVelocity) * 2.0;
+    finalPos.z += trailCurve.z * abs(normalizedVelocity) * 2.0;
   }
 
   vec4 viewPosition = modelViewMatrix * vec4(finalPos, 1.0);
