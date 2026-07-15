@@ -125,14 +125,16 @@ vec3 calculateMorph(
     pos += dir * repulsion;
   }
 
-  // Beating Heart Effect in Header
+  // Neurons Attaching/Detaching Effect in Header
   if (t < 0.15) {
-    float beat = fract(time * 0.8);
-    // Double pulse: lub-dub
-    float pulse = exp(-beat * 15.0) + exp(-abs(beat - 0.15) * 15.0);
-    // Smooth transition out of heartbeat when scrolling down
-    float beatIntensity = 1.0 - smoothstep(0.0, 0.15, t);
-    pos *= 1.0 + (pulse * 0.15 * beatIntensity);
+    // Define imaginary spatial grid cells (nodes)
+    vec3 clusterCenter = floor(pos * 1.5) / 1.5; 
+    vec3 dirToCenter = clusterCenter - pos;
+    // Oscillating attraction to the center (attaching/detaching rhythm)
+    float attraction = (sin(time * 2.0 + snoise(clusterCenter) * 10.0) + 1.0) * 0.5;
+    // Apply attraction smoothly
+    float intensity = 1.0 - smoothstep(0.0, 0.15, t);
+    pos += dirToCenter * (attraction * 0.7 * intensity);
   }
   
   return pos;
@@ -180,13 +182,19 @@ void main() {
   // Apply ripple softly to base structure
   finalPos.y += ripple * (1.0 - smoothstep(0.8, 1.0, t));
 
-  // Scroll Velocity: Falling into a hole with a trail
+  // Scroll Velocity: Shooting Star Effect
   // When scrolling down, uScrollVelocity is positive. 
-  float normalizedVelocity = clamp(uScrollVelocity * 0.0008, -1.0, 1.0);
+  float normalizedVelocity = clamp(uScrollVelocity * 0.001, -1.0, 1.0);
   
-  // Stretch particles upwards slightly when scrolling down to create a tight trail
+  // Create a concentrated shooting star with a short trail
   if (abs(normalizedVelocity) > 0.01) {
-    finalPos.y += normalizedVelocity * (aRandomSeed * 5.0);
+    // 1. Extreme pinch on XZ to make it concentrated like a shooting star
+    float pinch = 1.0 - (abs(normalizedVelocity) * 0.95);
+    finalPos.x *= pinch;
+    finalPos.z *= pinch;
+    
+    // 2. Short trail behind on the Y axis
+    finalPos.y += normalizedVelocity * (aRandomSeed * 3.0);
   }
 
   vec4 viewPosition = modelViewMatrix * vec4(finalPos, 1.0);
@@ -298,7 +306,7 @@ function NeuralScene() {
         targetY = 0;
       } else {
         // Footer puddle
-        targetY = -3;
+        targetY = -2.0;
       }
 
       groupRef.current.position.x = THREE.MathUtils.lerp(groupRef.current.position.x, targetX, delta * 2.0);
