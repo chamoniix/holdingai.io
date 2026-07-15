@@ -64,17 +64,17 @@ export default function AutomationPage() {
               }}
             >
               {[
-                "/images/assets/IMG_Showcase_Aura.jpg",
-                "/images/assets/IMG_Showcase_Vitals.jpg",
-                "/images/assets/IMG_Showcase_Nomad.jpg",
-                "/images/assets/IMG_Showcase_Estate.jpg",
-                "/images/assets/IMG_Showcase_Lumina.jpg",
+                "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
                 // Duplicate for infinite scroll
-                "/images/assets/IMG_Showcase_Aura.jpg",
-                "/images/assets/IMG_Showcase_Vitals.jpg",
-                "/images/assets/IMG_Showcase_Nomad.jpg",
-                "/images/assets/IMG_Showcase_Estate.jpg",
-                "/images/assets/IMG_Showcase_Lumina.jpg"
+                "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+                "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop"
               ].map((imgSrc, idx) => (
                 <div key={idx} className="w-[300px] h-[200px] md:w-[400px] md:h-[260px] flex-shrink-0 rounded-2xl overflow-hidden border border-white/10 relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

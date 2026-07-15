@@ -164,6 +164,12 @@ void main() {
     t, uTime, uMouse, aRandomSeed
   );
 
+  // Water drop ripple effect (effet goutte d'eau)
+  float distFromCenter = length(finalPos.xz);
+  float ripple = sin(distFromCenter * 5.0 - uTime * 4.0) * 0.15;
+  // Apply ripple softly to base structure
+  finalPos.y += ripple * (1.0 - smoothstep(0.8, 1.0, t));
+
   // The Footer Choreography: Puddle + Infinite Drop
   if (t > 0.85) {
     if (aRandomSeed < 0.1) {
@@ -285,8 +291,8 @@ function NeuralScene() {
       let targetZ = -4;
 
       if (t < 0.1) {
-        // Start center top, move down
-        targetY = THREE.MathUtils.lerp(3.5, 0, t / 0.1);
+        // Start lower (1.5 instead of 3.5) so it's not cut by the navbar
+        targetY = THREE.MathUtils.lerp(1.5, 0, t / 0.1);
         targetZ = -4;
       } else if (t < 0.3) {
         // Between header and trustbar (Wave)

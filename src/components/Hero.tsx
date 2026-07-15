@@ -25,7 +25,7 @@ export default function Hero() {
     >
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 w-full mt-24">
         <motion.h1
-          className="text-center font-bold text-balance flex flex-wrap justify-center overflow-visible"
+          className="text-center font-bold text-balance flex flex-wrap justify-center overflow-visible pb-4"
           style={{ 
             fontSize: 'clamp(3rem, 9vw, 9rem)', 
             letterSpacing: '-0.04em',
@@ -42,11 +42,11 @@ export default function Hero() {
           }}
         >
           {((dict?.hero?.headline as string) || "Building the Future of AI").split(" ").map((word, wordIndex) => (
-            <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.25em]">
+            <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.25em] pb-[0.1em]">
               {Array.from(word).map((char, charIndex) => (
                 <motion.span
                   key={`${wordIndex}-${charIndex}`}
-                  className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 inline-block drop-shadow-sm"
+                  className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#E2E2E8] to-[#606060] inline-block drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"
                   variants={{
                     hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
                     visible: {
