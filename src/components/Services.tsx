@@ -14,19 +14,11 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative pt-8 pb-16 md:pt-10 md:pb-20 px-6 bg-transparent z-10">
+    <section id="services" className="relative pt-0 pb-16 md:pt-0 md:pb-20 px-6 bg-transparent z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12 md:mb-16 relative z-10 mix-blend-difference">
-          <LuxuryText as="h2" delay={0.1} className="text-[11px] font-semibold tracking-widest text-[#86868B] uppercase mb-8">
-            The Architecture
-          </LuxuryText>
-          <br />
-          <LuxuryText 
-            as="h3" 
-            delay={0.3} 
-            className="text-5xl md:text-7xl font-bold tracking-tight max-w-4xl mx-auto leading-[1.1] text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/40"
-          >
-            We build systems that redefine industries.
+        <div className="text-center mb-16 md:mb-24 relative z-10 mix-blend-difference">
+          <LuxuryText as="h2" delay={0.1} className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 drop-shadow-2xl">
+            THE ARCHITECTURE
           </LuxuryText>
         </div>
         
