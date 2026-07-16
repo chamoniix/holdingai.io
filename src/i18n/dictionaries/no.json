@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "agents": "KI-AGENTER",
+    "saas": "SAAS",
+    "automation": "AUTOMATISERING",
+    "work": "VÅRT ARBEID",
+    "letsBuild": "LA OSS BYGGE"
+  },
+  "hero": {
+    "headline": "KI Konstruert",
+    "subheadline": "Vi skaper digitale opplevelser der banebrytende kunstig intelligens møter menneskelig ambisjon.",
+    "cta1": "Start Prosjekt",
+    "cta2": "Se Showreel"
+  },
+  "footer": {
+    "london": "LONDON",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "email": "info@holdingai.io",
+    "phone": "+44 7537106967",
+    "ourWork": "Vårt Arbeid",
+    "services": "Tjenester",
+    "about": "Om Oss",
+    "legal": "Juridiske Merknader",
+    "privacy": "Personvernerklæring",
+    "terms": "Vilkår og Betingelser",
+    "rights": "© 2026 HoldingAI LTD. Med enerett."
+  },
+  "about": {
+    "title": "En Visjon Utover Kode",
+    "description": "HoldingAI er ikke et typisk digitalt byrå. Vi er et ingeniør- og designlaboratorium dedikert til å bygge neste generasjon av intelligente plattformer. Vi kombinerer luksuriøs estetikk med den rå kraften til kunstig intelligens.",
+    "mission": "Vår Filosofi",
+    "missionText": "Vi tror at den mest avanserte teknologien skal føles usynlig. Systemene våre er designet for å operere med absolutt flyt, og tilbyr brukerne dine en opplevelse som grenser til magi. Fra dataarkitektur til den fineste piksel, er hver detalj tvangsmessig perfeksjonert.",
+    "stats": [
+      { "label": "Prosjekter Levert", "value": "40+" },
+      { "label": "Agenter Distribuert", "value": "1M+" },
+      { "label": "Linjer med Kode", "value": "2.5M" },
+      { "label": "År med Fremragende Kompetanse", "value": "5+" }
+    ]
+  },
+  "work": {
+    "title": "Vårt Arbeid",
+    "description": "Oppdag våre digitale monumenter. Fra webapplikasjoner av Apple-kvalitet til KI-systemer i bedriftsklassen, omdefinerer vi industristandarder.",
+    "projects": [
+      { "title": "Aura Network", "category": "KI Agent Plattform", "year": "2026" },
+      { "title": "Nexus Cloud", "category": "SaaS Infrastruktur", "year": "2025" },
+      { "title": "Prism", "category": "Bedriftsautomatisering", "year": "2025" },
+      { "title": "Onyx Protocol", "category": "Maskinlæring", "year": "2024" }
+    ]
+  },
+  "contact": {
+    "title": "La oss bygge",
+    "description": "Klar til å lede KI-revolusjonen? Beskriv prosjektet ditt, så kontakter ingeniørteamet vårt deg innen 24 timer.",
+    "nameLabel": "Ditt Navn",
+    "emailLabel": "E-postadresse",
+    "messageLabel": "Ditt Prosjekt",
+    "submit": "Send Melding"
+  },
+  "services": {
+    "aiAgents": {
+      "title": "Autonome KI-Agenter",
+      "description": "Vi utvikler intelligente agenter som kan resonnere, lære og utføre komplekse oppgaver autonomt.",
+      "feature1": "Kontinuerlig Læring",
+      "feature1Desc": "Våre agenter tilpasser seg og forbedrer seg med hver interaksjon, noe som garanterer konstant utvikling av ytelsen din.",
+      "feature2": "Logisk Resonnering",
+      "feature2Desc": "Utover enkel tekstgenerering integrerer systemene våre avanserte resonneringsevner for å løse forretningsproblemer.",
+      "feature3": "Handling Utførelse",
+      "feature3Desc": "Sømløs integrasjon med dine API-er som lar agenter handle direkte innenfor økosystemet ditt."
+    },
+    "saas": {
+      "title": "Skalerbar SaaS-utvikling",
+      "description": "Banebrytende programvarearkitekturer designet for å støtte millioner av brukere samtidig som de gir en flytende opplevelse.",
+      "feature1": "Høy Tilgjengelighet",
+      "feature1Desc": "Sky-opprinnelig infrastruktur garantert til 99,99% oppetid, bygget for hypervekst.",
+      "feature2": "Sikkerhet av Militær Grad",
+      "feature2Desc": "Ende-til-ende-kryptering og total overholdelse av de strengeste sikkerhetsstandardene (GDPR, SOC2).",
+      "feature3": "Premium UX/UI Design",
+      "feature3Desc": "Rene, intuitive og visuelt fantastiske grensesnitt som beholder brukerne dine."
+    },
+    "automation": {
+      "title": "Bedriftsautomatisering",
+      "description": "Eliminer friksjon. Vi forvandler dine manuelle prosesser til automatiserte, raske og feilfrie arbeidsflyter.",
+      "feature1": "Systemintegrasjon",
+      "feature1Desc": "Vi kobler sammen dine eksisterende verktøy (CRM, ERP, databaser) for å skape perfekt synergi.",
+      "feature2": "Kostnadsoptimalisering",
+      "feature2Desc": "Reduser driftskostnadene dine drastisk ved å automatisere tidkrevende oppgaver.",
+      "feature3": "Sanntidsovervåking",
+      "feature3Desc": "Analytiske dashbord for å overvåke effektiviteten av automatiseringene dine."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Personvernerklæring",
+      "content": "Hos HoldingAI LTD tar vi personvernet ditt på alvor. Vi samler inn minimalt med data som er nødvendig for å tilby tjenestene våre. Dette inkluderer navnet ditt, e-post og prosjektdetaljer sendt inn via kontaktskjemaet vårt. Vi selger eller deler ikke dataene dine med tredjeparter. For å be om sletting av dataene dine, vennligst kontakt oss på info@holdingai.io."
+    },
+    "terms": {
+      "title": "Vilkår og Betingelser",
+      "content": "Ved å bruke tjenestene våre godtar du disse vilkårene. HoldingAI LTD tilbyr programvareutvikling og KI-ingeniørtjenester 'som de er'. Vi er ikke ansvarlige for datatap eller tjenesteavbrudd. Alle immaterielle rettigheter til leveransene overføres til deg kun ved full betaling av fakturaer."
+    },
+    "mentions": {
+      "title": "Juridiske Merknader",
+      "content": "Nettstedsutgiver: HoldingAI LTD, registrert i England og Wales. Registrert kontor: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Storbritannia. Kontakt: info@holdingai.io | +44 7537106967. Hostet av: Vercel Inc."
+    }
+  }
+}

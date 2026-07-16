@@ -2,21 +2,30 @@
 
 import { motion } from 'framer-motion';
 
+const OpticalCenterLogo = () => <svg viewBox="0 0 200 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="28" fontWeight="800" letterSpacing="-1">OPTICAL CENTER</text></svg>;
+const EnedisLogo = () => <svg viewBox="0 0 120 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="800" letterSpacing="-1">enedis</text></svg>;
+const KrysLogo = () => <svg viewBox="0 0 80 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="900" fontStyle="italic">Krys</text></svg>;
+const DoctolibLogo = () => <svg viewBox="0 0 140 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="700" letterSpacing="-1">doctolib</text></svg>;
+const BasicFitLogo = () => <svg viewBox="0 0 160 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="900" fontStyle="italic" letterSpacing="-1">BASIC-FIT</text></svg>;
+const SanofiLogo = () => <svg viewBox="0 0 130 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="600" letterSpacing="-1">sanofi</text><circle cx="100" cy="15" r="4" /><circle cx="115" cy="20" r="4" /></svg>;
+const LOrealLogo = () => <svg viewBox="0 0 150 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="serif" fontSize="30" fontWeight="400" letterSpacing="2">L'ORÉAL</text></svg>;
+const BNPLogo = () => <svg viewBox="0 0 200 40" className="h-6 md:h-8 fill-current"><path d="M5 15 L15 5 L25 15 L15 25 Z" /><text x="35" y="30" fontFamily="sans-serif" fontSize="26" fontWeight="700">BNP PARIBAS</text></svg>;
+
 const logos = [
-  { name: "Optical Center", sector: "Opticien" },
-  { name: "Enedis", sector: "Énergie" },
-  { name: "Krys", sector: "Opticien" },
-  { name: "Doctolib", sector: "Santé" },
-  { name: "Basic-Fit", sector: "Sport" },
-  { name: "Sanofi", sector: "Santé" },
-  { name: "L'Oréal", sector: "Beauté" },
-  { name: "BNP Paribas", sector: "Finance" },
+  { name: "Optical Center", sector: "Opticien", icon: OpticalCenterLogo },
+  { name: "Enedis", sector: "Énergie", icon: EnedisLogo },
+  { name: "Krys", sector: "Opticien", icon: KrysLogo },
+  { name: "Doctolib", sector: "Santé", icon: DoctolibLogo },
+  { name: "Basic-Fit", sector: "Sport", icon: BasicFitLogo },
+  { name: "Sanofi", sector: "Santé", icon: SanofiLogo },
+  { name: "L'Oréal", sector: "Beauté", icon: LOrealLogo },
+  { name: "BNP Paribas", sector: "Finance", icon: BNPLogo },
 ];
 
 export default function TrustBar() {
   return (
-    <section className="w-full py-4 md:py-8 bg-transparent relative z-10 overflow-hidden flex flex-col items-center">
-      <p className="text-sm md:text-base text-[#86868B] uppercase tracking-widest font-semibold mb-6 text-center">
+    <section className="w-full py-8 md:py-12 bg-transparent relative z-10 overflow-hidden flex flex-col items-center">
+      <p className="text-sm md:text-base text-[#86868B] uppercase tracking-widest font-semibold mb-10 text-center">
         Ils nous font confiance
       </p>
       
@@ -26,24 +35,22 @@ export default function TrustBar() {
       
       <div className="flex w-full overflow-hidden">
         <motion.div
-          className="flex whitespace-nowrap items-center gap-16 md:gap-32 px-8"
-          animate={{ x: [0, -1000] }}
+          className="flex whitespace-nowrap items-center gap-20 md:gap-32 px-8"
+          animate={{ x: [0, -1500] }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: 30,
               ease: "linear",
             },
           }}
         >
           {/* Double the list to create a seamless infinite loop */}
           {[...logos, ...logos, ...logos].map((logo, index) => (
-            <div key={index} className="flex flex-col items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <span className="text-2xl md:text-4xl font-bold text-white tracking-tighter">
-                {logo.name}
-              </span>
-              <span className="text-[10px] uppercase tracking-widest text-[#86868B] mt-1">
+            <div key={index} className="flex flex-col items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 text-white">
+              <logo.icon />
+              <span className="text-[10px] uppercase tracking-widest text-[#86868B] mt-3">
                 {logo.sector}
               </span>
             </div>

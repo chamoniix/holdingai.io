@@ -6,8 +6,10 @@ import de from './dictionaries/de.json'
 import es from './dictionaries/es.json'
 import it from './dictionaries/it.json'
 import pt from './dictionaries/pt.json'
+import fi from './dictionaries/fi.json'
+import no from './dictionaries/no.json'
 
-const dictionaries = { en, fr, de, es, it, pt }
+const dictionaries = { en, fr, de, es, it, pt, fi, no }
 
 export const getDictionary = async (locale: string) => {
   return dictionaries[locale as keyof typeof dictionaries] || dictionaries.en

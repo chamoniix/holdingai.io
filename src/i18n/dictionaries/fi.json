@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "agents": "TEKOÄLYAGENTIT",
+    "saas": "SAAS",
+    "automation": "AUTOMAATIO",
+    "work": "TYÖMME",
+    "letsBuild": "RAKENNETAAN"
+  },
+  "hero": {
+    "headline": "Tekoälyllä Rakennettu",
+    "subheadline": "Luomme digitaalisia kokemuksia, joissa huippuluokan tekoäly kohtaa inhimillisen kunnianhimon.",
+    "cta1": "Aloita Projekti",
+    "cta2": "Katso Esittelyvideo"
+  },
+  "footer": {
+    "london": "LONTOO",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "email": "info@holdingai.io",
+    "phone": "+44 7537106967",
+    "ourWork": "Työmme",
+    "services": "Palvelut",
+    "about": "Tietoa meistä",
+    "legal": "Oikeudelliset huomautukset",
+    "privacy": "Tietosuojaseloste",
+    "terms": "Käyttöehdot",
+    "rights": "© 2026 HoldingAI LTD. Kaikki oikeudet pidätetään."
+  },
+  "about": {
+    "title": "Visio koodin tuolla puolen",
+    "description": "HoldingAI ei ole tavallinen digitoimisto. Olemme suunnittelu- ja kehityslaboratorio, joka on omistautunut rakentamaan seuraavan sukupolven älykkäitä alustoja. Yhdistämme luksusestetiikan ja tekoälyn raa'an voiman.",
+    "mission": "Filosofiamme",
+    "missionText": "Uskomme, että edistyneimmän teknologian tulisi tuntua näkymättömältä. Järjestelmämme on suunniteltu toimimaan täysin saumattomasti ja tarjoamaan käyttäjillesi kokemuksen, joka lähentelee taikuutta. Datan arkkitehtuurista pienimpään pikseliin, jokainen yksityiskohta on hiottu täydelliseksi.",
+    "stats": [
+      { "label": "Toimitetut projektit", "value": "40+" },
+      { "label": "Käyttöön otetut agentit", "value": "1M+" },
+      { "label": "Koodirivit", "value": "2.5M" },
+      { "label": "Huippuosaamisen vuodet", "value": "5+" }
+    ]
+  },
+  "work": {
+    "title": "Työmme",
+    "description": "Tutustu digitaalisiin monumentteihimme. Apple-tason verkkosovelluksista yritystason tekoälyjärjestelmiin – määrittelemme alan standardit uudelleen.",
+    "projects": [
+      { "title": "Aura Network", "category": "Tekoälyagenttialusta", "year": "2026" },
+      { "title": "Nexus Cloud", "category": "SaaS-infrastruktuuri", "year": "2025" },
+      { "title": "Prism", "category": "Yritysautomaatio", "year": "2025" },
+      { "title": "Onyx Protocol", "category": "Koneoppiminen", "year": "2024" }
+    ]
+  },
+  "contact": {
+    "title": "Rakennetaan",
+    "description": "Oletko valmis johtamaan tekoälyvallankumousta? Kuvaile projektiasi, ja insinööritiimimme ottaa sinuun yhteyttä 24 tunnin kuluessa.",
+    "nameLabel": "Nimesi",
+    "emailLabel": "Sähköpostiosoite",
+    "messageLabel": "Projektisi",
+    "submit": "Lähetä viesti"
+  },
+  "services": {
+    "aiAgents": {
+      "title": "Autonomiset tekoälyagentit",
+      "description": "Kehitämme älykkäitä agentteja, jotka kykenevät päättelemään, oppimaan ja suorittamaan monimutkaisia tehtäviä autonomisesti.",
+      "feature1": "Jatkuva oppiminen",
+      "feature1Desc": "Agenttimme mukautuvat ja paranevat jokaisen vuorovaikutuksen myötä, taaten jatkuvan suorituskyvyn kehittymisen.",
+      "feature2": "Looginen päättely",
+      "feature2Desc": "Yksinkertaisen tekstin tuottamisen lisäksi järjestelmämme integroivat edistyneitä päättelykykyjä liiketoimintaongelmien ratkaisemiseksi.",
+      "feature3": "Toimintojen suorittaminen",
+      "feature3Desc": "Saumaton integraatio API-rajapintoihin, jonka avulla agentit voivat toimia suoraan ekosysteemissäsi."
+    },
+    "saas": {
+      "title": "Skaalautuva SaaS-kehitys",
+      "description": "Huippuluokan ohjelmistoarkkitehtuurit, jotka on suunniteltu tukemaan miljoonia käyttäjiä samalla kun ne tarjoavat sujuvan kokemuksen.",
+      "feature1": "Korkea käytettävyys",
+      "feature1Desc": "Pilvinatiivi infrastruktuuri 99,99 % taatulla käyttöajalla, rakennettu hyperkasvua varten.",
+      "feature2": "Sotilastason turvallisuus",
+      "feature2Desc": "Päästä päähän -salaus ja täysi vaatimustenmukaisuus tiukimpien turvallisuusstandardien (GDPR, SOC2) kanssa.",
+      "feature3": "Premium UX/UI -suunnittelu",
+      "feature3Desc": "Puhtaat, intuitiiviset ja visuaalisesti upeat käyttöliittymät, jotka pitävät käyttäjäsi."
+    },
+    "automation": {
+      "title": "Yritysautomaatio",
+      "description": "Poista kitka. Muutamme manuaaliset prosessisi automaattisiksi, nopeiksi ja virheettömiksi työnkuluiksi.",
+      "feature1": "Järjestelmäintegraatio",
+      "feature1Desc": "Yhdistämme olemassa olevat työkalusi (CRM, ERP, tietokannat) luodaksemme täydellisen synergian.",
+      "feature2": "Kustannusten optimointi",
+      "feature2Desc": "Vähennä operatiivisia kustannuksiasi radikaalisti automatisoimalla aikaa vieviä tehtäviä.",
+      "feature3": "Reaaliaikainen seuranta",
+      "feature3Desc": "Analyyttiset kojelaudat automaatioidesi tehokkuuden seuraamiseksi."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Tietosuojaseloste",
+      "content": "HoldingAI LTD suhtautuu yksityisyyteesi vakavasti. Keräämme vain palveluidemme tarjoamiseen tarvittavat vähimmäistiedot. Tähän kuuluvat nimesi, sähköpostiosoitteesi ja yhteydenottolomakkeemme kautta lähetetyt projektitiedot. Emme myy tai jaa tietojasi kolmansille osapuolille. Pyytääksesi tietojesi poistamista, ota meihin yhteyttä osoitteeseen info@holdingai.io."
+    },
+    "terms": {
+      "title": "Käyttöehdot",
+      "content": "Käyttämällä palveluitamme hyväksyt nämä ehdot. HoldingAI LTD tarjoaa ohjelmistokehitys- ja tekoälysuunnittelupalveluita 'sellaisenaan'. Emme ole vastuussa tietojen menetyksestä tai palvelukatkoista. Kaikki immateriaalioikeudet toimitettaviin tuotteisiin siirtyvät sinulle vasta laskujen täyden maksun jälkeen."
+    },
+    "mentions": {
+      "title": "Oikeudelliset huomautukset",
+      "content": "Sivuston julkaisija: HoldingAI LTD, rekisteröity Englannissa ja Walesissa. Rekisteröity toimipaikka: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, UK. Yhteystiedot: info@holdingai.io | +44 7537106967. Isännöi: Vercel Inc."
+    }
+  }
+}
