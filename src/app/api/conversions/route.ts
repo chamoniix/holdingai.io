@@ -1,22 +1,19 @@
 import { createHash } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 
-// OpenAI Ads Conversions API (server-side) + Web3Forms passthrough.
+// OpenAI Ads Conversions API (server-side reporting).
 // Ref: https://developers.openai.com/ads/conversions-api
 //
-// Boundary: this route is the single server conversion boundary for the
-// contact form. It forwards the lead to Web3Forms and only fires the CAPI
-// event once Web3Forms accepts the submission. Failures never block the
-// lead flow: Web3Forms errors are surfaced to the form, CAPI errors are
-// swallowed (reporting must not break the business action).
+// Boundary: the contact form submits to Web3Forms directly from the browser
+// (Web3Forms free plan rejects server-side forwarding). On success, the
+// browser reports the same event here, and this route sends the CAPI event
+// with hashed email + quality gate. Reporting failures never affect the
+// form: the client call is fire-and-forget and this route always answers.
 
 const PIXEL_ID = process.env.OPENAI_ADS_PIXEL_ID; // same value as NEXT_PUBLIC_OPENAI_ADS_PIXEL_ID
 const CAPI_KEY = process.env.OPENAI_ADS_CONVERSIONS_API_KEY;
 const CAPI_URL = "https://bzr.openai.com/v1/events";
 const CANONICAL_ORIGIN = "https://www.holdingai.io";
-const WEB3FORMS_KEY =
-  process.env.WEB3FORMS_ACCESS_KEY || "5047e6e2-ede1-4dbe-a14b-54a7d333d0cd";
-const WEB3FORMS_URL = "https://api.web3forms.com/submit";
 
 // ---------------------------------------------------------------------------
 // Quality gate v1: deterministic keyword heuristic (0-100).
@@ -60,47 +57,18 @@ function sanitizeSourceUrl(raw: string | null): string {
 }
 
 export async function POST(req: NextRequest) {
-  let formData: FormData;
+  // Answer fast; never block or fail the client call.
   try {
-    formData = await req.formData();
-  } catch {
-    return NextResponse.json(
-      { success: false, message: "Invalid request." },
-      { status: 400 },
-    );
-  }
+    const body = await req.json().catch(() => null);
+    const eventId = String(body?.event_id || "").slice(0, 200);
+    const email = String(body?.email || "").slice(0, 200);
+    const message = String(body?.message || "").slice(0, 4000);
 
-  const eventId = String(formData.get("event_id") || "").slice(0, 200);
-  const email = String(formData.get("email") || "").slice(0, 200);
-  const message = String(formData.get("message") || "").slice(0, 4000);
-  const name = String(formData.get("name") || "").slice(0, 200);
-
-  // 1) Accept the lead first (Web3Forms). Only then report the conversion.
-  formData.set("access_key", WEB3FORMS_KEY);
-  let accepted = false;
-  try {
-    const res = await fetch(WEB3FORMS_URL, {
-      method: "POST",
-      body: formData,
-    });
-    const data = await res.json().catch(() => null);
-    accepted = Boolean(data?.success);
-    if (!accepted) {
-      return NextResponse.json(
-        { success: false, message: data?.message || "Submission failed." },
-        { status: 400 },
-      );
+    if (!eventId || !email || !message) {
+      return NextResponse.json({ ok: false, reason: "invalid" }, { status: 400 });
     }
-  } catch {
-    return NextResponse.json(
-      { success: false, message: "Submission failed." },
-      { status: 502 },
-    );
-  }
 
-  // 2) Report the conversion to OpenAI Ads (never blocks the lead).
-  try {
-    if (PIXEL_ID && CAPI_KEY && eventId && email) {
+    if (PIXEL_ID && CAPI_KEY) {
       const score = scoreLead(message);
       const qualified = score >= 40;
 
@@ -122,9 +90,9 @@ export async function POST(req: NextRequest) {
       const oppref = req.cookies.get("__oppref")?.value;
       if (oppref) event.oppref = oppref;
 
-      const body: Record<string, unknown> = { events: [event] };
+      const payload: Record<string, unknown> = { events: [event] };
       if (process.env.OPENAI_ADS_CAPI_VALIDATE_ONLY === "true") {
-        body.validate_only = true;
+        payload.validate_only = true;
       }
 
       await fetch(`${CAPI_URL}?pid=${encodeURIComponent(PIXEL_ID)}`, {
@@ -133,12 +101,12 @@ export async function POST(req: NextRequest) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${CAPI_KEY}`,
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(payload),
       });
     }
-  } catch {
-    // Reporting failure is intentionally non-blocking.
-  }
 
-  return NextResponse.json({ success: true, message: "Sent." });
+    return NextResponse.json({ ok: true });
+  } catch {
+    return NextResponse.json({ ok: true });
+  }
 }

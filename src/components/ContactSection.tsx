@@ -18,12 +18,12 @@ export default function ContactSection() {
     setStatus('submitting');
     
     const formData = new FormData(e.currentTarget);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "5047e6e2-ede1-4dbe-a14b-54a7d333d0cd");
     // Shared dedupe id: browser pixel + server CAPI report the same event.
     const eventId = crypto.randomUUID();
-    formData.append("event_id", eventId);
 
     try {
-      const response = await fetch("/api/conversions", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
       });
@@ -31,6 +31,17 @@ export default function ContactSection() {
       if (data.success) {
         setStatus('success');
         measureLeadCreated(eventId);
+        // Server-side CAPI reporting (fire-and-forget, never blocks the form).
+        fetch("/api/conversions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            event_id: eventId,
+            name: String(formData.get("name") || ""),
+            email: String(formData.get("email") || ""),
+            message: String(formData.get("message") || ""),
+          }),
+        }).catch(() => {});
       } else {
         setStatus('error');
       }
