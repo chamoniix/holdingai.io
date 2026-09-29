@@ -1,13 +1,17 @@
 'use client'
 
 import { useEffect } from 'react';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import ShowcaseSection from "@/components/ShowcaseSection";
 
 export default function Home() {
-  
+  const params = useParams();
+  const lang = (params?.lang as string) || 'en';
+
   return (
     <main className="w-full bg-transparent overflow-hidden">
       
@@ -39,12 +43,12 @@ export default function Home() {
             The future belongs to those who build it. Stop relying on templates. Let's architect something extraordinary.
           </p>
           
-          <button className="group relative px-12 py-6 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]">
+          <Link href={`/${lang}/contact`} className="group relative px-12 py-6 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]">
             <div className="absolute inset-0 bg-gradient-to-r from-[#2997FF] to-[#BF5AF2] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">
               Initiate Project
             </span>
-          </button>
+          </Link>
         </div>
       </section>
     </main>
