@@ -7,6 +7,7 @@ import NeuralCloud from "@/components/canvas/NeuralCloud";
 import ScrollManager from "@/components/ScrollManager";
 import Navigation from "@/components/Navigation";
 import Atmosphere from "@/components/ui/Atmosphere";
+import OpenAIAdsPixel from "@/components/OpenAIAdsPixel";
 import { getDictionary } from "@/i18n/getDictionary";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 
@@ -35,6 +36,7 @@ export default async function RootLayout({
     <html lang={lang} className="dark">
       <body className={`${inter.variable} antialiased bg-transparent text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
         <LanguageProvider lang={lang} dict={dict}>
+          <OpenAIAdsPixel />
           <Atmosphere />
           <ScrollManager />
           <NeuralCloud />

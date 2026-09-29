@@ -5,6 +5,7 @@ import { MagneticButton } from './ui/MagneticButton';
 import { useState } from 'react';
 import { motionTokens } from '@/lib/design-system';
 import LuxuryText from './ui/LuxuryText';
+import { measureLeadCreated } from './OpenAIAdsPixel';
 
 export default function ContactSection() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -17,16 +18,19 @@ export default function ContactSection() {
     setStatus('submitting');
     
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "5047e6e2-ede1-4dbe-a14b-54a7d333d0cd");
+    // Shared dedupe id: browser pixel + server CAPI report the same event.
+    const eventId = crypto.randomUUID();
+    formData.append("event_id", eventId);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/conversions", {
         method: "POST",
         body: formData
       });
       const data = await response.json();
       if (data.success) {
         setStatus('success');
+        measureLeadCreated(eventId);
       } else {
         setStatus('error');
       }
