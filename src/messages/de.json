@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "HoldingAI.io - Premium-Studio für KI-Produkte",
+    "description": "Wir bauen die nächste Generation von KI-Produkten. HoldingAI.io entwirft und entwickelt mobile Anwendungen, SaaS-Plattformen und KI-Agenten von Weltklasse."
+  },
+  "nav": {
+    "brand": "HOLDING AI",
+    "aiAgents": "KI-AGENTEN",
+    "saas": "SAAS",
+    "automation": "AUTOMATISIERUNG",
+    "work": "UNSERE ARBEIT",
+    "letsBuild": "LASST UNS BAUEN"
+  },
+  "hero": {
+    "title": "Wir bauen die Zukunft der KI",
+    "subtitle": "Wir erschaffen digitale Erlebnisse, in denen künstliche Intelligenz auf menschliche Ambition trifft.",
+    "startProject": "Projekt starten",
+    "watchShowreel": "Showreel ansehen",
+    "stats": {
+      "projects": "50+",
+      "projectsLabel": "Gelieferte KI-Projekte",
+      "revenue": "$10M+",
+      "revenueLabel": "Für Kunden generierter Umsatz",
+      "clients": "15+",
+      "clientsLabel": "Enterprise-Kunden"
+    }
+  },
+  "heroSection": {
+    "part1": "HOLDING",
+    "part2": "AI",
+    "startProject": "Projekt starten",
+    "exploreVision": "Vision entdecken"
+  },
+  "trust": {
+    "heading": "Sie vertrauen uns",
+    "sectors": {
+      "opticalCenter": "Optiker",
+      "enedis": "Energie",
+      "krys": "Optiker",
+      "doctolib": "Gesundheitswesen",
+      "basicFit": "Sport",
+      "sanofi": "Gesundheitswesen",
+      "loreal": "Schönheit",
+      "bnpParibas": "Finanzen"
+    }
+  },
+  "services": {
+    "eyebrow": "DIE ARCHITEKTUR",
+    "items": {
+      "aiStrategy": {
+        "title": "KI-Strategie",
+        "desc": "Transformieren Sie Ihr Business mit intelligenter Automatisierung, Machine-Learning-Modellen und KI-First-Denken."
+      },
+      "productDesign": {
+        "title": "Produktdesign",
+        "desc": "Weltklasse-UX/UI-Design, getragen von KI-Insights und Nutzerforschung."
+      },
+      "development": {
+        "title": "Entwicklung",
+        "desc": "Full-Stack-Engineering mit modernster KI-Integration (LLMs, Computer Vision, NLP)."
+      },
+      "dataAnalytics": {
+        "title": "Data & Analytics",
+        "desc": "Machen Sie aus Daten Entscheidungen – mit Predictive Analytics und Echtzeit-Dashboards."
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Der Beweis",
+    "title": "Digitale Monumente",
+    "items": {
+      "healthcare": { "title": "KI-Dashboard für das Gesundheitswesen", "sector": "HealthTech" },
+      "retail": { "title": "Personalisierungs-Engine für E-Commerce", "sector": "Retail" },
+      "fintech": { "title": "Prädiktive Finanzanalysen", "sector": "FinTech" }
+    }
+  },
+  "showcase": {
+    "title": "Aktuelle Projekte",
+    "items": {
+      "aura": { "title": "Aura", "sector": "Luxus-Banking" },
+      "vitals": { "title": "Vitals", "sector": "KI im Gesundheitswesen" },
+      "nomad": { "title": "Nomad", "sector": "Reiseplattform" },
+      "estate": { "title": "Estate", "sector": "Immobilien-CRM" },
+      "lumina": { "title": "Lumina", "sector": "Bildungsplattform" }
+    }
+  },
+  "numbers": {
+    "productsLaunched": "Produkte gelauncht",
+    "usersReached": "Erreichte Nutzer",
+    "industryAwards": "Branchenauszeichnungen"
+  },
+  "tech": {
+    "eyebrow1": "DIE TECHNOLOGIE ",
+    "eyebrow2": "ÖKOSYSTEM",
+    "subtitle": "Wir nutzen die fortschrittlichsten Frameworks und KI-Modelle, um Produkte zu bauen, die ihrer Zeit Jahre voraus wirken."
+  },
+  "build": {
+    "eyebrow": "WAS WIR BAUEN",
+    "subtitle": "Wir erschaffen digitale Ökosysteme, die Branchen neu definieren. Von prädiktiven Mobile-Apps bis zu riesigen Enterprise-Plattformen – unsere Architektur ist makellos.",
+    "items": {
+      "mobile": {
+        "title": "KI-Mobile-Apps",
+        "desc": "Intelligente, prädiktive und atemberaubend flüssige native Erlebnisse."
+      },
+      "saas": {
+        "title": "SaaS-Plattformen",
+        "desc": "Enterprise-Architektur mit Consumer-Ästhetik."
+      },
+      "agents": {
+        "title": "Autonome Agenten",
+        "desc": "Systeme, die denken, handeln und über menschliche Grenzen hinaus skalieren."
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Unser Prozess",
+    "steps": {
+      "discover": { "title": "Discover", "desc": "Das Problem, die Nutzerbedürfnisse und die Business-Ziele verstehen." },
+      "design": { "title": "Design", "desc": "Premium-Interfaces und nahtlose Erlebnisse gestalten." },
+      "prototype": { "title": "Prototyp", "desc": "Interaktive Modelle bauen, um die Kernkonzepte zu validieren." },
+      "develop": { "title": "Entwicklung", "desc": "Skalierbare Architektur mit modernster Technologie entwickeln." },
+      "launch": { "title": "Launch", "desc": "Das Produkt mit Präzision auf den Markt bringen." },
+      "scale": { "title": "Skalierung", "desc": "Die Plattform für globale Reichweite optimieren und ausbauen." }
+    }
+  },
+  "cta": {
+    "part1": "BAUEN WIR ETWAS",
+    "part2": "UNMÖGLICHES.",
+    "button": "Projekt starten"
+  },
+  "homeFinal": {
+    "part1": "Bereit, die ",
+    "part2": "KI-Revolution anzuführen?",
+    "subtitle": "Die Zukunft gehört denen, die sie bauen. Schluss mit vorgefertigten Templates. Lassen Sie uns etwas Außergewöhnliches erschaffen.",
+    "button": "Projekt starten"
+  },
+  "contact": {
+    "eyebrow": "BEREIT ZU BAUEN?",
+    "subtitle": "Ob Sie eine riesige Enterprise-Plattform oder eine preisgekrönte Mobile-App brauchen – wir sind der Partner, dem Sie vertrauen können.",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Telefon",
+    "title": "Bauen wir gemeinsam",
+    "description": "Bereit, die KI-Revolution anzuführen? Beschreiben Sie Ihr Projekt, und unser Engineering-Team meldet sich innerhalb von 24 Stunden.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Ihr Name",
+    "emailPlaceholder": "E-Mail-Adresse",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie uns von Ihrem Projekt...",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "sent": "Nachricht gesendet!",
+    "error": "Etwas ist schiefgelaufen.",
+    "errorDetail": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt per E-Mail."
+  },
+  "contactPage": {
+    "namePlaceholder": "Max Mustermann",
+    "emailPlaceholder": "max@firma.de",
+    "submit": "Senden"
+  },
+  "footer": {
+    "city": "London",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "work": "Unsere Arbeit",
+    "services": "Services",
+    "about": "Über uns",
+    "xTwitter": "X (Twitter)",
+    "copyright": "© {year} HoldingAI LTD.",
+    "legal": "Impressum",
+    "privacy": "Datenschutzerklärung",
+    "terms": "AGB"
+  },
+  "about": {
+    "title": "Eine Vision jenseits des Codes",
+    "description": "HoldingAI ist keine typische Digitalagentur. Wir sind ein Engineering- und Designlabor, das sich dem Bau der nächsten Generation intelligenter Plattformen widmet. Wir verbinden Luxus-Ästhetik mit der rohen Kraft künstlicher Intelligenz.",
+    "philosophy": "Unsere Philosophie",
+    "missionText": "Wir glauben, dass die fortschrittlichste Technologie unsichtbar sein sollte. Unsere Systeme sind für absolute Flüssigkeit konzipiert und bieten Ihren Nutzern ein Erlebnis an der Grenze zur Magie. Von der Datenarchitektur bis zum letzten Pixel wird jedes Detail obsessiv perfektioniert.",
+    "stats": {
+      "projects": { "label": "Gelieferte Projekte", "value": "40+" },
+      "agents": { "label": "Deployte Agenten", "value": "1M+" },
+      "code": { "label": "Codezeilen", "value": "2.5M" },
+      "years": { "label": "Jahre Exzellenz", "value": "5+" }
+    }
+  },
+  "work": {
+    "title": "Unsere Arbeit",
+    "description": "Entdecken Sie unsere digitalen Monumente. Von Webanwendungen in Apple-Qualität bis zu KI-Systemen auf Enterprise-Niveau definieren wir Industriestandards neu.",
+    "projects": {
+      "aura": { "title": "Aura Network", "category": "KI-Agenten-Plattform", "year": "2026" },
+      "nexus": { "title": "Nexus Cloud", "category": "SaaS-Infrastruktur", "year": "2025" },
+      "prism": { "title": "Prism", "category": "Enterprise-Automatisierung", "year": "2025" },
+      "onyx": { "title": "Onyx Protocol", "category": "Machine Learning", "year": "2024" }
+    }
+  },
+  "legal": {
+    "title": "Rechtsdokumente",
+    "mentions": "Impressum",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Allgemeine Geschäftsbedingungen"
+  },
+  "automation": {
+    "heading": "Interfaces in Aktion",
+    "alt": "App-Vorschau"
+  },
+  "servicesPages": {
+    "aiAgents": {
+      "title": "Autonome KI-Agenten",
+      "description": "Wir entwickeln intelligente Agenten, die in der Lage sind, komplexe Aufgaben eigenständig zu analysieren, zu lernen und auszuführen.",
+      "features": {
+        "learning": { "title": "Kontinuierliches Lernen", "desc": "Unsere Agenten passen sich mit jeder Interaktion an und verbessern sich – für eine stetige Steigerung Ihrer Performance." },
+        "reasoning": { "title": "Logisches Denken", "desc": "Über reine Textgenerierung hinaus integrieren unsere Systeme fortschrittliche Reasoning-Fähigkeiten zur Lösung geschäftlicher Probleme." },
+        "execution": { "title": "Aktionsausführung", "desc": "Nahtlose Integration mit Ihren APIs, damit Agenten direkt in Ihrem Ökosystem agieren können." }
+      }
+    },
+    "saas": {
+      "title": "Skalierbare SaaS-Entwicklung",
+      "description": "Modernste Softwarearchitekturen, die Millionen von Nutzern tragen und gleichzeitig ein flüssiges Erlebnis bieten.",
+      "features": {
+        "availability": { "title": "Hohe Verfügbarkeit", "desc": "Cloud-native Infrastruktur mit 99,99 % Uptime-Garantie, gebaut für Hyperwachstum." },
+        "security": { "title": "Sicherheit auf Militärniveau", "desc": "End-to-End-Verschlüsselung und vollständige Konformität mit den strengsten Sicherheitsstandards (DSGVO, SOC2)." },
+        "ux": { "title": "Premium UX/UI-Design", "desc": "Klare, intuitive und visuell beeindruckende Interfaces, die Ihre Nutzer binden." }
+      }
+    },
+    "automation": {
+      "title": "Enterprise-Automatisierung",
+      "description": "Schluss mit Reibungsverlusten. Wir verwandeln Ihre manuellen Prozesse in automatisierte, schnelle und fehlerfreie Workflows.",
+      "features": {
+        "integration": { "title": "Systemintegration", "desc": "Wir verbinden Ihre bestehenden Tools (CRM, ERP, Datenbanken) zu einer perfekten Synergie." },
+        "cost": { "title": "Kostenoptimierung", "desc": "Senken Sie Ihre Betriebskosten drastisch, indem Sie zeitaufwendige Aufgaben automatisieren." },
+        "monitoring": { "title": "Echtzeit-Monitoring", "desc": "Analytische Dashboards zur Überwachung der Effizienz Ihrer Automatisierungen." }
+      }
+    }
+  },
+  "legalContent": {
+    "privacy": { "title": "Datenschutzerklärung", "content": "Bei HoldingAI LTD nehmen wir Ihre Privatsphäre ernst. Wir erheben nur die minimalen Daten, die zur Bereitstellung unserer Dienste erforderlich sind. Dazu gehören Ihr Name, Ihre E-Mail-Adresse und die über unser Kontaktformular übermittelten Projektdetails. Wir verkaufen oder teilen Ihre Daten nicht mit Dritten. Um die Löschung Ihrer Daten zu beantragen, kontaktieren Sie uns bitte unter info@holdingai.io." },
+    "terms": { "title": "Allgemeine Geschäftsbedingungen", "content": "Mit der Nutzung unserer Dienste akzeptieren Sie diese Bedingungen. HoldingAI LTD erbringt Softwareentwicklungs- und KI-Engineering-Dienstleistungen 'wie besehen'. Wir haften nicht für Datenverluste oder Dienstunterbrechungen. Alle geistigen Eigentumsrechte an den Ergebnissen gehen erst nach vollständiger Bezahlung der Rechnungen auf Sie über." },
+    "mentions": { "title": "Impressum", "content": "Herausgeber der Website: HoldingAI LTD, eingetragen in England und Wales. Eingetragener Sitz: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Vereinigtes Königreich. Kontakt: info@holdingai.io | +44 7537106967. Gehostet von: Vercel Inc." }
+  }
+}

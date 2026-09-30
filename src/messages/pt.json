@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "HoldingAI.io - Estúdio Premium de Produtos de IA",
+    "description": "Construímos a próxima geração de produtos de IA. A HoldingAI.io projeta e desenvolve aplicações móveis, plataformas SaaS e agentes de IA de classe mundial."
+  },
+  "nav": {
+    "brand": "HOLDING AI",
+    "aiAgents": "AGENTES DE IA",
+    "saas": "SAAS",
+    "automation": "AUTOMAÇÃO",
+    "work": "NOSSO TRABALHO",
+    "letsBuild": "VAMOS CONSTRUIR"
+  },
+  "hero": {
+    "title": "Construindo o Futuro da IA",
+    "subtitle": "Criamos experiências digitais onde a inteligência artificial encontra a ambição humana.",
+    "startProject": "Iniciar o seu projeto",
+    "watchShowreel": "Ver o showreel",
+    "stats": {
+      "projects": "50+",
+      "projectsLabel": "Projetos de IA entregues",
+      "revenue": "$10M+",
+      "revenueLabel": "Receita gerada para clientes",
+      "clients": "15+",
+      "clientsLabel": "Clientes enterprise"
+    }
+  },
+  "heroSection": {
+    "part1": "HOLDING",
+    "part2": "AI",
+    "startProject": "Iniciar um projeto",
+    "exploreVision": "Explorar a visão"
+  },
+  "trust": {
+    "heading": "Eles confiam em nós",
+    "sectors": {
+      "opticalCenter": "Ótica",
+      "enedis": "Energia",
+      "krys": "Ótica",
+      "doctolib": "Saúde",
+      "basicFit": "Desporto",
+      "sanofi": "Saúde",
+      "loreal": "Beleza",
+      "bnpParibas": "Finanças"
+    }
+  },
+  "services": {
+    "eyebrow": "A ARQUITETURA",
+    "items": {
+      "aiStrategy": {
+        "title": "Estratégia de IA",
+        "desc": "Transforme o seu negócio com automação inteligente, modelos de machine learning e pensamento AI-first."
+      },
+      "productDesign": {
+        "title": "Design de Produto",
+        "desc": "Design UX/UI de classe mundial impulsionado por insights de IA e pesquisa de utilizadores."
+      },
+      "development": {
+        "title": "Desenvolvimento",
+        "desc": "Engenharia full-stack com integração de IA de ponta (LLMs, visão computacional, NLP)."
+      },
+      "dataAnalytics": {
+        "title": "Dados e Analytics",
+        "desc": "Transforme dados em decisões com análise preditiva e dashboards em tempo real."
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "A Prova",
+    "title": "Monumentos Digitais",
+    "items": {
+      "healthcare": { "title": "Dashboard de IA para a Saúde", "sector": "HealthTech" },
+      "retail": { "title": "Motor de Personalização para E-commerce", "sector": "Retail" },
+      "fintech": { "title": "Análise Preditiva Financeira", "sector": "FinTech" }
+    }
+  },
+  "showcase": {
+    "title": "Projetos Recentes",
+    "items": {
+      "aura": { "title": "Aura", "sector": "Banca de Luxo" },
+      "vitals": { "title": "Vitals", "sector": "IA na Saúde" },
+      "nomad": { "title": "Nomad", "sector": "Plataforma de Viagens" },
+      "estate": { "title": "Estate", "sector": "CRM Imobiliário" },
+      "lumina": { "title": "Lumina", "sector": "Plataforma Educativa" }
+    }
+  },
+  "numbers": {
+    "productsLaunched": "Produtos Lançados",
+    "usersReached": "Utilizadores Alcançados",
+    "industryAwards": "Prémios do Setor"
+  },
+  "tech": {
+    "eyebrow1": "A TECNOLOGIA ",
+    "eyebrow2": "ECOSSISTEMA",
+    "subtitle": "Aproveitamos as frameworks e os modelos de IA mais avançados para criar produtos que parecem estar anos à frente."
+  },
+  "build": {
+    "eyebrow": "O QUE CONSTRUÍMOS",
+    "subtitle": "Criamos ecossistemas digitais que redefinem indústrias. De apps móveis preditivas a plataformas empresariais massivas, a nossa arquitetura é impecável.",
+    "items": {
+      "mobile": {
+        "title": "Apps Móveis de IA",
+        "desc": "Experiências nativas inteligentes, preditivas e de uma fluidez espetacular."
+      },
+      "saas": {
+        "title": "Plataformas SaaS",
+        "desc": "Arquitetura de nível empresarial com estética de nível consumidor."
+      },
+      "agents": {
+        "title": "Agentes Autónomos",
+        "desc": "Sistemas que pensam, agem e escalam para além dos limites humanos."
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "O Nosso Processo",
+    "steps": {
+      "discover": { "title": "Descoberta", "desc": "Compreender o problema, as necessidades dos utilizadores e os objetivos de negócio." },
+      "design": { "title": "Design", "desc": "Criar interfaces premium e experiências fluidas." },
+      "prototype": { "title": "Protótipo", "desc": "Construir modelos interativos para validar os conceitos-chave." },
+      "develop": { "title": "Desenvolvimento", "desc": "Projetar uma arquitetura escalável com tecnologia de ponta." },
+      "launch": { "title": "Lançamento", "desc": "Implementar o produto no mercado com precisão." },
+      "scale": { "title": "Escala", "desc": "Otimizar e expandir a plataforma para um alcance global." }
+    }
+  },
+  "cta": {
+    "part1": "VAMOS CONSTRUIR ALGO",
+    "part2": "IMPOSSÍVEL.",
+    "button": "Iniciar o seu projeto"
+  },
+  "homeFinal": {
+    "part1": "Pronto para liderar a ",
+    "part2": "revolução da IA?",
+    "subtitle": "O futuro pertence a quem o constrói. Deixe de depender de templates. Vamos arquitetar algo extraordinário.",
+    "button": "Iniciar um projeto"
+  },
+  "contact": {
+    "eyebrow": "PRONTO PARA CONSTRUIR?",
+    "subtitle": "Quer precise de uma enorme plataforma empresarial ou de uma app móvel premiada, somos o parceiro em quem pode confiar.",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefone",
+    "title": "Vamos construir juntos",
+    "description": "Pronto para liderar a revolução da IA? Descreva o seu projeto e a nossa equipa de engenharia entrará em contacto consigo dentro de 24 horas.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "O seu nome",
+    "emailPlaceholder": "Endereço de email",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Fale-nos do seu projeto...",
+    "submit": "Enviar mensagem",
+    "sending": "A enviar...",
+    "sent": "Mensagem enviada!",
+    "error": "Algo correu mal.",
+    "errorDetail": "Algo correu mal. Tente novamente ou escreva-nos diretamente por email."
+  },
+  "contactPage": {
+    "namePlaceholder": "João Silva",
+    "emailPlaceholder": "joao@empresa.com",
+    "submit": "Enviar"
+  },
+  "footer": {
+    "city": "Londres",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "work": "O nosso trabalho",
+    "services": "Serviços",
+    "about": "Sobre nós",
+    "xTwitter": "X (Twitter)",
+    "copyright": "© {year} HoldingAI LTD.",
+    "legal": "Menções legais",
+    "privacy": "Política de privacidade",
+    "terms": "Termos"
+  },
+  "about": {
+    "title": "Uma Visão para Além do Código",
+    "description": "A HoldingAI não é uma agência digital típica. Somos um laboratório de engenharia e design dedicado a construir a próxima geração de plataformas inteligentes. Unimos a estética do luxo à potência bruta da inteligência artificial.",
+    "philosophy": "A Nossa Filosofia",
+    "missionText": "Acreditamos que a tecnologia mais avançada deve ser invisível. Os nossos sistemas são concebidos para funcionar com uma fluidez absoluta, oferecendo aos seus utilizadores uma experiência na fronteira da magia. Da arquitetura de dados ao mais ínfimo píxel, cada detalhe é aperfeiçoado de forma obsessiva.",
+    "stats": {
+      "projects": { "label": "Projetos Entregues", "value": "40+" },
+      "agents": { "label": "Agentes Implementados", "value": "1M+" },
+      "code": { "label": "Linhas de Código", "value": "2.5M" },
+      "years": { "label": "Anos de Excelência", "value": "5+" }
+    }
+  },
+  "work": {
+    "title": "O nosso trabalho",
+    "description": "Descubra os nossos monumentos digitais. De aplicações web com qualidade Apple a sistemas de IA de nível empresarial, redefinimos os padrões da indústria.",
+    "projects": {
+      "aura": { "title": "Aura Network", "category": "Plataforma de agentes de IA", "year": "2026" },
+      "nexus": { "title": "Nexus Cloud", "category": "Infraestrutura SaaS", "year": "2025" },
+      "prism": { "title": "Prism", "category": "Automação empresarial", "year": "2025" },
+      "onyx": { "title": "Onyx Protocol", "category": "Machine Learning", "year": "2024" }
+    }
+  },
+  "legal": {
+    "title": "Documentos legais",
+    "mentions": "Menções legais",
+    "privacy": "Política de privacidade",
+    "terms": "Termos e condições"
+  },
+  "automation": {
+    "heading": "Interfaces em ação",
+    "alt": "Pré-visualização da app"
+  },
+  "servicesPages": {
+    "aiAgents": {
+      "title": "Agentes de IA Autónomos",
+      "description": "Desenvolvemos agentes inteligentes capazes de raciocinar, aprender e executar tarefas complexas de forma autónoma.",
+      "features": {
+        "learning": { "title": "Aprendizagem Contínua", "desc": "Os nossos agentes adaptam-se e melhoram a cada interação, garantindo uma evolução constante do seu desempenho." },
+        "reasoning": { "title": "Raciocínio Lógico", "desc": "Para além da simples geração de texto, os nossos sistemas integram capacidades avançadas de raciocínio para resolver problemas de negócio." },
+        "execution": { "title": "Execução de Ações", "desc": "Integração perfeita com as suas APIs, permitindo que os agentes atuem diretamente no seu ecossistema." }
+      }
+    },
+    "saas": {
+      "title": "Desenvolvimento SaaS Escalável",
+      "description": "Arquiteturas de software de ponta, concebidas para suportar milhões de utilizadores com uma experiência fluida.",
+      "features": {
+        "availability": { "title": "Alta Disponibilidade", "desc": "Infraestrutura cloud-native com 99,99% de uptime garantido, construída para o hipercrescimento." },
+        "security": { "title": "Segurança de Grau Militar", "desc": "Encriptação de ponta a ponta e total conformidade com os padrões de segurança mais rigorosos (RGPD, SOC2)." },
+        "ux": { "title": "Design UX/UI Premium", "desc": "Interfaces limpas, intuitivas e visualmente deslumbrantes que fidelizam os seus utilizadores." }
+      }
+    },
+    "automation": {
+      "title": "Automação Empresarial",
+      "description": "Elimine a fricção. Transformamos os seus processos manuais em fluxos de trabalho automatizados, rápidos e sem erros.",
+      "features": {
+        "integration": { "title": "Integração de Sistemas", "desc": "Ligamos as suas ferramentas existentes (CRM, ERP, bases de dados) para criar uma sinergia perfeita." },
+        "cost": { "title": "Otimização de Custos", "desc": "Reduza drasticamente os seus custos operacionais automatizando as tarefas demoradas." },
+        "monitoring": { "title": "Monitorização em Tempo Real", "desc": "Dashboards analíticos para monitorizar a eficiência das suas automações." }
+      }
+    }
+  },
+  "legalContent": {
+    "privacy": { "title": "Política de Privacidade", "content": "Na HoldingAI LTD, levamos a sua privacidade a sério. Recolhemos apenas os dados mínimos necessários para prestar os nossos serviços. Isso inclui o seu nome, email e os detalhes do projeto enviados através do nosso formulário de contacto. Não vendemos nem partilhamos os seus dados com terceiros. Para solicitar a eliminação dos seus dados, contacte-nos em info@holdingai.io." },
+    "terms": { "title": "Termos e Condições", "content": "Ao utilizar os nossos serviços, concorda com estes termos. A HoldingAI LTD presta serviços de desenvolvimento de software e engenharia de IA 'tal como estão'. Não somos responsáveis por perdas de dados ou interrupções de serviço. Todos os direitos de propriedade intelectual sobre os entregáveis são-lhe transferidos apenas após o pagamento integral das faturas." },
+    "mentions": { "title": "Menções Legais", "content": "Editor do site: HoldingAI LTD, registada em Inglaterra e País de Gales. Sede social: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Reino Unido. Contacto: info@holdingai.io | +44 7537106967. Alojado por: Vercel Inc." }
+  }
+}
