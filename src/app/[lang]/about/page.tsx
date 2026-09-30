@@ -50,8 +50,8 @@ export default function AboutPage() {
             <motion.div key={index} variants={itemVariants} className="glass-panel p-8 rounded-3xl flex flex-col justify-center items-center text-center bg-white/[0.02] border border-white/10 backdrop-blur-xl relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               {/* Dynamic keys: cast `as never` to satisfy next-intl key typing. */}
-              <span className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tighter">{t(`about.stats.${key}.value` as never)}</span>
-              <span className="text-sm font-semibold tracking-widest text-[#86868B] uppercase">{t(`about.stats.${key}.label` as never)}</span>
+              <span className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tighter">{t(`stats.${key}.value` as never)}</span>
+              <span className="text-sm font-semibold tracking-widest text-[#86868B] uppercase">{t(`stats.${key}.label` as never)}</span>
             </motion.div>
           ))}
         </div>

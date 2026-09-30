@@ -30,8 +30,8 @@ export default function Services() {
           {servicesData.map((service, index) => {
             const IconComponent = iconMap[service.icon];
             // Dynamic keys: cast `as never` to satisfy next-intl key typing.
-            const title = t(`services.items.${service.key}.title` as never);
-            const description = t(`services.items.${service.key}.desc` as never);
+            const title = t(`items.${service.key}.title` as never);
+            const description = t(`items.${service.key}.desc` as never);
             return (
               <motion.div 
                 key={service.key}

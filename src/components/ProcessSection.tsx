@@ -40,8 +40,8 @@ export default function ProcessSection() {
             {processSteps.map((stepKey, index) => {
               const isEven = index % 2 === 0;
               // Dynamic keys: cast `as never` to satisfy next-intl key typing.
-              const title = t(`process.steps.${stepKey}.title` as never);
-              const desc = t(`process.steps.${stepKey}.desc` as never);
+              const title = t(`steps.${stepKey}.title` as never);
+              const desc = t(`steps.${stepKey}.desc` as never);
               return (
                 <div key={stepKey} className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   

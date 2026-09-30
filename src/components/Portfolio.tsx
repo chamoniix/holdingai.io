@@ -32,8 +32,8 @@ export default function Portfolio() {
         <div className="space-y-16 md:space-y-24">
           {projects.map((project, index) => {
             // Dynamic keys: cast `as never` to satisfy next-intl key typing.
-            const title = t(`portfolio.items.${project.key}.title` as never);
-            const sector = t(`portfolio.items.${project.key}.sector` as never);
+            const title = t(`items.${project.key}.title` as never);
+            const sector = t(`items.${project.key}.sector` as never);
             return (
               <motion.div
                 key={project.key}

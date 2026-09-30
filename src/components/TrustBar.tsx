@@ -56,7 +56,7 @@ export default function TrustBar() {
               <logo.icon />
               <span className="text-[10px] uppercase tracking-widest text-[#86868B] mt-3">
                 {/* Dynamic key: cast `as never` to satisfy next-intl key typing. */}
-                {t(`trust.sectors.${logo.key}` as never)}
+                {t(`sectors.${logo.key}` as never)}
               </span>
             </div>
           ))}

@@ -102,8 +102,8 @@ export default function WhatWeBuildSection() {
           <div ref={rightColRef} className="lg:w-2/3 flex flex-col gap-32 pb-32">
             {services.map((service, idx) => {
               // Dynamic keys: cast `as never` to satisfy next-intl key typing.
-              const title = t(`build.items.${service.key}.title` as never);
-              const desc = t(`build.items.${service.key}.desc` as never);
+              const title = t(`items.${service.key}.title` as never);
+              const desc = t(`items.${service.key}.desc` as never);
               return (
                 <div key={idx} className="service-card relative h-[70vh] rounded-[2.5rem] overflow-hidden group shadow-2xl border border-white/10 bg-[#0a0a0a]">
                   <div className="absolute inset-0">

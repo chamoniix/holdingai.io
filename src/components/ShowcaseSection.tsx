@@ -64,8 +64,8 @@ export default function ShowcaseSection() {
         <div ref={scrollWrapperRef} className="flex gap-12 md:gap-24 px-12 md:px-[20vw] items-center h-full">
           {projects.map((project, index) => {
             // Dynamic keys: cast `as never` to satisfy next-intl key typing.
-            const title = t(`showcase.items.${project.key}.title` as never);
-            const sector = t(`showcase.items.${project.key}.sector` as never);
+            const title = t(`items.${project.key}.title` as never);
+            const sector = t(`items.${project.key}.sector` as never);
             return (
               <div
                 key={index}
