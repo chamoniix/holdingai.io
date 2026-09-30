@@ -10,6 +10,10 @@ import Atmosphere from "@/components/ui/Atmosphere";
 import OpenAIAdsPixel from "@/components/OpenAIAdsPixel";
 import { getDictionary } from "@/i18n/getDictionary";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -30,24 +34,28 @@ export default async function RootLayout({
 }>) {
   const resolvedParams = await params;
   const lang = resolvedParams?.lang || 'en';
+  if (!hasLocale(routing.locales, lang)) notFound();
   const dict = await getDictionary(lang);
+  const messages = await getMessages();
 
   return (
     <html lang={lang} className="dark">
       <body className={`${inter.variable} antialiased bg-transparent text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
-        <LanguageProvider lang={lang} dict={dict}>
-          <OpenAIAdsPixel />
-          <Atmosphere />
-          <ScrollManager />
-          <NeuralCloud />
-          <Navigation />
-          <div className="relative z-10">
-            <SmoothScroll>
-              {children}
-              <Footer />
-            </SmoothScroll>
-          </div>
-        </LanguageProvider>
+        <NextIntlClientProvider messages={messages}>
+          <LanguageProvider lang={lang} dict={dict}>
+            <OpenAIAdsPixel />
+            <Atmosphere />
+            <ScrollManager />
+            <NeuralCloud />
+            <Navigation />
+            <div className="relative z-10">
+              <SmoothScroll>
+                {children}
+                <Footer />
+              </SmoothScroll>
+            </div>
+          </LanguageProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

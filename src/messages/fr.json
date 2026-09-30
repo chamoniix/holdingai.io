@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "HoldingAI.io - Studio Premium de Produits IA",
+    "description": "Nous construisons la prochaine génération de produits IA. HoldingAI.io conçoit et développe des applications mobiles, plateformes SaaS et agents IA de classe mondiale."
+  },
+  "nav": {
+    "brand": "HOLDING AI",
+    "aiAgents": "AGENTS IA",
+    "saas": "SAAS",
+    "automation": "AUTOMATISATION",
+    "work": "NOS RÉALISATIONS",
+    "letsBuild": "LANÇONS-NOUS"
+  },
+  "hero": {
+    "title": "Bâtir le Futur de l'IA",
+    "subtitle": "Nous façonnons des expériences digitales où l'intelligence artificielle rencontre l'ambition humaine.",
+    "startProject": "Démarrer votre projet",
+    "watchShowreel": "Regarder le Showreel",
+    "stats": {
+      "projects": "50+",
+      "projectsLabel": "Projets IA livrés",
+      "revenue": "$10M+",
+      "revenueLabel": "Revenus générés pour nos clients",
+      "clients": "15+",
+      "clientsLabel": "Clients grands comptes"
+    }
+  },
+  "heroSection": {
+    "part1": "HOLDING",
+    "part2": "AI",
+    "startProject": "Démarrer un projet",
+    "exploreVision": "Explorer la vision"
+  },
+  "trust": {
+    "heading": "Ils nous font confiance",
+    "sectors": {
+      "opticalCenter": "Opticien",
+      "enedis": "Énergie",
+      "krys": "Opticien",
+      "doctolib": "Santé",
+      "basicFit": "Sport",
+      "sanofi": "Santé",
+      "loreal": "Beauté",
+      "bnpParibas": "Finance"
+    }
+  },
+  "services": {
+    "eyebrow": "L'ARCHITECTURE",
+    "items": {
+      "aiStrategy": {
+        "title": "Stratégie IA",
+        "desc": "Transformez votre business grâce à l'automatisation intelligente, au machine learning et à une vision IA-first."
+      },
+      "productDesign": {
+        "title": "Design Produit",
+        "desc": "Un design UX/UI de classe mondiale, porté par les insights IA et la recherche utilisateur."
+      },
+      "development": {
+        "title": "Développement",
+        "desc": "Ingénierie full-stack avec une intégration IA de pointe (LLM, computer vision, NLP)."
+      },
+      "dataAnalytics": {
+        "title": "Data & Analytics",
+        "desc": "Transformez vos données en décisions grâce à l'analyse prédictive et aux dashboards temps réel."
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "La Preuve",
+    "title": "Monuments Digitaux",
+    "items": {
+      "healthcare": { "title": "Dashboard IA pour la Santé", "sector": "HealthTech" },
+      "retail": { "title": "Moteur de Personnalisation E-commerce", "sector": "Retail" },
+      "fintech": { "title": "Analyse Prédictive Financière", "sector": "FinTech" }
+    }
+  },
+  "showcase": {
+    "title": "Projets Récents",
+    "items": {
+      "aura": { "title": "Aura", "sector": "Banque de Luxe" },
+      "vitals": { "title": "Vitals", "sector": "IA Santé" },
+      "nomad": { "title": "Nomad", "sector": "Plateforme de Voyage" },
+      "estate": { "title": "Estate", "sector": "CRM Immobilier" },
+      "lumina": { "title": "Lumina", "sector": "Plateforme Éducative" }
+    }
+  },
+  "numbers": {
+    "productsLaunched": "Produits Lancés",
+    "usersReached": "Utilisateurs Atteints",
+    "industryAwards": "Récompenses"
+  },
+  "tech": {
+    "eyebrow1": "LA TECHNOLOGIE ",
+    "eyebrow2": "ÉCOSYSTÈME",
+    "subtitle": "Nous exploitons les frameworks et modèles d'IA les plus avancés pour créer des produits qui semblent avoir une longueur d'avance."
+  },
+  "build": {
+    "eyebrow": "CE QUE NOUS CONSTRUISONS",
+    "subtitle": "Nous concevons des écosystèmes digitaux qui redéfinissent les industries. Des apps mobiles prédictives aux plateformes d'entreprise massives, notre architecture est sans défaut.",
+    "items": {
+      "mobile": {
+        "title": "Apps Mobiles IA",
+        "desc": "Des expériences natives intelligentes, prédictives et d'une fluidité spectaculaire."
+      },
+      "saas": {
+        "title": "Plateformes SaaS",
+        "desc": "Une architecture de niveau entreprise avec une esthétique de niveau grand public."
+      },
+      "agents": {
+        "title": "Agents Autonomes",
+        "desc": "Des systèmes qui pensent, agissent et évoluent au-delà des limites humaines."
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Notre Processus",
+    "steps": {
+      "discover": { "title": "Découverte", "desc": "Comprendre le problème, les besoins utilisateurs et les objectifs business." },
+      "design": { "title": "Design", "desc": "Créer des interfaces premium et des expériences fluides." },
+      "prototype": { "title": "Prototype", "desc": "Construire des maquettes interactives pour valider les concepts clés." },
+      "develop": { "title": "Développement", "desc": "Concevoir une architecture scalable avec des technologies de pointe." },
+      "launch": { "title": "Lancement", "desc": "Déployer le produit sur le marché avec précision." },
+      "scale": { "title": "Passage à l'échelle", "desc": "Optimiser et étendre la plateforme pour une portée mondiale." }
+    }
+  },
+  "cta": {
+    "part1": "CONSTRUISONS QUELQUE CHOSE",
+    "part2": "D'IMPOSSIBLE.",
+    "button": "Démarrer votre projet"
+  },
+  "homeFinal": {
+    "part1": "Prêt à mener la ",
+    "part2": "révolution de l'IA ?",
+    "subtitle": "L'avenir appartient à ceux qui le construisent. Arrêtez de dépendre des templates. Architecturons quelque chose d'extraordinaire.",
+    "button": "Lancer un projet"
+  },
+  "contact": {
+    "eyebrow": "PRÊTS À CONSTRUIRE ?",
+    "subtitle": "Que vous ayez besoin d'une plateforme d'entreprise massive ou d'une app mobile primée, nous sommes le partenaire en qui vous pouvez avoir confiance.",
+    "emailLabel": "Email",
+    "phoneLabel": "Téléphone",
+    "title": "Construisons ensemble",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Adresse email",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Parlez-nous de votre projet...",
+    "submit": "Envoyer le message",
+    "sending": "Envoi...",
+    "sent": "Message envoyé !",
+    "error": "Une erreur est survenue.",
+    "errorDetail": "Une erreur est survenue. Réessayez ou écrivez-nous directement par email."
+  },
+  "contactPage": {
+    "namePlaceholder": "Jean Dupont",
+    "emailPlaceholder": "jean@entreprise.com",
+    "submit": "Envoyer"
+  },
+  "footer": {
+    "city": "Londres",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "work": "Nos réalisations",
+    "services": "Services",
+    "about": "À propos",
+    "xTwitter": "X (Twitter)",
+    "copyright": "© {year} HoldingAI LTD.",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions"
+  },
+  "about": {
+    "title": "Une Vision au-delà du Code",
+    "philosophy": "Notre Philosophie"
+  },
+  "work": {
+    "title": "Nos réalisations"
+  },
+  "legal": {
+    "title": "Documents légaux",
+    "mentions": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions générales"
+  },
+  "automation": {
+    "heading": "Interfaces en action",
+    "alt": "Aperçu de l'application"
+  }
+}

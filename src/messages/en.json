@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "HoldingAI.io - Premium AI Product Studio",
+    "description": "We build the next generation of AI products. HoldingAI.io designs and engineers world-class mobile applications, SaaS platforms, and AI agents."
+  },
+  "nav": {
+    "brand": "HOLDING AI",
+    "aiAgents": "AI AGENTS",
+    "saas": "SAAS",
+    "automation": "AUTOMATION",
+    "work": "OUR WORK",
+    "letsBuild": "LET'S BUILD"
+  },
+  "hero": {
+    "title": "Building the Future of AI",
+    "subtitle": "We craft digital experiences where artificial intelligence meets human ambition.",
+    "startProject": "Start Your Project",
+    "watchShowreel": "Watch Showreel",
+    "stats": {
+      "projects": "50+",
+      "projectsLabel": "AI Projects Delivered",
+      "revenue": "$10M+",
+      "revenueLabel": "Client Revenue Generated",
+      "clients": "15+",
+      "clientsLabel": "Enterprise Clients"
+    }
+  },
+  "heroSection": {
+    "part1": "HOLDING",
+    "part2": "AI",
+    "startProject": "Start Project",
+    "exploreVision": "Explore Vision"
+  },
+  "trust": {
+    "heading": "They trust us",
+    "sectors": {
+      "opticalCenter": "Optician",
+      "enedis": "Energy",
+      "krys": "Optician",
+      "doctolib": "Healthcare",
+      "basicFit": "Sports",
+      "sanofi": "Healthcare",
+      "loreal": "Beauty",
+      "bnpParibas": "Finance"
+    }
+  },
+  "services": {
+    "eyebrow": "THE ARCHITECTURE",
+    "items": {
+      "aiStrategy": {
+        "title": "AI Strategy",
+        "desc": "Transform your business with intelligent automation, machine learning models, and AI-first thinking."
+      },
+      "productDesign": {
+        "title": "Product Design",
+        "desc": "World-class UX/UI design powered by AI insights and user research."
+      },
+      "development": {
+        "title": "Development",
+        "desc": "Full-stack engineering with cutting-edge AI integration (LLMs, computer vision, NLP)."
+      },
+      "dataAnalytics": {
+        "title": "Data & Analytics",
+        "desc": "Turn data into decisions with predictive analytics and real-time dashboards."
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "The Proof",
+    "title": "Digital Monuments",
+    "items": {
+      "healthcare": { "title": "AI Dashboard for Healthcare", "sector": "HealthTech" },
+      "retail": { "title": "E-commerce Personalization Engine", "sector": "Retail" },
+      "fintech": { "title": "Financial Predictive Analytics", "sector": "FinTech" }
+    }
+  },
+  "showcase": {
+    "title": "Recent Projects",
+    "items": {
+      "aura": { "title": "Aura", "sector": "Luxury Banking" },
+      "vitals": { "title": "Vitals", "sector": "Healthcare AI" },
+      "nomad": { "title": "Nomad", "sector": "Travel Platform" },
+      "estate": { "title": "Estate", "sector": "Property CRM" },
+      "lumina": { "title": "Lumina", "sector": "Education Platform" }
+    }
+  },
+  "numbers": {
+    "productsLaunched": "Products Launched",
+    "usersReached": "Users Reached",
+    "industryAwards": "Industry Awards"
+  },
+  "tech": {
+    "eyebrow1": "THE TECHNOLOGY ",
+    "eyebrow2": "ECOSYSTEM",
+    "subtitle": "We leverage the most advanced frameworks and AI models to build products that feel years ahead."
+  },
+  "build": {
+    "eyebrow": "WHAT WE BUILD",
+    "subtitle": "We craft digital ecosystems that redefine industries. From predictive mobile apps to massive enterprise platforms, our architecture is flawless.",
+    "items": {
+      "mobile": {
+        "title": "AI Mobile Apps",
+        "desc": "Intelligent, predictive, and wildly fluid native experiences."
+      },
+      "saas": {
+        "title": "SaaS Platforms",
+        "desc": "Enterprise-grade architecture with consumer-grade aesthetics."
+      },
+      "agents": {
+        "title": "Autonomous Agents",
+        "desc": "Systems that think, act, and scale beyond human limits."
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Our Process",
+    "steps": {
+      "discover": { "title": "Discover", "desc": "Understanding the problem, user needs, and business objectives." },
+      "design": { "title": "Design", "desc": "Crafting premium user interfaces and seamless experiences." },
+      "prototype": { "title": "Prototype", "desc": "Building interactive models to validate the core concepts." },
+      "develop": { "title": "Develop", "desc": "Engineering scalable architecture with cutting-edge tech." },
+      "launch": { "title": "Launch", "desc": "Deploying the product to the market with precision." },
+      "scale": { "title": "Scale", "desc": "Optimizing and expanding the platform for global reach." }
+    }
+  },
+  "cta": {
+    "part1": "LET'S BUILD SOMETHING",
+    "part2": "IMPOSSIBLE.",
+    "button": "Start Your Project"
+  },
+  "homeFinal": {
+    "part1": "Ready to Lead the ",
+    "part2": "AI Revolution?",
+    "subtitle": "The future belongs to those who build it. Stop relying on templates. Let's architect something extraordinary.",
+    "button": "Initiate Project"
+  },
+  "contact": {
+    "eyebrow": "READY TO BUILD?",
+    "subtitle": "Whether you need a massive enterprise platform or an award-winning mobile app, we are the partner you trust to deliver.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "title": "Let's Build",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Email Address",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message Sent!",
+    "error": "Something went wrong.",
+    "errorDetail": "Something went wrong. Please try again or email us directly."
+  },
+  "contactPage": {
+    "namePlaceholder": "John Doe",
+    "emailPlaceholder": "john@company.com",
+    "submit": "Submit"
+  },
+  "footer": {
+    "city": "London",
+    "address1": "Lytchett House, Freeland Park",
+    "address2": "Wareham Road, Poole, Dorset",
+    "work": "Our Work",
+    "services": "Services",
+    "about": "About Us",
+    "xTwitter": "X (Twitter)",
+    "copyright": "© {year} HoldingAI LTD.",
+    "legal": "Legal Mentions",
+    "privacy": "Privacy Policy",
+    "terms": "Terms"
+  },
+  "about": {
+    "title": "A Vision Beyond Code",
+    "philosophy": "Our Philosophy"
+  },
+  "work": {
+    "title": "Our Work"
+  },
+  "legal": {
+    "title": "Legal Documents",
+    "mentions": "Legal Mentions",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "automation": {
+    "heading": "Interfaces in Action",
+    "alt": "App Preview"
+  }
+}

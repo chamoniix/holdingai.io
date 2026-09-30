@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
+// Custom locale proxy (Next 16 file convention).
+// Kept instead of next-intl's createMiddleware because `next/root-params`
+// cannot be imported from the middleware context in Next 16.2.10.
+
 const locales = ['en', 'fr', 'de', 'es', 'it', 'pt', 'fi', 'no']
 const defaultLocale = 'en'
 
@@ -21,7 +25,7 @@ function getLocale(request: NextRequest): string {
 export function proxy(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
-  
+
   // Exclude static files, API routes, and Next.js internals
   if (
     pathname.match(/\.(.*)$/) ||
