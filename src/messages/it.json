@@ -69,19 +69,43 @@
     "eyebrow": "La Prova",
     "title": "Monumenti Digitali",
     "items": {
-      "healthcare": { "title": "Dashboard AI per la Sanità", "sector": "HealthTech" },
-      "retail": { "title": "Motore di Personalizzazione E-commerce", "sector": "Retail" },
-      "fintech": { "title": "Analisi Predittiva Finanziaria", "sector": "FinTech" }
+      "healthcare": {
+        "title": "Dashboard AI per la Sanità",
+        "sector": "HealthTech"
+      },
+      "retail": {
+        "title": "Motore di Personalizzazione E-commerce",
+        "sector": "Retail"
+      },
+      "fintech": {
+        "title": "Analisi Predittiva Finanziaria",
+        "sector": "FinTech"
+      }
     }
   },
   "showcase": {
     "title": "Progetti Recenti",
     "items": {
-      "aura": { "title": "Aura", "sector": "Private Banking" },
-      "vitals": { "title": "Vitals", "sector": "AI per la Sanità" },
-      "nomad": { "title": "Nomad", "sector": "Piattaforma di Viaggio" },
-      "estate": { "title": "Estate", "sector": "CRM Immobiliare" },
-      "lumina": { "title": "Lumina", "sector": "Piattaforma Educativa" }
+      "aura": {
+        "title": "Aura",
+        "sector": "Private Banking"
+      },
+      "vitals": {
+        "title": "Vitals",
+        "sector": "AI per la Sanità"
+      },
+      "nomad": {
+        "title": "Nomad",
+        "sector": "Piattaforma di Viaggio"
+      },
+      "estate": {
+        "title": "Estate",
+        "sector": "CRM Immobiliare"
+      },
+      "lumina": {
+        "title": "Lumina",
+        "sector": "Piattaforma Educativa"
+      }
     }
   },
   "numbers": {
@@ -115,12 +139,30 @@
   "process": {
     "eyebrow": "Il Nostro Processo",
     "steps": {
-      "discover": { "title": "Scoperta", "desc": "Comprendere il problema, le esigenze degli utenti e gli obiettivi di business." },
-      "design": { "title": "Design", "desc": "Creare interfacce premium ed esperienze fluide." },
-      "prototype": { "title": "Prototipo", "desc": "Costruire modelli interattivi per validare i concetti chiave." },
-      "develop": { "title": "Sviluppo", "desc": "Progettare un'architettura scalabile con tecnologie all'avanguardia." },
-      "launch": { "title": "Lancio", "desc": "Distribuire il prodotto sul mercato con precisione." },
-      "scale": { "title": "Scalabilità", "desc": "Ottimizzare ed espandere la piattaforma per una portata globale." }
+      "discover": {
+        "title": "Scoperta",
+        "desc": "Comprendere il problema, le esigenze degli utenti e gli obiettivi di business."
+      },
+      "design": {
+        "title": "Design",
+        "desc": "Creare interfacce premium ed esperienze fluide."
+      },
+      "prototype": {
+        "title": "Prototipo",
+        "desc": "Costruire modelli interattivi per validare i concetti chiave."
+      },
+      "develop": {
+        "title": "Sviluppo",
+        "desc": "Progettare un'architettura scalabile con tecnologie all'avanguardia."
+      },
+      "launch": {
+        "title": "Lancio",
+        "desc": "Distribuire il prodotto sul mercato con precisione."
+      },
+      "scale": {
+        "title": "Scalabilità",
+        "desc": "Ottimizzare ed espandere la piattaforma per una portata globale."
+      }
     }
   },
   "cta": {
@@ -176,20 +218,48 @@
     "philosophy": "La Nostra Filosofia",
     "missionText": "Crediamo che la tecnologia più avanzata debba essere invisibile. I nostri sistemi sono progettati per funzionare con fluidità assoluta, offrendo ai tuoi utenti un'esperienza al confine della magia. Dall'architettura dei dati al più piccolo pixel, ogni dettaglio è perfezionato in modo ossessivo.",
     "stats": {
-      "projects": { "label": "Progetti Consegnati", "value": "40+" },
-      "agents": { "label": "Agenti Distribuiti", "value": "1M+" },
-      "code": { "label": "Linee di Codice", "value": "2.5M" },
-      "years": { "label": "Anni di Eccellenza", "value": "5+" }
+      "projects": {
+        "label": "Progetti Consegnati",
+        "value": "40+"
+      },
+      "agents": {
+        "label": "Agenti Distribuiti",
+        "value": "1M+"
+      },
+      "code": {
+        "label": "Linee di Codice",
+        "value": "2.5M"
+      },
+      "years": {
+        "label": "Anni di Eccellenza",
+        "value": "5+"
+      }
     }
   },
   "work": {
     "title": "I nostri lavori",
     "description": "Scopri i nostri monumenti digitali. Dalle web app di qualità Apple ai sistemi AI di livello enterprise, ridefiniamo gli standard del settore.",
     "projects": {
-      "aura": { "title": "Aura Network", "category": "Piattaforma di agenti AI", "year": "2026" },
-      "nexus": { "title": "Nexus Cloud", "category": "Infrastruttura SaaS", "year": "2025" },
-      "prism": { "title": "Prism", "category": "Automazione aziendale", "year": "2025" },
-      "onyx": { "title": "Onyx Protocol", "category": "Machine Learning", "year": "2024" }
+      "aura": {
+        "title": "Aura Network",
+        "category": "Piattaforma di agenti AI",
+        "year": "2026"
+      },
+      "nexus": {
+        "title": "Nexus Cloud",
+        "category": "Infrastruttura SaaS",
+        "year": "2025"
+      },
+      "prism": {
+        "title": "Prism",
+        "category": "Automazione aziendale",
+        "year": "2025"
+      },
+      "onyx": {
+        "title": "Onyx Protocol",
+        "category": "Machine Learning",
+        "year": "2024"
+      }
     }
   },
   "legal": {
@@ -207,33 +277,111 @@
       "title": "Agenti AI Autonomi",
       "description": "Sviluppiamo agenti intelligenti capaci di ragionare, apprendere ed eseguire compiti complessi in modo autonomo.",
       "features": {
-        "learning": { "title": "Apprendimento Continuo", "desc": "I nostri agenti si adattano e migliorano a ogni interazione, garantendo un'evoluzione costante delle tue performance." },
-        "reasoning": { "title": "Ragionamento Logico", "desc": "Oltre alla semplice generazione di testo, i nostri sistemi integrano capacità di ragionamento avanzato per risolvere problemi di business." },
-        "execution": { "title": "Esecuzione di Azioni", "desc": "Integrazione perfetta con le tue API, permettendo agli agenti di agire direttamente sul tuo ecosistema." }
+        "learning": {
+          "title": "Apprendimento Continuo",
+          "desc": "I nostri agenti si adattano e migliorano a ogni interazione, garantendo un'evoluzione costante delle tue performance."
+        },
+        "reasoning": {
+          "title": "Ragionamento Logico",
+          "desc": "Oltre alla semplice generazione di testo, i nostri sistemi integrano capacità di ragionamento avanzato per risolvere problemi di business."
+        },
+        "execution": {
+          "title": "Esecuzione di Azioni",
+          "desc": "Integrazione perfetta con le tue API, permettendo agli agenti di agire direttamente sul tuo ecosistema."
+        }
       }
     },
     "saas": {
       "title": "Sviluppo SaaS Scalabile",
       "description": "Architetture software all'avanguardia, progettate per supportare milioni di utenti offrendo un'esperienza fluida.",
       "features": {
-        "availability": { "title": "Alta Disponibilità", "desc": "Infrastruttura cloud-native con uptime garantito al 99,99%, costruita per l'iper-crescita." },
-        "security": { "title": "Sicurezza di Grado Militare", "desc": "Crittografia end-to-end e piena conformità agli standard di sicurezza più severi (GDPR, SOC2)." },
-        "ux": { "title": "Design UX/UI Premium", "desc": "Interfacce pulite, intuitive e visivamente straordinarie che fidelizzano i tuoi utenti." }
+        "availability": {
+          "title": "Alta Disponibilità",
+          "desc": "Infrastruttura cloud-native con uptime garantito al 99,99%, costruita per l'iper-crescita."
+        },
+        "security": {
+          "title": "Sicurezza di Grado Militare",
+          "desc": "Crittografia end-to-end e piena conformità agli standard di sicurezza più severi (GDPR, SOC2)."
+        },
+        "ux": {
+          "title": "Design UX/UI Premium",
+          "desc": "Interfacce pulite, intuitive e visivamente straordinarie che fidelizzano i tuoi utenti."
+        }
       }
     },
     "automation": {
       "title": "Automazione Aziendale",
       "description": "Elimina gli attriti. Trasformiamo i tuoi processi manuali in flussi di lavoro automatizzati, rapidi e senza errori.",
       "features": {
-        "integration": { "title": "Integrazione dei Sistemi", "desc": "Colleghiamo i tuoi strumenti esistenti (CRM, ERP, database) per creare una sinergia perfetta." },
-        "cost": { "title": "Ottimizzazione dei Costi", "desc": "Riduci drasticamente i costi operativi automatizzando le attività che richiedono tempo." },
-        "monitoring": { "title": "Monitoraggio in Tempo Reale", "desc": "Dashboard analitiche per monitorare l'efficienza delle tue automazioni." }
+        "integration": {
+          "title": "Integrazione dei Sistemi",
+          "desc": "Colleghiamo i tuoi strumenti esistenti (CRM, ERP, database) per creare una sinergia perfetta."
+        },
+        "cost": {
+          "title": "Ottimizzazione dei Costi",
+          "desc": "Riduci drasticamente i costi operativi automatizzando le attività che richiedono tempo."
+        },
+        "monitoring": {
+          "title": "Monitoraggio in Tempo Reale",
+          "desc": "Dashboard analitiche per monitorare l'efficienza delle tue automazioni."
+        }
       }
     }
   },
+  "seo": {
+    "home": {
+      "title": "HoldingAI — Studio Premium di Prodotti AI | Agenti AI, SaaS e Automazione",
+      "description": "HoldingAI progetta e sviluppa prodotti AI di livello mondiale: agenti autonomi, piattaforme SaaS scalabili e automazione aziendale. Studio AI premium."
+    },
+    "about": {
+      "title": "Chi è HoldingAI — La Nostra Filosofia | Studio Premium di Prodotti AI",
+      "description": "HoldingAI è un laboratorio di ingegneria e design per piattaforme intelligenti. La nostra filosofia: estetica del lusso e intelligenza artificiale."
+    },
+    "work": {
+      "title": "I Nostri Lavori — Progetti AI e Case Study | HoldingAI",
+      "description": "Esplora i monumenti digitali di HoldingAI: piattaforme di agenti AI, infrastrutture SaaS, automazione aziendale e progetti di machine learning."
+    },
+    "contact": {
+      "title": "Contatta HoldingAI — Avvia il Tuo Progetto AI | Studio Premium",
+      "description": "Pronto a costruire con l'AI? Contatta HoldingAI: il nostro team di ingegneri risponderà entro 24 ore. Descrivi il tuo progetto."
+    },
+    "aiAgents": {
+      "title": "Agenti AI Autonomi — Servizi di Sviluppo | HoldingAI",
+      "description": "Sviluppiamo agenti AI intelligenti che ragionano, apprendono ed eseguono compiti complessi in autonomia. Apprendimento continuo, ragionamento logico e integrazione API."
+    },
+    "saas": {
+      "title": "Sviluppo SaaS Scalabile — Piattaforme ad Alta Disponibilità | HoldingAI",
+      "description": "Architetture SaaS all'avanguardia per milioni di utenti: uptime 99,99%, sicurezza di grado militare (GDPR, SOC2) e design UX/UI premium."
+    },
+    "automation": {
+      "title": "Automazione Aziendale — Workflow e Integrazione dei Sistemi | HoldingAI",
+      "description": "Elimina gli attriti con l'automazione aziendale: integrazione dei sistemi (CRM, ERP), ottimizzazione dei costi e monitoraggio in tempo reale."
+    },
+    "privacy": {
+      "title": "Privacy Policy | HoldingAI",
+      "description": "Come HoldingAI LTD raccoglie, utilizza e protegge i tuoi dati personali. Raccolta minima, nessuna condivisione con terzi, cancellazione su richiesta."
+    },
+    "terms": {
+      "title": "Termini e Condizioni | HoldingAI",
+      "description": "I termini che regolano l'uso dei servizi di sviluppo software e ingegneria AI di HoldingAI LTD."
+    },
+    "mentions": {
+      "title": "Note Legali | HoldingAI",
+      "description": "Editore, sede legale e informazioni di hosting per holdingai.io, gestito da HoldingAI LTD (Inghilterra e Galles)."
+    }
+  },
   "legalContent": {
-    "privacy": { "title": "Privacy Policy", "content": "In HoldingAI LTD prendiamo sul serio la tua privacy. Raccogliamo solo i dati minimi necessari per fornire i nostri servizi. Ciò include il tuo nome, l'email e i dettagli del progetto inviati tramite il nostro modulo di contatto. Non vendiamo né condividiamo i tuoi dati con terze parti. Per richiedere la cancellazione dei tuoi dati, contattaci all'indirizzo info@holdingai.io." },
-    "terms": { "title": "Termini e Condizioni", "content": "Utilizzando i nostri servizi, accetti questi termini. HoldingAI LTD fornisce servizi di sviluppo software e ingegneria AI 'così come sono'. Non siamo responsabili di perdite di dati o interruzioni del servizio. Tutti i diritti di proprietà intellettuale sui deliverable vengono trasferiti a te solo dopo il pagamento integrale delle fatture." },
-    "mentions": { "title": "Note Legali", "content": "Editore del sito: HoldingAI LTD, registrata in Inghilterra e Galles. Sede legale: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Regno Unito. Contatto: info@holdingai.io | +44 7537106967. Hosting: Vercel Inc." }
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": "In HoldingAI LTD prendiamo sul serio la tua privacy. Raccogliamo solo i dati minimi necessari per fornire i nostri servizi. Ciò include il tuo nome, l'email e i dettagli del progetto inviati tramite il nostro modulo di contatto. Non vendiamo né condividiamo i tuoi dati con terze parti. Per richiedere la cancellazione dei tuoi dati, contattaci all'indirizzo info@holdingai.io."
+    },
+    "terms": {
+      "title": "Termini e Condizioni",
+      "content": "Utilizzando i nostri servizi, accetti questi termini. HoldingAI LTD fornisce servizi di sviluppo software e ingegneria AI 'così come sono'. Non siamo responsabili di perdite di dati o interruzioni del servizio. Tutti i diritti di proprietà intellettuale sui deliverable vengono trasferiti a te solo dopo il pagamento integrale delle fatture."
+    },
+    "mentions": {
+      "title": "Note Legali",
+      "content": "Editore del sito: HoldingAI LTD, registrata in Inghilterra e Galles. Sede legale: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Regno Unito. Contatto: info@holdingai.io | +44 7537106967. Hosting: Vercel Inc."
+    }
   }
 }

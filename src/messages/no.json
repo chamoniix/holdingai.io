@@ -69,19 +69,43 @@
     "eyebrow": "Beviset",
     "title": "Digitale monumenter",
     "items": {
-      "healthcare": { "title": "KI-dashbord for helse", "sector": "HealthTech" },
-      "retail": { "title": "Personalisering for e-handel", "sector": "Retail" },
-      "fintech": { "title": "Prediktiv finansanalyse", "sector": "FinTech" }
+      "healthcare": {
+        "title": "KI-dashbord for helse",
+        "sector": "HealthTech"
+      },
+      "retail": {
+        "title": "Personalisering for e-handel",
+        "sector": "Retail"
+      },
+      "fintech": {
+        "title": "Prediktiv finansanalyse",
+        "sector": "FinTech"
+      }
     }
   },
   "showcase": {
     "title": "Nylige prosjekter",
     "items": {
-      "aura": { "title": "Aura", "sector": "Luksusbank" },
-      "vitals": { "title": "Vitals", "sector": "KI i helse" },
-      "nomad": { "title": "Nomad", "sector": "Reiseplattform" },
-      "estate": { "title": "Estate", "sector": "Eiendoms-CRM" },
-      "lumina": { "title": "Lumina", "sector": "Utdanningsplattform" }
+      "aura": {
+        "title": "Aura",
+        "sector": "Luksusbank"
+      },
+      "vitals": {
+        "title": "Vitals",
+        "sector": "KI i helse"
+      },
+      "nomad": {
+        "title": "Nomad",
+        "sector": "Reiseplattform"
+      },
+      "estate": {
+        "title": "Estate",
+        "sector": "Eiendoms-CRM"
+      },
+      "lumina": {
+        "title": "Lumina",
+        "sector": "Utdanningsplattform"
+      }
     }
   },
   "numbers": {
@@ -115,12 +139,30 @@
   "process": {
     "eyebrow": "Vår prosess",
     "steps": {
-      "discover": { "title": "Oppdag", "desc": "Forstå problemet, brukerbehovene og forretningsmålene." },
-      "design": { "title": "Design", "desc": "Skaper premium-grensesnitt og sømløse opplevelser." },
-      "prototype": { "title": "Prototype", "desc": "Bygger interaktive modeller for å validere kjernekonseptene." },
-      "develop": { "title": "Utvikling", "desc": "Utvikler skalerbar arkitektur med banebrytende teknologi." },
-      "launch": { "title": "Lansering", "desc": "Slipper produktet på markedet med presisjon." },
-      "scale": { "title": "Skalering", "desc": "Optimaliserer og utvider plattformen for global rekkevidde." }
+      "discover": {
+        "title": "Oppdag",
+        "desc": "Forstå problemet, brukerbehovene og forretningsmålene."
+      },
+      "design": {
+        "title": "Design",
+        "desc": "Skaper premium-grensesnitt og sømløse opplevelser."
+      },
+      "prototype": {
+        "title": "Prototype",
+        "desc": "Bygger interaktive modeller for å validere kjernekonseptene."
+      },
+      "develop": {
+        "title": "Utvikling",
+        "desc": "Utvikler skalerbar arkitektur med banebrytende teknologi."
+      },
+      "launch": {
+        "title": "Lansering",
+        "desc": "Slipper produktet på markedet med presisjon."
+      },
+      "scale": {
+        "title": "Skalering",
+        "desc": "Optimaliserer og utvider plattformen for global rekkevidde."
+      }
     }
   },
   "cta": {
@@ -176,20 +218,48 @@
     "philosophy": "Vår filosofi",
     "missionText": "Vi tror den mest avanserte teknologien bør være usynlig. Systemene våre er designet for absolutt flyt og gir brukerne dine en opplevelse på grensen til magi. Fra dataarkitektur til minste piksel blir hver detalj perfeksjonert besettende nøye.",
     "stats": {
-      "projects": { "label": "Leverte prosjekter", "value": "40+" },
-      "agents": { "label": "Utrullede agenter", "value": "1M+" },
-      "code": { "label": "Kodelinjer", "value": "2.5M" },
-      "years": { "label": "År med fortreffelighet", "value": "5+" }
+      "projects": {
+        "label": "Leverte prosjekter",
+        "value": "40+"
+      },
+      "agents": {
+        "label": "Utrullede agenter",
+        "value": "1M+"
+      },
+      "code": {
+        "label": "Kodelinjer",
+        "value": "2.5M"
+      },
+      "years": {
+        "label": "År med fortreffelighet",
+        "value": "5+"
+      }
     }
   },
   "work": {
     "title": "Vårt arbeid",
     "description": "Oppdag våre digitale monumenter. Fra nettapper i Apple-kvalitet til KI-systemer i bedriftsklasse – vi redefinerer bransjestandarder.",
     "projects": {
-      "aura": { "title": "Aura Network", "category": "KI-agentplattform", "year": "2026" },
-      "nexus": { "title": "Nexus Cloud", "category": "SaaS-infrastruktur", "year": "2025" },
-      "prism": { "title": "Prism", "category": "Bedriftsautomatisering", "year": "2025" },
-      "onyx": { "title": "Onyx Protocol", "category": "Maskinlæring", "year": "2024" }
+      "aura": {
+        "title": "Aura Network",
+        "category": "KI-agentplattform",
+        "year": "2026"
+      },
+      "nexus": {
+        "title": "Nexus Cloud",
+        "category": "SaaS-infrastruktur",
+        "year": "2025"
+      },
+      "prism": {
+        "title": "Prism",
+        "category": "Bedriftsautomatisering",
+        "year": "2025"
+      },
+      "onyx": {
+        "title": "Onyx Protocol",
+        "category": "Maskinlæring",
+        "year": "2024"
+      }
     }
   },
   "legal": {
@@ -207,33 +277,111 @@
       "title": "Autonome KI-agenter",
       "description": "Vi utvikler intelligente agenter som kan resonnere, lære og utføre komplekse oppgaver autonomt.",
       "features": {
-        "learning": { "title": "Kontinuerlig læring", "desc": "Agentene våre tilpasser seg og forbedres med hver interaksjon, noe som garanterer konstant utvikling av ytelsen din." },
-        "reasoning": { "title": "Logisk resonnering", "desc": "Utover enkel tekstgenerering integrerer systemene våre avanserte resonneringsevner for å løse forretningsproblemer." },
-        "execution": { "title": "Handlingsutførelse", "desc": "Sømløs integrasjon med API-ene dine slik at agenter kan handle direkte i økosystemet ditt." }
+        "learning": {
+          "title": "Kontinuerlig læring",
+          "desc": "Agentene våre tilpasser seg og forbedres med hver interaksjon, noe som garanterer konstant utvikling av ytelsen din."
+        },
+        "reasoning": {
+          "title": "Logisk resonnering",
+          "desc": "Utover enkel tekstgenerering integrerer systemene våre avanserte resonneringsevner for å løse forretningsproblemer."
+        },
+        "execution": {
+          "title": "Handlingsutførelse",
+          "desc": "Sømløs integrasjon med API-ene dine slik at agenter kan handle direkte i økosystemet ditt."
+        }
       }
     },
     "saas": {
       "title": "Skalerbar SaaS-utvikling",
       "description": "Banebrytende programvarearkitekturer designet for å støtte millioner av brukere med en sømløs opplevelse.",
       "features": {
-        "availability": { "title": "Høy tilgjengelighet", "desc": "Skybasert infrastruktur med garantert 99,99 % oppetid, bygget for hypervekst." },
-        "security": { "title": "Sikkerhet på militært nivå", "desc": "Ende-til-ende-kryptering og full etterlevelse av de strengeste sikkerhetsstandardene (GDPR, SOC2)." },
-        "ux": { "title": "Premium UX/UI-design", "desc": "Rene, intuitive og visuelt imponerende grensesnitt som holder på brukerne dine." }
+        "availability": {
+          "title": "Høy tilgjengelighet",
+          "desc": "Skybasert infrastruktur med garantert 99,99 % oppetid, bygget for hypervekst."
+        },
+        "security": {
+          "title": "Sikkerhet på militært nivå",
+          "desc": "Ende-til-ende-kryptering og full etterlevelse av de strengeste sikkerhetsstandardene (GDPR, SOC2)."
+        },
+        "ux": {
+          "title": "Premium UX/UI-design",
+          "desc": "Rene, intuitive og visuelt imponerende grensesnitt som holder på brukerne dine."
+        }
       }
     },
     "automation": {
       "title": "Bedriftsautomatisering",
       "description": "Fjern friksjon. Vi transformerer de manuelle prosessene dine til automatiserte, raske og feilfrie arbeidsflyter.",
       "features": {
-        "integration": { "title": "Systemintegrasjon", "desc": "Vi kobler sammen de eksisterende verktøyene dine (CRM, ERP, databaser) for perfekt synergi." },
-        "cost": { "title": "Kostnadsoptimalisering", "desc": "Reduser driftskostnadene dramatisk ved å automatisere tidkrevende oppgaver." },
-        "monitoring": { "title": "Sanntidsovervåking", "desc": "Analytiske dashboards for å overvåke effektiviteten i automatiseringene dine." }
+        "integration": {
+          "title": "Systemintegrasjon",
+          "desc": "Vi kobler sammen de eksisterende verktøyene dine (CRM, ERP, databaser) for perfekt synergi."
+        },
+        "cost": {
+          "title": "Kostnadsoptimalisering",
+          "desc": "Reduser driftskostnadene dramatisk ved å automatisere tidkrevende oppgaver."
+        },
+        "monitoring": {
+          "title": "Sanntidsovervåking",
+          "desc": "Analytiske dashboards for å overvåke effektiviteten i automatiseringene dine."
+        }
       }
     }
   },
+  "seo": {
+    "home": {
+      "title": "HoldingAI — Premium-studio for KI | Agenter, SaaS og automatisering",
+      "description": "HoldingAI designer og utvikler KI-produkter i verdensklasse: autonome agenter, skalerbare SaaS-plattformer og bedriftsautomatisering. Premium KI-studio."
+    },
+    "about": {
+      "title": "Om HoldingAI — Vår filosofi | Premium-studio for KI-produkter",
+      "description": "HoldingAI er et ingeniør- og designlaboratorium som bygger neste generasjon intelligente plattformer. Oppdag filosofien vår: luksusestetikk møter kunstig intelligens."
+    },
+    "work": {
+      "title": "Vårt arbeid — KI-prosjekter og casestudier | HoldingAI",
+      "description": "Utforsk HoldingAIs digitale monumenter: KI-agentplattformer, SaaS-infrastruktur, bedriftsautomatisering og maskinlæringsprosjekter."
+    },
+    "contact": {
+      "title": "Kontakt HoldingAI — Start KI-prosjektet ditt | Premium-studio",
+      "description": "Klar til å bygge med KI? Kontakt HoldingAI – ingeniørteamet vårt svarer innen 24 timer. Beskriv prosjektet ditt."
+    },
+    "aiAgents": {
+      "title": "Autonome KI-agenter — utviklingstjenester | HoldingAI",
+      "description": "Vi utvikler intelligente KI-agenter som resonnerer, lærer og utfører komplekse oppgaver autonomt. Kontinuerlig læring, logisk resonnering og sømløs API-integrasjon."
+    },
+    "saas": {
+      "title": "Skalerbar SaaS-utvikling — plattformer med høy tilgjengelighet | HoldingAI",
+      "description": "Banebrytende SaaS-arkitekturer for millioner av brukere: 99,99 % oppetid, sikkerhet på militært nivå (GDPR, SOC2) og premium UX/UI-design."
+    },
+    "automation": {
+      "title": "Bedriftsautomatisering — arbeidsflyter og systemintegrasjon | HoldingAI",
+      "description": "Fjern friksjon med bedriftsautomatisering: systemintegrasjon (CRM, ERP), kostnadsoptimalisering og sanntidsovervåking."
+    },
+    "privacy": {
+      "title": "Personvernerklæring | HoldingAI",
+      "description": "Hvordan HoldingAI LTD samler inn, bruker og beskytter personopplysningene dine. Minimal innsamling, ingen deling med tredjeparter, sletting på forespørsel."
+    },
+    "terms": {
+      "title": "Vilkår og betingelser | HoldingAI",
+      "description": "Vilkårene som gjelder for bruk av HoldingAI LTDs programvareutviklings- og KI-tjenester."
+    },
+    "mentions": {
+      "title": "Juridisk informasjon | HoldingAI",
+      "description": "Utgiver-, kontor- og hostinginformasjon for holdingai.io, drevet av HoldingAI LTD (England og Wales)."
+    }
+  },
   "legalContent": {
-    "privacy": { "title": "Personvernerklæring", "content": "Hos HoldingAI LTD tar vi personvernet ditt på alvor. Vi samler kun inn de dataene som er nødvendige for å levere tjenestene våre. Dette inkluderer navn, e-post og prosjektdetaljer sendt via kontaktskjemaet vårt. Vi selger eller deler ikke dataene dine med tredjeparter. For å be om sletting av dataene dine, kontakt oss på info@holdingai.io." },
-    "terms": { "title": "Vilkår og betingelser", "content": "Ved å bruke tjenestene våre godtar du disse vilkårene. HoldingAI LTD leverer programvareutviklings- og KI-tjenester 'som de er'. Vi er ikke ansvarlige for tap av data eller tjenesteavbrudd. Alle immaterielle rettigheter til leveransene overføres til deg først etter full betaling av fakturaer." },
-    "mentions": { "title": "Juridisk informasjon", "content": "Nettstedets utgiver: HoldingAI LTD, registrert i England og Wales. Registrert kontor: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Storbritannia. Kontakt: info@holdingai.io | +44 7537106967. Hosting: Vercel Inc." }
+    "privacy": {
+      "title": "Personvernerklæring",
+      "content": "Hos HoldingAI LTD tar vi personvernet ditt på alvor. Vi samler kun inn de dataene som er nødvendige for å levere tjenestene våre. Dette inkluderer navn, e-post og prosjektdetaljer sendt via kontaktskjemaet vårt. Vi selger eller deler ikke dataene dine med tredjeparter. For å be om sletting av dataene dine, kontakt oss på info@holdingai.io."
+    },
+    "terms": {
+      "title": "Vilkår og betingelser",
+      "content": "Ved å bruke tjenestene våre godtar du disse vilkårene. HoldingAI LTD leverer programvareutviklings- og KI-tjenester 'som de er'. Vi er ikke ansvarlige for tap av data eller tjenesteavbrudd. Alle immaterielle rettigheter til leveransene overføres til deg først etter full betaling av fakturaer."
+    },
+    "mentions": {
+      "title": "Juridisk informasjon",
+      "content": "Nettstedets utgiver: HoldingAI LTD, registrert i England og Wales. Registrert kontor: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Storbritannia. Kontakt: info@holdingai.io | +44 7537106967. Hosting: Vercel Inc."
+    }
   }
 }

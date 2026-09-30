@@ -1,18 +1,29 @@
-'use client'
-
-import { useEffect } from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import { type Locale } from '@/i18n/routing';
+import { buildPageMetadata } from '@/lib/seo';
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import ShowcaseSection from "@/components/ShowcaseSection";
 
-export default function Home() {
-  const t = useTranslations('homeFinal');
-  const params = useParams();
-  const lang = (params?.lang as string) || 'en';
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return buildPageMetadata(lang, 'home', '');
+}
+
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const t = await getTranslations({ locale: lang as Locale, namespace: 'homeFinal' });
 
   return (
     <main className="w-full bg-transparent overflow-hidden">

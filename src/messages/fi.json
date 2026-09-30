@@ -69,19 +69,43 @@
     "eyebrow": "Todiste",
     "title": "Digitaaliset monumentit",
     "items": {
-      "healthcare": { "title": "Terveydenhuollon tekoälykojelauta", "sector": "HealthTech" },
-      "retail": { "title": "Verkkokaupan personointimoottori", "sector": "Retail" },
-      "fintech": { "title": "Ennakoiva talousanalytiikka", "sector": "FinTech" }
+      "healthcare": {
+        "title": "Terveydenhuollon tekoälykojelauta",
+        "sector": "HealthTech"
+      },
+      "retail": {
+        "title": "Verkkokaupan personointimoottori",
+        "sector": "Retail"
+      },
+      "fintech": {
+        "title": "Ennakoiva talousanalytiikka",
+        "sector": "FinTech"
+      }
     }
   },
   "showcase": {
     "title": "Viimeisimmät projektit",
     "items": {
-      "aura": { "title": "Aura", "sector": "Luksuspankkitoiminta" },
-      "vitals": { "title": "Vitals", "sector": "Terveydenhuollon tekoäly" },
-      "nomad": { "title": "Nomad", "sector": "Matkailualusta" },
-      "estate": { "title": "Estate", "sector": "Kiinteistö-CRM" },
-      "lumina": { "title": "Lumina", "sector": "Koulutusalusta" }
+      "aura": {
+        "title": "Aura",
+        "sector": "Luksuspankkitoiminta"
+      },
+      "vitals": {
+        "title": "Vitals",
+        "sector": "Terveydenhuollon tekoäly"
+      },
+      "nomad": {
+        "title": "Nomad",
+        "sector": "Matkailualusta"
+      },
+      "estate": {
+        "title": "Estate",
+        "sector": "Kiinteistö-CRM"
+      },
+      "lumina": {
+        "title": "Lumina",
+        "sector": "Koulutusalusta"
+      }
     }
   },
   "numbers": {
@@ -115,12 +139,30 @@
   "process": {
     "eyebrow": "Prosessimme",
     "steps": {
-      "discover": { "title": "Löytäminen", "desc": "Ongelman, käyttäjätarpeiden ja liiketoimintatavoitteiden ymmärtäminen." },
-      "design": { "title": "Suunnittelu", "desc": "Premium-käyttöliittymien ja saumattomien kokemusten luominen." },
-      "prototype": { "title": "Prototyyppi", "desc": "Interaktiivisten mallien rakentaminen ydinkonseptien validoimiseksi." },
-      "develop": { "title": "Kehitys", "desc": "Skaalautuvan arkkitehtuurin suunnittelu huipputeknologialla." },
-      "launch": { "title": "Julkaisu", "desc": "Tuotteen vieminen markkinoille tarkasti." },
-      "scale": { "title": "Skaalaus", "desc": "Alustan optimointi ja laajentaminen maailmanlaajuiseen ulottuvuuteen." }
+      "discover": {
+        "title": "Löytäminen",
+        "desc": "Ongelman, käyttäjätarpeiden ja liiketoimintatavoitteiden ymmärtäminen."
+      },
+      "design": {
+        "title": "Suunnittelu",
+        "desc": "Premium-käyttöliittymien ja saumattomien kokemusten luominen."
+      },
+      "prototype": {
+        "title": "Prototyyppi",
+        "desc": "Interaktiivisten mallien rakentaminen ydinkonseptien validoimiseksi."
+      },
+      "develop": {
+        "title": "Kehitys",
+        "desc": "Skaalautuvan arkkitehtuurin suunnittelu huipputeknologialla."
+      },
+      "launch": {
+        "title": "Julkaisu",
+        "desc": "Tuotteen vieminen markkinoille tarkasti."
+      },
+      "scale": {
+        "title": "Skaalaus",
+        "desc": "Alustan optimointi ja laajentaminen maailmanlaajuiseen ulottuvuuteen."
+      }
     }
   },
   "cta": {
@@ -176,20 +218,48 @@
     "philosophy": "Filosofiamme",
     "missionText": "Uskomme, että edistyneimmän teknologian tulee olla näkymätöntä. Järjestelmämme on suunniteltu toimimaan täydellisen sulavasti ja tarjoamaan käyttäjillesi kokemuksen, joka hipoo taikuutta. Data-arkkitehtuurista pienimpään pikseliin jokainen yksityiskohta hiotaan pakkomielteisen tarkasti.",
     "stats": {
-      "projects": { "label": "Toimitetut projektit", "value": "40+" },
-      "agents": { "label": "Käyttöönotetut agentit", "value": "1M+" },
-      "code": { "label": "Koodiriviä", "value": "2.5M" },
-      "years": { "label": "Vuotta huippuosaamista", "value": "5+" }
+      "projects": {
+        "label": "Toimitetut projektit",
+        "value": "40+"
+      },
+      "agents": {
+        "label": "Käyttöönotetut agentit",
+        "value": "1M+"
+      },
+      "code": {
+        "label": "Koodiriviä",
+        "value": "2.5M"
+      },
+      "years": {
+        "label": "Vuotta huippuosaamista",
+        "value": "5+"
+      }
     }
   },
   "work": {
     "title": "Työmme",
     "description": "Tutustu digitaalisiin monumentteihimme. Apple-laatuisista verkkosovelluksista yritystason tekoälyjärjestelmiin – määrittelemme alan standardit uudelleen.",
     "projects": {
-      "aura": { "title": "Aura Network", "category": "Tekoälyagenttialusta", "year": "2026" },
-      "nexus": { "title": "Nexus Cloud", "category": "SaaS-infrastruktuuri", "year": "2025" },
-      "prism": { "title": "Prism", "category": "Yritysautomaatio", "year": "2025" },
-      "onyx": { "title": "Onyx Protocol", "category": "Koneoppiminen", "year": "2024" }
+      "aura": {
+        "title": "Aura Network",
+        "category": "Tekoälyagenttialusta",
+        "year": "2026"
+      },
+      "nexus": {
+        "title": "Nexus Cloud",
+        "category": "SaaS-infrastruktuuri",
+        "year": "2025"
+      },
+      "prism": {
+        "title": "Prism",
+        "category": "Yritysautomaatio",
+        "year": "2025"
+      },
+      "onyx": {
+        "title": "Onyx Protocol",
+        "category": "Koneoppiminen",
+        "year": "2024"
+      }
     }
   },
   "legal": {
@@ -207,33 +277,111 @@
       "title": "Autonomiset tekoälyagentit",
       "description": "Kehitämme älykkäitä agentteja, jotka kykenevät päättelemään, oppimaan ja suorittamaan monimutkaisia tehtäviä autonomisesti.",
       "features": {
-        "learning": { "title": "Jatkuva oppiminen", "desc": "Agenttimme mukautuvat ja kehittyvät jokaisessa vuorovaikutuksessa, mikä takaa suorituskykysi jatkuvan kehityksen." },
-        "reasoning": { "title": "Looginen päättely", "desc": "Tekstintuotantoa pidemmälle – järjestelmämme yhdistävät kehittyneen päättelykyvyn liiketoimintaongelmien ratkaisemiseen." },
-        "execution": { "title": "Toimintojen suoritus", "desc": "Saumaton integraatio API:iesi kanssa, jotta agentit voivat toimia suoraan ekosysteemissäsi." }
+        "learning": {
+          "title": "Jatkuva oppiminen",
+          "desc": "Agenttimme mukautuvat ja kehittyvät jokaisessa vuorovaikutuksessa, mikä takaa suorituskykysi jatkuvan kehityksen."
+        },
+        "reasoning": {
+          "title": "Looginen päättely",
+          "desc": "Tekstintuotantoa pidemmälle – järjestelmämme yhdistävät kehittyneen päättelykyvyn liiketoimintaongelmien ratkaisemiseen."
+        },
+        "execution": {
+          "title": "Toimintojen suoritus",
+          "desc": "Saumaton integraatio API:iesi kanssa, jotta agentit voivat toimia suoraan ekosysteemissäsi."
+        }
       }
     },
     "saas": {
       "title": "Skaalautuva SaaS-kehitys",
       "description": "Huippuluokan ohjelmistoarkkitehtuureja, jotka on suunniteltu miljoonille käyttäjille sujuvan kokemuksen kera.",
       "features": {
-        "availability": { "title": "Korkea käytettävyys", "desc": "Cloud-native-infrastruktuuri 99,99 % käytettävyystakuulla, rakennettu hyperkasvuun." },
-        "security": { "title": "Sotilastason tietoturva", "desc": "Päästä päähän -salaus ja täysi vaatimustenmukaisuus tiukimpien tietoturvastandardien kanssa (GDPR, SOC2)." },
-        "ux": { "title": "Premium UX/UI-suunnittelu", "desc": "Puhtaita, intuitiivisia ja visuaalisesti häikäiseviä käyttöliittymiä, jotka sitouttavat käyttäjäsi." }
+        "availability": {
+          "title": "Korkea käytettävyys",
+          "desc": "Cloud-native-infrastruktuuri 99,99 % käytettävyystakuulla, rakennettu hyperkasvuun."
+        },
+        "security": {
+          "title": "Sotilastason tietoturva",
+          "desc": "Päästä päähän -salaus ja täysi vaatimustenmukaisuus tiukimpien tietoturvastandardien kanssa (GDPR, SOC2)."
+        },
+        "ux": {
+          "title": "Premium UX/UI-suunnittelu",
+          "desc": "Puhtaita, intuitiivisia ja visuaalisesti häikäiseviä käyttöliittymiä, jotka sitouttavat käyttäjäsi."
+        }
       }
     },
     "automation": {
       "title": "Yritysautomaatio",
       "description": "Poista kitka. Muunnamme manuaaliset prosessisi automatisoiduiksi, nopeiksi ja virheettömiksi työnkuluiksi.",
       "features": {
-        "integration": { "title": "Järjestelmäintegraatio", "desc": "Yhdistämme nykyiset työkalusi (CRM, ERP, tietokannat) täydellisen synergian luomiseksi." },
-        "cost": { "title": "Kustannusten optimointi", "desc": "Vähennä toimintakustannuksiasi radikaalisti automatisoimalla aikaa vievät tehtävät." },
-        "monitoring": { "title": "Reaaliaikainen seuranta", "desc": "Analyyttiset kojelaudat automaatioidesi tehokkuuden seuraamiseen." }
+        "integration": {
+          "title": "Järjestelmäintegraatio",
+          "desc": "Yhdistämme nykyiset työkalusi (CRM, ERP, tietokannat) täydellisen synergian luomiseksi."
+        },
+        "cost": {
+          "title": "Kustannusten optimointi",
+          "desc": "Vähennä toimintakustannuksiasi radikaalisti automatisoimalla aikaa vievät tehtävät."
+        },
+        "monitoring": {
+          "title": "Reaaliaikainen seuranta",
+          "desc": "Analyyttiset kojelaudat automaatioidesi tehokkuuden seuraamiseen."
+        }
       }
     }
   },
+  "seo": {
+    "home": {
+      "title": "HoldingAI — Premium-tekoälytuotestudio | Tekoälyagentit, SaaS ja automaatio",
+      "description": "HoldingAI suunnittelee ja kehittää maailmanluokan tekoälytuotteita: autonomisia agentteja, skaalautuvia SaaS-alustoja ja yritysautomaatiota. Premium-tekoälystudio."
+    },
+    "about": {
+      "title": "Tietoa HoldingAI:sta — Filosofiamme | Premium-tekoälytuotestudio",
+      "description": "HoldingAI on suunnittelu- ja kehityslaboratorio, joka rakentaa seuraavan sukupolven älykkäitä alustoja. Tutustu filosofiaamme: luksusestetiikka kohtaa tekoälyn."
+    },
+    "work": {
+      "title": "Työmme — Tekoälyprojektit ja asiakastapaukset | HoldingAI",
+      "description": "Tutustu HoldingAI:n digitaalisiin monumentteihin: tekoälyagenttialustoihin, SaaS-infrastruktuuriin, yritysautomaatioon ja koneoppimisprojekteihin."
+    },
+    "contact": {
+      "title": "Ota yhteyttä HoldingAI:hin — Aloita tekoälyprojektisi | Premium-studio",
+      "description": "Valmis rakentamaan tekoälyllä? Ota yhteyttä HoldingAI:hin – insinööritiimimme vastaa 24 tunnin kuluessa. Kuvaile projektisi."
+    },
+    "aiAgents": {
+      "title": "Autonomiset tekoälyagentit — kehityspalvelut | HoldingAI",
+      "description": "Älykkäitä tekoälyagentteja, jotka päättelevät, oppivat ja toimivat autonomisesti. Jatkuva oppiminen, looginen päättely ja API-integraatio."
+    },
+    "saas": {
+      "title": "Skaalautuva SaaS-kehitys — korkean käytettävyyden alustat | HoldingAI",
+      "description": "Huippuluokan SaaS-arkkitehtuureja miljoonille käyttäjille: 99,99 % käytettävyys, sotilastason tietoturva (GDPR, SOC2) ja premium UX/UI-suunnittelu."
+    },
+    "automation": {
+      "title": "Yritysautomaatio — työnkulut ja järjestelmäintegraatio | HoldingAI",
+      "description": "Poista kitka yritysautomaatiolla: järjestelmäintegraatio (CRM, ERP), kustannusten optimointi ja reaaliaikaiset seurantanäkymät."
+    },
+    "privacy": {
+      "title": "Tietosuojakäytäntö | HoldingAI",
+      "description": "Miten HoldingAI LTD kerää, käyttää ja suojaa henkilötietojasi. Minimaalinen keruu, ei jakamista kolmansille osapuolille, poisto pyynnöstä."
+    },
+    "terms": {
+      "title": "Käyttöehdot | HoldingAI",
+      "description": "Ehdot, jotka koskevat HoldingAI LTD:n ohjelmistokehitys- ja tekoälysuunnittelupalveluiden käyttöä."
+    },
+    "mentions": {
+      "title": "Oikeudelliset tiedot | HoldingAI",
+      "description": "Julkaisija-, toimipaikka- ja hosting-tiedot sivustolle holdingai.io, jota ylläpitää HoldingAI LTD (Englanti ja Wales)."
+    }
+  },
   "legalContent": {
-    "privacy": { "title": "Tietosuojakäytäntö", "content": "HoldingAI LTD ottaa yksityisyytesi vakavasti. Keräämme vain palveluidemme tarjoamiseen tarvittavat vähimmäistiedot. Tämä sisältää nimesi, sähköpostisi ja yhteydenottolomakkeen kautta lähettämäsi projektin tiedot. Emme myy emmekä jaa tietojasi kolmansille osapuolille. Pyytääksesi tietojesi poistamista, ota meihin yhteyttä osoitteessa info@holdingai.io." },
-    "terms": { "title": "Käyttöehdot", "content": "Käyttämällä palveluitamme hyväksyt nämä ehdot. HoldingAI LTD tarjoaa ohjelmistokehitys- ja tekoälysuunnittelupalveluita 'sellaisenaan'. Emme ole vastuussa tietojen menetyksestä tai palvelukatkoksista. Kaikki toimituksiin liittyvät immateriaalioikeudet siirtyvät sinulle vasta laskujen täyden maksun jälkeen." },
-    "mentions": { "title": "Oikeudelliset tiedot", "content": "Sivuston julkaisija: HoldingAI LTD, rekisteröity Englantiin ja Walesiin. Rekisteröity toimipaikka: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Iso-Britannia. Yhteystiedot: info@holdingai.io | +44 7537106967. Palveluntarjoaja: Vercel Inc." }
+    "privacy": {
+      "title": "Tietosuojakäytäntö",
+      "content": "HoldingAI LTD ottaa yksityisyytesi vakavasti. Keräämme vain palveluidemme tarjoamiseen tarvittavat vähimmäistiedot. Tämä sisältää nimesi, sähköpostisi ja yhteydenottolomakkeen kautta lähettämäsi projektin tiedot. Emme myy emmekä jaa tietojasi kolmansille osapuolille. Pyytääksesi tietojesi poistamista, ota meihin yhteyttä osoitteessa info@holdingai.io."
+    },
+    "terms": {
+      "title": "Käyttöehdot",
+      "content": "Käyttämällä palveluitamme hyväksyt nämä ehdot. HoldingAI LTD tarjoaa ohjelmistokehitys- ja tekoälysuunnittelupalveluita 'sellaisenaan'. Emme ole vastuussa tietojen menetyksestä tai palvelukatkoksista. Kaikki toimituksiin liittyvät immateriaalioikeudet siirtyvät sinulle vasta laskujen täyden maksun jälkeen."
+    },
+    "mentions": {
+      "title": "Oikeudelliset tiedot",
+      "content": "Sivuston julkaisija: HoldingAI LTD, rekisteröity Englantiin ja Walesiin. Rekisteröity toimipaikka: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Iso-Britannia. Yhteystiedot: info@holdingai.io | +44 7537106967. Palveluntarjoaja: Vercel Inc."
+    }
   }
 }
