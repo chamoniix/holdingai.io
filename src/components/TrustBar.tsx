@@ -52,9 +52,9 @@ export default function TrustBar() {
         >
           {/* Double the list to create a seamless infinite loop */}
           {[...logos, ...logos, ...logos].map((logo, index) => (
-            <div key={index} className="flex flex-col items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 text-white">
+            <div key={index} className="flex flex-col items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 text-white">
               <logo.icon />
-              <span className="text-[10px] uppercase tracking-widest text-[#86868B] mt-3">
+              <span className="text-xs font-medium uppercase tracking-widest text-[#A1A1A6] mt-3">
                 {/* Dynamic key: cast `as never` to satisfy next-intl key typing. */}
                 {t(`sectors.${logo.key}` as never)}
               </span>

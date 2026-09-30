@@ -33,7 +33,7 @@ function LanguageSelector({ currentLang }: { currentLang: string }) {
       <select
         value={currentLang}
         onChange={handleLanguageChange}
-        className="appearance-none bg-white/5 border border-white/10 rounded-full pl-4 pr-8 py-2.5 text-[10px] font-semibold tracking-[0.15em] text-white hover:bg-white/10 transition-all backdrop-blur-md outline-none cursor-pointer"
+        className="appearance-none bg-white/5 border border-white/10 rounded-full pl-5 pr-9 py-3 text-xs font-semibold tracking-[0.18em] text-white hover:bg-white/10 transition-all backdrop-blur-md outline-none cursor-pointer"
       >
         {languages.map((l) => (
           <option key={l.code} value={l.code} className="bg-[#030304] text-white">
@@ -71,23 +71,23 @@ export default function Navigation() {
               </linearGradient>
             </defs>
           </svg>
-          <span className="font-bold tracking-[0.2em] text-xs text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 drop-shadow-md">
+          <span className="font-bold tracking-[0.2em] text-sm text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 drop-shadow-md">
             {t('brand')}
           </span>
         </Link>
 
         {/* Center Links (Desktop only) */}
-        <div className="hidden lg:flex items-center gap-8 glass-panel-sm px-8 py-3 bg-white/[0.02] border border-white/[0.05] shadow-[0_0_15px_rgba(41,151,255,0.05)] rounded-full">
-          <Link href={`/${lang}/services/ai-agents`} className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
+        <div className="hidden lg:flex items-center gap-9 glass-panel-sm px-9 py-3.5 bg-white/[0.02] border border-white/[0.05] shadow-[0_0_15px_rgba(41,151,255,0.05)] rounded-full">
+          <Link href={`/${lang}/services/ai-agents`} className="text-xs font-semibold tracking-[0.18em] text-white/70 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
             {t('aiAgents')}
           </Link>
-          <Link href={`/${lang}/services/saas`} className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
+          <Link href={`/${lang}/services/saas`} className="text-xs font-semibold tracking-[0.18em] text-white/70 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
             {t('saas')}
           </Link>
-          <Link href={`/${lang}/services/automation`} className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
+          <Link href={`/${lang}/services/automation`} className="text-xs font-semibold tracking-[0.18em] text-white/70 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
             {t('automation')}
           </Link>
-          <Link href={`/${lang}/work`} className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
+          <Link href={`/${lang}/work`} className="text-xs font-semibold tracking-[0.18em] text-white/70 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
             {t('work')}
           </Link>
         </div>
@@ -95,7 +95,7 @@ export default function Navigation() {
         {/* CTA & Lang */}
         <div className="flex items-center gap-3">
           <LanguageSelector currentLang={lang} />
-          <Link href={`/${lang}/contact`} className="px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold tracking-[0.15em] text-white hover:bg-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-500 backdrop-blur-md">
+          <Link href={`/${lang}/contact`} className="px-7 py-3 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-[0.18em] text-white hover:bg-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-500 backdrop-blur-md">
             {t('letsBuild')}
           </Link>
         </div>

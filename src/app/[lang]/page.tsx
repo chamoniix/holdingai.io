@@ -56,9 +56,9 @@ export default async function Home({
             {t('subtitle')}
           </p>
           
-          <Link href={`/${lang}/contact`} className="group relative px-12 py-6 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]">
+          <Link href={`/${lang}/contact`} className="group relative px-16 py-7 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]">
             <div className="absolute inset-0 bg-gradient-to-r from-[#2997FF] to-[#BF5AF2] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+            <span className="relative z-10 text-lg md:text-xl group-hover:text-white transition-colors duration-500">
               {t('button')}
             </span>
           </Link>
