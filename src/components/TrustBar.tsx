@@ -40,18 +40,18 @@ export default function TrustBar() {
       <div className="flex w-full overflow-hidden">
         <motion.div
           className="flex whitespace-nowrap items-center gap-20 md:gap-32 px-8"
-          animate={{ x: [0, -1500] }}
+          animate={{ x: ["0%", "-50%"] }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 30,
+              duration: 40,
               ease: "linear",
             },
           }}
         >
-          {/* Double the list to create a seamless infinite loop */}
-          {[...logos, ...logos, ...logos].map((logo, index) => (
+          {/* Double the list and translate by exactly half: seamless infinite loop */}
+          {[...logos, ...logos].map((logo, index) => (
             <div key={index} className="flex flex-col items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 text-white">
               <logo.icon />
               <span className="text-xs font-medium uppercase tracking-widest text-[#A1A1A6] mt-3">
