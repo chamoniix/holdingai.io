@@ -76,7 +76,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} className="dark">
-      <body className={`${inter.variable} antialiased bg-transparent text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
+      <body className={`${inter.variable} antialiased text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
