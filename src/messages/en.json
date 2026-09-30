@@ -140,6 +140,7 @@
     "emailLabel": "Email",
     "phoneLabel": "Phone",
     "title": "Let's Build",
+    "description": "Ready to lead the AI revolution? Describe your project and our engineering team will contact you within 24 hours.",
     "nameLabel": "Name",
     "namePlaceholder": "Your Name",
     "emailPlaceholder": "Email Address",
@@ -171,10 +172,25 @@
   },
   "about": {
     "title": "A Vision Beyond Code",
-    "philosophy": "Our Philosophy"
+    "description": "HoldingAI is not a typical digital agency. We are an engineering and design lab dedicated to building the next generation of intelligent platforms. We merge luxury aesthetics with the raw power of artificial intelligence.",
+    "philosophy": "Our Philosophy",
+    "missionText": "We believe the most advanced technology should feel invisible. Our systems are designed to operate with absolute fluidity, offering your users an experience bordering on magic. From data architecture to the finest pixel, every detail is obsessively perfected.",
+    "stats": {
+      "projects": { "label": "Projects Delivered", "value": "40+" },
+      "agents": { "label": "Agents Deployed", "value": "1M+" },
+      "code": { "label": "Lines of Code", "value": "2.5M" },
+      "years": { "label": "Years of Excellence", "value": "5+" }
+    }
   },
   "work": {
-    "title": "Our Work"
+    "title": "Our Work",
+    "description": "Discover our digital monuments. From Apple-quality web applications to enterprise-grade AI systems, we redefine industry standards.",
+    "projects": {
+      "aura": { "title": "Aura Network", "category": "AI Agent Platform", "year": "2026" },
+      "nexus": { "title": "Nexus Cloud", "category": "SaaS Infrastructure", "year": "2025" },
+      "prism": { "title": "Prism", "category": "Enterprise Automation", "year": "2025" },
+      "onyx": { "title": "Onyx Protocol", "category": "Machine Learning", "year": "2024" }
+    }
   },
   "legal": {
     "title": "Legal Documents",
@@ -185,5 +201,39 @@
   "automation": {
     "heading": "Interfaces in Action",
     "alt": "App Preview"
+  },
+  "servicesPages": {
+    "aiAgents": {
+      "title": "Autonomous AI Agents",
+      "description": "We develop intelligent agents capable of reasoning, learning, and executing complex tasks autonomously.",
+      "features": {
+        "learning": { "title": "Continuous Learning", "desc": "Our agents adapt and improve with every interaction, guaranteeing constant evolution of your performance." },
+        "reasoning": { "title": "Logical Reasoning", "desc": "Beyond simple text generation, our systems integrate advanced reasoning capabilities to solve business problems." },
+        "execution": { "title": "Action Execution", "desc": "Seamless integration with your APIs allowing agents to act directly within your ecosystem." }
+      }
+    },
+    "saas": {
+      "title": "Scalable SaaS Development",
+      "description": "Cutting-edge software architectures designed to support millions of users while providing a fluid experience.",
+      "features": {
+        "availability": { "title": "High Availability", "desc": "Cloud-native infrastructure guaranteed at 99.99% uptime, built for hyper-growth." },
+        "security": { "title": "Military-Grade Security", "desc": "End-to-end encryption and total compliance with the strictest security standards (GDPR, SOC2)." },
+        "ux": { "title": "Premium UX/UI Design", "desc": "Clean, intuitive, and visually stunning interfaces that retain your users." }
+      }
+    },
+    "automation": {
+      "title": "Enterprise Automation",
+      "description": "Eliminate friction. We transform your manual processes into automated, fast, and error-free workflows.",
+      "features": {
+        "integration": { "title": "Systems Integration", "desc": "We connect your existing tools (CRM, ERP, databases) to create perfect synergy." },
+        "cost": { "title": "Cost Optimization", "desc": "Drastically reduce your operational costs by automating time-consuming tasks." },
+        "monitoring": { "title": "Real-time Monitoring", "desc": "Analytical dashboards to monitor the efficiency of your automations." }
+      }
+    }
+  },
+  "legalContent": {
+    "privacy": { "title": "Privacy Policy", "content": "At HoldingAI LTD, we take your privacy seriously. We collect minimal data necessary to provide our services. This includes your name, email, and project details submitted via our contact form. We do not sell or share your data with third parties. To request the deletion of your data, please contact us at info@holdingai.io." },
+    "terms": { "title": "Terms & Conditions", "content": "By using our services, you agree to these terms. HoldingAI LTD provides software development and AI engineering services 'as is'. We are not liable for data loss or service interruptions. All intellectual property rights to the deliverables are transferred to you only upon full payment of invoices." },
+    "mentions": { "title": "Legal Mentions", "content": "Site Publisher: HoldingAI LTD, registered in England & Wales. Registered Office: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, UK. Contact: info@holdingai.io | +44 7537106967. Hosted by: Vercel Inc." }
   }
 }

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { useTranslation } from '@/i18n/LanguageContext';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -51,7 +51,8 @@ function LanguageSelector({ currentLang }: { currentLang: string }) {
 }
 
 export default function Navigation() {
-  const { lang, dict } = useTranslation();
+  const lang = useLocale();
+  const t = useTranslations('nav');
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex items-center justify-center pointer-events-none">
@@ -71,23 +72,23 @@ export default function Navigation() {
             </defs>
           </svg>
           <span className="font-bold tracking-[0.2em] text-xs text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 drop-shadow-md">
-            HOLDING AI
+            {t('brand')}
           </span>
         </Link>
 
         {/* Center Links (Desktop only) */}
         <div className="hidden lg:flex items-center gap-8 glass-panel-sm px-8 py-3 bg-white/[0.02] border border-white/[0.05] shadow-[0_0_15px_rgba(41,151,255,0.05)] rounded-full">
           <Link href={`/${lang}/services/ai-agents`} className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
-            {dict.nav?.agents || "AI AGENTS"}
+            {t('aiAgents')}
           </Link>
           <Link href={`/${lang}/services/saas`} className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
-            {dict.nav?.saas || "SAAS"}
+            {t('saas')}
           </Link>
           <Link href={`/${lang}/services/automation`} className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
-            {dict.nav?.automation || "AUTOMATION"}
+            {t('automation')}
           </Link>
           <Link href={`/${lang}/work`} className="text-[10px] font-semibold tracking-[0.15em] text-white/60 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#2997FF] hover:to-[#BF5AF2] transition-all duration-300">
-            {dict.nav?.work || "OUR WORK"}
+            {t('work')}
           </Link>
         </div>
 
@@ -95,7 +96,7 @@ export default function Navigation() {
         <div className="flex items-center gap-3">
           <LanguageSelector currentLang={lang} />
           <Link href={`/${lang}/contact`} className="px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold tracking-[0.15em] text-white hover:bg-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-500 backdrop-blur-md">
-            {dict.nav?.letsBuild || "LET'S BUILD"}
+            {t('letsBuild')}
           </Link>
         </div>
       </div>

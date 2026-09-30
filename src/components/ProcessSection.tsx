@@ -3,17 +3,12 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import LuxuryText from './ui/LuxuryText';
+import { useTranslations } from 'next-intl';
 
-const processSteps = [
-  { title: "Discover", desc: "Understanding the problem, user needs, and business objectives." },
-  { title: "Design", desc: "Crafting premium user interfaces and seamless experiences." },
-  { title: "Prototype", desc: "Building interactive models to validate the core concepts." },
-  { title: "Develop", desc: "Engineering scalable architecture with cutting-edge tech." },
-  { title: "Launch", desc: "Deploying the product to the market with precision." },
-  { title: "Scale", desc: "Optimizing and expanding the platform for global reach." },
-];
+const processSteps = ["discover", "design", "prototype", "develop", "launch", "scale"] as const;
 
 export default function ProcessSection() {
+  const t = useTranslations('process');
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -27,7 +22,7 @@ export default function ProcessSection() {
       <div className="container mx-auto px-6 max-w-4xl pointer-events-auto">
         <div className="text-center mb-32">
           <LuxuryText as="h2" className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
-            Our Process
+            {t('eyebrow')}
           </LuxuryText>
         </div>
 
@@ -42,10 +37,13 @@ export default function ProcessSection() {
           />
 
           <div className="space-y-24">
-            {processSteps.map((step, index) => {
+            {processSteps.map((stepKey, index) => {
               const isEven = index % 2 === 0;
+              // Dynamic keys: cast `as never` to satisfy next-intl key typing.
+              const title = t(`process.steps.${stepKey}.title` as never);
+              const desc = t(`process.steps.${stepKey}.desc` as never);
               return (
-                <div key={step.title} className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                <div key={stepKey} className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   
                   {/* Timeline Dot */}
                   <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-brand-dark border-2 border-brand-neon -translate-x-1/2 shadow-[0_0_15px_rgba(0,240,255,0.5)] z-10" />
@@ -59,8 +57,8 @@ export default function ProcessSection() {
                       transition={{ duration: 0.8, ease: "easeOut" }}
                       className="glass-panel p-8 rounded-2xl"
                     >
-                      <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
-                      <p className="text-white/60">{step.desc}</p>
+                      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+                      <p className="text-white/60">{desc}</p>
                     </motion.div>
                   </div>
                 </div>

@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
-import { useTranslation } from '@/i18n/LanguageContext';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 export default function ContactPage() {
-  const { lang, dict } = useTranslation();
+  const t = useTranslations('contact');
+  const tp = useTranslations('contactPage');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -40,10 +41,10 @@ export default function ContactPage() {
         className="max-w-2xl w-full text-center mb-16"
       >
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
-          {dict.contact?.title || "Let's Build"}
+          {t('title')}
         </h1>
         <p className="text-xl text-[#86868B] font-light">
-          {dict.contact?.description}
+          {t('description')}
         </p>
       </motion.div>
       
@@ -57,18 +58,18 @@ export default function ContactPage() {
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2997FF] to-[#BF5AF2] opacity-50" />
           
           <div className="flex flex-col gap-3">
-            <label className="text-xs font-bold tracking-[0.2em] text-[#86868B] uppercase">{dict.contact?.nameLabel || "Name"}</label>
-            <input name="name" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2997FF] focus:bg-white/10 transition-all placeholder:text-white/20" placeholder="John Doe" />
+            <label className="text-xs font-bold tracking-[0.2em] text-[#86868B] uppercase">{t('nameLabel')}</label>
+            <input name="name" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2997FF] focus:bg-white/10 transition-all placeholder:text-white/20" placeholder={tp('namePlaceholder')} />
           </div>
           
           <div className="flex flex-col gap-3">
-            <label className="text-xs font-bold tracking-[0.2em] text-[#86868B] uppercase">{dict.contact?.emailLabel || "Email"}</label>
-            <input name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2997FF] focus:bg-white/10 transition-all placeholder:text-white/20" placeholder="john@company.com" />
+            <label className="text-xs font-bold tracking-[0.2em] text-[#86868B] uppercase">{t('emailLabel')}</label>
+            <input name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2997FF] focus:bg-white/10 transition-all placeholder:text-white/20" placeholder={tp('emailPlaceholder')} />
           </div>
           
           <div className="flex flex-col gap-3">
-            <label className="text-xs font-bold tracking-[0.2em] text-[#86868B] uppercase">{dict.contact?.messageLabel || "Message"}</label>
-            <textarea name="message" required rows={5} className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2997FF] focus:bg-white/10 transition-all resize-none placeholder:text-white/20" placeholder="Tell us about your project..."></textarea>
+            <label className="text-xs font-bold tracking-[0.2em] text-[#86868B] uppercase">{t('messageLabel')}</label>
+            <textarea name="message" required rows={5} className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#2997FF] focus:bg-white/10 transition-all resize-none placeholder:text-white/20" placeholder={t('messagePlaceholder')}></textarea>
           </div>
           
           <button 
@@ -76,13 +77,13 @@ export default function ContactPage() {
             disabled={status === 'submitting' || status === 'success'}
             className="w-full mt-4 bg-white text-black font-bold py-5 rounded-xl hover:scale-[0.98] transition-transform flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {status === 'submitting' ? 'Sending...' : 
-             status === 'success' ? 'Message Sent!' : 
-             (dict.contact?.submit || "Submit")}
+            {status === 'submitting' ? t('sending') :
+             status === 'success' ? t('sent') :
+             tp('submit')}
           </button>
           
           {status === 'error' && (
-            <p className="text-red-400 text-sm text-center">Something went wrong. Please try again or email us directly.</p>
+            <p className="text-red-400 text-sm text-center">{t('errorDetail')}</p>
           )}
         </form>
       </motion.div>

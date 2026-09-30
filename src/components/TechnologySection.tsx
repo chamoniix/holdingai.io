@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 const techStack = [
   "React", "Next.js", "TypeScript", "Tailwind", "Framer Motion", 
@@ -10,6 +11,7 @@ const techStack = [
 ];
 
 export default function TechnologySection() {
+  const t = useTranslations('tech');
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -29,7 +31,7 @@ export default function TechnologySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            THE TECHNOLOGY <span className="text-brand-cyan">ECOSYSTEM</span>
+            {t('eyebrow1')}<span className="text-brand-cyan">{t('eyebrow2')}</span>
           </motion.h2>
           <motion.p 
             className="mt-6 text-xl text-white/50 max-w-2xl mx-auto"
@@ -38,7 +40,7 @@ export default function TechnologySection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
           >
-            We leverage the most advanced frameworks and AI models to build products that feel years ahead.
+            {t('subtitle')}
           </motion.p>
         </div>
 

@@ -3,12 +3,14 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import ShowcaseSection from "@/components/ShowcaseSection";
 
 export default function Home() {
+  const t = useTranslations('homeFinal');
   const params = useParams();
   const lang = (params?.lang as string) || 'en';
 
@@ -36,17 +38,17 @@ export default function Home() {
             className="text-white font-bold tracking-tight mb-8 leading-[1.1] text-balance"
             style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', letterSpacing: '-0.04em' }}
           >
-            Ready to Lead the <span className="text-gradient-accent">AI Revolution?</span>
+            {t('part1')}<span className="text-gradient-accent">{t('part2')}</span>
           </h2>
           
           <p className="text-xl md:text-2xl text-[#86868B] mb-12 font-light max-w-2xl">
-            The future belongs to those who build it. Stop relying on templates. Let's architect something extraordinary.
+            {t('subtitle')}
           </p>
           
           <Link href={`/${lang}/contact`} className="group relative px-12 py-6 bg-white text-black font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]">
             <div className="absolute inset-0 bg-gradient-to-r from-[#2997FF] to-[#BF5AF2] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <span className="relative z-10 group-hover:text-white transition-colors duration-500">
-              Initiate Project
+              {t('button')}
             </span>
           </Link>
         </div>

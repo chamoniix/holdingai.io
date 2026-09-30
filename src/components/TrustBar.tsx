@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 const OpticalCenterLogo = () => <svg viewBox="0 0 200 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="28" fontWeight="800" letterSpacing="-1">OPTICAL CENTER</text></svg>;
 const EnedisLogo = () => <svg viewBox="0 0 120 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="800" letterSpacing="-1">enedis</text></svg>;
@@ -11,22 +12,25 @@ const SanofiLogo = () => <svg viewBox="0 0 130 40" className="h-6 md:h-8 fill-cu
 const LOrealLogo = () => <svg viewBox="0 0 150 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="serif" fontSize="30" fontWeight="400" letterSpacing="2">L'ORÉAL</text></svg>;
 const BNPLogo = () => <svg viewBox="0 0 200 40" className="h-6 md:h-8 fill-current"><path d="M5 15 L15 5 L25 15 L15 25 Z" /><text x="35" y="30" fontFamily="sans-serif" fontSize="26" fontWeight="700">BNP PARIBAS</text></svg>;
 
+// Partner names are proper nouns and stay hardcoded; only sectors are translated.
 const logos = [
-  { name: "Optical Center", sector: "Opticien", icon: OpticalCenterLogo },
-  { name: "Enedis", sector: "Énergie", icon: EnedisLogo },
-  { name: "Krys", sector: "Opticien", icon: KrysLogo },
-  { name: "Doctolib", sector: "Santé", icon: DoctolibLogo },
-  { name: "Basic-Fit", sector: "Sport", icon: BasicFitLogo },
-  { name: "Sanofi", sector: "Santé", icon: SanofiLogo },
-  { name: "L'Oréal", sector: "Beauté", icon: LOrealLogo },
-  { name: "BNP Paribas", sector: "Finance", icon: BNPLogo },
+  { name: "Optical Center", key: 'opticalCenter', icon: OpticalCenterLogo },
+  { name: "Enedis", key: 'enedis', icon: EnedisLogo },
+  { name: "Krys", key: 'krys', icon: KrysLogo },
+  { name: "Doctolib", key: 'doctolib', icon: DoctolibLogo },
+  { name: "Basic-Fit", key: 'basicFit', icon: BasicFitLogo },
+  { name: "Sanofi", key: 'sanofi', icon: SanofiLogo },
+  { name: "L'Oréal", key: 'loreal', icon: LOrealLogo },
+  { name: "BNP Paribas", key: 'bnpParibas', icon: BNPLogo },
 ];
 
 export default function TrustBar() {
+  const t = useTranslations('trust');
+
   return (
     <section className="w-full pt-8 pb-2 md:pt-12 md:pb-4 bg-transparent relative z-10 overflow-hidden flex flex-col items-center">
       <p className="text-sm md:text-base text-[#86868B] uppercase tracking-widest font-semibold mb-10 text-center">
-        Ils nous font confiance
+        {t('heading')}
       </p>
       
       {/* Gradient masks for smooth fading on edges */}
@@ -51,7 +55,8 @@ export default function TrustBar() {
             <div key={index} className="flex flex-col items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300 text-white">
               <logo.icon />
               <span className="text-[10px] uppercase tracking-widest text-[#86868B] mt-3">
-                {logo.sector}
+                {/* Dynamic key: cast `as never` to satisfy next-intl key typing. */}
+                {t(`trust.sectors.${logo.key}` as never)}
               </span>
             </div>
           ))}

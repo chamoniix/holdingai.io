@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { MagneticButton } from './ui/MagneticButton';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 const HeroScene = dynamic(() => import('./HeroScene'), { ssr: false });
 
 export default function HeroSection() {
+  const t = useTranslations('heroSection');
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -83,10 +85,10 @@ export default function HeroSection() {
           className="text-6xl md:text-8xl lg:text-[12rem] font-bold tracking-[-0.04em] leading-[0.85] text-white text-center mix-blend-difference"
         >
           <div className="overflow-hidden pb-4">
-            <span className="block reveal-line transform-gpu">HOLDING</span>
+            <span className="block reveal-line transform-gpu">{t('part1')}</span>
           </div>
           <div className="overflow-hidden pb-4">
-            <span className="block reveal-line text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500 transform-gpu">AI</span>
+            <span className="block reveal-line text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500 transform-gpu">{t('part2')}</span>
           </div>
         </h1>
         
@@ -97,12 +99,12 @@ export default function HeroSection() {
         >
           <MagneticButton>
             <div className="px-10 py-5 rounded-full bg-white text-black font-semibold tracking-wide hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transition-shadow duration-500 text-lg">
-              Start Project
+              {t('startProject')}
             </div>
           </MagneticButton>
           <MagneticButton>
             <div className="px-10 py-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-semibold tracking-wide hover:bg-white/10 transition-colors duration-300 text-lg">
-              Explore Vision
+              {t('exploreVision')}
             </div>
           </MagneticButton>
         </div>

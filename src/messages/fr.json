@@ -140,6 +140,7 @@
     "emailLabel": "Email",
     "phoneLabel": "Téléphone",
     "title": "Construisons ensemble",
+    "description": "Prêt à mener la révolution de l'IA ? Décrivez-nous votre projet et notre équipe d'ingénieurs vous contactera sous 24 heures.",
     "nameLabel": "Nom",
     "namePlaceholder": "Votre nom",
     "emailPlaceholder": "Adresse email",
@@ -171,10 +172,25 @@
   },
   "about": {
     "title": "Une Vision au-delà du Code",
-    "philosophy": "Notre Philosophie"
+    "description": "HoldingAI n'est pas une simple agence digitale. Nous sommes un laboratoire d'ingénierie et de design dédié à construire la prochaine génération de plateformes intelligentes. Nous allions l'esthétique du luxe à la puissance brute de l'intelligence artificielle.",
+    "philosophy": "Notre Philosophie",
+    "missionText": "Nous croyons que la technologie la plus avancée doit être invisible. Nos systèmes sont conçus pour fonctionner avec une fluidité absolue, offrant à vos utilisateurs une expérience à la frontière de la magie. De l'architecture des données jusqu'au moindre pixel, chaque détail est obsessionnellement perfectionné.",
+    "stats": {
+      "projects": { "label": "Projets Livrés", "value": "40+" },
+      "agents": { "label": "Agents Déployés", "value": "1M+" },
+      "code": { "label": "Lignes de Code", "value": "2.5M" },
+      "years": { "label": "Années d'Excellence", "value": "5+" }
+    }
   },
   "work": {
-    "title": "Nos réalisations"
+    "title": "Nos réalisations",
+    "description": "Découvrez nos monuments numériques. Des applications web de qualité Apple aux systèmes d'IA de qualité entreprise, nous redéfinissons les standards de l'industrie.",
+    "projects": {
+      "aura": { "title": "Aura Network", "category": "Plateforme d'agents IA", "year": "2026" },
+      "nexus": { "title": "Nexus Cloud", "category": "Infrastructure SaaS", "year": "2025" },
+      "prism": { "title": "Prism", "category": "Automatisation d'entreprise", "year": "2025" },
+      "onyx": { "title": "Onyx Protocol", "category": "Machine Learning", "year": "2024" }
+    }
   },
   "legal": {
     "title": "Documents légaux",
@@ -185,5 +201,39 @@
   "automation": {
     "heading": "Interfaces en action",
     "alt": "Aperçu de l'application"
+  },
+  "servicesPages": {
+    "aiAgents": {
+      "title": "Agents IA Autonomes",
+      "description": "Nous développons des agents intelligents capables de raisonner, d'apprendre et d'exécuter des tâches complexes de manière autonome.",
+      "features": {
+        "learning": { "title": "Apprentissage Continu", "desc": "Nos agents s'adaptent et s'améliorent à chaque interaction, garantissant une évolution constante de vos performances." },
+        "reasoning": { "title": "Raisonnement Logique", "desc": "Au-delà de la simple génération de texte, nos systèmes intègrent des capacités de raisonnement avancé pour résoudre des problèmes métiers." },
+        "execution": { "title": "Exécution d'Actions", "desc": "Intégration transparente avec vos API pour permettre aux agents d'agir directement sur votre écosystème." }
+      }
+    },
+    "saas": {
+      "title": "Développement SaaS Évolutif",
+      "description": "Des architectures logicielles de pointe, conçues pour supporter des millions d'utilisateurs tout en offrant une expérience fluide.",
+      "features": {
+        "availability": { "title": "Haute Disponibilité", "desc": "Infrastructure cloud native garantie à 99.99% d'uptime, conçue pour l'hyper-croissance." },
+        "security": { "title": "Sécurité Militaire", "desc": "Chiffrement de bout en bout et conformité totale avec les normes de sécurité les plus strictes (RGPD, SOC2)." },
+        "ux": { "title": "Design UX/UI Premium", "desc": "Des interfaces épurées, intuitives et visuellement époustouflantes qui fidélisent vos utilisateurs." }
+      }
+    },
+    "automation": {
+      "title": "Automatisation d'Entreprise",
+      "description": "Éliminez les frictions. Nous transformons vos processus manuels en flux de travail automatisés, rapides et sans erreur.",
+      "features": {
+        "integration": { "title": "Intégration Systèmes", "desc": "Nous connectons vos outils existants (CRM, ERP, bases de données) pour créer une synergie parfaite." },
+        "cost": { "title": "Optimisation des Coûts", "desc": "Réduisez drastiquement vos coûts opérationnels en automatisant les tâches chronophages." },
+        "monitoring": { "title": "Supervision en Temps Réel", "desc": "Tableaux de bord analytiques pour monitorer l'efficacité de vos automatisations." }
+      }
+    }
+  },
+  "legalContent": {
+    "privacy": { "title": "Politique de Confidentialité", "content": "Chez HoldingAI LTD, nous prenons votre vie privée au sérieux. Nous collectons des données minimales nécessaires pour fournir nos services. Cela inclut votre nom, email et les détails du projet soumis via notre formulaire de contact. Nous ne vendons ni ne partageons vos données avec des tiers. Pour toute demande de suppression de vos données, veuillez nous contacter à info@holdingai.io." },
+    "terms": { "title": "Conditions Générales", "content": "L'utilisation de nos services implique l'acceptation des présentes conditions. HoldingAI LTD fournit des services de développement de logiciels et d'intelligence artificielle 'tels quels'. Nous déclinons toute responsabilité pour les pertes de données ou les interruptions de service. Tous les droits de propriété intellectuelle sur les livrables vous sont transférés uniquement après paiement intégral des factures." },
+    "mentions": { "title": "Mentions Légales", "content": "Éditeur du site : HoldingAI LTD, société enregistrée en Angleterre et au Pays de Galles. Siège social : Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Royaume-Uni. Contact : info@holdingai.io | +44 7537106967. Hébergement : Vercel Inc." }
   }
 }

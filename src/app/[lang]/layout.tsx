@@ -8,22 +8,30 @@ import ScrollManager from "@/components/ScrollManager";
 import Navigation from "@/components/Navigation";
 import Atmosphere from "@/components/ui/Atmosphere";
 import OpenAIAdsPixel from "@/components/OpenAIAdsPixel";
-import { getDictionary } from "@/i18n/getDictionary";
-import { LanguageProvider } from "@/i18n/LanguageContext";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-export const metadata: Metadata = {
-  title: "HoldingAI.io - Premium AI Product Studio",
-  description: "We build the next generation of AI products. HoldingAI.io designs and engineers world-class mobile applications, SaaS platforms, and AI agents.",
-  icons: {
-    icon: '/icon.svg',
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(routing.locales, lang)) notFound();
+  const t = await getTranslations({ locale: lang as Locale, namespace: 'meta' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    icons: {
+      icon: '/icon.svg',
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -35,26 +43,23 @@ export default async function RootLayout({
   const resolvedParams = await params;
   const lang = resolvedParams?.lang || 'en';
   if (!hasLocale(routing.locales, lang)) notFound();
-  const dict = await getDictionary(lang);
   const messages = await getMessages();
 
   return (
     <html lang={lang} className="dark">
       <body className={`${inter.variable} antialiased bg-transparent text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
         <NextIntlClientProvider messages={messages}>
-          <LanguageProvider lang={lang} dict={dict}>
-            <OpenAIAdsPixel />
-            <Atmosphere />
-            <ScrollManager />
-            <NeuralCloud />
-            <Navigation />
-            <div className="relative z-10">
-              <SmoothScroll>
-                {children}
-                <Footer />
-              </SmoothScroll>
-            </div>
-          </LanguageProvider>
+          <OpenAIAdsPixel />
+          <Atmosphere />
+          <ScrollManager />
+          <NeuralCloud />
+          <Navigation />
+          <div className="relative z-10">
+            <SmoothScroll>
+              {children}
+              <Footer />
+            </SmoothScroll>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

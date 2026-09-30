@@ -6,8 +6,10 @@ import { useState } from 'react';
 import { motionTokens } from '@/lib/design-system';
 import LuxuryText from './ui/LuxuryText';
 import { measureLeadCreated } from './OpenAIAdsPixel';
+import { useTranslations } from 'next-intl';
 
 export default function ContactSection() {
+  const t = useTranslations('contact');
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
@@ -63,19 +65,19 @@ export default function ContactSection() {
             variants={motionTokens.presets.slideUp}
           >
             <LuxuryText as="h2" className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
-              READY TO BUILD?
+              {t('eyebrow')}
             </LuxuryText>
             <p className="text-xl text-white/60 mb-12 max-w-md">
-              Whether you need a massive enterprise platform or an award-winning mobile app, we are the partner you trust to deliver.
+              {t('subtitle')}
             </p>
 
             <div className="space-y-8 text-white/50">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-white mb-2">Email</p>
+                <p className="text-sm font-semibold uppercase tracking-widest text-white mb-2">{t('emailLabel')}</p>
                 <a href="mailto:info@holdingai.io" className="text-2xl hover:text-brand-neon transition-colors">info@holdingai.io</a>
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-white mb-2">Phone</p>
+                <p className="text-sm font-semibold uppercase tracking-widest text-white mb-2">{t('phoneLabel')}</p>
                 <a href="tel:+447537106967" className="text-2xl hover:text-brand-neon transition-colors">+44 7537 106967</a>
               </div>
             </div>
@@ -95,7 +97,7 @@ export default function ContactSection() {
                   name="name"
                   type="text" 
                   required
-                  placeholder="Your Name" 
+                  placeholder={t('namePlaceholder')}
                   className={inputClasses}
                   onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
@@ -113,7 +115,7 @@ export default function ContactSection() {
                   name="email"
                   type="email" 
                   required
-                  placeholder="Email Address" 
+                  placeholder={t('emailPlaceholder')}
                   className={inputClasses}
                   onFocus={() => setFocusedField('email')}
                   onBlur={() => setFocusedField(null)}
@@ -130,7 +132,7 @@ export default function ContactSection() {
                 <textarea 
                   name="message"
                   required
-                  placeholder="Tell us about your project..." 
+                  placeholder={t('messagePlaceholder')}
                   rows={4}
                   className={`${inputClasses} resize-none`}
                   onFocus={() => setFocusedField('message')}
@@ -146,7 +148,7 @@ export default function ContactSection() {
 
               <div className="pt-4 flex flex-col md:flex-row items-center gap-6 justify-start md:justify-end">
                 {status === 'error' && (
-                  <p className="text-red-400 text-sm">Something went wrong.</p>
+                  <p className="text-red-400 text-sm">{t('error')}</p>
                 )}
                 <button type="submit" disabled={status === 'submitting' || status === 'success'} className="w-full md:w-auto">
                   <MagneticButton className="group w-full md:w-auto">
@@ -154,7 +156,7 @@ export default function ContactSection() {
                       <span className="absolute inset-0 bg-gradient-to-r from-brand-neon to-brand-purple rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
                       <div className="relative bg-black px-12 py-4 rounded-full transition-transform duration-300 group-hover:scale-[0.98] w-full text-center">
                         <span className="text-lg font-bold text-white tracking-wide">
-                          {status === 'submitting' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message'}
+                          {status === 'submitting' ? t('sending') : status === 'success' ? t('sent') : t('submit')}
                         </span>
                       </div>
                     </div>

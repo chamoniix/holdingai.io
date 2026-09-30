@@ -2,12 +2,13 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { useTranslation } from '@/i18n/LanguageContext'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null)
-  const { lang, dict } = useTranslation()
+  const lang = useLocale()
+  const t = useTranslations('hero')
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -41,7 +42,7 @@ export default function Hero() {
             }
           }}
         >
-          {((dict?.hero?.headline as string) || "Building the Future of AI").split(" ").map((word, wordIndex) => (
+          {t('title').split(" ").map((word, wordIndex) => (
             <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.25em] pb-[0.1em]">
               {Array.from(word).map((char, charIndex) => (
                 <motion.span
@@ -71,7 +72,7 @@ export default function Hero() {
           className="mt-8 text-xl md:text-2xl text-gray-200 max-w-3xl text-center font-normal drop-shadow-lg relative z-20"
           style={{ letterSpacing: '0em', lineHeight: 1.6 }}
         >
-          {dict?.hero?.subheadline || "We craft digital experiences where artificial intelligence meets human ambition."}
+          {t('subtitle')}
         </motion.p>
         
         <motion.div
@@ -85,7 +86,7 @@ export default function Hero() {
               whileHover={{ scale: 0.98 }}
               className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
             >
-              {dict?.hero?.cta1 || "Start Your Project"}
+              {t('startProject')}
             </motion.button>
           </Link>
           <Link href={`/${lang}/work`}>
@@ -93,7 +94,7 @@ export default function Hero() {
               whileHover={{ scale: 0.98 }}
               className="px-8 py-4 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] backdrop-blur-[40px] text-white font-semibold rounded-full hover:bg-[rgba(255,255,255,0.05)] transition-all"
             >
-              {dict?.hero?.cta2 || "Watch Showreel"}
+              {t('watchShowreel')}
             </motion.button>
           </Link>
         </motion.div>

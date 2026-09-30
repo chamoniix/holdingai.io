@@ -1,12 +1,12 @@
+// Title/subtitle/buttons were reconciled into the "hero" message namespace (single source).
+// Stat labels are resolved at render time via t(`hero.stats.${key}Label`).
+export type HeroStatKey = 'projects' | 'revenue' | 'clients';
+
 export const heroData = {
-  headline: 'Building the Future of AI',
-  subheadline: 'We craft digital experiences where artificial intelligence meets human ambition.',
-  cta: 'Start Your Project',
-  ctaSecondary: 'Watch Showreel',
   stats: [
-    { value: '50+', label: 'AI Projects Delivered' },
-    { value: '$10M+', label: 'Client Revenue Generated' },
-    { value: '15+', label: 'Enterprise Clients' }
+    { key: 'projects' as HeroStatKey, value: '50+' },
+    { key: 'revenue' as HeroStatKey, value: '$10M+' },
+    { key: 'clients' as HeroStatKey, value: '15+' }
   ],
   backgroundImages: [
     'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920',

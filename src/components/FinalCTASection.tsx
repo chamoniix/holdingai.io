@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { MagneticButton } from './ui/MagneticButton';
+import { useTranslations } from 'next-intl';
 
 export default function FinalCTASection() {
+  const t = useTranslations('cta');
+
   return (
     <section className="relative py-60 bg-black overflow-hidden flex flex-col items-center justify-center text-center">
       {/* Background glow */}
@@ -23,8 +26,8 @@ export default function FinalCTASection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1 }}
         >
-          LET&apos;S BUILD SOMETHING<br />
-          <span className="text-gradient-neon">IMPOSSIBLE.</span>
+          {t('part1')}<br />
+          <span className="text-gradient-neon">{t('part2')}</span>
         </motion.h2>
 
         <motion.div
@@ -37,7 +40,7 @@ export default function FinalCTASection() {
             <div className="relative overflow-hidden rounded-full p-[1px]">
               <span className="absolute inset-0 bg-gradient-to-r from-brand-neon to-brand-purple rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative bg-black px-12 py-6 rounded-full transition-transform duration-300 group-hover:scale-[0.98]">
-                <span className="text-xl font-bold text-white tracking-wide">Start Your Project</span>
+                <span className="text-xl font-bold text-white tracking-wide">{t('button')}</span>
               </div>
             </div>
           </MagneticButton>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 function Counter({ from, to, duration = 2, suffix = "" }: { from: number, to: number, duration?: number, suffix?: string }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
@@ -25,6 +26,8 @@ function Counter({ from, to, duration = 2, suffix = "" }: { from: number, to: nu
 }
 
 export default function NumbersSection() {
+  const t = useTranslations('numbers');
+
   return (
     <section className="py-32 bg-black relative overflow-hidden">
       {/* Particles effect background could go here, for now using a gradient orb */}
@@ -45,7 +48,7 @@ export default function NumbersSection() {
             <h4 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tighter">
               <Counter from={0} to={50} suffix="+" />
             </h4>
-            <p className="text-xl text-brand-neon uppercase tracking-widest font-semibold">Products Launched</p>
+            <p className="text-xl text-brand-neon uppercase tracking-widest font-semibold">{t('productsLaunched')}</p>
           </motion.div>
 
           <motion.div 
@@ -58,7 +61,7 @@ export default function NumbersSection() {
             <h4 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tighter">
               <Counter from={0} to={100} suffix="M+" />
             </h4>
-            <p className="text-xl text-brand-cyan uppercase tracking-widest font-semibold">Users Reached</p>
+            <p className="text-xl text-brand-cyan uppercase tracking-widest font-semibold">{t('usersReached')}</p>
           </motion.div>
 
           <motion.div 
@@ -71,7 +74,7 @@ export default function NumbersSection() {
             <h4 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tighter">
               <Counter from={0} to={15} suffix="" />
             </h4>
-            <p className="text-xl text-brand-purple uppercase tracking-widest font-semibold">Industry Awards</p>
+            <p className="text-xl text-brand-purple uppercase tracking-widest font-semibold">{t('industryAwards')}</p>
           </motion.div>
 
         </div>

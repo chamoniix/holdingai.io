@@ -1,9 +1,9 @@
 'use client';
-import { useTranslation } from '@/i18n/LanguageContext';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 export default function AIAgentsPage() {
-  const { dict } = useTranslation();
+  const t = useTranslations('servicesPages');
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -21,21 +21,22 @@ export default function AIAgentsPage() {
         
         <motion.div variants={itemVariants} className="text-center mb-24">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
-            {dict.services?.aiAgents?.title}
+            {t('aiAgents.title')}
           </h1>
           <p className="text-xl md:text-2xl text-[#86868B] font-light leading-relaxed max-w-3xl mx-auto">
-            {dict.services?.aiAgents?.description}
+            {t('aiAgents.description')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
-          {[1, 2, 3].map((num) => {
-            const featureTitle = dict.services?.aiAgents?.[`feature${num}` as keyof typeof dict.services.aiAgents];
-            const featureDesc = dict.services?.aiAgents?.[`feature${num}Desc` as keyof typeof dict.services.aiAgents];
+          {(['learning', 'reasoning', 'execution'] as const).map((key, num) => {
+            // Dynamic keys: cast `as never` to satisfy next-intl key typing.
+            const featureTitle = t(`aiAgents.features.${key}.title` as never);
+            const featureDesc = t(`aiAgents.features.${key}.desc` as never);
             
             return (
               <motion.div key={num} variants={itemVariants} className="glass-panel p-10 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 text-6xl text-[#2997FF] blur-[2px] group-hover:blur-none font-bold">0{num}</div>
+                <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-100 transition-opacity duration-500 text-6xl text-[#2997FF] blur-[2px] group-hover:blur-none font-bold">0{num + 1}</div>
                 <h3 className="text-2xl font-bold text-white mb-4 relative z-10">{featureTitle}</h3>
                 <p className="text-[#86868B] leading-relaxed relative z-10">{featureDesc}</p>
               </motion.div>
