@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-16 mb-16 md:mb-24">
           
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-1">
-            <p className="text-white text-sm font-bold tracking-[0.2em] uppercase mb-6 opacity-90">{t('city')}</p>
+            <p className="text-white text-sm font-bold tracking-[0.2em] uppercase mb-6 opacity-90">{t('city')}, {t('country')}</p>
             <p className="text-[#A1A1A6] text-base font-light">{t('address1')}</p>
             <p className="text-[#A1A1A6] text-base font-light">{t('address2')}</p>
             <div className="pt-6 flex flex-col space-y-2">
