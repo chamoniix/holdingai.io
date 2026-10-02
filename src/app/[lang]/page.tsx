@@ -6,6 +6,7 @@ import { buildPageMetadata } from '@/lib/seo';
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
+import NumbersSection from "@/components/NumbersSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
 
 export async function generateMetadata({
@@ -35,7 +36,10 @@ export default async function Home({
 
       {/* Scene 2: The Architecture */}
       <Services />
-      
+
+      {/* Proof of scale */}
+      <NumbersSection />
+
       {/* Scene 3: Selected Work (Horizontal Carousel) */}
       <ShowcaseSection />
       
