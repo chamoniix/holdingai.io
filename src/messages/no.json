@@ -12,7 +12,8 @@
     "letsBuild": "LA OSS BYGGE"
   },
   "hero": {
-    "title": "Bygger fremtidens KI",
+    "title1": "Vi bygger",
+    "title2": "fremtidens KI",
     "subtitle": "Vi skaper digitale opplevelser der kunstig intelligens møter menneskelig ambisjon.",
     "startProject": "Start prosjektet ditt",
     "watchShowreel": "Se showreel",
@@ -24,6 +25,10 @@
       "clients": "15+",
       "clientsLabel": "Enterprise-kunder"
     }
+  },
+  "manifesto": {
+    "a": "Vi bygger ikke nettsider.",
+    "b": "Vi arkitekterer det neste tiåret med intelligens."
   },
   "heroSection": {
     "part1": "HOLDING",

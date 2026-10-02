@@ -12,7 +12,8 @@
     "letsBuild": "LANÇONS-NOUS"
   },
   "hero": {
-    "title": "Bâtir le Futur de l'IA",
+    "title1": "Bâtir le",
+    "title2": "Futur de l'IA",
     "subtitle": "Nous façonnons des expériences digitales où l'intelligence artificielle rencontre l'ambition humaine.",
     "startProject": "Démarrer votre projet",
     "watchShowreel": "Regarder le Showreel",
@@ -24,6 +25,10 @@
       "clients": "15+",
       "clientsLabel": "Clients grands comptes"
     }
+  },
+  "manifesto": {
+    "a": "Nous ne construisons pas des sites web.",
+    "b": "Nous architecturons la prochaine décennie de l'intelligence."
   },
   "heroSection": {
     "part1": "HOLDING",

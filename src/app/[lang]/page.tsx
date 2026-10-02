@@ -5,6 +5,7 @@ import { type Locale } from '@/i18n/routing';
 import { buildPageMetadata } from '@/lib/seo';
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
+import ManifestoSection from "@/components/ManifestoSection";
 import Services from "@/components/Services";
 import NumbersSection from "@/components/NumbersSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
@@ -33,6 +34,9 @@ export default async function Home({
       <Hero />
       
       <TrustBar />
+
+      {/* Scene 1.5: The Manifesto */}
+      <ManifestoSection />
 
       {/* Scene 2: The Architecture */}
       <Services />

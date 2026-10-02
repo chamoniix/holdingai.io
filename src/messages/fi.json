@@ -12,7 +12,8 @@
     "letsBuild": "RAKENNETAAN"
   },
   "hero": {
-    "title": "Rakennamme tekoälyn tulevaisuutta",
+    "title1": "Rakennamme",
+    "title2": "tekoälyn tulevaisuutta",
     "subtitle": "Luomme digitaalisia kokemuksia, joissa tekoäly kohtaa inhimillisen kunnianhimon.",
     "startProject": "Aloita projektisi",
     "watchShowreel": "Katso showreel",
@@ -24,6 +25,10 @@
       "clients": "15+",
       "clientsLabel": "Yritysasiakkaat"
     }
+  },
+  "manifesto": {
+    "a": "Emme rakenna verkkosivustoja.",
+    "b": "Me suunnittelemme tekoälyn seuraavan vuosikymmenen."
   },
   "heroSection": {
     "part1": "HOLDING",

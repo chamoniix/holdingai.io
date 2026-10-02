@@ -24,45 +24,25 @@ export default function Hero() {
       ref={containerRef}
       className="relative w-full min-h-[75vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-transparent"
     >
+      {/* Aurora halo — ambient light behind the headline (blur on the div, never on text) */}
+      <div className="hero-aurora" aria-hidden="true" />
+
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 w-full mt-24">
         <motion.h1
-          className="text-center font-bold text-balance flex flex-wrap justify-center overflow-visible pb-4"
+          className="text-center font-bold text-balance flex flex-wrap justify-center items-baseline overflow-visible pb-4"
           style={{ 
             fontSize: 'clamp(3rem, 9vw, 9rem)', 
             letterSpacing: '-0.04em',
             lineHeight: 1.1
           }}
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.05, delayChildren: 0.2 }
-            }
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
         >
-          {t('title').split(" ").map((word, wordIndex) => (
-            <span key={wordIndex} className="inline-block whitespace-nowrap mr-[0.25em] pb-[0.1em]">
-              {Array.from(word).map((char, charIndex) => (
-                <motion.span
-                  key={`${wordIndex}-${charIndex}`}
-                  className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#E2E2E8] to-[#606060] inline-block drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] pb-2"
-                  variants={{
-                    hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
-                    visible: {
-                      opacity: 1, 
-                      y: 0, 
-                      filter: 'blur(0px)',
-                      transition: { type: 'spring', damping: 12, stiffness: 100 }
-                    }
-                  }}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </span>
-          ))}
+          <span className="text-[#F5F5F7]">{t('title1')}</span>
+          <em className="italic font-serif-display text-[#E2E2E8] pl-[0.25em]">
+            {t('title2')}
+          </em>
         </motion.h1>
         
         <motion.p

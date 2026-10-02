@@ -31,6 +31,11 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* SILENT POWER — serif display (Instrument Serif) */
+  .font-serif-display {
+    font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
+  }
   
   /* Glassmorphism 4.0 - Billion Dollar HQ Polish */
   .glass-panel {
@@ -90,6 +95,40 @@
     display: grid;
     grid-template-columns: repeat(24, minmax(0, 1fr));
     gap: 1.5rem; /* 24px gap */
+  }
+}
+
+/* SILENT POWER — hero aurora halo (light, never on text) */
+.hero-aurora {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(41, 151, 255, 0.55) 0%,
+    rgba(191, 90, 242, 0.32) 42%,
+    rgba(191, 90, 242, 0) 68%
+  );
+  filter: blur(80px);
+  opacity: 0.2;
+  pointer-events: none;
+  animation: aurora-drift 12s ease-in-out infinite;
+}
+
+@keyframes aurora-drift {
+  0%, 100% {
+    opacity: 0.16;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.24;
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora {
+    animation: none;
+    opacity: 0.2;
   }
 }
 

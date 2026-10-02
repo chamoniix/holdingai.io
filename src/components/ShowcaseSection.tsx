@@ -69,6 +69,11 @@ export default function ShowcaseSection() {
             return (
               <div
                 key={index}
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  e.currentTarget.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                  e.currentTarget.style.setProperty('--y', `${e.clientY - rect.top}px`);
+                }}
                 className="group relative flex-shrink-0 w-[300px] h-[450px] md:w-[420px] md:h-[590px] lg:w-[500px] lg:h-[700px] overflow-hidden cursor-pointer rounded-3xl border border-white/10 bg-white/[0.02] shadow-[0_0_40px_rgba(255,255,255,0.05)]"
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500 z-10 pointer-events-none" />
@@ -78,6 +83,14 @@ export default function ShowcaseSection() {
                   src={project.img}
                   alt={title}
                   className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+                />
+
+                {/* Spotlight glow following the cursor */}
+                <div
+                  className="pointer-events-none absolute inset-0 z-[15] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(41,151,255,0.16), rgba(191,90,242,0.10) 45%, transparent 65%)',
+                  }}
                 />
 
                 <div className="absolute bottom-10 left-10 z-20 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]">

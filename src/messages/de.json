@@ -12,7 +12,8 @@
     "letsBuild": "LASST UNS BAUEN"
   },
   "hero": {
-    "title": "Wir bauen die Zukunft der KI",
+    "title1": "Wir bauen das",
+    "title2": "Zukunft der KI",
     "subtitle": "Wir erschaffen digitale Erlebnisse, in denen künstliche Intelligenz auf menschliche Ambition trifft.",
     "startProject": "Projekt starten",
     "watchShowreel": "Showreel ansehen",
@@ -24,6 +25,10 @@
       "clients": "15+",
       "clientsLabel": "Enterprise-Kunden"
     }
+  },
+  "manifesto": {
+    "a": "Wir bauen keine Websites.",
+    "b": "Wir gestalten das nächste Jahrzehnt der Intelligenz."
   },
   "heroSection": {
     "part1": "HOLDING",

@@ -12,7 +12,8 @@
     "letsBuild": "LET'S BUILD"
   },
   "hero": {
-    "title": "Building the Future of AI",
+    "title1": "Building the",
+    "title2": "Future of AI",
     "subtitle": "We craft digital experiences where artificial intelligence meets human ambition.",
     "startProject": "Start Your Project",
     "watchShowreel": "Watch Showreel",
@@ -24,6 +25,10 @@
       "clients": "15+",
       "clientsLabel": "Enterprise Clients"
     }
+  },
+  "manifesto": {
+    "a": "We don't build websites.",
+    "b": "We architect the next decade of intelligence."
   },
   "heroSection": {
     "part1": "HOLDING",

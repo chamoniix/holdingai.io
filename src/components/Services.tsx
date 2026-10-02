@@ -50,7 +50,14 @@ export default function Services() {
                   </p>
                 </div>
               
-              <div className="w-full md:w-1/2 aspect-[4/3] md:aspect-square relative flex items-center justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.02] shadow-2xl">
+              <div
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  e.currentTarget.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                  e.currentTarget.style.setProperty('--y', `${e.clientY - rect.top}px`);
+                }}
+                className="group relative w-full md:w-1/2 aspect-[4/3] md:aspect-square flex items-center justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.02] shadow-2xl"
+              >
                 <img 
                   src={service.image} 
                   alt={title}
@@ -58,6 +65,13 @@ export default function Services() {
                 />
                 {/* Subtle overlay gradient to blend edges if needed, or just let the image shine */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                {/* Spotlight glow following the cursor */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'radial-gradient(500px circle at var(--x, 50%) var(--y, 50%), rgba(41,151,255,0.14), transparent 60%)',
+                  }}
+                />
               </div>
             </motion.div>
             );

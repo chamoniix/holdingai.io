@@ -12,7 +12,8 @@
     "letsBuild": "CONSTRUYAMOS"
   },
   "hero": {
-    "title": "Construyendo el Futuro de la IA",
+    "title1": "Construyendo el",
+    "title2": "Futuro de la IA",
     "subtitle": "Creamos experiencias digitales donde la inteligencia artificial se encuentra con la ambición humana.",
     "startProject": "Iniciar tu proyecto",
     "watchShowreel": "Ver el showreel",
@@ -24,6 +25,10 @@
       "clients": "15+",
       "clientsLabel": "Clientes enterprise"
     }
+  },
+  "manifesto": {
+    "a": "No construimos sitios web.",
+    "b": "Arquitecturamos la próxima década de la inteligencia."
   },
   "heroSection": {
     "part1": "HOLDING",
