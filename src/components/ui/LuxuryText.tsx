@@ -34,7 +34,6 @@ export default function LuxuryText({ children, className, delay = 0, as = 'div' 
     visible: {
       opacity: 1,
       y: 0,
-      filter: 'blur(0px)',
       transition: {
         type: 'spring' as const,
         damping: 24,
@@ -46,7 +45,6 @@ export default function LuxuryText({ children, className, delay = 0, as = 'div' 
     hidden: {
       opacity: 0,
       y: 10,
-      filter: 'blur(8px)',
       transition: {
         type: 'spring' as const,
         damping: 24,
@@ -64,7 +62,7 @@ export default function LuxuryText({ children, className, delay = 0, as = 'div' 
       variants={container}
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'}
-      className={cn("will-change-transform will-change-filter", className)}
+      className={cn("will-change-transform", className)}
     >
       {words.map((word, index) => (
         <motion.span

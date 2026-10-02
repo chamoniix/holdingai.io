@@ -53,7 +53,7 @@ export default function ShowcaseSection() {
       <div className="absolute top-20 left-12 md:left-20 z-20 pointer-events-none">
         <LuxuryText
           as="h3"
-          className="text-4xl md:text-6xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-[#E2E2E8] to-[#86868B]"
+          className="text-4xl md:text-6xl font-bold tracking-tighter text-[#E2E2E8]"
         >
           {t('title')}
         </LuxuryText>

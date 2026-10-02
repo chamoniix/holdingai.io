@@ -20,7 +20,7 @@ export default function Services() {
     <section id="services" className="relative pt-0 pb-16 md:pt-0 md:pb-20 px-6 bg-transparent z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-24 relative z-10">
-          <LuxuryText as="h2" delay={0.1} className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 drop-shadow-2xl">
+          <LuxuryText as="h2" delay={0.1} className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white">
             {t('eyebrow')}
           </LuxuryText>
         </div>
