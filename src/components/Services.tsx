@@ -40,12 +40,12 @@ export default function Services() {
                 className="group relative flex items-center gap-5 md:gap-10 border-b border-white/10 py-8 md:py-10 overflow-hidden"
               >
                 {/* Number */}
-                <span className="shrink-0 w-10 font-mono text-sm text-[#86868B] group-hover:text-[#BF5AF2] transition-colors duration-300">
+                <span className="shrink-0 w-10 font-mono text-sm text-[#A1A1A6] group-hover:text-[#BF5AF2] transition-colors duration-300">
                   {num}
                 </span>
 
                 {/* Huge title */}
-                <h3 className="flex-1 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white/40 group-hover:text-white transition-colors duration-300">
+                <h3 className="flex-1 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white/70 group-hover:text-white transition-colors duration-300">
                   {title}
                 </h3>
 

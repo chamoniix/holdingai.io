@@ -50,9 +50,9 @@ export default function ProcessSection() {
                   {/* Timeline dot (desktop) */}
                   <div className="absolute top-0 left-0 w-2 h-2 -translate-y-1/2 rounded-full bg-[#2997FF] hidden md:block" />
 
-                  <span className="font-mono text-xs text-[#86868B]">{num}</span>
+                  <span className="font-mono text-xs text-[#A1A1A6]">{num}</span>
                   <h3 className="mt-2 text-xl md:text-2xl font-semibold text-white tracking-tight">{title}</h3>
-                  <p className="mt-2 text-sm text-[#86868B] font-light leading-relaxed">{desc}</p>
+                  <p className="mt-2 text-sm text-[#A1A1A6] font-light leading-relaxed">{desc}</p>
                 </motion.div>
               );
             })}
