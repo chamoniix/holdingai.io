@@ -17,6 +17,7 @@
     "subtitle": "Creiamo esperienze digitali dove l'intelligenza artificiale incontra l'ambizione umana.",
     "startProject": "Avvia il tuo progetto",
     "watchShowreel": "Guarda lo showreel",
+    "sideLabel": "STUDIO IA PREMIUM — LONDRA · PARIGI",
     "stats": {
       "projects": "50+",
       "projectsLabel": "Progetti AI consegnati",
@@ -89,7 +90,7 @@
     }
   },
   "showcase": {
-    "title": "Progetti Recenti",
+    "title": "Lavori Selezionati",
     "items": {
       "aura": {
         "title": "Aura",

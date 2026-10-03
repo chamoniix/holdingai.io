@@ -4,11 +4,12 @@ import { getTranslations } from 'next-intl/server';
 import { type Locale } from '@/i18n/routing';
 import { buildPageMetadata } from '@/lib/seo';
 import Hero from "@/components/Hero";
-import TrustBar from "@/components/TrustBar";
+import CapabilitiesMarquee from "@/components/CapabilitiesMarquee";
 import ManifestoSection from "@/components/ManifestoSection";
-import Services from "@/components/Services";
-import NumbersSection from "@/components/NumbersSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
+import Services from "@/components/Services";
+import ProcessSection from "@/components/ProcessSection";
+import TrustBar from "@/components/TrustBar";
 
 export async function generateMetadata({
   params,
@@ -32,22 +33,26 @@ export default async function Home({
       
       {/* Scene 1: The Ignition */}
       <Hero />
-      
-      <TrustBar />
+
+      {/* Scene 1.2: Capabilities marquee */}
+      <CapabilitiesMarquee />
 
       {/* Scene 1.5: The Manifesto */}
       <ManifestoSection />
 
-      {/* Scene 2: The Architecture */}
+      {/* Scene 2: Selected Work (asymmetric gallery) */}
+      <ShowcaseSection />
+
+      {/* Scene 3: The Architecture (numbered index) */}
       <Services />
 
-      {/* Proof of scale */}
-      <NumbersSection />
+      {/* Scene 4: The Process (horizontal timeline) */}
+      <ProcessSection />
 
-      {/* Scene 3: Selected Work (Horizontal Carousel) */}
-      <ShowcaseSection />
-      
-      {/* Scene 5: The Ultimatum (Final CTA) */}
+      {/* Scene 5: Trust (compact) */}
+      <TrustBar />
+
+      {/* Scene 6: The Ultimatum (Final CTA) */}
       <section className="relative py-20 md:py-24 px-6 bg-transparent z-10 overflow-hidden">
         {/* Background Ambient Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,#2997FF30,transparent_60%)] pointer-events-none" />

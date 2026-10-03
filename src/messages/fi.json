@@ -17,6 +17,7 @@
     "subtitle": "Luomme digitaalisia kokemuksia, joissa tekoäly kohtaa inhimillisen kunnianhimon.",
     "startProject": "Aloita projektisi",
     "watchShowreel": "Katso showreel",
+    "sideLabel": "PREMIUM-TEKOÄLYSTUDIO — LONTOO · PARIISI",
     "stats": {
       "projects": "50+",
       "projectsLabel": "Toimitetut tekoälyprojektit",
@@ -89,7 +90,7 @@
     }
   },
   "showcase": {
-    "title": "Viimeisimmät projektit",
+    "title": "Valitut työt",
     "items": {
       "aura": {
         "title": "Aura",

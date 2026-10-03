@@ -17,6 +17,7 @@
     "subtitle": "Nous façonnons des expériences digitales où l'intelligence artificielle rencontre l'ambition humaine.",
     "startProject": "Démarrer votre projet",
     "watchShowreel": "Regarder le Showreel",
+    "sideLabel": "STUDIO IA PREMIUM — LONDRES · PARIS",
     "stats": {
       "projects": "50+",
       "projectsLabel": "Projets IA livrés",
@@ -80,7 +81,7 @@
     }
   },
   "showcase": {
-    "title": "Projets Récents",
+    "title": "Travaux Sélectionnés",
     "items": {
       "aura": { "title": "Aura", "sector": "Banque de Luxe" },
       "vitals": { "title": "Vitals", "sector": "IA Santé" },

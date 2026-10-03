@@ -17,6 +17,7 @@
     "subtitle": "We craft digital experiences where artificial intelligence meets human ambition.",
     "startProject": "Start Your Project",
     "watchShowreel": "Watch Showreel",
+    "sideLabel": "PREMIUM AI STUDIO — LONDON · PARIS",
     "stats": {
       "projects": "50+",
       "projectsLabel": "AI Projects Delivered",
@@ -80,7 +81,7 @@
     }
   },
   "showcase": {
-    "title": "Recent Projects",
+    "title": "Selected Work",
     "items": {
       "aura": { "title": "Aura", "sector": "Luxury Banking" },
       "vitals": { "title": "Vitals", "sector": "Healthcare AI" },

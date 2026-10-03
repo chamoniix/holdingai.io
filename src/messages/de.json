@@ -17,6 +17,7 @@
     "subtitle": "Wir erschaffen digitale Erlebnisse, in denen künstliche Intelligenz auf menschliche Ambition trifft.",
     "startProject": "Projekt starten",
     "watchShowreel": "Showreel ansehen",
+    "sideLabel": "PREMIUM-KI-STUDIO — LONDON · PARIS",
     "stats": {
       "projects": "50+",
       "projectsLabel": "Gelieferte KI-Projekte",
@@ -89,7 +90,7 @@
     }
   },
   "showcase": {
-    "title": "Aktuelle Projekte",
+    "title": "Ausgewählte Arbeiten",
     "items": {
       "aura": {
         "title": "Aura",

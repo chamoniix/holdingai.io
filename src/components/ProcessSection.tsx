@@ -1,67 +1,59 @@
 "use client";
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import LuxuryText from './ui/LuxuryText';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 const processSteps = ["discover", "design", "prototype", "develop", "launch", "scale"] as const;
 
 export default function ProcessSection() {
   const t = useTranslations('process');
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"]
-  });
-
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} className="py-40 bg-transparent relative z-10 pointer-events-none">
-      <div className="container mx-auto px-6 max-w-4xl pointer-events-auto">
-        <div className="text-center mb-32">
-          <LuxuryText as="h2" className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
-            {t('eyebrow')}
-          </LuxuryText>
-        </div>
+    <section className="relative py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-transparent z-10">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white mb-16 md:mb-24"
+        >
+          {t('eyebrow')}
+        </motion.h2>
 
         <div className="relative">
-          {/* Vertical Line Background */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2" />
-          
-          {/* Animated Vertical Line */}
-          <motion.div 
-            className="absolute left-4 md:left-1/2 top-0 w-px bg-gradient-to-b from-brand-neon via-brand-purple to-brand-cyan -translate-x-1/2"
-            style={{ height: lineHeight }}
+          {/* Continuous line (desktop) */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-white/10 hidden md:block" />
+          <motion.div
+            className="absolute top-0 left-0 h-px bg-gradient-to-r from-[#2997FF] to-[#BF5AF2] hidden md:block"
+            style={{ width: '100%', transformOrigin: 'left center' }}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
           />
 
-          <div className="space-y-24">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-10 md:gap-6">
             {processSteps.map((stepKey, index) => {
-              const isEven = index % 2 === 0;
-              // Dynamic keys: cast `as never` to satisfy next-intl key typing.
               const title = t(`steps.${stepKey}.title` as never);
               const desc = t(`steps.${stepKey}.desc` as never);
+              const num = String(index + 1).padStart(2, '0');
               return (
-                <div key={stepKey} className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  
-                  {/* Timeline Dot */}
-                  <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-brand-dark border-2 border-brand-neon -translate-x-1/2 shadow-[0_0_15px_rgba(0,240,255,0.5)] z-10" />
+                <motion.div
+                  key={stepKey}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-10%' }}
+                  transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.08 }}
+                  className="relative md:pt-8"
+                >
+                  {/* Timeline dot (desktop) */}
+                  <div className="absolute top-0 left-0 w-2 h-2 -translate-y-1/2 rounded-full bg-[#2997FF] hidden md:block" />
 
-                  {/* Content Container */}
-                  <div className={`ml-12 md:ml-0 md:w-1/2 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'}`}>
-                    <motion.div
-                      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
-                      className="glass-panel p-8 rounded-2xl"
-                    >
-                      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-                      <p className="text-white/60">{desc}</p>
-                    </motion.div>
-                  </div>
-                </div>
+                  <span className="font-mono text-xs text-[#86868B]">{num}</span>
+                  <h3 className="mt-2 text-xl md:text-2xl font-semibold text-white tracking-tight">{title}</h3>
+                  <p className="mt-2 text-sm text-[#86868B] font-light leading-relaxed">{desc}</p>
+                </motion.div>
               );
             })}
           </div>

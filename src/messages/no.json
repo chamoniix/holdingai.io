@@ -17,6 +17,7 @@
     "subtitle": "Vi skaper digitale opplevelser der kunstig intelligens møter menneskelig ambisjon.",
     "startProject": "Start prosjektet ditt",
     "watchShowreel": "Se showreel",
+    "sideLabel": "PREMIUM KI-STUDIO — LONDON · PARIS",
     "stats": {
       "projects": "50+",
       "projectsLabel": "Leverte KI-prosjekter",
@@ -89,7 +90,7 @@
     }
   },
   "showcase": {
-    "title": "Nylige prosjekter",
+    "title": "Utvalgte arbeider",
     "items": {
       "aura": {
         "title": "Aura",

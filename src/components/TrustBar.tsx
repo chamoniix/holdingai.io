@@ -3,14 +3,14 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
-const OpticalCenterLogo = () => <svg viewBox="0 0 200 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="28" fontWeight="800" letterSpacing="-1">OPTICAL CENTER</text></svg>;
-const EnedisLogo = () => <svg viewBox="0 0 120 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="800" letterSpacing="-1">enedis</text></svg>;
-const KrysLogo = () => <svg viewBox="0 0 80 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="900" fontStyle="italic">Krys</text></svg>;
-const DoctolibLogo = () => <svg viewBox="0 0 140 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="700" letterSpacing="-1">doctolib</text></svg>;
-const BasicFitLogo = () => <svg viewBox="0 0 160 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="900" fontStyle="italic" letterSpacing="-1">BASIC-FIT</text></svg>;
-const SanofiLogo = () => <svg viewBox="0 0 130 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="600" letterSpacing="-1">sanofi</text><circle cx="100" cy="15" r="4" /><circle cx="115" cy="20" r="4" /></svg>;
-const LOrealLogo = () => <svg viewBox="0 0 150 40" className="h-6 md:h-8 fill-current"><text x="0" y="30" fontFamily="serif" fontSize="30" fontWeight="400" letterSpacing="2">L'ORÉAL</text></svg>;
-const BNPLogo = () => <svg viewBox="0 0 200 40" className="h-6 md:h-8 fill-current"><path d="M5 15 L15 5 L25 15 L15 25 Z" /><text x="35" y="30" fontFamily="sans-serif" fontSize="26" fontWeight="700">BNP PARIBAS</text></svg>;
+const OpticalCenterLogo = () => <svg viewBox="0 0 200 40" className="h-5 md:h-6 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="28" fontWeight="800" letterSpacing="-1">OPTICAL CENTER</text></svg>;
+const EnedisLogo = () => <svg viewBox="0 0 120 40" className="h-5 md:h-6 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="800" letterSpacing="-1">enedis</text></svg>;
+const KrysLogo = () => <svg viewBox="0 0 80 40" className="h-5 md:h-6 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="900" fontStyle="italic">Krys</text></svg>;
+const DoctolibLogo = () => <svg viewBox="0 0 140 40" className="h-5 md:h-6 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="700" letterSpacing="-1">doctolib</text></svg>;
+const BasicFitLogo = () => <svg viewBox="0 0 160 40" className="h-5 md:h-6 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="900" fontStyle="italic" letterSpacing="-1">BASIC-FIT</text></svg>;
+const SanofiLogo = () => <svg viewBox="0 0 130 40" className="h-5 md:h-6 fill-current"><text x="0" y="30" fontFamily="sans-serif" fontSize="32" fontWeight="600" letterSpacing="-1">sanofi</text><circle cx="100" cy="15" r="4" /><circle cx="115" cy="20" r="4" /></svg>;
+const LOrealLogo = () => <svg viewBox="0 0 150 40" className="h-5 md:h-6 fill-current"><text x="0" y="30" fontFamily="serif" fontSize="30" fontWeight="400" letterSpacing="2">L'ORÉAL</text></svg>;
+const BNPLogo = () => <svg viewBox="0 0 200 40" className="h-5 md:h-6 fill-current"><path d="M5 15 L15 5 L25 15 L15 25 Z" /><text x="35" y="30" fontFamily="sans-serif" fontSize="26" fontWeight="700">BNP PARIBAS</text></svg>;
 
 // Partner names are proper nouns and stay hardcoded; only sectors are translated.
 const logos = [
@@ -28,8 +28,8 @@ export default function TrustBar() {
   const t = useTranslations('trust');
 
   return (
-    <section className="w-full pt-8 pb-2 md:pt-12 md:pb-4 bg-transparent relative z-10 overflow-hidden flex flex-col items-center">
-      <p className="text-sm md:text-base text-[#86868B] uppercase tracking-widest font-semibold mb-10 text-center">
+    <section className="w-full pt-6 pb-2 md:pt-8 md:pb-4 bg-transparent relative z-10 overflow-hidden flex flex-col items-center">
+      <p className="text-xs md:text-sm text-[#86868B] uppercase tracking-widest font-semibold mb-6 text-center">
         {t('heading')}
       </p>
       
