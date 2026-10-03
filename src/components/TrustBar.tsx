@@ -29,13 +29,13 @@ export default function TrustBar() {
 
   return (
     <section className="w-full pt-6 pb-2 md:pt-8 md:pb-4 bg-transparent relative z-10 overflow-hidden flex flex-col items-center">
-      <p className="text-xs md:text-sm text-[#86868B] uppercase tracking-widest font-semibold mb-6 text-center">
+      <p className="text-xs md:text-sm text-[#6E6E73] uppercase tracking-widest font-semibold mb-6 text-center">
         {t('heading')}
       </p>
       
       {/* Gradient masks for smooth fading on edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FAFAF8] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FAFAF8] to-transparent z-10 pointer-events-none" />
       
       <div className="flex w-full overflow-hidden">
         <motion.div
@@ -52,9 +52,9 @@ export default function TrustBar() {
         >
           {/* Double the list and translate by exactly half: seamless infinite loop */}
           {[...logos, ...logos].map((logo, index) => (
-            <div key={index} className="flex flex-col items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 text-white">
+            <div key={index} className="flex flex-col items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 text-[#0A0A0C] hover:text-[#7C3AED]">
               <logo.icon />
-              <span className="text-xs font-medium uppercase tracking-widest text-[#A1A1A6] mt-3">
+              <span className="text-xs font-medium uppercase tracking-widest text-[#6E6E73] mt-3">
                 {/* Dynamic key: cast `as never` to satisfy next-intl key typing. */}
                 {t(`sectors.${logo.key}` as never)}
               </span>

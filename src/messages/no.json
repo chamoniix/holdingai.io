@@ -12,24 +12,24 @@
     "letsBuild": "LA OSS BYGGE"
   },
   "hero": {
-    "title1": "Vi bygger",
-    "title2": "fremtidens KI",
-    "subtitle": "Vi skaper digitale opplevelser der kunstig intelligens møter menneskelig ambisjon.",
-    "startProject": "Start prosjektet ditt",
-    "watchShowreel": "Se showreel",
-    "sideLabel": "PREMIUM KI-STUDIO — LONDON · PARIS",
+    "title1": "KI som arbeider",
+    "title2": "for virksomheten din",
+    "subtitle": "Autonome agenter, automatisering og generativ KI — fra pilot til skala.",
+    "startProject": "Start et prosjekt",
+    "watchShowreel": "Utforsk tjenestene våre",
+    "sideLabel": "360 KI-BYRÅ — LONDON · PARIS",
     "stats": {
-      "projects": "50+",
-      "projectsLabel": "Leverte KI-prosjekter",
-      "revenue": "$10M+",
-      "revenueLabel": "Inntekter generert for kunder",
-      "clients": "15+",
-      "clientsLabel": "Enterprise-kunder"
+      "projects": "62 %",
+      "projectsLabel": "av selskapene eksperimenterer med KI-agenter",
+      "revenue": "88 %",
+      "revenueLabel": "av organisasjonene bruker allerede KI",
+      "clients": "2/3",
+      "clientsLabel": "har ennå ikke fanget verdien"
     }
   },
   "manifesto": {
-    "a": "Vi bygger ikke nettsider.",
-    "b": "Vi arkitekterer det neste tiåret med intelligens."
+    "a": "88 % av selskapene har tatt i bruk KI.",
+    "b": "Bare 1 av 3 fanger verdien. Vi endrer det."
   },
   "heroSection": {
     "part1": "HOLDING",
@@ -51,23 +51,32 @@
     }
   },
   "services": {
-    "eyebrow": "ARKITEKTUREN",
+    "eyebrow": "VÅR EKSPERTISE",
+    "title": "Seks måter å transformere virksomheten din med KI",
     "items": {
-      "aiStrategy": {
-        "title": "KI-strategi",
-        "desc": "Transformer virksomheten din med intelligent automatisering, maskinlæringsmodeller og KI-først-tenkning."
+      "agents": {
+        "title": "KI-agenter og automatisering",
+        "desc": "Autonome agenter som utfører, bestemmer og automatiserer prosessene dine — 24/7, uten feil."
       },
-      "productDesign": {
-        "title": "Produktdesign",
-        "desc": "UX/UI-design i verdensklasse drevet av KI-innsikt og brukerforskning."
+      "knowledge": {
+        "title": "RAG og kunnskapsassistenter",
+        "desc": "Dokumentene dine blir en samtalende assistent. Teamene dine finner svar på sekunder."
       },
-      "development": {
-        "title": "Utvikling",
-        "desc": "Full-stack-utvikling med banebrytende KI-integrasjon (LLM-er, datasyn, NLP)."
+      "chatbots": {
+        "title": "Chatboter og kundeservice",
+        "desc": "Kundestøtte som svarer umiddelbart, i din tone, døgnet rundt."
       },
-      "dataAnalytics": {
-        "title": "Data og analyse",
-        "desc": "Gjør data om til beslutninger med prediktiv analyse og sanntidsdashboards."
+      "implementation": {
+        "title": "Integrasjon og MLOps",
+        "desc": "Fra pilot til produksjon i skala. Vi industrialiserer KI-en din."
+      },
+      "consulting": {
+        "title": "KI-coaching og strategi",
+        "desc": "Revisjon, veikart og KI-drevet transformasjon av arbeidsflytene dine."
+      },
+      "genai": {
+        "title": "Generativ KI for forretning",
+        "desc": "Innhold, kampanjer og produkter forsterket av generativ KI."
       }
     }
   },
@@ -168,6 +177,32 @@
       "scale": {
         "title": "Skalering",
         "desc": "Optimaliserer og utvider plattformen for global rekkevidde."
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "HVA KUNDENE SIER",
+    "title": "Virkelige resultater, ekte ord",
+    "items": {
+      "sophie": {
+        "quote": "KI-agenten kuttet supportkostnadene våre med 62 % på tre måneder.",
+        "name": "Sophie Marchand",
+        "role": "COO — Finloop, London-fintech"
+      },
+      "james": {
+        "quote": "Fra 300 manuelle timer til 40 i måneden. Automatiseringen betalte seg på seks uker.",
+        "name": "James Whitmore",
+        "role": "Head of Operations — Northgate Retail"
+      },
+      "elena": {
+        "quote": "RAG-kunnskapsbasen vår svarer på 85 % av kundespørsmålene uten menneskelig innblanding.",
+        "name": "Elena Petrova",
+        "role": "VP Customer Experience — Lumenly"
+      },
+      "marc": {
+        "quote": "De gjorde ideen vår om til et lansert produkt på ti uker. Helt uvanlig.",
+        "name": "Marc Dubois",
+        "role": "CEO — Carely, healthtech"
       }
     }
   },

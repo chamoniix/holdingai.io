@@ -16,16 +16,16 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-10%' }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white mb-16 md:mb-24"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-[#0A0A0C] mb-16 md:mb-24"
         >
           {t('eyebrow')}
         </motion.h2>
 
         <div className="relative">
           {/* Continuous line (desktop) */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-white/10 hidden md:block" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-[#E5E5E5] hidden md:block" />
           <motion.div
-            className="absolute top-0 left-0 h-px bg-gradient-to-r from-[#2997FF] to-[#BF5AF2] hidden md:block"
+            className="absolute top-0 left-0 h-px bg-[#7C3AED] hidden md:block"
             style={{ width: '100%', transformOrigin: 'left center' }}
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -48,11 +48,11 @@ export default function ProcessSection() {
                   className="relative md:pt-8"
                 >
                   {/* Timeline dot (desktop) */}
-                  <div className="absolute top-0 left-0 w-2 h-2 -translate-y-1/2 rounded-full bg-[#2997FF] hidden md:block" />
+                  <div className="absolute top-0 left-0 w-2 h-2 -translate-y-1/2 rounded-full bg-[#7C3AED] hidden md:block" />
 
-                  <span className="font-mono text-xs text-[#A1A1A6]">{num}</span>
-                  <h3 className="mt-2 text-xl md:text-2xl font-semibold text-white tracking-tight">{title}</h3>
-                  <p className="mt-2 text-sm text-[#A1A1A6] font-light leading-relaxed">{desc}</p>
+                  <span className="font-mono text-xs text-[#8E8E93]">{num}</span>
+                  <h3 className="mt-2 text-xl md:text-2xl font-semibold text-[#0A0A0C] tracking-tight">{title}</h3>
+                  <p className="mt-2 text-sm text-[#6E6E73] font-light leading-relaxed">{desc}</p>
                 </motion.div>
               );
             })}

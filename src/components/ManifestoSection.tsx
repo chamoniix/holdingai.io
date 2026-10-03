@@ -19,7 +19,7 @@ export default function ManifestoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-20%' }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif-display italic text-[#E2E2E8] leading-[1.15]"
+          className="font-serif-display italic text-[#0A0A0C] leading-[1.15]"
           style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}
         >
           {t('a')}
@@ -30,7 +30,7 @@ export default function ManifestoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-20%' }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-          className="font-serif-display italic text-[#BF5AF2] leading-[1.15] mt-2"
+          className="font-serif-display italic text-[#7C3AED] leading-[1.15] mt-2"
           style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}
         >
           {t('b')}

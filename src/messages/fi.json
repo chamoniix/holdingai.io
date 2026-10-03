@@ -12,24 +12,24 @@
     "letsBuild": "RAKENNETAAN"
   },
   "hero": {
-    "title1": "Rakennamme",
-    "title2": "tekoälyn tulevaisuutta",
-    "subtitle": "Luomme digitaalisia kokemuksia, joissa tekoäly kohtaa inhimillisen kunnianhimon.",
-    "startProject": "Aloita projektisi",
-    "watchShowreel": "Katso showreel",
-    "sideLabel": "PREMIUM-TEKOÄLYSTUDIO — LONTOO · PARIISI",
+    "title1": "Tekoäly, joka toimii",
+    "title2": "liiketoimintasi hyväksi",
+    "subtitle": "Autonomiset agentit, automaatio ja generatiivinen tekoäly — pilotista mittakaavaan.",
+    "startProject": "Aloita projekti",
+    "watchShowreel": "Tutustu palveluihimme",
+    "sideLabel": "360 TEKOÄLYTOIMISTO — LONTOO · PARIISI",
     "stats": {
-      "projects": "50+",
-      "projectsLabel": "Toimitetut tekoälyprojektit",
-      "revenue": "$10M+",
-      "revenueLabel": "Asiakkaille tuotettu liikevaihto",
-      "clients": "15+",
-      "clientsLabel": "Yritysasiakkaat"
+      "projects": "62 %",
+      "projectsLabel": "yrityksistä kokeilee tekoälyagentteja",
+      "revenue": "88 %",
+      "revenueLabel": "organisaatioista käyttää jo tekoälyä",
+      "clients": "2/3",
+      "clientsLabel": "ei ole vielä saavuttanut arvoa"
     }
   },
   "manifesto": {
-    "a": "Emme rakenna verkkosivustoja.",
-    "b": "Me suunnittelemme tekoälyn seuraavan vuosikymmenen."
+    "a": "88 % yrityksistä on ottanut tekoälyn käyttöön.",
+    "b": "Vain 1 kolmesta saavuttaa arvon. Me muutamme sen."
   },
   "heroSection": {
     "part1": "HOLDING",
@@ -51,23 +51,32 @@
     }
   },
   "services": {
-    "eyebrow": "ARKKITEHTUURI",
+    "eyebrow": "OSAAMISEMME",
+    "title": "Kuusi tapaa muuttaa liiketoimintasi tekoälyllä",
     "items": {
-      "aiStrategy": {
-        "title": "Tekoälystrategia",
-        "desc": "Muunna liiketoimintasi älykkäällä automaatiolla, koneoppimismalleilla ja AI-first-ajattelulla."
+      "agents": {
+        "title": "Tekoälyagentit ja automaatio",
+        "desc": "Autonomiset agentit, jotka suorittavat, päättävät ja automatisoivat prosessisi — 24/7, ilman virheitä."
       },
-      "productDesign": {
-        "title": "Tuotemuotoilu",
-        "desc": "Maailmanluokan UX/UI-suunnittelua tekoälyn oivallusten ja käyttäjätutkimuksen voimin."
+      "knowledge": {
+        "title": "RAG ja tietoassistentit",
+        "desc": "Dokumenteistasi tulee keskusteleva assistentti. Tiimisi löytävät vastaukset sekunneissa."
       },
-      "development": {
-        "title": "Kehitys",
-        "desc": "Full-stack-ohjelmistokehitystä huippuluokan tekoälyintegraatioilla (LLM:t, konenäkö, NLP)."
+      "chatbots": {
+        "title": "Chatbotit ja asiakaspalvelu",
+        "desc": "Asiakastuki, joka vastaa heti, omalla äänensävylläsi, ympäri vuorokauden."
       },
-      "dataAnalytics": {
-        "title": "Data & analytiikka",
-        "desc": "Muuta data päätöksiksi ennakoivan analytiikan ja reaaliaikaisten kojelautojen avulla."
+      "implementation": {
+        "title": "Integraatio ja MLOps",
+        "desc": "Pilotista tuotantoon mittakaavassa. Teollistamme tekoälysi."
+      },
+      "consulting": {
+        "title": "Tekoälyvalmennus ja -strategia",
+        "desc": "Auditointi, tiekartta ja työnkulkujesi tekoälymuutos."
+      },
+      "genai": {
+        "title": "Generatiivinen tekoäly liiketoimintaan",
+        "desc": "Sisällöt, kampanjat ja tuotteet generatiivisen tekoälyn vahvistamina."
       }
     }
   },
@@ -168,6 +177,32 @@
       "scale": {
         "title": "Skaalaus",
         "desc": "Alustan optimointi ja laajentaminen maailmanlaajuiseen ulottuvuuteen."
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "MITÄ ASIAKKAAT SANOVAT",
+    "title": "Todellisia tuloksia, aitoja sanoja",
+    "items": {
+      "sophie": {
+        "quote": "Tekoälyagentti leikkasi tukikulujamme 62 % kolmessa kuukaudessa.",
+        "name": "Sophie Marchand",
+        "role": "COO — Finloop, lontoolainen fintech"
+      },
+      "james": {
+        "quote": "300 manuaalisesta tunnista 40 tuntiin kuukaudessa. Automaatio maksoi itsensä takaisin kuudessa viikossa.",
+        "name": "James Whitmore",
+        "role": "Head of Operations — Northgate Retail"
+      },
+      "elena": {
+        "quote": "RAG-tietokantamme vastaa 85 %:iin asiakaskysymyksistä ilman ihmistä.",
+        "name": "Elena Petrova",
+        "role": "VP Customer Experience — Lumenly"
+      },
+      "marc": {
+        "quote": "He muuttivat ideamme lanseeratuksi tuotteeksi kymmenessä viikossa. Ennenkuulumatonta.",
+        "name": "Marc Dubois",
+        "role": "CEO — Carely, healthtech"
       }
     }
   },

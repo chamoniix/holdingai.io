@@ -8,15 +8,15 @@ export default function Footer() {
   const t = useTranslations('footer');
 
   return (
-    <footer className="bg-transparent pt-20 md:pt-24 pb-12 relative overflow-hidden pointer-events-auto border-t border-white/10">
+    <footer className="bg-transparent pt-20 md:pt-24 pb-12 relative overflow-hidden pointer-events-auto border-t border-[#E5E5E5]">
       {/* Background ambient glow - extremely subtle */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#2997FF]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#7C3AED]/5 blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10 flex flex-col items-center">
         
         {/* Massive Signature */}
         <h2 
-          className="font-bold tracking-tighter text-center mb-16 md:mb-20 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20"
+          className="font-bold tracking-tighter text-center mb-16 md:mb-20 text-[#0A0A0C]"
           style={{ fontSize: 'clamp(3rem, 12vw, 10rem)', letterSpacing: '-0.06em', lineHeight: 0.8 }}
         >
           HOLDING AI
@@ -26,39 +26,38 @@ export default function Footer() {
         <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-16 mb-16 md:mb-24">
           
           <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-1">
-            <p className="text-white text-sm font-bold tracking-[0.2em] uppercase mb-6 opacity-90">{t('city')}, {t('country')}</p>
-            <p className="text-[#A1A1A6] text-base font-light">{t('address1')}</p>
-            <p className="text-[#A1A1A6] text-base font-light">{t('address2')}</p>
+            <p className="text-[#0A0A0C] text-sm font-bold tracking-[0.2em] uppercase mb-6">{t('city')}, {t('country')}</p>
+            <p className="text-[#6E6E73] text-base font-light">{t('address1')}</p>
+            <p className="text-[#6E6E73] text-base font-light">{t('address2')}</p>
             <div className="pt-6 flex flex-col space-y-2">
-              {/* GAP: no email/phone keys in footer namespace — contact data kept hardcoded */}
-              <a href="mailto:info@holdingai.io" className="text-white text-base font-light hover:text-[#2997FF] transition-colors">info@holdingai.io</a>
-              <a href="tel:+447537106967" className="text-white text-base font-light hover:text-[#2997FF] transition-colors">+44 7537106967</a>
+              <a href="mailto:info@holdingai.io" className="text-[#0A0A0C] text-base font-light hover:text-[#7C3AED] transition-colors">info@holdingai.io</a>
+              <a href="tel:+447537106967" className="text-[#0A0A0C] text-base font-light hover:text-[#7C3AED] transition-colors">+44 7537106967</a>
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center md:items-start text-center md:text-left">
             <div className="flex flex-col space-y-5">
-              <Link href={`/${lang}/work`} className="text-[#A1A1A6] hover:text-white transition-colors text-base font-light tracking-wide">{t('work')}</Link>
-              <Link href={`/${lang}/services/ai-agents`} className="text-[#A1A1A6] hover:text-white transition-colors text-base font-light tracking-wide">{t('services')}</Link>
-              <Link href={`/${lang}/about`} className="text-[#A1A1A6] hover:text-white transition-colors text-base font-light tracking-wide">{t('about')}</Link>
+              <Link href={`/${lang}/work`} className="text-[#6E6E73] hover:text-[#7C3AED] transition-colors text-base font-light tracking-wide">{t('work')}</Link>
+              <Link href={`/${lang}/services/ai-agents`} className="text-[#6E6E73] hover:text-[#7C3AED] transition-colors text-base font-light tracking-wide">{t('services')}</Link>
+              <Link href={`/${lang}/about`} className="text-[#6E6E73] hover:text-[#7C3AED] transition-colors text-base font-light tracking-wide">{t('about')}</Link>
             </div>
             <div className="flex flex-col space-y-5">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#A1A1A6] hover:text-white transition-colors text-base font-light tracking-wide">{t('xTwitter')}</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#6E6E73] hover:text-[#7C3AED] transition-colors text-base font-light tracking-wide">{t('xTwitter')}</a>
             </div>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className="w-full pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[#A1A1A6] text-xs uppercase tracking-[0.15em]">
+        <div className="w-full pt-8 border-t border-[#E5E5E5] flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[#6E6E73] text-xs uppercase tracking-[0.15em]">
             {t('copyright', { year: new Date().getFullYear() })}
           </p>
           
           <div className="flex gap-8">
-            <Link href={`/${lang}/legal/mentions-legales`} className="text-[#A1A1A6] hover:text-white transition-colors text-xs uppercase tracking-[0.15em]">{t('legal')}</Link>
-            <Link href={`/${lang}/legal/privacy`} className="text-[#A1A1A6] hover:text-white transition-colors text-xs uppercase tracking-[0.15em]">{t('privacy')}</Link>
-            <Link href={`/${lang}/legal/terms`} className="text-[#A1A1A6] hover:text-white transition-colors text-xs uppercase tracking-[0.15em]">{t('terms')}</Link>
+            <Link href={`/${lang}/legal/mentions-legales`} className="text-[#6E6E73] hover:text-[#7C3AED] transition-colors text-xs uppercase tracking-[0.15em]">{t('legal')}</Link>
+            <Link href={`/${lang}/legal/privacy`} className="text-[#6E6E73] hover:text-[#7C3AED] transition-colors text-xs uppercase tracking-[0.15em]">{t('privacy')}</Link>
+            <Link href={`/${lang}/legal/terms`} className="text-[#6E6E73] hover:text-[#7C3AED] transition-colors text-xs uppercase tracking-[0.15em]">{t('terms')}</Link>
           </div>
         </div>
 

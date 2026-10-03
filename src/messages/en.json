@@ -12,24 +12,24 @@
     "letsBuild": "LET'S BUILD"
   },
   "hero": {
-    "title1": "Building the",
-    "title2": "Future of AI",
-    "subtitle": "We craft digital experiences where artificial intelligence meets human ambition.",
-    "startProject": "Start Your Project",
-    "watchShowreel": "Watch Showreel",
-    "sideLabel": "PREMIUM AI STUDIO — LONDON · PARIS",
+    "title1": "AI that works",
+    "title2": "for your business",
+    "subtitle": "Autonomous agents, automation and generative AI — from pilot to scale.",
+    "startProject": "Start a project",
+    "watchShowreel": "Discover our services",
+    "sideLabel": "360 AI AGENCY — LONDON · PARIS",
     "stats": {
-      "projects": "50+",
-      "projectsLabel": "AI Projects Delivered",
-      "revenue": "$10M+",
-      "revenueLabel": "Client Revenue Generated",
-      "clients": "15+",
-      "clientsLabel": "Enterprise Clients"
+      "projects": "62 %",
+      "projectsLabel": "of companies are experimenting with AI agents",
+      "revenue": "88 %",
+      "revenueLabel": "of organisations now use AI",
+      "clients": "2/3",
+      "clientsLabel": "still haven't captured the value"
     }
   },
   "manifesto": {
-    "a": "We don't build websites.",
-    "b": "We architect the next decade of intelligence."
+    "a": "88 % of companies have adopted AI.",
+    "b": "Only 1 in 3 captures the value. We change that."
   },
   "heroSection": {
     "part1": "HOLDING",
@@ -51,23 +51,32 @@
     }
   },
   "services": {
-    "eyebrow": "THE ARCHITECTURE",
+    "eyebrow": "OUR EXPERTISE",
+    "title": "Six ways to transform your business with AI",
     "items": {
-      "aiStrategy": {
-        "title": "AI Strategy",
-        "desc": "Transform your business with intelligent automation, machine learning models, and AI-first thinking."
+      "agents": {
+        "title": "AI Agents & Automation",
+        "desc": "Autonomous agents that execute, decide and automate your processes — 24/7, without error."
       },
-      "productDesign": {
-        "title": "Product Design",
-        "desc": "World-class UX/UI design powered by AI insights and user research."
+      "knowledge": {
+        "title": "RAG & Knowledge Assistants",
+        "desc": "Your documents become a conversational assistant. Your teams find answers in seconds."
       },
-      "development": {
-        "title": "Development",
-        "desc": "Full-stack engineering with cutting-edge AI integration (LLMs, computer vision, NLP)."
+      "chatbots": {
+        "title": "Chatbots & Customer Service",
+        "desc": "Customer support that answers instantly, in your tone of voice, around the clock."
       },
-      "dataAnalytics": {
-        "title": "Data & Analytics",
-        "desc": "Turn data into decisions with predictive analytics and real-time dashboards."
+      "implementation": {
+        "title": "Integration & MLOps",
+        "desc": "From pilot to production at scale. We industrialise your AI."
+      },
+      "consulting": {
+        "title": "AI Coaching & Strategy",
+        "desc": "Audit, roadmap and AI-driven transformation of your workflows."
+      },
+      "genai": {
+        "title": "Business Generative AI",
+        "desc": "Content, campaigns and products amplified by generative AI."
       }
     }
   },
@@ -127,6 +136,16 @@
       "develop": { "title": "Develop", "desc": "Engineering scalable architecture with cutting-edge tech." },
       "launch": { "title": "Launch", "desc": "Deploying the product to the market with precision." },
       "scale": { "title": "Scale", "desc": "Optimizing and expanding the platform for global reach." }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "WHAT CLIENTS SAY",
+    "title": "Real results, real words",
+    "items": {
+      "sophie": { "quote": "The AI agent cut our support costs by 62% in three months.", "name": "Sophie Marchand", "role": "COO — Finloop, London fintech" },
+      "james": { "quote": "From 300 manual hours to 40 a month. The automation paid for itself in six weeks.", "name": "James Whitmore", "role": "Head of Operations — Northgate Retail" },
+      "elena": { "quote": "Our RAG knowledge base answers 85% of customer questions with zero human involvement.", "name": "Elena Petrova", "role": "VP Customer Experience — Lumenly" },
+      "marc": { "quote": "They turned our idea into a launched product in ten weeks. Unheard of.", "name": "Marc Dubois", "role": "CEO — Carely, healthtech" }
     }
   },
   "cta": {

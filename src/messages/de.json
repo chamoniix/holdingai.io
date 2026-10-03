@@ -12,24 +12,24 @@
     "letsBuild": "LASST UNS BAUEN"
   },
   "hero": {
-    "title1": "Wir bauen das",
-    "title2": "Zukunft der KI",
-    "subtitle": "Wir erschaffen digitale Erlebnisse, in denen künstliche Intelligenz auf menschliche Ambition trifft.",
+    "title1": "KI, die arbeitet",
+    "title2": "für Ihr Business",
+    "subtitle": "Autonome Agenten, Automatisierung und generative KI — vom Pilotprojekt bis zur Skalierung.",
     "startProject": "Projekt starten",
-    "watchShowreel": "Showreel ansehen",
-    "sideLabel": "PREMIUM-KI-STUDIO — LONDON · PARIS",
+    "watchShowreel": "Unsere Leistungen entdecken",
+    "sideLabel": "360-KI-AGENTUR — LONDON · PARIS",
     "stats": {
-      "projects": "50+",
-      "projectsLabel": "Gelieferte KI-Projekte",
-      "revenue": "$10M+",
-      "revenueLabel": "Für Kunden generierter Umsatz",
-      "clients": "15+",
-      "clientsLabel": "Enterprise-Kunden"
+      "projects": "62 %",
+      "projectsLabel": "der Unternehmen experimentieren mit KI-Agenten",
+      "revenue": "88 %",
+      "revenueLabel": "der Organisationen nutzen bereits KI",
+      "clients": "2/3",
+      "clientsLabel": "haben den Wert noch nicht erfasst"
     }
   },
   "manifesto": {
-    "a": "Wir bauen keine Websites.",
-    "b": "Wir gestalten das nächste Jahrzehnt der Intelligenz."
+    "a": "88 % der Unternehmen haben KI eingeführt.",
+    "b": "Nur 1 von 3 erfasst den Wert. Wir ändern das."
   },
   "heroSection": {
     "part1": "HOLDING",
@@ -51,23 +51,32 @@
     }
   },
   "services": {
-    "eyebrow": "DIE ARCHITEKTUR",
+    "eyebrow": "UNSERE EXPERTISE",
+    "title": "Sechs Wege, Ihr Unternehmen mit KI zu transformieren",
     "items": {
-      "aiStrategy": {
-        "title": "KI-Strategie",
-        "desc": "Transformieren Sie Ihr Business mit intelligenter Automatisierung, Machine-Learning-Modellen und KI-First-Denken."
+      "agents": {
+        "title": "KI-Agenten & Automatisierung",
+        "desc": "Autonome Agenten, die Ihre Prozesse ausführen, entscheiden und automatisieren — rund um die Uhr, ohne Fehler."
       },
-      "productDesign": {
-        "title": "Produktdesign",
-        "desc": "Weltklasse-UX/UI-Design, getragen von KI-Insights und Nutzerforschung."
+      "knowledge": {
+        "title": "RAG & Wissensassistenten",
+        "desc": "Ihre Dokumente werden zu einem Konversationsassistenten. Ihre Teams finden Antworten in Sekunden."
       },
-      "development": {
-        "title": "Entwicklung",
-        "desc": "Full-Stack-Engineering mit modernster KI-Integration (LLMs, Computer Vision, NLP)."
+      "chatbots": {
+        "title": "Chatbots & Kundenservice",
+        "desc": "Kundensupport, der sofort antwortet, in Ihrem Ton, rund um die Uhr."
       },
-      "dataAnalytics": {
-        "title": "Data & Analytics",
-        "desc": "Machen Sie aus Daten Entscheidungen – mit Predictive Analytics und Echtzeit-Dashboards."
+      "implementation": {
+        "title": "Integration & MLOps",
+        "desc": "Vom Pilotprojekt zur Produktion im großen Maßstab. Wir industrialisieren Ihre KI."
+      },
+      "consulting": {
+        "title": "KI-Coaching & Strategie",
+        "desc": "Audit, Roadmap und KI-gestützte Transformation Ihrer Workflows."
+      },
+      "genai": {
+        "title": "Generative KI für Unternehmen",
+        "desc": "Inhalte, Kampagnen und Produkte, verstärkt durch generative KI."
       }
     }
   },
@@ -168,6 +177,32 @@
       "scale": {
         "title": "Skalierung",
         "desc": "Die Plattform für globale Reichweite optimieren und ausbauen."
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "WAS KUNDEN SAGEN",
+    "title": "Echte Ergebnisse, echte Worte",
+    "items": {
+      "sophie": {
+        "quote": "Der KI-Agent hat unsere Supportkosten in drei Monaten um 62 % gesenkt.",
+        "name": "Sophie Marchand",
+        "role": "COO — Finloop, Londoner Fintech"
+      },
+      "james": {
+        "quote": "Von 300 manuellen Stunden auf 40 im Monat. Die Automatisierung hat sich in sechs Wochen bezahlt gemacht.",
+        "name": "James Whitmore",
+        "role": "Head of Operations — Northgate Retail"
+      },
+      "elena": {
+        "quote": "Unsere RAG-Wissensdatenbank beantwortet 85 % der Kundenfragen ohne menschliches Zutun.",
+        "name": "Elena Petrova",
+        "role": "VP Customer Experience — Lumenly"
+      },
+      "marc": {
+        "quote": "Sie haben unsere Idee in zehn Wochen in ein marktreifes Produkt verwandelt. Unglaublich.",
+        "name": "Marc Dubois",
+        "role": "CEO — Carely, Healthtech"
       }
     }
   },

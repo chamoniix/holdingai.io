@@ -3,10 +3,8 @@ import { Inter, Instrument_Serif } from "next/font/google";
 import "../globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
-import NeuralCloud from "@/components/canvas/NeuralCloud";
 import ScrollManager from "@/components/ScrollManager";
 import Navigation from "@/components/Navigation";
-import Atmosphere from "@/components/ui/Atmosphere";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 import OpenAIAdsPixel from "@/components/OpenAIAdsPixel";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -82,8 +80,8 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={lang} className="dark">
-      <body className={`${inter.variable} ${instrumentSerif.variable} antialiased text-[#F5F5F7] selection:bg-[#2997FF]/30 selection:text-white overflow-auto`}>
+    <html lang={lang}>
+      <body className={`${inter.variable} ${instrumentSerif.variable} antialiased text-[#0A0A0C] selection:bg-[#7C3AED]/20 selection:text-[#0A0A0C] overflow-auto`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -107,9 +105,7 @@ export default async function RootLayout({
         />
         <NextIntlClientProvider messages={messages}>
           <OpenAIAdsPixel />
-          <Atmosphere />
           <ScrollManager />
-          <NeuralCloud />
           <Navigation />
           <div className="relative z-10">
             <SmoothScroll>

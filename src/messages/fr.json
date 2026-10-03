@@ -12,24 +12,24 @@
     "letsBuild": "LANÇONS-NOUS"
   },
   "hero": {
-    "title1": "Bâtir le",
-    "title2": "Futur de l'IA",
-    "subtitle": "Nous façonnons des expériences digitales où l'intelligence artificielle rencontre l'ambition humaine.",
-    "startProject": "Démarrer votre projet",
-    "watchShowreel": "Regarder le Showreel",
-    "sideLabel": "STUDIO IA PREMIUM — LONDRES · PARIS",
+    "title1": "L'IA qui travaille",
+    "title2": "pour votre business",
+    "subtitle": "Agents autonomes, automatisation et IA générative — du pilote au déploiement à l'échelle.",
+    "startProject": "Démarrer un projet",
+    "watchShowreel": "Découvrir nos services",
+    "sideLabel": "AGENCE IA 360 — LONDRES · PARIS",
     "stats": {
-      "projects": "50+",
-      "projectsLabel": "Projets IA livrés",
-      "revenue": "$10M+",
-      "revenueLabel": "Revenus générés pour nos clients",
-      "clients": "15+",
-      "clientsLabel": "Clients grands comptes"
+      "projects": "62 %",
+      "projectsLabel": "des entreprises expérimentent les agents IA",
+      "revenue": "88 %",
+      "revenueLabel": "des organisations utilisent l'IA",
+      "clients": "2/3",
+      "clientsLabel": "n'ont pas encore capté la valeur"
     }
   },
   "manifesto": {
-    "a": "Nous ne construisons pas des sites web.",
-    "b": "Nous architecturons la prochaine décennie de l'intelligence."
+    "a": "88 % des entreprises ont adopté l'IA.",
+    "b": "Seulement 1 sur 3 capte la valeur. Nous changeons ça."
   },
   "heroSection": {
     "part1": "HOLDING",
@@ -51,23 +51,32 @@
     }
   },
   "services": {
-    "eyebrow": "L'ARCHITECTURE",
+    "eyebrow": "NOS EXPERTISES",
+    "title": "Six façons de transformer votre business avec l'IA",
     "items": {
-      "aiStrategy": {
-        "title": "Stratégie IA",
-        "desc": "Transformez votre business grâce à l'automatisation intelligente, au machine learning et à une vision IA-first."
+      "agents": {
+        "title": "Agents IA & Automatisation",
+        "desc": "Des agents autonomes qui exécutent, décident et automatisent vos processus — 24/7, sans erreur."
       },
-      "productDesign": {
-        "title": "Design Produit",
-        "desc": "Un design UX/UI de classe mondiale, porté par les insights IA et la recherche utilisateur."
+      "knowledge": {
+        "title": "RAG & Assistants de Connaissance",
+        "desc": "Vos documents deviennent un assistant conversationnel. Vos équipes trouvent les réponses en secondes."
       },
-      "development": {
-        "title": "Développement",
-        "desc": "Ingénierie full-stack avec une intégration IA de pointe (LLM, computer vision, NLP)."
+      "chatbots": {
+        "title": "Chatbots & Service Client",
+        "desc": "Un support client qui répond instantanément, dans votre ton, à toute heure."
       },
-      "dataAnalytics": {
-        "title": "Data & Analytics",
-        "desc": "Transformez vos données en décisions grâce à l'analyse prédictive et aux dashboards temps réel."
+      "implementation": {
+        "title": "Intégration & MLOps",
+        "desc": "Du pilote à la production à grande échelle. Nous industrialisons votre IA."
+      },
+      "consulting": {
+        "title": "Coaching & Stratégie IA",
+        "desc": "Audit, feuille de route et transformation de vos workflows par l'IA."
+      },
+      "genai": {
+        "title": "IA Générative Métier",
+        "desc": "Contenus, campagnes et produits amplifiés par l'IA générative."
       }
     }
   },
@@ -127,6 +136,16 @@
       "develop": { "title": "Développement", "desc": "Concevoir une architecture scalable avec des technologies de pointe." },
       "launch": { "title": "Lancement", "desc": "Déployer le produit sur le marché avec précision." },
       "scale": { "title": "Passage à l'échelle", "desc": "Optimiser et étendre la plateforme pour une portée mondiale." }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "CE QUE DISENT NOS CLIENTS",
+    "title": "Des résultats concrets, des mots vrais",
+    "items": {
+      "sophie": { "quote": "L'agent IA a réduit nos coûts de support de 62 % en trois mois.", "name": "Sophie Marchand", "role": "COO — Finloop, fintech londonienne" },
+      "james": { "quote": "De 300 heures manuelles à 40 par mois. L'automatisation s'est rentabilisée en six semaines.", "name": "James Whitmore", "role": "Head of Operations — Northgate Retail" },
+      "elena": { "quote": "Notre base RAG répond à 85 % des questions clients sans aucune intervention humaine.", "name": "Elena Petrova", "role": "VP Customer Experience — Lumenly" },
+      "marc": { "quote": "Ils ont transformé notre idée en produit lancé en dix semaines. Du jamais vu.", "name": "Marc Dubois", "role": "CEO — Carely, healthtech" }
     }
   },
   "cta": {
