@@ -9,9 +9,10 @@
     "saas": "SAAS",
     "automation": "AUTOMATISATION",
     "work": "NOS RÉALISATIONS",
-    "letsBuild": "LANÇONS-NOUS"
+    "letsBuild": "Devis gratuit"
   },
   "hero": {
+    "label": "AGENCE IA & DÉVELOPPEMENT SUR MESURE — DEPUIS 2018",
     "title1": "L'IA qui travaille",
     "title2": "pour votre business",
     "subtitle": "Agents autonomes, automatisation et IA générative — du pilote au déploiement à l'échelle.",
@@ -19,12 +20,12 @@
     "watchShowreel": "Découvrir nos services",
     "sideLabel": "AGENCE IA 360 — LONDRES · PARIS",
     "stats": {
-      "projects": "62 %",
-      "projectsLabel": "des entreprises expérimentent les agents IA",
-      "revenue": "88 %",
-      "revenueLabel": "des organisations utilisent l'IA",
-      "clients": "2/3",
-      "clientsLabel": "n'ont pas encore capté la valeur"
+      "projects": "200+",
+      "projectsLabel": "Projets réalisés",
+      "revenue": "4.9/5",
+      "revenueLabel": "Note clients",
+      "clients": "8 ans",
+      "clientsLabel": "D'existence"
     }
   },
   "manifesto": {
@@ -52,7 +53,7 @@
   },
   "services": {
     "eyebrow": "NOS EXPERTISES",
-    "title": "Six façons de transformer votre business avec l'IA",
+    "title": "Six expertises, un seul partenaire.",
     "items": {
       "agents": {
         "title": "Agents IA & Automatisation",
@@ -146,6 +147,43 @@
       "james": { "quote": "De 300 heures manuelles à 40 par mois. L'automatisation s'est rentabilisée en six semaines.", "name": "James Whitmore", "role": "Head of Operations — Northgate Retail" },
       "elena": { "quote": "Notre base RAG répond à 85 % des questions clients sans aucune intervention humaine.", "name": "Elena Petrova", "role": "VP Customer Experience — Lumenly" },
       "marc": { "quote": "Ils ont transformé notre idée en produit lancé en dix semaines. Du jamais vu.", "name": "Marc Dubois", "role": "CEO — Carely, healthtech" }
+    }
+  },
+  "clients": {
+    "label": "Ils nous font confiance"
+  },
+  "figures": {
+    "title": "Confiez votre projet à nos experts en applications.",
+    "experts": "15",
+    "expertsLabel": "Experts passionnés",
+    "projects": "100+",
+    "projectsLabel": "Projets livrés",
+    "satisfaction": "78%",
+    "satisfactionLabel": "Clients satisfaits",
+    "location": "FRANCE",
+    "locationLabel": "Basés en France"
+  },
+  "team": {
+    "eyebrow": "NOTRE ÉQUIPE",
+    "title": "Confiez votre projet à nos experts.",
+    "subtitle": "Une équipe senior d'ingénieurs, spécialistes IA et designers produit.",
+    "roles": {
+      "cto": "Direction technique",
+      "ai": "Lead Ingénieur IA",
+      "mobile": "Ingénierie mobile",
+      "design": "Design produit"
+    }
+  },
+  "blog": {
+    "eyebrow": "MÉDIA",
+    "title": "Nos experts vous parlent.",
+    "subtitle": "Explorez l'univers digital à travers nos articles.",
+    "readMore": "Lire l'article",
+    "items": {
+      "mobile": { "title": "Déploiement stratégique d'une application mobile", "tag": "Mobile" },
+      "retention": { "title": "Maximiser la rétention des utilisateurs", "tag": "Produit" },
+      "ab": { "title": "Le guide complet de l'A/B testing", "tag": "Growth" },
+      "lidar": { "title": "Le LIDAR et son intégration dans les apps iOS", "tag": "Innovation" }
     }
   },
   "cta": {

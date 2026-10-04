@@ -9,7 +9,7 @@
     "saas": "SAAS",
     "automation": "AUTOMATIZACIÓN",
     "work": "NUESTRO TRABAJO",
-    "letsBuild": "CONSTRUYAMOS"
+    "letsBuild": "Presupuesto gratis"
   },
   "hero": {
     "title1": "IA que trabaja",
@@ -19,13 +19,14 @@
     "watchShowreel": "Descubrir nuestros servicios",
     "sideLabel": "AGENCIA IA 360 — LONDRES · PARÍS",
     "stats": {
-      "projects": "62 %",
-      "projectsLabel": "de las empresas experimentan con agentes de IA",
-      "revenue": "88 %",
-      "revenueLabel": "de las organizaciones ya usan IA",
-      "clients": "2/3",
-      "clientsLabel": "aún no han capturado el valor"
-    }
+      "projects": "200+",
+      "projectsLabel": "Proyectos realizados",
+      "revenue": "4.9/5",
+      "revenueLabel": "Valoración de clientes",
+      "clients": "8 años",
+      "clientsLabel": "En el mercado"
+    },
+    "label": "AGENCIA DE IA Y SOFTWARE A MEDIDA — DESDE 2018"
   },
   "manifesto": {
     "a": "El 88 % de las empresas ha adoptado la IA.",
@@ -52,7 +53,7 @@
   },
   "services": {
     "eyebrow": "NUESTRA EXPERTISE",
-    "title": "Seis formas de transformar tu negocio con IA",
+    "title": "Seis áreas de expertise. Un solo socio.",
     "items": {
       "agents": {
         "title": "Agentes de IA y Automatización",
@@ -203,6 +204,55 @@
         "quote": "Convirtieron nuestra idea en un producto lanzado en diez semanas. Insólito.",
         "name": "Marc Dubois",
         "role": "CEO — Carely, healthtech"
+      }
+    }
+  },
+  "clients": {
+    "label": "Con la confianza de los líderes del sector"
+  },
+  "figures": {
+    "title": "Confíe su proyecto a nuestros expertos en aplicaciones.",
+    "experts": "15",
+    "expertsLabel": "Expertos apasionados",
+    "projects": "100+",
+    "projectsLabel": "Proyectos entregados",
+    "satisfaction": "78%",
+    "satisfactionLabel": "Clientes satisfechos",
+    "location": "FRANCE",
+    "locationLabel": "Con sede en Francia"
+  },
+  "team": {
+    "eyebrow": "NUESTRO EQUIPO",
+    "title": "Confíe su proyecto a nuestros expertos.",
+    "subtitle": "Un equipo senior de ingenieros, especialistas en IA y diseñadores de producto.",
+    "roles": {
+      "cto": "Dirección técnica",
+      "ai": "Lead Ingeniero de IA",
+      "mobile": "Ingeniería móvil",
+      "design": "Diseño de producto"
+    }
+  },
+  "blog": {
+    "eyebrow": "INSIGHTS",
+    "title": "Nuestros expertos comparten.",
+    "subtitle": "Explorando el universo digital a través de nuestros artículos.",
+    "readMore": "Leer el artículo",
+    "items": {
+      "mobile": {
+        "title": "Despliegue estratégico de una aplicación móvil",
+        "tag": "Mobile"
+      },
+      "retention": {
+        "title": "Maximizar la retención de usuarios",
+        "tag": "Producto"
+      },
+      "ab": {
+        "title": "La guía completa del A/B testing",
+        "tag": "Growth"
+      },
+      "lidar": {
+        "title": "El LIDAR y su integración en las apps de iOS",
+        "tag": "Innovación"
       }
     }
   },

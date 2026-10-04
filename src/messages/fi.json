@@ -9,7 +9,7 @@
     "saas": "SAAS",
     "automation": "AUTOMAATIO",
     "work": "TYÖMME",
-    "letsBuild": "RAKENNETAAN"
+    "letsBuild": "Ilmainen tarjous"
   },
   "hero": {
     "title1": "Tekoäly, joka toimii",
@@ -19,13 +19,14 @@
     "watchShowreel": "Tutustu palveluihimme",
     "sideLabel": "360 TEKOÄLYTOIMISTO — LONTOO · PARIISI",
     "stats": {
-      "projects": "62 %",
-      "projectsLabel": "yrityksistä kokeilee tekoälyagentteja",
-      "revenue": "88 %",
-      "revenueLabel": "organisaatioista käyttää jo tekoälyä",
-      "clients": "2/3",
-      "clientsLabel": "ei ole vielä saavuttanut arvoa"
-    }
+      "projects": "200+",
+      "projectsLabel": "Toteutettua projektia",
+      "revenue": "4.9/5",
+      "revenueLabel": "Asiakasarvio",
+      "clients": "8 vuotta",
+      "clientsLabel": "Toiminnassa"
+    },
+    "label": "TEKOÄLY- JA OHJELMISTOTOIMISTO — VUODESTA 2018"
   },
   "manifesto": {
     "a": "88 % yrityksistä on ottanut tekoälyn käyttöön.",
@@ -52,7 +53,7 @@
   },
   "services": {
     "eyebrow": "OSAAMISEMME",
-    "title": "Kuusi tapaa muuttaa liiketoimintasi tekoälyllä",
+    "title": "Kuusi osaamisaluetta. Yksi kumppani.",
     "items": {
       "agents": {
         "title": "Tekoälyagentit ja automaatio",
@@ -203,6 +204,55 @@
         "quote": "He muuttivat ideamme lanseeratuksi tuotteeksi kymmenessä viikossa. Ennenkuulumatonta.",
         "name": "Marc Dubois",
         "role": "CEO — Carely, healthtech"
+      }
+    }
+  },
+  "clients": {
+    "label": "Toimialajohtajien luottama"
+  },
+  "figures": {
+    "title": "Uskokaa projektinne sovellusasiantuntijoillemme.",
+    "experts": "15",
+    "expertsLabel": "Intohimoisia asiantuntijoita",
+    "projects": "100+",
+    "projectsLabel": "Toimitetut projektit",
+    "satisfaction": "78%",
+    "satisfactionLabel": "Tyytyväisiä asiakkaita",
+    "location": "FRANCE",
+    "locationLabel": "Kotipaikka Ranskassa"
+  },
+  "team": {
+    "eyebrow": "TIIMIMME",
+    "title": "Uskokaa projektinne asiantuntijoillemme.",
+    "subtitle": "Kokenut tiimi insinöörejä, tekoälyasiantuntijoita ja tuotesuunnittelijoita.",
+    "roles": {
+      "cto": "Tekninen johto",
+      "ai": "Johtava tekoälyinsinööri",
+      "mobile": "Mobiilikehitys",
+      "design": "Tuotesuunnittelu"
+    }
+  },
+  "blog": {
+    "eyebrow": "NÄKEMYKSET",
+    "title": "Asiantuntijamme jakavat.",
+    "subtitle": "Tutkimme digitaalista maailmankaikkeutta artikkeleidemme kautta.",
+    "readMore": "Lue artikkeli",
+    "items": {
+      "mobile": {
+        "title": "Mobiilisovelluksen strateginen käyttöönotto",
+        "tag": "Mobile"
+      },
+      "retention": {
+        "title": "Käyttäjien sitoutumisen maksimointi",
+        "tag": "Tuote"
+      },
+      "ab": {
+        "title": "Täydellinen opas A/B-testaukseen",
+        "tag": "Growth"
+      },
+      "lidar": {
+        "title": "LIDAR ja sen integrointi iOS-sovelluksiin",
+        "tag": "Innovaatio"
       }
     }
   },

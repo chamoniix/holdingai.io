@@ -4,13 +4,16 @@ import { getTranslations } from 'next-intl/server';
 import { type Locale } from '@/i18n/routing';
 import { buildPageMetadata } from '@/lib/seo';
 import Hero from "@/components/Hero";
+import ClientsStrip from "@/components/ClientsStrip";
 import CapabilitiesMarquee from "@/components/CapabilitiesMarquee";
 import ManifestoSection from "@/components/ManifestoSection";
-import ShowcaseSection from "@/components/ShowcaseSection";
+import FiguresSection from "@/components/FiguresSection";
 import Services from "@/components/Services";
+import TeamSection from "@/components/TeamSection";
+import ShowcaseSection from "@/components/ShowcaseSection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import TrustBar from "@/components/TrustBar";
+import BlogSection from "@/components/BlogSection";
 
 export async function generateMetadata({
   params,
@@ -32,8 +35,11 @@ export default async function Home({
   return (
     <main className="w-full bg-transparent overflow-hidden">
       
-      {/* Scene 1: The Ignition */}
+      {/* Scene 1: Hero */}
       <Hero />
+
+      {/* Scene 1.1: Clients strip */}
+      <ClientsStrip />
 
       {/* Scene 1.2: Capabilities marquee */}
       <CapabilitiesMarquee />
@@ -41,22 +47,28 @@ export default async function Home({
       {/* Scene 1.5: The Manifesto */}
       <ManifestoSection />
 
-      {/* Scene 2: Selected Work (asymmetric gallery) */}
-      <ShowcaseSection />
+      {/* Scene 2: Dark figures block */}
+      <FiguresSection />
 
-      {/* Scene 3: The Architecture (numbered index) */}
+      {/* Scene 3: Expertise accordion */}
       <Services />
 
-      {/* Scene 4: The Process (horizontal timeline) */}
+      {/* Scene 3.5: Team */}
+      <TeamSection />
+
+      {/* Scene 4: Selected Work (asymmetric gallery) */}
+      <ShowcaseSection />
+
+      {/* Scene 5: The Process (horizontal timeline) */}
       <ProcessSection />
 
-      {/* Scene 4.5: Testimonials */}
+      {/* Scene 5.5: Testimonials */}
       <TestimonialsSection />
 
-      {/* Scene 5: Trust (compact) */}
-      <TrustBar />
+      {/* Scene 6: Blog */}
+      <BlogSection />
 
-      {/* Scene 6: The Ultimatum (Final CTA) */}
+      {/* Scene 7: The Ultimatum (Final CTA) */}
       <section className="relative py-20 md:py-24 px-6 bg-transparent z-10 overflow-hidden">
         {/* Background Ambient Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(124,58,237,0.08),transparent_60%)] pointer-events-none" />
@@ -81,6 +93,12 @@ export default async function Home({
           </Link>
         </div>
       </section>
+
+      {/* Badges (agreements) */}
+      <div className="relative z-10 px-6 pb-16 flex items-center justify-center gap-10">
+        <img src="/images/kosmos/badge-cii.webp" alt="CII" className="h-12 md:h-14 w-auto object-contain grayscale opacity-60" />
+        <img src="/images/kosmos/badge-bpi.png" alt="BPI France" className="h-12 md:h-14 w-auto object-contain grayscale opacity-60" />
+      </div>
     </main>
   );
 }

@@ -12,10 +12,10 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { key: 'aura',   img: '/images/projects/extra-marketing.jpg', span: 'lg:col-span-7', aspect: 'aspect-[16/10]', offset: '' },
-  { key: 'vitals', img: '/images/projects/extra-robotics.jpg', span: 'lg:col-span-5', aspect: 'aspect-[3/4]',   offset: 'lg:mt-24' },
-  { key: 'nomad',  img: '/images/projects/data.jpg',           span: 'lg:col-span-5', aspect: 'aspect-[4/3]',   offset: 'lg:mt-6' },
-  { key: 'estate', img: '/images/projects/keyboard.jpg',       span: 'lg:col-span-7', aspect: 'aspect-[16/9]',  offset: 'lg:mt-16' },
+  { key: 'aura',   img: '/images/kosmos/showcase-ia.webp',          span: 'lg:col-span-7', aspect: 'aspect-[16/10]', offset: '' },
+  { key: 'vitals', img: '/images/kosmos/showcase-mobile.webp',      span: 'lg:col-span-5', aspect: 'aspect-[3/4]',   offset: 'lg:mt-24' },
+  { key: 'nomad',  img: '/images/kosmos/showcase-web.webp',         span: 'lg:col-span-5', aspect: 'aspect-[4/3]',   offset: 'lg:mt-6' },
+  { key: 'estate', img: '/images/kosmos/showcase-backoffice.webp',  span: 'lg:col-span-7', aspect: 'aspect-[16/9]',  offset: 'lg:mt-16' },
 ];
 
 export default function ShowcaseSection() {

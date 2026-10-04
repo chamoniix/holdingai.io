@@ -1,13 +1,13 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useLocale, useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { servicesData } from '@/data/services-data'
 
 export default function Services() {
-  const lang = useLocale()
   const t = useTranslations('services')
+  const [open, setOpen] = useState<number>(0)
 
   return (
     <section id="services" className="relative py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-transparent z-10">
@@ -34,40 +34,70 @@ export default function Services() {
           </motion.h2>
         </div>
 
-        {/* Card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {servicesData.map((service, index) => {
-            const title = t(`items.${service.key}.title` as never);
-            const desc = t(`items.${service.key}.desc` as never);
-            return (
-              <motion.div
-                key={service.key}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-8%' }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 3) * 0.08 }}
-                className="h-full"
-              >
-                <Link
-                  href={`/${lang}/contact`}
-                  className="group flex flex-col h-full bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="aspect-[16/10] overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={service.image}
-                      alt={title as string}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6 md:p-7 flex flex-col flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-[#0A0A0C] tracking-tight">{title}</h3>
-                    <p className="mt-3 text-[#4A4A4E] font-light leading-relaxed">{desc}</p>
-                  </div>
-                </Link>
-              </motion.div>
-            );
-          })}
+        {/* Asymmetric: sticky image left, accordion right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Left: sticky vertical image */}
+          <div className="hidden lg:block">
+            <div className="sticky top-24 rounded-3xl overflow-hidden border border-[#E5E5E5] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.18)] aspect-[4/5]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/kosmos/showcase-ia.webp"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Right: accordion */}
+          <div className="border-t border-[#E5E5E5]">
+            {servicesData.map((service, index) => {
+              const title = t(`items.${service.key}.title` as never);
+              const desc = t(`items.${service.key}.desc` as never);
+              const num = String(index + 1).padStart(2, '0');
+              const isOpen = open === index;
+              return (
+                <div key={service.key} className="border-b border-[#E5E5E5]">
+                  <button
+                    type="button"
+                    onClick={() => setOpen(isOpen ? -1 : index)}
+                    className="w-full flex items-center gap-5 py-6 md:py-7 text-left"
+                  >
+                    <span className="shrink-0 w-10 font-mono text-sm text-[#8E8E93]">{num}</span>
+                    <span
+                      className={`flex-1 text-2xl md:text-3xl font-bold tracking-tight transition-colors duration-300 ${
+                        isOpen ? 'text-[#0A0A0C]' : 'text-[#0A0A0C]/55'
+                      }`}
+                    >
+                      {title}
+                    </span>
+                    <span
+                      className={`shrink-0 inline-block text-2xl text-[#0A0A0C]/60 transition-transform duration-300 ${
+                        isOpen ? 'rotate-[-45deg]' : ''
+                      }`}
+                    >
+                      →
+                    </span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pb-7 pl-15 md:pl-[3.75rem] text-[#4A4A4E] font-light leading-relaxed max-w-xl">
+                          {desc}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

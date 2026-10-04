@@ -9,7 +9,7 @@
     "saas": "SAAS",
     "automation": "AUTOMATISERING",
     "work": "VÅRT ARBEID",
-    "letsBuild": "LA OSS BYGGE"
+    "letsBuild": "Gratis tilbud"
   },
   "hero": {
     "title1": "KI som arbeider",
@@ -19,13 +19,14 @@
     "watchShowreel": "Utforsk tjenestene våre",
     "sideLabel": "360 KI-BYRÅ — LONDON · PARIS",
     "stats": {
-      "projects": "62 %",
-      "projectsLabel": "av selskapene eksperimenterer med KI-agenter",
-      "revenue": "88 %",
-      "revenueLabel": "av organisasjonene bruker allerede KI",
-      "clients": "2/3",
-      "clientsLabel": "har ennå ikke fanget verdien"
-    }
+      "projects": "200+",
+      "projectsLabel": "Gjennomførte prosjekter",
+      "revenue": "4.9/5",
+      "revenueLabel": "Kundevurdering",
+      "clients": "8 år",
+      "clientsLabel": "I drift"
+    },
+    "label": "KI- OG PROGRAMVAREAGENTUR — SIDEN 2018"
   },
   "manifesto": {
     "a": "88 % av selskapene har tatt i bruk KI.",
@@ -52,7 +53,7 @@
   },
   "services": {
     "eyebrow": "VÅR EKSPERTISE",
-    "title": "Seks måter å transformere virksomheten din med KI",
+    "title": "Seks kompetanseområder. Én partner.",
     "items": {
       "agents": {
         "title": "KI-agenter og automatisering",
@@ -203,6 +204,55 @@
         "quote": "De gjorde ideen vår om til et lansert produkt på ti uker. Helt uvanlig.",
         "name": "Marc Dubois",
         "role": "CEO — Carely, healthtech"
+      }
+    }
+  },
+  "clients": {
+    "label": "Betrodd av bransjeledere"
+  },
+  "figures": {
+    "title": "Overlat prosjektet ditt til våre applikasjonseksperter.",
+    "experts": "15",
+    "expertsLabel": "Lidenskapelige eksperter",
+    "projects": "100+",
+    "projectsLabel": "Leverte prosjekter",
+    "satisfaction": "78%",
+    "satisfactionLabel": "Fornøyde kunder",
+    "location": "FRANCE",
+    "locationLabel": "Basert i Frankrike"
+  },
+  "team": {
+    "eyebrow": "VÅRT TEAM",
+    "title": "Overlat prosjektet ditt til våre eksperter.",
+    "subtitle": "Et seniorteam av ingeniører, KI-spesialister og produktdesignere.",
+    "roles": {
+      "cto": "Teknisk ledelse",
+      "ai": "Lead KI-ingeniør",
+      "mobile": "Mobilutvikling",
+      "design": "Produktdesign"
+    }
+  },
+  "blog": {
+    "eyebrow": "INNSIKT",
+    "title": "Våre eksperter deler.",
+    "subtitle": "Utforsker det digitale universet gjennom artiklene våre.",
+    "readMore": "Les artikkelen",
+    "items": {
+      "mobile": {
+        "title": "Strategisk utrulling av en mobilapplikasjon",
+        "tag": "Mobile"
+      },
+      "retention": {
+        "title": "Maksimere brukerlojalitet",
+        "tag": "Produkt"
+      },
+      "ab": {
+        "title": "Den komplette guiden til A/B-testing",
+        "tag": "Growth"
+      },
+      "lidar": {
+        "title": "LIDAR og dets integrasjon i iOS-apper",
+        "tag": "Innovasjon"
       }
     }
   },

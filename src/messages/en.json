@@ -9,9 +9,10 @@
     "saas": "SAAS",
     "automation": "AUTOMATION",
     "work": "OUR WORK",
-    "letsBuild": "LET'S BUILD"
+    "letsBuild": "Free quote"
   },
   "hero": {
+    "label": "AI & CUSTOM SOFTWARE AGENCY — SINCE 2018",
     "title1": "AI that works",
     "title2": "for your business",
     "subtitle": "Autonomous agents, automation and generative AI — from pilot to scale.",
@@ -19,12 +20,12 @@
     "watchShowreel": "Discover our services",
     "sideLabel": "360 AI AGENCY — LONDON · PARIS",
     "stats": {
-      "projects": "62 %",
-      "projectsLabel": "of companies are experimenting with AI agents",
-      "revenue": "88 %",
-      "revenueLabel": "of organisations now use AI",
-      "clients": "2/3",
-      "clientsLabel": "still haven't captured the value"
+      "projects": "200+",
+      "projectsLabel": "Projects delivered",
+      "revenue": "4.9/5",
+      "revenueLabel": "Client rating",
+      "clients": "8 yrs",
+      "clientsLabel": "In business"
     }
   },
   "manifesto": {
@@ -52,7 +53,7 @@
   },
   "services": {
     "eyebrow": "OUR EXPERTISE",
-    "title": "Six ways to transform your business with AI",
+    "title": "Six areas of expertise. One partner.",
     "items": {
       "agents": {
         "title": "AI Agents & Automation",
@@ -146,6 +147,43 @@
       "james": { "quote": "From 300 manual hours to 40 a month. The automation paid for itself in six weeks.", "name": "James Whitmore", "role": "Head of Operations — Northgate Retail" },
       "elena": { "quote": "Our RAG knowledge base answers 85% of customer questions with zero human involvement.", "name": "Elena Petrova", "role": "VP Customer Experience — Lumenly" },
       "marc": { "quote": "They turned our idea into a launched product in ten weeks. Unheard of.", "name": "Marc Dubois", "role": "CEO — Carely, healthtech" }
+    }
+  },
+  "clients": {
+    "label": "Trusted by industry leaders"
+  },
+  "figures": {
+    "title": "Entrust your project to our application experts.",
+    "experts": "15",
+    "expertsLabel": "Passionate experts",
+    "projects": "100+",
+    "projectsLabel": "Projects delivered",
+    "satisfaction": "78%",
+    "satisfactionLabel": "Satisfied clients",
+    "location": "FRANCE",
+    "locationLabel": "Based in France"
+  },
+  "team": {
+    "eyebrow": "OUR TEAM",
+    "title": "Entrust your project to our experts.",
+    "subtitle": "A senior team of engineers, AI specialists and product designers.",
+    "roles": {
+      "cto": "Technical Direction",
+      "ai": "Lead AI Engineer",
+      "mobile": "Mobile Engineering",
+      "design": "Product Design"
+    }
+  },
+  "blog": {
+    "eyebrow": "INSIGHTS",
+    "title": "Our experts share.",
+    "subtitle": "Exploring the digital universe through our articles.",
+    "readMore": "Read article",
+    "items": {
+      "mobile": { "title": "Strategic deployment of a mobile application", "tag": "Mobile" },
+      "retention": { "title": "Maximizing user retention", "tag": "Product" },
+      "ab": { "title": "The complete guide to A/B testing", "tag": "Growth" },
+      "lidar": { "title": "LIDAR and its integration in iOS apps", "tag": "Innovation" }
     }
   },
   "cta": {

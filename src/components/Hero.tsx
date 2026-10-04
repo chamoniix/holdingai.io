@@ -5,9 +5,9 @@ import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 
 const stats = [
-  { value: 'projects', label: 'projectsLabel' },
-  { value: 'revenue', label: 'revenueLabel' },
-  { value: 'clients', label: 'clientsLabel' },
+  { value: 'projects', label: 'projectsLabel', stars: false },
+  { value: 'revenue', label: 'revenueLabel', stars: true },
+  { value: 'clients', label: 'clientsLabel', stars: false },
 ] as const
 
 export default function Hero() {
@@ -34,6 +34,15 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left: statement */}
         <div>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+            className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#8E8E93] font-semibold mb-6"
+          >
+            {t('label')}
+          </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,10 +107,17 @@ export default function Hero() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x divide-[#E5E5E5]">
           {stats.map((s, i) => (
             <div key={s.value} className={i === 0 ? 'sm:pr-8' : 'sm:px-8'}>
-              <span className="text-3xl md:text-4xl font-semibold text-[#0A0A0C] tracking-tight">
-                {t(`stats.${s.value}` as never)}
-              </span>
-              <span className="mt-2 block text-sm text-[#6E6E73] font-light max-w-[24rem]">
+              <div className="flex items-center gap-2">
+                <span className="text-3xl md:text-4xl font-semibold text-[#0A0A0C] tracking-tight">
+                  {t(`stats.${s.value}` as never)}
+                </span>
+                {s.stars && (
+                  <span className="flex gap-0.5 text-[#FFD447] text-lg leading-none" aria-hidden="true">
+                    {[0, 1, 2, 3, 4].map((n) => <span key={n}>★</span>)}
+                  </span>
+                )}
+              </div>
+              <span className="mt-2 block text-sm text-[#6E6E73] font-light">
                 {t(`stats.${s.label}` as never)}
               </span>
             </div>

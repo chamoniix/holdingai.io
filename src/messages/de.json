@@ -9,7 +9,7 @@
     "saas": "SAAS",
     "automation": "AUTOMATISIERUNG",
     "work": "UNSERE ARBEIT",
-    "letsBuild": "LASST UNS BAUEN"
+    "letsBuild": "Kostenloses Angebot"
   },
   "hero": {
     "title1": "KI, die arbeitet",
@@ -19,13 +19,14 @@
     "watchShowreel": "Unsere Leistungen entdecken",
     "sideLabel": "360-KI-AGENTUR — LONDON · PARIS",
     "stats": {
-      "projects": "62 %",
-      "projectsLabel": "der Unternehmen experimentieren mit KI-Agenten",
-      "revenue": "88 %",
-      "revenueLabel": "der Organisationen nutzen bereits KI",
-      "clients": "2/3",
-      "clientsLabel": "haben den Wert noch nicht erfasst"
-    }
+      "projects": "200+",
+      "projectsLabel": "Umgesetzte Projekte",
+      "revenue": "4.9/5",
+      "revenueLabel": "Kundenbewertung",
+      "clients": "8 Jahre",
+      "clientsLabel": "Am Markt"
+    },
+    "label": "KI- & SOFTWARE-AGENTUR — SEIT 2018"
   },
   "manifesto": {
     "a": "88 % der Unternehmen haben KI eingeführt.",
@@ -52,7 +53,7 @@
   },
   "services": {
     "eyebrow": "UNSERE EXPERTISE",
-    "title": "Sechs Wege, Ihr Unternehmen mit KI zu transformieren",
+    "title": "Sechs Kompetenzbereiche. Ein Partner.",
     "items": {
       "agents": {
         "title": "KI-Agenten & Automatisierung",
@@ -203,6 +204,55 @@
         "quote": "Sie haben unsere Idee in zehn Wochen in ein marktreifes Produkt verwandelt. Unglaublich.",
         "name": "Marc Dubois",
         "role": "CEO — Carely, Healthtech"
+      }
+    }
+  },
+  "clients": {
+    "label": "Von Branchenführern geschätzt"
+  },
+  "figures": {
+    "title": "Vertrauen Sie Ihr Projekt unseren App-Experten an.",
+    "experts": "15",
+    "expertsLabel": "Leidenschaftliche Experten",
+    "projects": "100+",
+    "projectsLabel": "Gelieferte Projekte",
+    "satisfaction": "78%",
+    "satisfactionLabel": "Zufriedene Kunden",
+    "location": "FRANCE",
+    "locationLabel": "In Frankreich ansässig"
+  },
+  "team": {
+    "eyebrow": "UNSER TEAM",
+    "title": "Vertrauen Sie Ihr Projekt unseren Experten an.",
+    "subtitle": "Ein Senior-Team aus Ingenieuren, KI-Spezialisten und Produktdesignern.",
+    "roles": {
+      "cto": "Technische Leitung",
+      "ai": "Lead KI-Ingenieur",
+      "mobile": "Mobile-Entwicklung",
+      "design": "Produktdesign"
+    }
+  },
+  "blog": {
+    "eyebrow": "EINBLICKE",
+    "title": "Unsere Experten teilen.",
+    "subtitle": "Wir erkunden das digitale Universum durch unsere Artikel.",
+    "readMore": "Artikel lesen",
+    "items": {
+      "mobile": {
+        "title": "Strategischer Einsatz einer mobilen Anwendung",
+        "tag": "Mobile"
+      },
+      "retention": {
+        "title": "Nutzerbindung maximieren",
+        "tag": "Produkt"
+      },
+      "ab": {
+        "title": "Der komplette Leitfaden zum A/B-Testing",
+        "tag": "Growth"
+      },
+      "lidar": {
+        "title": "LIDAR und seine Integration in iOS-Apps",
+        "tag": "Innovation"
       }
     }
   },
