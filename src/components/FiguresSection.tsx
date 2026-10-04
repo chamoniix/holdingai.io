@@ -31,7 +31,13 @@ function Counter({ raw, label, inView }: { raw: string; label: string; inView: b
       if (p < 1) raf = requestAnimationFrame(tick)
     }
     raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
+    // Hard guarantee: even if rAF stalls (background tab, throttling),
+    // the final value is always displayed.
+    const fallback = setTimeout(() => setVal(target), duration + 400)
+    return () => {
+      cancelAnimationFrame(raf)
+      clearTimeout(fallback)
+    }
   }, [inView, parsed, reduced, target])
 
   return (
