@@ -11,12 +11,13 @@ function parseValue(raw: string): { num: number; suffix: string } | null {
 
 function Counter({ raw, label, inView }: { raw: string; label: string; inView: boolean }) {
   const reduced = useReducedMotion() ?? false
-  const parsed = parseValue(raw)
-  const target = parsed ? parsed.num : 0
   const [val, setVal] = useState(0)
 
   useEffect(() => {
-    if (!inView || !parsed) return
+    if (!inView) return
+    const parsed = parseValue(raw)
+    if (!parsed) return
+    const target = parsed.num
     if (reduced) {
       setVal(target)
       return
@@ -38,7 +39,9 @@ function Counter({ raw, label, inView }: { raw: string; label: string; inView: b
       cancelAnimationFrame(raf)
       clearTimeout(fallback)
     }
-  }, [inView, parsed, reduced, target])
+  }, [inView, raw, reduced])
+
+  const parsed = parseValue(raw)
 
   return (
     <div className="lg:px-8 first:lg:pl-0">
