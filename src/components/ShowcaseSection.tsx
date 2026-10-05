@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Reveal from './ui/Reveal';
 
@@ -19,6 +20,50 @@ const projects: Project[] = [
   { key: 'estate', img: '/images/kosmos/showcase-backoffice.webp',  span: 'lg:col-span-7', aspect: 'aspect-[16/9]',  offset: 'lg:mt-16' },
 ];
 
+function GalleryItem({ project, index }: { project: Project; index: number }) {
+  const t = useTranslations('showcase');
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+  // Each card drifts at a slightly different rate (subtle ±24px max).
+  const amp = 8 + (index % 4) * 5;
+  const y = useTransform(scrollYProgress, [0, 1], [amp, -amp]);
+
+  const title = t(`items.${project.key}.title` as never);
+  const sector = t(`items.${project.key}.sector` as never);
+
+  return (
+    <div ref={ref} className={`${project.span} ${project.offset}`}>
+      <motion.div
+        style={{ y }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: '-10%' }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: index * 0.06 }}
+        className="group relative bg-white rounded-3xl border border-[#E5E5E5] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-16px_rgba(0,0,0,0.14)]"
+      >
+        <div className={`${project.aspect} overflow-hidden`}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={project.img}
+            alt={title as string}
+            className="w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
+          />
+        </div>
+
+        {/* Label below the image */}
+        <div className="p-6 md:p-7">
+          <p className="text-[11px] uppercase tracking-widest text-[#8E8E93] mb-2">{sector}</p>
+          <h3 className="text-2xl md:text-3xl font-bold text-[#0A0A0C] tracking-tight">{title}</h3>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 export default function ShowcaseSection() {
   const t = useTranslations('showcase');
 
@@ -34,35 +79,9 @@ export default function ShowcaseSection() {
 
         {/* Asymmetric masonry grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
-          {projects.map((project, index) => {
-            const title = t(`items.${project.key}.title` as never);
-            const sector = t(`items.${project.key}.sector` as never);
-            return (
-              <motion.div
-                key={project.key}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-10%' }}
-                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: (index % 2) * 0.1 }}
-                className={`group relative ${project.span} ${project.offset} bg-white rounded-3xl border border-[#E5E5E5] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-16px_rgba(0,0,0,0.14)]`}
-              >
-                <div className={`${project.aspect} overflow-hidden`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.img}
-                    alt={title as string}
-                    className="w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
-                  />
-                </div>
-
-                {/* Label below the image */}
-                <div className="p-6 md:p-7">
-                  <p className="text-[11px] uppercase tracking-widest text-[#8E8E93] mb-2">{sector}</p>
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#0A0A0C] tracking-tight">{title}</h3>
-                </div>
-              </motion.div>
-            );
-          })}
+          {projects.map((project, index) => (
+            <GalleryItem key={project.key} project={project} index={index} />
+          ))}
         </div>
       </div>
     </section>

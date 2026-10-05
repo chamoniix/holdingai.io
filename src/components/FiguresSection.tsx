@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { motion, useInView, useReducedMotion } from 'framer-motion'
+import { motion, useInView, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
 function parseValue(raw: string): { num: number; suffix: string } | null {
@@ -62,6 +62,9 @@ export default function FiguresSection() {
   const t = useTranslations('figures')
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-20%' })
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] })
+  const titleY = useTransform(scrollYProgress, [0, 1], [18, -18])
 
   const items = [
     { key: 'experts', label: t('expertsLabel') },
@@ -71,17 +74,19 @@ export default function FiguresSection() {
   ] as const
 
   return (
-    <section className="relative py-28 md:py-36 bg-[#0A0A0C] z-10">
+    <section ref={sectionRef} className="relative py-28 md:py-36 bg-[#0A0A0C] z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-3xl md:text-5xl font-bold tracking-tighter text-white max-w-3xl mb-16 md:mb-20"
-        >
-          {t('title')}
-        </motion.h2>
+        <motion.div style={{ y: titleY }}>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-3xl md:text-5xl font-bold tracking-tighter text-white max-w-3xl mb-16 md:mb-20"
+          >
+            {t('title')}
+          </motion.h2>
+        </motion.div>
 
         <div ref={ref} className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 lg:divide-x lg:divide-white/10">
           {items.map((item) => (

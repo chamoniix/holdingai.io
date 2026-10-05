@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ScrollManager from "@/components/ScrollManager";
 import Navigation from "@/components/Navigation";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
+import CursorSwarm from "@/components/ui/CursorSwarm";
 import OpenAIAdsPixel from "@/components/OpenAIAdsPixel";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
@@ -106,6 +107,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <OpenAIAdsPixel />
           <ScrollManager />
+          <CursorSwarm />
           <Navigation />
           <div className="relative z-10">
             <SmoothScroll>

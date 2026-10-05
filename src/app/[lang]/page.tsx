@@ -14,6 +14,7 @@ import ShowcaseSection from "@/components/ShowcaseSection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import BlogSection from "@/components/BlogSection";
+import Magnetic from "@/components/ui/Magnetic";
 
 export async function generateMetadata({
   params,
@@ -85,13 +86,15 @@ export default async function Home({
             {t('subtitle')}
           </p>
           
-          <Link href={`/${lang}/contact`} className="group relative px-16 py-7 bg-[#7C3AED] text-white font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]">
-            <div className="absolute inset-0 bg-[#5B21B6] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="relative z-10 inline-flex items-center gap-2 text-lg md:text-xl transition-colors duration-500">
-              {t('button')}
-              <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">→</span>
-            </span>
-          </Link>
+          <Magnetic>
+            <Link href={`/${lang}/contact`} className="group relative px-16 py-7 bg-[#7C3AED] text-white font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]">
+              <div className="absolute inset-0 bg-[#5B21B6] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <span className="relative z-10 inline-flex items-center gap-2 text-lg md:text-xl transition-colors duration-500">
+                {t('button')}
+                <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">→</span>
+              </span>
+            </Link>
+          </Magnetic>
         </div>
       </section>
 

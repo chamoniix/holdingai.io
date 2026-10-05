@@ -1,8 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
+import Magnetic from './ui/Magnetic'
 
 const stats = [
   { value: 'projects', label: 'projectsLabel', stars: false },
@@ -15,9 +17,16 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 export default function Hero() {
   const lang = useLocale()
   const t = useTranslations('hero')
+  const sectionRef = useRef<HTMLElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -20])
 
   return (
-    <section className="relative w-full px-6 md:px-12 lg:px-24 pt-32 md:pt-40 pb-12 md:pb-16 overflow-hidden bg-transparent">
+    <section ref={sectionRef} className="relative w-full px-6 md:px-12 lg:px-24 pt-32 md:pt-40 pb-12 md:pb-16 overflow-hidden bg-transparent">
       {/* Subtle violet halo (opacity < 0.1) */}
       <div
         className="absolute -top-40 right-0 w-[44rem] h-[44rem] rounded-full pointer-events-none"
@@ -82,38 +91,44 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: EASE, delay: 0.42 }}
             className="mt-10 flex flex-wrap gap-4"
           >
-            <Link
-              href={`/${lang}/contact`}
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-[#0A0A0C] text-white font-semibold rounded-full hover:bg-[#7C3AED] transition-colors"
-            >
-              {t('startProject')}
-              <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">→</span>
-            </Link>
-            <Link
-              href={`/${lang}/work`}
-              className="group inline-flex items-center gap-2 px-8 py-4 border border-[#D1D1D6] text-[#0A0A0C] font-semibold rounded-full hover:border-[#0A0A0C] transition-colors"
-            >
-              {t('watchShowreel')}
-              <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">→</span>
-            </Link>
+            <Magnetic>
+              <Link
+                href={`/${lang}/contact`}
+                className="group inline-flex items-center gap-2 px-8 py-4 bg-[#0A0A0C] text-white font-semibold rounded-full hover:bg-[#7C3AED] transition-colors"
+              >
+                {t('startProject')}
+                <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">→</span>
+              </Link>
+            </Magnetic>
+            <Magnetic strength={0.2}>
+              <Link
+                href={`/${lang}/work`}
+                className="group inline-flex items-center gap-2 px-8 py-4 border border-[#D1D1D6] text-[#0A0A0C] font-semibold rounded-full hover:border-[#0A0A0C] transition-colors"
+              >
+                {t('watchShowreel')}
+                <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">→</span>
+              </Link>
+            </Magnetic>
           </motion.div>
         </div>
 
-        {/* Right: image card — fade + scale */}
+        {/* Right: image card — fade + scale + scroll parallax */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: EASE, delay: 0.2 }}
           className="relative"
         >
-          <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-[#E5E5E5] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.18)]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/hero-visual.jpg"
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <motion.div style={{ y: imageY }}>
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-[#E5E5E5] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.18)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/hero-visual.jpg"
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
 
