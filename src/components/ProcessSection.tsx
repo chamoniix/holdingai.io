@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Reveal from './ui/Reveal';
 
 const processSteps = ["discover", "design", "prototype", "develop", "launch", "scale"] as const;
 
@@ -9,17 +10,13 @@ export default function ProcessSection() {
   const t = useTranslations('process');
 
   return (
-    <section className="relative py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-transparent z-10">
+    <section className="relative py-20 md:py-28 px-6 md:px-12 lg:px-24 bg-transparent z-10">
       <div className="max-w-7xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-10%' }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-[#0A0A0C] mb-16 md:mb-24"
-        >
-          {t('eyebrow')}
-        </motion.h2>
+        <Reveal className="mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-[#0A0A0C]">
+            {t('eyebrow')}
+          </h2>
+        </Reveal>
 
         <div className="relative">
           {/* Continuous line (desktop) */}

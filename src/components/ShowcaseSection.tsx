@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Reveal from './ui/Reveal';
 
 type Project = {
   key: 'aura' | 'vitals' | 'nomad' | 'estate';
@@ -22,18 +23,14 @@ export default function ShowcaseSection() {
   const t = useTranslations('showcase');
 
   return (
-    <section className="relative py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-transparent z-10">
+    <section className="relative py-20 md:py-28 px-6 md:px-12 lg:px-24 bg-transparent z-10">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-10%' }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-[#0A0A0C] mb-12 md:mb-16"
-        >
-          {t('title')}
-        </motion.h2>
+        <Reveal className="mb-12 md:mb-16">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-[#0A0A0C]">
+            {t('title')}
+          </h2>
+        </Reveal>
 
         {/* Asymmetric masonry grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
@@ -47,14 +44,14 @@ export default function ShowcaseSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-10%' }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: (index % 2) * 0.1 }}
-                className={`group relative ${project.span} ${project.offset} bg-white rounded-3xl border border-[#E5E5E5] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)]`}
+                className={`group relative ${project.span} ${project.offset} bg-white rounded-3xl border border-[#E5E5E5] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-16px_rgba(0,0,0,0.14)]`}
               >
                 <div className={`${project.aspect} overflow-hidden`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.img}
                     alt={title as string}
-                    className="w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-105"
                   />
                 </div>
 

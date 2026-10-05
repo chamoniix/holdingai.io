@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import Reveal from './ui/Reveal'
 
 const items = [
   { key: 'sophie', img: '/images/testimonials/1.jpg' },
@@ -14,29 +15,17 @@ export default function TestimonialsSection() {
   const t = useTranslations('testimonials')
 
   return (
-    <section className="relative py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-transparent z-10">
+    <section className="relative py-20 md:py-28 px-6 md:px-12 lg:px-24 bg-transparent z-10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-12 md:mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7C3AED] mb-4"
-          >
-            {t('eyebrow')}
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="text-3xl md:text-5xl font-bold tracking-tighter text-[#0A0A0C]"
-          >
+        <Reveal className="mb-12 md:mb-16">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7C3AED] mb-4">
+            <span className="text-[#B0B0B5]">[ </span>{t('eyebrow')}<span className="text-[#B0B0B5]"> ]</span>
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-[#0A0A0C]">
             {t('title')}
-          </motion.h2>
-        </div>
+          </h2>
+        </Reveal>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -51,7 +40,7 @@ export default function TestimonialsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-8%' }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 }}
-                className="bg-white border border-[#E5E5E5] rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.04)] flex flex-col"
+                className="bg-white border border-[#E5E5E5] rounded-2xl p-7 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-16px_rgba(0,0,0,0.14)] flex flex-col"
               >
                 <div className="w-14 h-14 rounded-full overflow-hidden mb-5">
                   {/* eslint-disable-next-line @next/next/no-img-element */}

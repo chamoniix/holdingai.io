@@ -71,7 +71,7 @@ export default function FiguresSection() {
   ] as const
 
   return (
-    <section className="relative py-24 md:py-32 bg-[#0A0A0C] z-10">
+    <section className="relative py-28 md:py-36 bg-[#0A0A0C] z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}

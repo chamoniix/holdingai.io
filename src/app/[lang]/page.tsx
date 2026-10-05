@@ -69,7 +69,7 @@ export default async function Home({
       <BlogSection />
 
       {/* Scene 7: The Ultimatum (Final CTA) */}
-      <section className="relative py-20 md:py-24 px-6 bg-transparent z-10 overflow-hidden">
+      <section className="relative py-20 md:py-28 px-6 bg-transparent z-10 overflow-hidden">
         {/* Background Ambient Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(124,58,237,0.08),transparent_60%)] pointer-events-none" />
         
@@ -87,8 +87,9 @@ export default async function Home({
           
           <Link href={`/${lang}/contact`} className="group relative px-16 py-7 bg-[#7C3AED] text-white font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]">
             <div className="absolute inset-0 bg-[#5B21B6] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="relative z-10 text-lg md:text-xl transition-colors duration-500">
+            <span className="relative z-10 inline-flex items-center gap-2 text-lg md:text-xl transition-colors duration-500">
               {t('button')}
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">→</span>
             </span>
           </Link>
         </div>

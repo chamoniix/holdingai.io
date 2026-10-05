@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -53,13 +53,25 @@ function LanguageSelector({ currentLang }: { currentLang: string }) {
 export default function Navigation() {
   const lang = useLocale();
   const t = useTranslations('nav');
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex items-center justify-center pointer-events-none">
-      
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 px-6 flex items-center justify-center pointer-events-none transition-all duration-300 ${
+        scrolled
+          ? 'py-3 bg-[#FAFAF8]/80 backdrop-blur-md border-b border-[#E5E5E5]'
+          : 'py-6 bg-transparent'
+      }`}
+    >
       <div className="flex items-center justify-between w-full max-w-7xl pointer-events-auto">
         {/* ... Logo & Links ... */}
-        {/* Note: I'll include the original logo and center links here */}
         <Link href={`/${lang}`} className="flex items-center gap-4 hover:opacity-80 transition-opacity">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 4V20M20 4V20M4 12H20" stroke="url(#logo-grad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -100,7 +112,6 @@ export default function Navigation() {
           </Link>
         </div>
       </div>
-      
     </nav>
   );
 }

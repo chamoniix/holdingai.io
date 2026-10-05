@@ -12,7 +12,7 @@ export default function ManifestoSection() {
   const t = useTranslations('manifesto')
 
   return (
-    <section className="relative w-full py-32 md:py-48 px-6 bg-transparent z-10">
+    <section className="relative w-full py-28 md:py-36 px-6 bg-transparent z-10">
       <div className="max-w-5xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 40 }}
