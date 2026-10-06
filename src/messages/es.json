@@ -256,6 +256,23 @@
       }
     }
   },
+  "projectsIndex": {
+    "eyebrow": "PORTFOLIO",
+    "title": "Sistemas entregados para empresas ambiciosas.",
+    "subtitle": "Una selección de plataformas, productos de IA y sistemas fintech diseñados y desarrollados de principio a fin.",
+    "items": {
+      "dct": {"name": "DCT Network", "tag": "Red de Ventures", "desc": "Una red de ventures digitales que conecta productos, comunidades, recompensas e infraestructura de plataforma."},
+      "dream": {"name": "DreamComeTrue", "tag": "Plataforma de Consumo", "desc": "Una plataforma de consumo para campañas, participación, engagement digital y mecánicas de recompensa."},
+      "perhomes": {"name": "per.homes", "tag": "PropTech", "desc": "Un producto PropTech para descubrimiento de inmuebles, operaciones, enrutamiento de leads y flujos de marketplace."},
+      "janex": {"name": "Janex", "tag": "Marketplace", "desc": "Una plataforma de producto para operaciones de servicio, flujos de clientes y experiencias de marketplace escalables."},
+      "wallet": {"name": "Wallet Platform", "tag": "FinTech", "desc": "Una plataforma de operaciones fintech para saldos, transacciones, onboarding, revisiones y reporting."},
+      "raffle": {"name": "Raffle Platform", "tag": "Producto de Campaña", "desc": "Un producto de campañas y sorteos: participaciones, elegibilidad, sorteos, recompensas y cumplimiento."},
+      "salesai": {"name": "Sales AI", "tag": "IA de Ventas", "desc": "Un asistente de ventas con IA para investigación de leads, seguimientos, scoring de pipeline y visibilidad del equipo."},
+      "edai": {"name": "Education AI", "tag": "IA EdTech", "desc": "Una plataforma educativa con IA para apoyo al aprendizaje, evaluaciones y visibilidad del progreso."},
+      "dreamai": {"name": "Dream AI", "tag": "Producto de IA", "desc": "Una capa de producto con IA para ideación, planificación guiada y experiencias digitales personalizadas."},
+      "tradepulse": {"name": "DCT TradePulse", "tag": "Inteligencia de Trading", "desc": "Una plataforma de inteligencia de trading: señales de mercado, dashboards, alertas y apoyo a la decisión."}
+    }
+  },
   "cta": {
     "part1": "CONSTRUYAMOS ALGO",
     "part2": "IMPOSIBLE.",

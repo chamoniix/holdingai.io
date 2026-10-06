@@ -11,6 +11,7 @@ import FiguresSection from "@/components/FiguresSection";
 import Services from "@/components/Services";
 import TeamSection from "@/components/TeamSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
+import ProjectsIndexSection from "@/components/ProjectsIndexSection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import BlogSection from "@/components/BlogSection";
@@ -59,6 +60,9 @@ export default async function Home({
 
       {/* Scene 4: Selected Work (asymmetric gallery) */}
       <ShowcaseSection />
+
+      {/* Scene 4.5: Full project index */}
+      <ProjectsIndexSection />
 
       {/* Scene 5: The Process (horizontal timeline) */}
       <ProcessSection />

@@ -186,6 +186,23 @@
       "lidar": { "title": "LIDAR and its integration in iOS apps", "tag": "Innovation" }
     }
   },
+  "projectsIndex": {
+    "eyebrow": "PORTFOLIO",
+    "title": "Systems shipped for ambitious companies.",
+    "subtitle": "A selection of platforms, AI products and fintech systems designed and engineered end to end.",
+    "items": {
+      "dct": { "name": "DCT Network", "tag": "Venture Network", "desc": "A digital venture network connecting products, communities, rewards and platform infrastructure." },
+      "dream": { "name": "DreamComeTrue", "tag": "Consumer Platform", "desc": "A consumer platform for campaigns, participation, digital engagement and reward mechanics." },
+      "perhomes": { "name": "per.homes", "tag": "PropTech", "desc": "A PropTech product for property discovery, operations, lead routing and marketplace workflows." },
+      "janex": { "name": "Janex", "tag": "Marketplace", "desc": "A product platform for service operations, customer workflows and scalable marketplace experiences." },
+      "wallet": { "name": "Wallet Platform", "tag": "FinTech", "desc": "A fintech operations platform for balances, transactions, onboarding, reviews and reporting." },
+      "raffle": { "name": "Raffle Platform", "tag": "Campaign Product", "desc": "A campaign and raffle product: entries, eligibility, draws, rewards and compliance workflows." },
+      "salesai": { "name": "Sales AI", "tag": "AI Sales", "desc": "An AI sales assistant for lead research, follow-ups, pipeline scoring and team visibility." },
+      "edai": { "name": "Education AI", "tag": "AI EdTech", "desc": "An AI education platform for learning support, assessments and progress visibility." },
+      "dreamai": { "name": "Dream AI", "tag": "AI Product", "desc": "An AI product layer for ideation, guided planning and personalized digital experiences." },
+      "tradepulse": { "name": "DCT TradePulse", "tag": "Trading Intelligence", "desc": "A trading intelligence platform: market signals, dashboards, alerts and decision support." }
+    }
+  },
   "cta": {
     "part1": "LET'S BUILD SOMETHING",
     "part2": "IMPOSSIBLE.",

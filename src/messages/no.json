@@ -256,6 +256,23 @@
       }
     }
   },
+  "projectsIndex": {
+    "eyebrow": "PORTFOLIO",
+    "title": "Systemer levert for ambisiøse selskaper.",
+    "subtitle": "Et utvalg av plattformer, AI-produkter og fintech-systemer designet og utviklet ende-til-ende.",
+    "items": {
+      "dct": {"name": "DCT Network", "tag": "Venture-nettverk", "desc": "Et digitalt venture-nettverk som kobler produkter, fellesskap, belønninger og plattforminfrastruktur."},
+      "dream": {"name": "DreamComeTrue", "tag": "Forbrukerplattform", "desc": "En forbrukerplattform for kampanjer, deltakelse, digital engasjement og belønningsmekanikker."},
+      "perhomes": {"name": "per.homes", "tag": "PropTech", "desc": "Et PropTech-produkt for eiendomssøk, drift, lead-routing og markedsplass-arbeidsflyter."},
+      "janex": {"name": "Janex", "tag": "Markedsplass", "desc": "En produktplattform for serviceoperasjoner, kundearbeidsflyter og skalerbare markedsplassopplevelser."},
+      "wallet": {"name": "Wallet Platform", "tag": "FinTech", "desc": "En fintech-driftsplattform for saldoer, transaksjoner, onboarding, gjennomganger og rapportering."},
+      "raffle": {"name": "Raffle Platform", "tag": "Kampanjeprodukt", "desc": "Et kampanje- og lotteriprodukt: deltakelser, kvalifisering, trekninger, belønninger og etterlevelse."},
+      "salesai": {"name": "Sales AI", "tag": "AI-salg", "desc": "En AI-salgassistent for lead-research, oppfølginger, pipeline-scoring og teamoversikt."},
+      "edai": {"name": "Education AI", "tag": "AI EdTech", "desc": "En AI-utdanningsplattform for læringsstøtte, vurderinger og fremdriftsoversikt."},
+      "dreamai": {"name": "Dream AI", "tag": "AI-produkt", "desc": "Et AI-produktlag for idémyldring, guidet planlegging og personlige digitale opplevelser."},
+      "tradepulse": {"name": "DCT TradePulse", "tag": "Trading Intelligence", "desc": "En trading-intelligence-plattform: markedssignaler, dashboards, varsler og beslutningsstøtte."}
+    }
+  },
   "cta": {
     "part1": "LA OSS BYGGE NOE",
     "part2": "UMULIG.",

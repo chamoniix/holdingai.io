@@ -186,6 +186,23 @@
       "lidar": { "title": "Le LIDAR et son intégration dans les apps iOS", "tag": "Innovation" }
     }
   },
+  "projectsIndex": {
+    "eyebrow": "PORTFOLIO",
+    "title": "Des systèmes livrés pour des entreprises ambitieuses.",
+    "subtitle": "Une sélection de plateformes, produits IA et systèmes fintech conçus et développés de bout en bout.",
+    "items": {
+      "dct": { "name": "DCT Network", "tag": "Réseau de Ventures", "desc": "Un réseau de ventures digitales reliant produits, communautés, récompenses et infrastructure." },
+      "dream": { "name": "DreamComeTrue", "tag": "Plateforme Grand Public", "desc": "Une plateforme grand public de campagnes, participation et mécaniques de récompense." },
+      "perhomes": { "name": "per.homes", "tag": "PropTech", "desc": "Un produit PropTech pour la découverte de biens, les opérations et les workflows marketplace." },
+      "janex": { "name": "Janex", "tag": "Marketplace", "desc": "Une plateforme produit pour les opérations de service et des expériences marketplace évolutives." },
+      "wallet": { "name": "Wallet Platform", "tag": "FinTech", "desc": "Une plateforme fintech pour soldes, transactions, onboarding et reporting." },
+      "raffle": { "name": "Raffle Platform", "tag": "Produit Campagne", "desc": "Un produit de campagnes et tirages : participations, éligibilité, récompenses et conformité." },
+      "salesai": { "name": "Sales AI", "tag": "IA Vente", "desc": "Un assistant IA de vente : recherche de leads, relances, scoring et visibilité pipeline." },
+      "edai": { "name": "Education AI", "tag": "IA Éducative", "desc": "Une plateforme IA éducative : accompagnement, évaluations et suivi des progrès." },
+      "dreamai": { "name": "Dream AI", "tag": "Produit IA", "desc": "Une couche produit IA pour l'idéation, la planification guidée et les expériences personnalisées." },
+      "tradepulse": { "name": "DCT TradePulse", "tag": "Intelligence Trading", "desc": "Une plateforme d'intelligence de trading : signaux, dashboards, alertes et aide à la décision." }
+    }
+  },
   "cta": {
     "part1": "CONSTRUISONS QUELQUE CHOSE",
     "part2": "D'IMPOSSIBLE.",
