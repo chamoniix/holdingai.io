@@ -21,10 +21,19 @@ Site d'agence IA **holdingai.io** — refonte complète : design + contenu + i18
 
 - Repo : `github.com/chamoniix/holdingai.io` — **PUBLIC**.
   ⚠️ **Ne jamais committer de secret, clé API, ID de compte pub, token.** Tout ce qui est poussé est visible publiquement.
-- `main` = `ec440ad` → **production** (`www.holdingai.io`). Ancien design sombre + tous les correctifs (i18n next-intl, SEO, tracking). **Stable.**
-- `feature/full-site` = `fe31ac9` → **preview**. Refonte claire « **Kosmos Elevated** ». Dernier commit : retrait de l'essaim de curseur.
+- `main` → **production** (`www.holdingai.io`). Ancien design sombre + tous les correctifs (i18n next-intl, SEO, tracking) + retrait du plan ads. **Stable.**
+- `feature/full-site` → **preview**. Refonte claire « **Kosmos Elevated** ».
 
-**Divergence vérifiée avec refs fraîches (2026-10-06)** : `feature/full-site` = **13 commits d'avance, 0 de retard** sur `main`. `main` est intégralement contenu dans la feature → **merge sans risque de régression** (fast-forward), base commune `ec440ad`.
+⚠️ **Ne pas figer les SHA dans ce fichier** : committer ce fichier change le SHA de la branche. Interroger le distant, qui seul fait foi :
+
+```bash
+git fetch origin --prune
+git ls-remote origin refs/heads/main refs/heads/feature/full-site
+git rev-list --left-right --count origin/main...origin/feature/full-site   # main-only / feature-only
+```
+
+**État du 2026-10-06** : `main` a 1 commit que la feature n'a pas (le patch sécurité) ; la feature porte tout le reste. `main` est donc intégralement contenu dans la feature → **merge sans régression**. Test à blanc vérifié **sans aucun conflit** :
+`git merge-tree --write-tree origin/main origin/feature/full-site`
 
 ## 3. Workspaces
 
@@ -98,8 +107,10 @@ Composants **orphelins (0 import)** :
 
 ## 12. Sécurité — repo public
 
-- `docs/ADS_PLAN_V2.md` a été **retiré du repo** (il exposait l'ID du compte publicitaire et la stratégie d'enchères). Il vit désormais dans `local/` (`/local/` est dans `.gitignore`).
-- ⚠️ **L'ID reste présent dans l'historique git** (commit `9f4d63c`), donc toujours lisible publiquement. Un vrai nettoyage exige une réécriture d'historique + force-push : **à ne faire qu'avec l'accord explicite du fondateur**.
+- `docs/ADS_PLAN_V2.md` a été **retiré des deux branches** — `main` (production) et `feature/full-site` — car il exposait l'ID du compte publicitaire et toute la stratégie d'enchères sur un repo public. Il avait d'abord été repéré sur la feature, puis **retrouvé intact sur `main`, la branche par défaut indexée par GitHub**.
+- Le document vit désormais dans `local/ADS_PLAN_V2.md`, et `/local/` est ajouté au `.gitignore` sur les deux branches (fichier rendu identique de part et d'autre pour que le merge reste sans conflit).
+- ⚠️ **L'ID reste présent dans l'historique git** (commit `9f4d63c`), donc toujours lisible publiquement. Un vrai effacement exige une réécriture d'historique (`git filter-repo`) + force-push sur les deux branches : **à ne faire qu'avec l'accord explicite du fondateur**, et à coordonner avec Vercel.
+- Sévérité : un ID de compte publicitaire seul ne permet pas de piloter le compte sans la clé API. **Un scan complet des secrets dans tout l'historique n'a pas encore été fait** (reporté par le fondateur).
 - Avant tout commit : vérifier qu'aucun secret ne part (`git grep -nE "sk-|whsec_|adacct_|token"`).
 
 ## 13. Outillage de l'environnement
