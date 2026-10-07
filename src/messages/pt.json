@@ -261,17 +261,58 @@
     "title": "Sistemas entregues para empresas ambiciosas.",
     "subtitle": "Uma seleção de plataformas, produtos de IA e sistemas fintech concebidos e desenvolvidos de ponta a ponta.",
     "items": {
-      "dct": {"name": "DCT Network", "tag": "Rede de Ventures", "desc": "Uma rede de ventures digitais que liga produtos, comunidades, recompensas e infraestrutura de plataforma."},
-      "dream": {"name": "DreamComeTrue", "tag": "Plataforma de Consumo", "desc": "Uma plataforma de consumo para campanhas, participação, engagement digital e mecânicas de recompensa."},
-      "perhomes": {"name": "per.homes", "tag": "PropTech", "desc": "Um produto PropTech para descoberta de imóveis, operações, encaminhamento de leads e workflows de marketplace."},
-      "janex": {"name": "Janex", "tag": "Marketplace", "desc": "Uma plataforma de produto para operações de serviço, workflows de clientes e experiências de marketplace escaláveis."},
-      "wallet": {"name": "Wallet Platform", "tag": "FinTech", "desc": "Uma plataforma fintech para saldos, transações, onboarding, revisões e reporting."},
-      "raffle": {"name": "Raffle Platform", "tag": "Produto de Campanha", "desc": "Um produto de campanhas e sorteios: participações, elegibilidade, sorteios, recompensas e conformidade."},
-      "salesai": {"name": "Sales AI", "tag": "IA de Vendas", "desc": "Um assistente de vendas com IA para pesquisa de leads, follow-ups, scoring de pipeline e visibilidade da equipa."},
-      "edai": {"name": "Education AI", "tag": "IA EdTech", "desc": "Uma plataforma educativa com IA para apoio à aprendizagem, avaliações e visibilidade do progresso."},
-      "dreamai": {"name": "Dream AI", "tag": "Produto de IA", "desc": "Uma camada de produto com IA para ideação, planeamento guiado e experiências digitais personalizadas."},
-      "tradepulse": {"name": "DCT TradePulse", "tag": "Inteligência de Trading", "desc": "Uma plataforma de inteligência de trading: sinais de mercado, dashboards, alertas e apoio à decisão."}
-    }
+      "dct": {
+        "name": "Converge",
+        "tag": "Rede de Ventures",
+        "desc": "Uma rede de ventures digitais que liga produtos, comunidades, recompensas e infraestrutura de plataforma."
+      },
+      "dream": {
+        "name": "Bloom",
+        "tag": "Plataforma de Consumo",
+        "desc": "Uma plataforma de consumo para campanhas, participação, engagement digital e mecânicas de recompensa."
+      },
+      "perhomes": {
+        "name": "Domus",
+        "tag": "PropTech",
+        "desc": "Um produto PropTech para descoberta de imóveis, operações, encaminhamento de leads e workflows de marketplace."
+      },
+      "janex": {
+        "name": "Tandem",
+        "tag": "Marketplace",
+        "desc": "Uma plataforma de produto para operações de serviço, workflows de clientes e experiências de marketplace escaláveis."
+      },
+      "wallet": {
+        "name": "Vault",
+        "tag": "FinTech",
+        "desc": "Uma plataforma fintech para saldos, transações, onboarding, revisões e reporting."
+      },
+      "raffle": {
+        "name": "Fortuna",
+        "tag": "Produto de Campanha",
+        "desc": "Um produto de campanhas e sorteios: participações, elegibilidade, sorteios, recompensas e conformidade."
+      },
+      "salesai": {
+        "name": "Closer",
+        "tag": "IA de Vendas",
+        "desc": "Um assistente de vendas com IA para pesquisa de leads, follow-ups, scoring de pipeline e visibilidade da equipa."
+      },
+      "edai": {
+        "name": "Mentor",
+        "tag": "IA EdTech",
+        "desc": "Uma plataforma educativa com IA para apoio à aprendizagem, avaliações e visibilidade do progresso."
+      },
+      "dreamai": {
+        "name": "Reverie",
+        "tag": "Produto de IA",
+        "desc": "Uma camada de produto com IA para ideação, planeamento guiado e experiências digitais personalizadas."
+      },
+      "tradepulse": {
+        "name": "Meridian",
+        "tag": "Inteligência de Trading",
+        "desc": "Uma plataforma de inteligência de trading: sinais de mercado, dashboards, alertas e apoio à decisão."
+      }
+    },
+    "viewAll": "Ver todos os projetos"
   },
   "cta": {
     "part1": "VAMOS CONSTRUIR ALGO",

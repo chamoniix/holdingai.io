@@ -261,17 +261,58 @@
     "title": "Järjestelmiä kunnianhimoisille yrityksille.",
     "subtitle": "Valikoima alustoja, tekoälytuotteita ja fintech-järjestelmiä – suunniteltu ja rakennettu päästä päähän.",
     "items": {
-      "dct": {"name": "DCT Network", "tag": "Venture-verkosto", "desc": "Digitaalinen venture-verkosto, joka yhdistää tuotteet, yhteisöt, palkinnot ja alustainfrastruktuurin."},
-      "dream": {"name": "DreamComeTrue", "tag": "Kuluttaja-alusta", "desc": "Kuluttaja-alusta kampanjoille, osallistumiselle, digitaaliselle sitoutumiselle ja palkintomekaniikoille."},
-      "perhomes": {"name": "per.homes", "tag": "PropTech", "desc": "PropTech-tuote kiinteistöjen etsintään, operaatioihin, liidien ohjaukseen ja markkinapaikkatyönkulkuihin."},
-      "janex": {"name": "Janex", "tag": "Markkinapaikka", "desc": "Tuotealusta palveluoperaatioille, asiakastyönkulkuille ja skaalautuville markkinapaikkakokemuksille."},
-      "wallet": {"name": "Wallet Platform", "tag": "FinTech", "desc": "Fintech-operaatioalusta saldoille, transaktioille, käyttöönotolle, tarkastuksille ja raportoinnille."},
-      "raffle": {"name": "Raffle Platform", "tag": "Kampanjatuote", "desc": "Kampanja- ja arvontatuote: osallistumiset, kelpoisuus, arvonnat, palkinnot ja vaatimustenmukaisuus."},
-      "salesai": {"name": "Sales AI", "tag": "Myynnin tekoäly", "desc": "Tekoälypohjainen myyntiassistentti liidien tutkimukseen, seurantoihin, pipeline-pisteytykseen ja tiimin näkyvyyteen."},
-      "edai": {"name": "Education AI", "tag": "Koulutuksen tekoäly", "desc": "Tekoälypohjainen koulutusalusta oppimisen tukeen, arviointeihin ja edistymisen näkyvyyteen."},
-      "dreamai": {"name": "Dream AI", "tag": "Tekoälytuote", "desc": "Tekoälytuotekerros ideointiin, ohjattuun suunnitteluun ja personoituihin digitaalisiin kokemuksiin."},
-      "tradepulse": {"name": "DCT TradePulse", "tag": "Kaupankäynnin analytiikka", "desc": "Kaupankäynnin analytiikka-alusta: markkinasignaalit, dashboardit, hälytykset ja päätöksenteon tuki."}
-    }
+      "dct": {
+        "name": "Converge",
+        "tag": "Venture-verkosto",
+        "desc": "Digitaalinen venture-verkosto, joka yhdistää tuotteet, yhteisöt, palkinnot ja alustainfrastruktuurin."
+      },
+      "dream": {
+        "name": "Bloom",
+        "tag": "Kuluttaja-alusta",
+        "desc": "Kuluttaja-alusta kampanjoille, osallistumiselle, digitaaliselle sitoutumiselle ja palkintomekaniikoille."
+      },
+      "perhomes": {
+        "name": "Domus",
+        "tag": "PropTech",
+        "desc": "PropTech-tuote kiinteistöjen etsintään, operaatioihin, liidien ohjaukseen ja markkinapaikkatyönkulkuihin."
+      },
+      "janex": {
+        "name": "Tandem",
+        "tag": "Markkinapaikka",
+        "desc": "Tuotealusta palveluoperaatioille, asiakastyönkulkuille ja skaalautuville markkinapaikkakokemuksille."
+      },
+      "wallet": {
+        "name": "Vault",
+        "tag": "FinTech",
+        "desc": "Fintech-operaatioalusta saldoille, transaktioille, käyttöönotolle, tarkastuksille ja raportoinnille."
+      },
+      "raffle": {
+        "name": "Fortuna",
+        "tag": "Kampanjatuote",
+        "desc": "Kampanja- ja arvontatuote: osallistumiset, kelpoisuus, arvonnat, palkinnot ja vaatimustenmukaisuus."
+      },
+      "salesai": {
+        "name": "Closer",
+        "tag": "Myynnin tekoäly",
+        "desc": "Tekoälypohjainen myyntiassistentti liidien tutkimukseen, seurantoihin, pipeline-pisteytykseen ja tiimin näkyvyyteen."
+      },
+      "edai": {
+        "name": "Mentor",
+        "tag": "Koulutuksen tekoäly",
+        "desc": "Tekoälypohjainen koulutusalusta oppimisen tukeen, arviointeihin ja edistymisen näkyvyyteen."
+      },
+      "dreamai": {
+        "name": "Reverie",
+        "tag": "Tekoälytuote",
+        "desc": "Tekoälytuotekerros ideointiin, ohjattuun suunnitteluun ja personoituihin digitaalisiin kokemuksiin."
+      },
+      "tradepulse": {
+        "name": "Meridian",
+        "tag": "Kaupankäynnin analytiikka",
+        "desc": "Kaupankäynnin analytiikka-alusta: markkinasignaalit, dashboardit, hälytykset ja päätöksenteon tuki."
+      }
+    },
+    "viewAll": "Katso kaikki projektit"
   },
   "cta": {
     "part1": "RAKENNETAAN JOTAIN",

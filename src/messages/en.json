@@ -85,19 +85,43 @@
     "eyebrow": "The Proof",
     "title": "Digital Monuments",
     "items": {
-      "healthcare": { "title": "AI Dashboard for Healthcare", "sector": "HealthTech" },
-      "retail": { "title": "E-commerce Personalization Engine", "sector": "Retail" },
-      "fintech": { "title": "Financial Predictive Analytics", "sector": "FinTech" }
+      "healthcare": {
+        "title": "AI Dashboard for Healthcare",
+        "sector": "HealthTech"
+      },
+      "retail": {
+        "title": "E-commerce Personalization Engine",
+        "sector": "Retail"
+      },
+      "fintech": {
+        "title": "Financial Predictive Analytics",
+        "sector": "FinTech"
+      }
     }
   },
   "showcase": {
     "title": "Selected Work",
     "items": {
-      "aura": { "title": "Aura", "sector": "Luxury Banking" },
-      "vitals": { "title": "Vitals", "sector": "Healthcare AI" },
-      "nomad": { "title": "Nomad", "sector": "Travel Platform" },
-      "estate": { "title": "Estate", "sector": "Property CRM" },
-      "lumina": { "title": "Lumina", "sector": "Education Platform" }
+      "aura": {
+        "title": "Aura",
+        "sector": "Luxury Banking"
+      },
+      "vitals": {
+        "title": "Vitals",
+        "sector": "Healthcare AI"
+      },
+      "nomad": {
+        "title": "Nomad",
+        "sector": "Travel Platform"
+      },
+      "estate": {
+        "title": "Estate",
+        "sector": "Property CRM"
+      },
+      "lumina": {
+        "title": "Lumina",
+        "sector": "Education Platform"
+      }
     }
   },
   "numbers": {
@@ -131,22 +155,56 @@
   "process": {
     "eyebrow": "Our Process",
     "steps": {
-      "discover": { "title": "Discover", "desc": "Understanding the problem, user needs, and business objectives." },
-      "design": { "title": "Design", "desc": "Crafting premium user interfaces and seamless experiences." },
-      "prototype": { "title": "Prototype", "desc": "Building interactive models to validate the core concepts." },
-      "develop": { "title": "Develop", "desc": "Engineering scalable architecture with cutting-edge tech." },
-      "launch": { "title": "Launch", "desc": "Deploying the product to the market with precision." },
-      "scale": { "title": "Scale", "desc": "Optimizing and expanding the platform for global reach." }
+      "discover": {
+        "title": "Discover",
+        "desc": "Understanding the problem, user needs, and business objectives."
+      },
+      "design": {
+        "title": "Design",
+        "desc": "Crafting premium user interfaces and seamless experiences."
+      },
+      "prototype": {
+        "title": "Prototype",
+        "desc": "Building interactive models to validate the core concepts."
+      },
+      "develop": {
+        "title": "Develop",
+        "desc": "Engineering scalable architecture with cutting-edge tech."
+      },
+      "launch": {
+        "title": "Launch",
+        "desc": "Deploying the product to the market with precision."
+      },
+      "scale": {
+        "title": "Scale",
+        "desc": "Optimizing and expanding the platform for global reach."
+      }
     }
   },
   "testimonials": {
     "eyebrow": "WHAT CLIENTS SAY",
     "title": "Real results, real words",
     "items": {
-      "sophie": { "quote": "The AI agent cut our support costs by 62% in three months.", "name": "Sophie Marchand", "role": "COO — Finloop, London fintech" },
-      "james": { "quote": "From 300 manual hours to 40 a month. The automation paid for itself in six weeks.", "name": "James Whitmore", "role": "Head of Operations — Northgate Retail" },
-      "elena": { "quote": "Our RAG knowledge base answers 85% of customer questions with zero human involvement.", "name": "Elena Petrova", "role": "VP Customer Experience — Lumenly" },
-      "marc": { "quote": "They turned our idea into a launched product in ten weeks. Unheard of.", "name": "Marc Dubois", "role": "CEO — Carely, healthtech" }
+      "sophie": {
+        "quote": "The AI agent cut our support costs by 62% in three months.",
+        "name": "Sophie Marchand",
+        "role": "COO — Finloop, London fintech"
+      },
+      "james": {
+        "quote": "From 300 manual hours to 40 a month. The automation paid for itself in six weeks.",
+        "name": "James Whitmore",
+        "role": "Head of Operations — Northgate Retail"
+      },
+      "elena": {
+        "quote": "Our RAG knowledge base answers 85% of customer questions with zero human involvement.",
+        "name": "Elena Petrova",
+        "role": "VP Customer Experience — Lumenly"
+      },
+      "marc": {
+        "quote": "They turned our idea into a launched product in ten weeks. Unheard of.",
+        "name": "Marc Dubois",
+        "role": "CEO — Carely, healthtech"
+      }
     }
   },
   "clients": {
@@ -180,10 +238,22 @@
     "subtitle": "Exploring the digital universe through our articles.",
     "readMore": "Read article",
     "items": {
-      "mobile": { "title": "Strategic deployment of a mobile application", "tag": "Mobile" },
-      "retention": { "title": "Maximizing user retention", "tag": "Product" },
-      "ab": { "title": "The complete guide to A/B testing", "tag": "Growth" },
-      "lidar": { "title": "LIDAR and its integration in iOS apps", "tag": "Innovation" }
+      "mobile": {
+        "title": "Strategic deployment of a mobile application",
+        "tag": "Mobile"
+      },
+      "retention": {
+        "title": "Maximizing user retention",
+        "tag": "Product"
+      },
+      "ab": {
+        "title": "The complete guide to A/B testing",
+        "tag": "Growth"
+      },
+      "lidar": {
+        "title": "LIDAR and its integration in iOS apps",
+        "tag": "Innovation"
+      }
     }
   },
   "projectsIndex": {
@@ -191,17 +261,58 @@
     "title": "Systems shipped for ambitious companies.",
     "subtitle": "A selection of platforms, AI products and fintech systems designed and engineered end to end.",
     "items": {
-      "dct": { "name": "DCT Network", "tag": "Venture Network", "desc": "A digital venture network connecting products, communities, rewards and platform infrastructure." },
-      "dream": { "name": "DreamComeTrue", "tag": "Consumer Platform", "desc": "A consumer platform for campaigns, participation, digital engagement and reward mechanics." },
-      "perhomes": { "name": "per.homes", "tag": "PropTech", "desc": "A PropTech product for property discovery, operations, lead routing and marketplace workflows." },
-      "janex": { "name": "Janex", "tag": "Marketplace", "desc": "A product platform for service operations, customer workflows and scalable marketplace experiences." },
-      "wallet": { "name": "Wallet Platform", "tag": "FinTech", "desc": "A fintech operations platform for balances, transactions, onboarding, reviews and reporting." },
-      "raffle": { "name": "Raffle Platform", "tag": "Campaign Product", "desc": "A campaign and raffle product: entries, eligibility, draws, rewards and compliance workflows." },
-      "salesai": { "name": "Sales AI", "tag": "AI Sales", "desc": "An AI sales assistant for lead research, follow-ups, pipeline scoring and team visibility." },
-      "edai": { "name": "Education AI", "tag": "AI EdTech", "desc": "An AI education platform for learning support, assessments and progress visibility." },
-      "dreamai": { "name": "Dream AI", "tag": "AI Product", "desc": "An AI product layer for ideation, guided planning and personalized digital experiences." },
-      "tradepulse": { "name": "DCT TradePulse", "tag": "Trading Intelligence", "desc": "A trading intelligence platform: market signals, dashboards, alerts and decision support." }
-    }
+      "dct": {
+        "name": "Converge",
+        "tag": "Venture Network",
+        "desc": "A digital venture network connecting products, communities, rewards and platform infrastructure."
+      },
+      "dream": {
+        "name": "Bloom",
+        "tag": "Consumer Platform",
+        "desc": "A consumer platform for campaigns, participation, digital engagement and reward mechanics."
+      },
+      "perhomes": {
+        "name": "Domus",
+        "tag": "PropTech",
+        "desc": "A PropTech product for property discovery, operations, lead routing and marketplace workflows."
+      },
+      "janex": {
+        "name": "Tandem",
+        "tag": "Marketplace",
+        "desc": "A product platform for service operations, customer workflows and scalable marketplace experiences."
+      },
+      "wallet": {
+        "name": "Vault",
+        "tag": "FinTech",
+        "desc": "A fintech operations platform for balances, transactions, onboarding, reviews and reporting."
+      },
+      "raffle": {
+        "name": "Fortuna",
+        "tag": "Campaign Product",
+        "desc": "A campaign and raffle product: entries, eligibility, draws, rewards and compliance workflows."
+      },
+      "salesai": {
+        "name": "Closer",
+        "tag": "AI Sales",
+        "desc": "An AI sales assistant for lead research, follow-ups, pipeline scoring and team visibility."
+      },
+      "edai": {
+        "name": "Mentor",
+        "tag": "AI EdTech",
+        "desc": "An AI education platform for learning support, assessments and progress visibility."
+      },
+      "dreamai": {
+        "name": "Reverie",
+        "tag": "AI Product",
+        "desc": "An AI product layer for ideation, guided planning and personalized digital experiences."
+      },
+      "tradepulse": {
+        "name": "Meridian",
+        "tag": "Trading Intelligence",
+        "desc": "A trading intelligence platform: market signals, dashboards, alerts and decision support."
+      }
+    },
+    "viewAll": "View all projects"
   },
   "cta": {
     "part1": "LET'S BUILD SOMETHING",
@@ -257,20 +368,48 @@
     "philosophy": "Our Philosophy",
     "missionText": "We believe the most advanced technology should feel invisible. Our systems are designed to operate with absolute fluidity, offering your users an experience bordering on magic. From data architecture to the finest pixel, every detail is obsessively perfected.",
     "stats": {
-      "projects": { "label": "Projects Delivered", "value": "40+" },
-      "agents": { "label": "Agents Deployed", "value": "1M+" },
-      "code": { "label": "Lines of Code", "value": "2.5M" },
-      "years": { "label": "Years of Excellence", "value": "5+" }
+      "projects": {
+        "label": "Projects Delivered",
+        "value": "40+"
+      },
+      "agents": {
+        "label": "Agents Deployed",
+        "value": "1M+"
+      },
+      "code": {
+        "label": "Lines of Code",
+        "value": "2.5M"
+      },
+      "years": {
+        "label": "Years of Excellence",
+        "value": "5+"
+      }
     }
   },
   "work": {
     "title": "Our Work",
     "description": "Discover our digital monuments. From Apple-quality web applications to enterprise-grade AI systems, we redefine industry standards.",
     "projects": {
-      "aura": { "title": "Aura Network", "category": "AI Agent Platform", "year": "2026" },
-      "nexus": { "title": "Nexus Cloud", "category": "SaaS Infrastructure", "year": "2025" },
-      "prism": { "title": "Prism", "category": "Enterprise Automation", "year": "2025" },
-      "onyx": { "title": "Onyx Protocol", "category": "Machine Learning", "year": "2024" }
+      "aura": {
+        "title": "Aura Network",
+        "category": "AI Agent Platform",
+        "year": "2026"
+      },
+      "nexus": {
+        "title": "Nexus Cloud",
+        "category": "SaaS Infrastructure",
+        "year": "2025"
+      },
+      "prism": {
+        "title": "Prism",
+        "category": "Enterprise Automation",
+        "year": "2025"
+      },
+      "onyx": {
+        "title": "Onyx Protocol",
+        "category": "Machine Learning",
+        "year": "2024"
+      }
     }
   },
   "legal": {
@@ -288,45 +427,111 @@
       "title": "Autonomous AI Agents",
       "description": "We develop intelligent agents capable of reasoning, learning, and executing complex tasks autonomously.",
       "features": {
-        "learning": { "title": "Continuous Learning", "desc": "Our agents adapt and improve with every interaction, guaranteeing constant evolution of your performance." },
-        "reasoning": { "title": "Logical Reasoning", "desc": "Beyond simple text generation, our systems integrate advanced reasoning capabilities to solve business problems." },
-        "execution": { "title": "Action Execution", "desc": "Seamless integration with your APIs allowing agents to act directly within your ecosystem." }
+        "learning": {
+          "title": "Continuous Learning",
+          "desc": "Our agents adapt and improve with every interaction, guaranteeing constant evolution of your performance."
+        },
+        "reasoning": {
+          "title": "Logical Reasoning",
+          "desc": "Beyond simple text generation, our systems integrate advanced reasoning capabilities to solve business problems."
+        },
+        "execution": {
+          "title": "Action Execution",
+          "desc": "Seamless integration with your APIs allowing agents to act directly within your ecosystem."
+        }
       }
     },
     "saas": {
       "title": "Scalable SaaS Development",
       "description": "Cutting-edge software architectures designed to support millions of users while providing a fluid experience.",
       "features": {
-        "availability": { "title": "High Availability", "desc": "Cloud-native infrastructure guaranteed at 99.99% uptime, built for hyper-growth." },
-        "security": { "title": "Military-Grade Security", "desc": "End-to-end encryption and total compliance with the strictest security standards (GDPR, SOC2)." },
-        "ux": { "title": "Premium UX/UI Design", "desc": "Clean, intuitive, and visually stunning interfaces that retain your users." }
+        "availability": {
+          "title": "High Availability",
+          "desc": "Cloud-native infrastructure guaranteed at 99.99% uptime, built for hyper-growth."
+        },
+        "security": {
+          "title": "Military-Grade Security",
+          "desc": "End-to-end encryption and total compliance with the strictest security standards (GDPR, SOC2)."
+        },
+        "ux": {
+          "title": "Premium UX/UI Design",
+          "desc": "Clean, intuitive, and visually stunning interfaces that retain your users."
+        }
       }
     },
     "automation": {
       "title": "Enterprise Automation",
       "description": "Eliminate friction. We transform your manual processes into automated, fast, and error-free workflows.",
       "features": {
-        "integration": { "title": "Systems Integration", "desc": "We connect your existing tools (CRM, ERP, databases) to create perfect synergy." },
-        "cost": { "title": "Cost Optimization", "desc": "Drastically reduce your operational costs by automating time-consuming tasks." },
-        "monitoring": { "title": "Real-time Monitoring", "desc": "Analytical dashboards to monitor the efficiency of your automations." }
+        "integration": {
+          "title": "Systems Integration",
+          "desc": "We connect your existing tools (CRM, ERP, databases) to create perfect synergy."
+        },
+        "cost": {
+          "title": "Cost Optimization",
+          "desc": "Drastically reduce your operational costs by automating time-consuming tasks."
+        },
+        "monitoring": {
+          "title": "Real-time Monitoring",
+          "desc": "Analytical dashboards to monitor the efficiency of your automations."
+        }
       }
     }
   },
   "legalContent": {
-    "privacy": { "title": "Privacy Policy", "content": "At HoldingAI LTD, we take your privacy seriously. We collect minimal data necessary to provide our services. This includes your name, email, and project details submitted via our contact form. We do not sell or share your data with third parties. To request the deletion of your data, please contact us at info@holdingai.io." },
-    "terms": { "title": "Terms & Conditions", "content": "By using our services, you agree to these terms. HoldingAI LTD provides software development and AI engineering services 'as is'. We are not liable for data loss or service interruptions. All intellectual property rights to the deliverables are transferred to you only upon full payment of invoices." },
-    "mentions": { "title": "Legal Mentions", "content": "Site Publisher: HoldingAI LTD, registered in England & Wales. Registered Office: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, UK. Contact: info@holdingai.io | +44 7537106967. Hosted by: Vercel Inc." }
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": "At HoldingAI LTD, we take your privacy seriously. We collect minimal data necessary to provide our services. This includes your name, email, and project details submitted via our contact form. We do not sell or share your data with third parties. To request the deletion of your data, please contact us at info@holdingai.io."
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "content": "By using our services, you agree to these terms. HoldingAI LTD provides software development and AI engineering services 'as is'. We are not liable for data loss or service interruptions. All intellectual property rights to the deliverables are transferred to you only upon full payment of invoices."
+    },
+    "mentions": {
+      "title": "Legal Mentions",
+      "content": "Site Publisher: HoldingAI LTD, registered in England & Wales. Registered Office: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, UK. Contact: info@holdingai.io | +44 7537106967. Hosted by: Vercel Inc."
+    }
   },
   "seo": {
-    "home": { "title": "HoldingAI — Premium AI Product Studio | AI Agents, SaaS & Automation", "description": "HoldingAI designs and engineers world-class AI products: autonomous agents, scalable SaaS platforms and enterprise automation. Partner with a premium AI studio." },
-    "about": { "title": "About HoldingAI — Our Philosophy | Premium AI Product Studio", "description": "HoldingAI is an engineering and design lab building the next generation of intelligent platforms. Discover our philosophy: luxury aesthetics meets artificial intelligence." },
-    "work": { "title": "Our Work — AI Projects & Case Studies | HoldingAI", "description": "Explore HoldingAI's digital monuments: AI agent platforms, SaaS infrastructure, enterprise automation and machine learning projects delivered for industry leaders." },
-    "contact": { "title": "Contact HoldingAI — Start Your AI Project | Premium AI Studio", "description": "Ready to build with AI? Contact HoldingAI and our engineering team will respond within 24 hours. Describe your project and get a premium AI partner." },
-    "aiAgents": { "title": "Autonomous AI Agents — Development Services | HoldingAI", "description": "We develop intelligent AI agents that reason, learn and execute complex tasks autonomously. Continuous learning, logical reasoning and seamless API integration." },
-    "saas": { "title": "Scalable SaaS Development — High-Availability Platforms | HoldingAI", "description": "Cutting-edge SaaS architectures designed for millions of users: 99.99% uptime, military-grade security (GDPR, SOC2) and premium UX/UI design." },
-    "automation": { "title": "Enterprise Automation — Workflow & Systems Integration | HoldingAI", "description": "Eliminate friction with enterprise automation: systems integration (CRM, ERP), cost optimization and real-time monitoring dashboards." },
-    "privacy": { "title": "Privacy Policy | HoldingAI", "description": "How HoldingAI LTD collects, uses and protects your personal data. Minimal collection, no third-party sharing, deletion on request." },
-    "terms": { "title": "Terms & Conditions | HoldingAI", "description": "The terms governing the use of HoldingAI LTD's software development and AI engineering services." },
-    "mentions": { "title": "Legal Mentions | HoldingAI", "description": "Publisher, registered office and hosting information for holdingai.io, operated by HoldingAI LTD (England & Wales)." }
+    "home": {
+      "title": "HoldingAI — Premium AI Product Studio | AI Agents, SaaS & Automation",
+      "description": "HoldingAI designs and engineers world-class AI products: autonomous agents, scalable SaaS platforms and enterprise automation. Partner with a premium AI studio."
+    },
+    "about": {
+      "title": "About HoldingAI — Our Philosophy | Premium AI Product Studio",
+      "description": "HoldingAI is an engineering and design lab building the next generation of intelligent platforms. Discover our philosophy: luxury aesthetics meets artificial intelligence."
+    },
+    "work": {
+      "title": "Our Work — AI Projects & Case Studies | HoldingAI",
+      "description": "Explore HoldingAI's digital monuments: AI agent platforms, SaaS infrastructure, enterprise automation and machine learning projects delivered for industry leaders."
+    },
+    "contact": {
+      "title": "Contact HoldingAI — Start Your AI Project | Premium AI Studio",
+      "description": "Ready to build with AI? Contact HoldingAI and our engineering team will respond within 24 hours. Describe your project and get a premium AI partner."
+    },
+    "aiAgents": {
+      "title": "Autonomous AI Agents — Development Services | HoldingAI",
+      "description": "We develop intelligent AI agents that reason, learn and execute complex tasks autonomously. Continuous learning, logical reasoning and seamless API integration."
+    },
+    "saas": {
+      "title": "Scalable SaaS Development — High-Availability Platforms | HoldingAI",
+      "description": "Cutting-edge SaaS architectures designed for millions of users: 99.99% uptime, military-grade security (GDPR, SOC2) and premium UX/UI design."
+    },
+    "automation": {
+      "title": "Enterprise Automation — Workflow & Systems Integration | HoldingAI",
+      "description": "Eliminate friction with enterprise automation: systems integration (CRM, ERP), cost optimization and real-time monitoring dashboards."
+    },
+    "privacy": {
+      "title": "Privacy Policy | HoldingAI",
+      "description": "How HoldingAI LTD collects, uses and protects your personal data. Minimal collection, no third-party sharing, deletion on request."
+    },
+    "terms": {
+      "title": "Terms & Conditions | HoldingAI",
+      "description": "The terms governing the use of HoldingAI LTD's software development and AI engineering services."
+    },
+    "mentions": {
+      "title": "Legal Mentions | HoldingAI",
+      "description": "Publisher, registered office and hosting information for holdingai.io, operated by HoldingAI LTD (England & Wales)."
+    }
   }
 }

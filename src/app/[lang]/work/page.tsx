@@ -1,66 +1,106 @@
 'use client';
-import { useTranslations } from 'next-intl';
+
+import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import Reveal from '@/components/ui/Reveal';
+
+const projects = [
+  'converge',
+  'bloom',
+  'domus',
+  'tandem',
+  'vault',
+  'fortuna',
+  'closer',
+  'mentor',
+  'reverie',
+  'meridian',
+] as const;
 
 export default function WorkPage() {
-  const t = useTranslations('work');
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-  };
+  const t = useTranslations('projectsIndex');
+  const tw = useTranslations('work');
+  const tc = useTranslations('homeFinal');
+  const lang = useLocale();
 
   return (
-    <main className="w-full min-h-screen bg-transparent pt-32 md:pt-40 px-6 relative z-10 flex flex-col items-center">
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        animate="show"
-        className="max-w-7xl w-full"
-      >
-        <motion.div variants={itemVariants} className="text-center mb-24">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
-            {t('title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-[#86868B] font-light leading-relaxed max-w-3xl mx-auto">
-            {t('description')}
+    <main className="w-full bg-transparent pt-32 md:pt-40 pb-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+        {/* Header */}
+        <Reveal className="mb-16 md:mb-24 max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7C3AED] mb-4">
+            <span className="text-[#B0B0B5]">[ </span>{t('eyebrow')}<span className="text-[#B0B0B5]"> ]</span>
           </p>
-        </motion.div>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-[#0A0A0C] mb-6">
+            {tw('title')}
+          </h1>
+          <p className="text-lg md:text-xl text-[#4A4A4E] font-light leading-relaxed">
+            {tw('description')}
+          </p>
+        </Reveal>
 
-        {/* Project Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          {(['aura', 'nexus', 'prism', 'onyx'] as const).map((key, index) => (
-            <motion.div 
-              key={index} 
-              variants={itemVariants} 
-              className="group relative overflow-hidden rounded-3xl aspect-[4/3] bg-white/[0.02] border border-white/10 cursor-pointer"
-            >
-              {/* Abstract Project Placeholder (Since we don't have images yet) */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2997FF]/10 to-[#BF5AF2]/10 opacity-50 group-hover:opacity-100 transition-opacity duration-700 mix-blend-overlay" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-700 ease-out flex items-center justify-center backdrop-blur-xl">
-                  {/* Dynamic keys: cast `as never` to satisfy next-intl key typing. */}
-                  <span className="text-xs tracking-[0.2em] uppercase text-white/50">{t(`projects.${key}.year` as never)}</span>
+        {/* Projects */}
+        <div className="space-y-24 md:space-y-32">
+          {projects.map((key, index) => {
+            const name = t(`items.${key}.name` as never) as string;
+            const tag = t(`items.${key}.tag` as never) as string;
+            const desc = t(`items.${key}.desc` as never) as string;
+            return (
+              <Reveal key={key}>
+                <div id={key} className="scroll-mt-32">
+                  {/* Title row */}
+                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-4">
+                    <span className="font-mono text-sm text-[#B0B0B5]">{String(index + 1).padStart(2, '0')}</span>
+                    <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-[#0A0A0C]">{name}</h2>
+                    <span className="rounded-full bg-[#7C3AED]/[0.08] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#7C3AED]">
+                      {tag}
+                    </span>
+                  </div>
+                  <p className="text-base md:text-lg text-[#4A4A4E] font-light max-w-2xl mb-8">{desc}</p>
+
+                  {/* Solution views: dark + light */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                    {(['dark', 'light'] as const).map((theme, i) => (
+                      <motion.div
+                        key={theme}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: '-8%' }}
+                        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+                        className="group overflow-hidden rounded-2xl border border-[#E5E5E5] bg-white shadow-[0_16px_40px_-24px_rgba(0,0,0,0.12)]"
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={`/images/solutions/${key}-${theme}.jpg`}
+                          alt={`${name} — ${tag} (${theme})`}
+                          className="w-full h-auto transition-transform duration-[600ms] group-hover:scale-[1.02]"
+                          loading="lazy"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              
-              {/* Project Info */}
-              <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <p className="text-[#2997FF] text-sm tracking-[0.2em] font-semibold uppercase mb-3">{t(`projects.${key}.category` as never)}</p>
-                <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">{t(`projects.${key}.title` as never)}</h3>
-              </div>
-            </motion.div>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
-      </motion.div>
+
+        {/* Bottom CTA */}
+        <Reveal className="mt-24 md:mt-32 flex flex-col items-center text-center">
+          <div className="h-px w-24 bg-[#E5E5E5] mb-12" />
+          <Link
+            href={`/${lang}/contact`}
+            className="group relative px-14 py-6 bg-[#7C3AED] text-white font-semibold rounded-full overflow-hidden transition-transform hover:scale-95 duration-300 ease-[0.16,1,0.3,1]"
+          >
+            <div className="absolute inset-0 bg-[#5B21B6] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="relative z-10 inline-flex items-center gap-2 text-lg transition-colors duration-500">
+              {tc('button')}
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true">→</span>
+            </span>
+          </Link>
+        </Reveal>
+      </div>
     </main>
   );
 }

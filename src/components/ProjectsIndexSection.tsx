@@ -1,7 +1,8 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Reveal from './ui/Reveal'
 
 const projects = [
@@ -19,6 +20,7 @@ const projects = [
 
 export default function ProjectsIndexSection() {
   const t = useTranslations('projectsIndex')
+  const lang = useLocale()
 
   return (
     <section className="relative py-20 md:py-28 px-6 md:px-12 lg:px-24 bg-transparent z-10">
@@ -82,6 +84,17 @@ export default function ProjectsIndexSection() {
             )
           })}
         </div>
+
+        {/* View all projects */}
+        <Reveal className="mt-12 flex justify-center">
+          <Link
+            href={`/${lang}/work`}
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-[#7C3AED] transition-all duration-300"
+          >
+            {t('viewAll')}
+            <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+          </Link>
+        </Reveal>
       </div>
     </section>
   )

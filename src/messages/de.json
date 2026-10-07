@@ -261,17 +261,58 @@
     "title": "Systeme, die für ambitionierte Unternehmen gebaut wurden.",
     "subtitle": "Eine Auswahl an Plattformen, KI-Produkten und FinTech-Systemen – von Anfang bis Ende konzipiert und entwickelt.",
     "items": {
-      "dct": {"name": "DCT Network", "tag": "Venture-Netzwerk", "desc": "Ein digitales Venture-Netzwerk, das Produkte, Communities, Rewards und Plattform-Infrastruktur verbindet."},
-      "dream": {"name": "DreamComeTrue", "tag": "Consumer-Plattform", "desc": "Eine Consumer-Plattform für Kampagnen, Teilnahme, digitales Engagement und Reward-Mechaniken."},
-      "perhomes": {"name": "per.homes", "tag": "PropTech", "desc": "Ein PropTech-Produkt für Immobiliensuche, Betrieb, Lead-Routing und Marketplace-Workflows."},
-      "janex": {"name": "Janex", "tag": "Marketplace", "desc": "Eine Produktplattform für Serviceabläufe, Kunden-Workflows und skalierbare Marketplace-Erlebnisse."},
-      "wallet": {"name": "Wallet Platform", "tag": "FinTech", "desc": "Eine FinTech-Betriebsplattform für Kontostände, Transaktionen, Onboarding, Reviews und Reporting."},
-      "raffle": {"name": "Raffle Platform", "tag": "Kampagnen-Produkt", "desc": "Ein Kampagnen- und Verlosungsprodukt: Teilnahmen, Berechtigung, Ziehungen, Rewards und Compliance."},
-      "salesai": {"name": "Sales AI", "tag": "KI-Vertrieb", "desc": "Ein KI-Vertriebsassistent für Lead-Recherche, Follow-ups, Pipeline-Scoring und Team-Transparenz."},
-      "edai": {"name": "Education AI", "tag": "KI-EdTech", "desc": "Eine KI-Bildungsplattform für Lernbegleitung, Assessments und Fortschritts-Transparenz."},
-      "dreamai": {"name": "Dream AI", "tag": "KI-Produkt", "desc": "Eine KI-Produktschicht für Ideation, geführte Planung und personalisierte digitale Erlebnisse."},
-      "tradepulse": {"name": "DCT TradePulse", "tag": "Trading Intelligence", "desc": "Eine Trading-Intelligence-Plattform: Marktsignale, Dashboards, Alerts und Entscheidungshilfe."}
-    }
+      "dct": {
+        "name": "Converge",
+        "tag": "Venture-Netzwerk",
+        "desc": "Ein digitales Venture-Netzwerk, das Produkte, Communities, Rewards und Plattform-Infrastruktur verbindet."
+      },
+      "dream": {
+        "name": "Bloom",
+        "tag": "Consumer-Plattform",
+        "desc": "Eine Consumer-Plattform für Kampagnen, Teilnahme, digitales Engagement und Reward-Mechaniken."
+      },
+      "perhomes": {
+        "name": "Domus",
+        "tag": "PropTech",
+        "desc": "Ein PropTech-Produkt für Immobiliensuche, Betrieb, Lead-Routing und Marketplace-Workflows."
+      },
+      "janex": {
+        "name": "Tandem",
+        "tag": "Marketplace",
+        "desc": "Eine Produktplattform für Serviceabläufe, Kunden-Workflows und skalierbare Marketplace-Erlebnisse."
+      },
+      "wallet": {
+        "name": "Vault",
+        "tag": "FinTech",
+        "desc": "Eine FinTech-Betriebsplattform für Kontostände, Transaktionen, Onboarding, Reviews und Reporting."
+      },
+      "raffle": {
+        "name": "Fortuna",
+        "tag": "Kampagnen-Produkt",
+        "desc": "Ein Kampagnen- und Verlosungsprodukt: Teilnahmen, Berechtigung, Ziehungen, Rewards und Compliance."
+      },
+      "salesai": {
+        "name": "Closer",
+        "tag": "KI-Vertrieb",
+        "desc": "Ein KI-Vertriebsassistent für Lead-Recherche, Follow-ups, Pipeline-Scoring und Team-Transparenz."
+      },
+      "edai": {
+        "name": "Mentor",
+        "tag": "KI-EdTech",
+        "desc": "Eine KI-Bildungsplattform für Lernbegleitung, Assessments und Fortschritts-Transparenz."
+      },
+      "dreamai": {
+        "name": "Reverie",
+        "tag": "KI-Produkt",
+        "desc": "Eine KI-Produktschicht für Ideation, geführte Planung und personalisierte digitale Erlebnisse."
+      },
+      "tradepulse": {
+        "name": "Meridian",
+        "tag": "Trading Intelligence",
+        "desc": "Eine Trading-Intelligence-Plattform: Marktsignale, Dashboards, Alerts und Entscheidungshilfe."
+      }
+    },
+    "viewAll": "Alle Projekte ansehen"
   },
   "cta": {
     "part1": "BAUEN WIR ETWAS",

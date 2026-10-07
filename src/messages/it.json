@@ -261,17 +261,58 @@
     "title": "Sistemi consegnati per aziende ambiziose.",
     "subtitle": "Una selezione di piattaforme, prodotti AI e sistemi fintech progettati e sviluppati end-to-end.",
     "items": {
-      "dct": {"name": "DCT Network", "tag": "Rete di Venture", "desc": "Una rete di venture digitali che connette prodotti, community, reward e infrastruttura di piattaforma."},
-      "dream": {"name": "DreamComeTrue", "tag": "Piattaforma Consumer", "desc": "Una piattaforma consumer per campagne, partecipazione, engagement digitale e meccaniche di reward."},
-      "perhomes": {"name": "per.homes", "tag": "PropTech", "desc": "Un prodotto PropTech per ricerca immobiliare, operazioni, lead routing e workflow di marketplace."},
-      "janex": {"name": "Janex", "tag": "Marketplace", "desc": "Una piattaforma prodotto per operazioni di servizio, workflow clienti ed esperienze marketplace scalabili."},
-      "wallet": {"name": "Wallet Platform", "tag": "FinTech", "desc": "Una piattaforma fintech per saldi, transazioni, onboarding, revisioni e reporting."},
-      "raffle": {"name": "Raffle Platform", "tag": "Prodotto Campagna", "desc": "Un prodotto per campagne ed estrazioni: partecipazioni, eleggibilità, estrazioni, reward e compliance."},
-      "salesai": {"name": "Sales AI", "tag": "AI per le Vendite", "desc": "Un assistente di vendita AI per ricerca lead, follow-up, scoring della pipeline e visibilità del team."},
-      "edai": {"name": "Education AI", "tag": "AI EdTech", "desc": "Una piattaforma educativa AI per supporto all'apprendimento, valutazioni e visibilità dei progressi."},
-      "dreamai": {"name": "Dream AI", "tag": "Prodotto AI", "desc": "Uno strato di prodotto AI per ideazione, pianificazione guidata ed esperienze digitali personalizzate."},
-      "tradepulse": {"name": "DCT TradePulse", "tag": "Intelligence di Trading", "desc": "Una piattaforma di intelligence per il trading: segnali di mercato, dashboard, alert e supporto decisionale."}
-    }
+      "dct": {
+        "name": "Converge",
+        "tag": "Rete di Venture",
+        "desc": "Una rete di venture digitali che connette prodotti, community, reward e infrastruttura di piattaforma."
+      },
+      "dream": {
+        "name": "Bloom",
+        "tag": "Piattaforma Consumer",
+        "desc": "Una piattaforma consumer per campagne, partecipazione, engagement digitale e meccaniche di reward."
+      },
+      "perhomes": {
+        "name": "Domus",
+        "tag": "PropTech",
+        "desc": "Un prodotto PropTech per ricerca immobiliare, operazioni, lead routing e workflow di marketplace."
+      },
+      "janex": {
+        "name": "Tandem",
+        "tag": "Marketplace",
+        "desc": "Una piattaforma prodotto per operazioni di servizio, workflow clienti ed esperienze marketplace scalabili."
+      },
+      "wallet": {
+        "name": "Vault",
+        "tag": "FinTech",
+        "desc": "Una piattaforma fintech per saldi, transazioni, onboarding, revisioni e reporting."
+      },
+      "raffle": {
+        "name": "Fortuna",
+        "tag": "Prodotto Campagna",
+        "desc": "Un prodotto per campagne ed estrazioni: partecipazioni, eleggibilità, estrazioni, reward e compliance."
+      },
+      "salesai": {
+        "name": "Closer",
+        "tag": "AI per le Vendite",
+        "desc": "Un assistente di vendita AI per ricerca lead, follow-up, scoring della pipeline e visibilità del team."
+      },
+      "edai": {
+        "name": "Mentor",
+        "tag": "AI EdTech",
+        "desc": "Una piattaforma educativa AI per supporto all'apprendimento, valutazioni e visibilità dei progressi."
+      },
+      "dreamai": {
+        "name": "Reverie",
+        "tag": "Prodotto AI",
+        "desc": "Uno strato di prodotto AI per ideazione, pianificazione guidata ed esperienze digitali personalizzate."
+      },
+      "tradepulse": {
+        "name": "Meridian",
+        "tag": "Intelligence di Trading",
+        "desc": "Una piattaforma di intelligence per il trading: segnali di mercato, dashboard, alert e supporto decisionale."
+      }
+    },
+    "viewAll": "Vedi tutti i progetti"
   },
   "cta": {
     "part1": "COSTRUIAMO QUALCOSA",
