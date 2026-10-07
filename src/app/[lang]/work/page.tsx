@@ -5,17 +5,18 @@ import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Reveal from '@/components/ui/Reveal';
 
+// key = message key (projectsIndex.items.*), slug = image slug (public/images/solutions/<slug>-{dark,light}.jpg)
 const projects = [
-  'converge',
-  'bloom',
-  'domus',
-  'tandem',
-  'vault',
-  'fortuna',
-  'closer',
-  'mentor',
-  'reverie',
-  'meridian',
+  { key: 'dct', slug: 'converge' },
+  { key: 'dream', slug: 'bloom' },
+  { key: 'perhomes', slug: 'domus' },
+  { key: 'janex', slug: 'tandem' },
+  { key: 'wallet', slug: 'vault' },
+  { key: 'raffle', slug: 'fortuna' },
+  { key: 'salesai', slug: 'closer' },
+  { key: 'edai', slug: 'mentor' },
+  { key: 'dreamai', slug: 'reverie' },
+  { key: 'tradepulse', slug: 'meridian' },
 ] as const;
 
 export default function WorkPage() {
@@ -28,7 +29,7 @@ export default function WorkPage() {
     <main className="w-full bg-transparent pt-32 md:pt-40 pb-20 relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         {/* Header */}
-        <Reveal className="mb-16 md:mb-24 max-w-3xl">
+        <Reveal className="mb-16 md:mb-20 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7C3AED] mb-4">
             <span className="text-[#B0B0B5]">[ </span>{t('eyebrow')}<span className="text-[#B0B0B5]"> ]</span>
           </p>
@@ -41,14 +42,14 @@ export default function WorkPage() {
         </Reveal>
 
         {/* Projects */}
-        <div className="space-y-24 md:space-y-32">
-          {projects.map((key, index) => {
+        <div className="space-y-16 md:space-y-24">
+          {projects.map(({ key, slug }, index) => {
             const name = t(`items.${key}.name` as never) as string;
             const tag = t(`items.${key}.tag` as never) as string;
             const desc = t(`items.${key}.desc` as never) as string;
             return (
               <Reveal key={key}>
-                <div id={key} className="scroll-mt-32">
+                <div id={slug} className="scroll-mt-32">
                   {/* Title row */}
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-4">
                     <span className="font-mono text-sm text-[#B0B0B5]">{String(index + 1).padStart(2, '0')}</span>
@@ -72,7 +73,7 @@ export default function WorkPage() {
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={`/images/solutions/${key}-${theme}.jpg`}
+                          src={`/images/solutions/${slug}-${theme}.jpg`}
                           alt={`${name} — ${tag} (${theme})`}
                           className="w-full h-auto transition-transform duration-[600ms] group-hover:scale-[1.02]"
                           loading="lazy"
@@ -87,7 +88,7 @@ export default function WorkPage() {
         </div>
 
         {/* Bottom CTA */}
-        <Reveal className="mt-24 md:mt-32 flex flex-col items-center text-center">
+        <Reveal className="mt-20 md:mt-28 flex flex-col items-center text-center">
           <div className="h-px w-24 bg-[#E5E5E5] mb-12" />
           <Link
             href={`/${lang}/contact`}
