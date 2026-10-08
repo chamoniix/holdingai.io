@@ -204,6 +204,26 @@
         "quote": "De gjorde ideen vår om til et lansert produkt på ti uker. Helt uvanlig.",
         "name": "Marc Dubois",
         "role": "CEO — Carely, healthtech"
+      },
+      "nadia": {
+        "quote": "Converge koblet våre fem ventures i ett nettverk. Onboarding av partnere gikk fra uker til dager.",
+        "name": "Nadia Kellner",
+        "role": "Managing Partner — venture studio"
+      },
+      "ben": {
+        "quote": "1 200 annonser live i første uke, null hendelser. Operasjonslaget fungerer rett og slett.",
+        "name": "Ben Okafor",
+        "role": "Driftsdirektør — eiendomsgruppen"
+      },
+      "yasmine": {
+        "quote": "Fra konsept til 12 000 elever på seks måneder. Plattformen vokser med oss.",
+        "name": "Yasmine Haddad",
+        "role": "CEO — edtech"
+      },
+      "lars": {
+        "quote": "Svarprosenten vår gikk fra 8 % til 31 % på ett kvartal takket være AI-assistenten.",
+        "name": "Lars Sørensen",
+        "role": "Salgssjef — B2B SaaS"
       }
     }
   },

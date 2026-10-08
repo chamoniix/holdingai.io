@@ -204,6 +204,26 @@
         "quote": "Convirtieron nuestra idea en un producto lanzado en diez semanas. Insólito.",
         "name": "Marc Dubois",
         "role": "CEO — Carely, healthtech"
+      },
+      "nadia": {
+        "quote": "Converge conectó nuestras cinco ventures en una sola red. El onboarding de socios pasó de semanas a días.",
+        "name": "Nadia Kellner",
+        "role": "Socia directora — venture studio"
+      },
+      "ben": {
+        "quote": "1.200 anuncios publicados en la primera semana, cero incidentes. La capa operativa simplemente funciona.",
+        "name": "Ben Okafor",
+        "role": "Director de operaciones — grupo inmobiliario"
+      },
+      "yasmine": {
+        "quote": "Del concepto a 12.000 estudiantes en seis meses. La plataforma crece con nosotros.",
+        "name": "Yasmine Haddad",
+        "role": "CEO — edtech"
+      },
+      "lars": {
+        "quote": "Nuestra tasa de respuesta pasó del 8 % al 31 % en un trimestre gracias al asistente de IA.",
+        "name": "Lars Sørensen",
+        "role": "Director de ventas — SaaS B2B"
       }
     }
   },

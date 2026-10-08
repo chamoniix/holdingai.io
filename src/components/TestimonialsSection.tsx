@@ -9,6 +9,10 @@ const items = [
   { key: 'james',  img: '/images/testimonials/2.jpg' },
   { key: 'elena',  img: '/images/testimonials/3.jpg' },
   { key: 'marc',   img: '/images/testimonials/4.jpg' },
+  { key: 'nadia',  img: '/images/testimonials/5.jpg' },
+  { key: 'ben',    img: '/images/testimonials/6.jpg' },
+  { key: 'yasmine', img: '/images/testimonials/7.jpg' },
+  { key: 'lars',   img: '/images/testimonials/8.jpg' },
 ] as const
 
 export default function TestimonialsSection() {

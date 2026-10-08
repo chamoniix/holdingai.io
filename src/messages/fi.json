@@ -204,6 +204,26 @@
         "quote": "He muuttivat ideamme lanseeratuksi tuotteeksi kymmenessä viikossa. Ennenkuulumatonta.",
         "name": "Marc Dubois",
         "role": "CEO — Carely, healthtech"
+      },
+      "nadia": {
+        "quote": "Converge yhdisti viisi ventureamme yhdeksi verkoksi. Kumppanien onboarding lyheni viikoista päiviin.",
+        "name": "Nadia Kellner",
+        "role": "Vastaava partneri — venture studio"
+      },
+      "ben": {
+        "quote": "1 200 ilmoitusta verkossa ensimmäisellä viikolla, nolla ongelmaa. Operatiivinen kerros toimii.",
+        "name": "Ben Okafor",
+        "role": "Operatiivinen johtaja — kiinteistöryhmä"
+      },
+      "yasmine": {
+        "quote": "Konseptista 12 000 oppijaan kuudessa kuukaudessa. Alusta kasvaa kanssamme.",
+        "name": "Yasmine Haddad",
+        "role": "Toimitusjohtaja — edtech"
+      },
+      "lars": {
+        "quote": "Vastausprosenttimme nousi 8 %:sta 31 %:iin yhdessä neljänneksessä tekoälyassistentin ansiosta.",
+        "name": "Lars Sørensen",
+        "role": "Myyntijohtaja — B2B SaaS"
       }
     }
   },
