@@ -49,6 +49,22 @@
       "max_bytes": 235520,
       "sha256": "f926cf8755d3caf3e8a5c4585c5f2258832214ca9d98adc98b5e22e92cdd3c27",
       "alt_fr": "Concept d’interface Domus de HoldingAI : annonces immobilières et carte interactive pour rechercher des biens."
+    },
+    {
+      "file": "tandem-gpt2.jpg",
+      "project": "Tandem",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-tandem-v3-raw.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "bytes": 194089,
+      "max_bytes": 235520,
+      "sha256": "f5ced82b361c17680b5ee518dc2f50e18c1a9818c30729404c6b2d3f3c02214e",
+      "alt_fr": "Concept d’interface Tandem de HoldingAI : marketplace éditoriale de prestataires avec portraits, disponibilités et réservation."
     }
   ]
 }

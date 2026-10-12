@@ -6,6 +6,7 @@ const samples = [
   { key: 'dct', image: 'converge-gpt2.jpg', score: '8/10' },
   { key: 'dream', image: 'bloom-gpt2.jpg', score: '8.5/10' },
   { key: 'perhomes', image: 'domus-gpt2.jpg', score: '8/10' },
+  { key: 'janex', image: 'tandem-gpt2.jpg', score: '8.5/10' },
 ] as const;
 
 export async function generateMetadata({
