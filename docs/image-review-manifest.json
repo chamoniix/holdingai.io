@@ -33,6 +33,22 @@
       "max_bytes": 235520,
       "sha256": "12d3524d8dede98fdcda9698775886960db98669c9a5f32a2947d86eaea2b0a1",
       "alt_fr": "Concept Bloom by HoldingAI : plateforme de campagnes participatives et récompenses, campagne vedette et progression des participations."
+    },
+    {
+      "file": "domus-gpt2.jpg",
+      "project": "Domus",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-domus-raw.png",
+      "source_size": [
+        1024,
+        1024
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "bytes": 220860,
+      "max_bytes": 235520,
+      "sha256": "f926cf8755d3caf3e8a5c4585c5f2258832214ca9d98adc98b5e22e92cdd3c27",
+      "alt_fr": "Concept d’interface Domus de HoldingAI : annonces immobilières et carte interactive pour rechercher des biens."
     }
   ]
 }
