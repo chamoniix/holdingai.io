@@ -553,5 +553,12 @@
       "title": "Juridisk informasjon",
       "content": "Nettstedets utgiver: HoldingAI LTD, registrert i England og Wales. Registrert kontor: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Storbritannia. Kontakt: info@holdingai.io | +44 7537106967. Hosting: Vercel Inc."
     }
+  },
+  "imageReview": {
+    "eyebrow": "GPT IMAGE 2 · PRIVAT FORHÅNDSVISNING",
+    "title": "Prosjektbilder — godkjenn før bruk",
+    "disclaimer": "AI-genererte konseptgrensesnitt med illustrasjonsdata. Dette er ikke skjermbilder av lanserte produkter. Ingenting på denne siden brukes i den aktive porteføljen.",
+    "status": "Venter på godkjenning",
+    "concept": "Visuelt konsept"
   }
 }

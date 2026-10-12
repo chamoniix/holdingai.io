@@ -553,5 +553,12 @@
       "title": "Legal Mentions | HoldingAI",
       "description": "Publisher, registered office and hosting information for holdingai.io, operated by HoldingAI LTD (England & Wales)."
     }
+  },
+  "imageReview": {
+    "eyebrow": "GPT IMAGE 2 · PRIVATE PREVIEW",
+    "title": "Project visuals — review before use",
+    "disclaimer": "AI-generated concept interfaces with illustrative sample data. These are not screenshots of deployed products. Nothing on this page is used in the live portfolio.",
+    "status": "Awaiting your approval",
+    "concept": "Visual concept"
   }
 }

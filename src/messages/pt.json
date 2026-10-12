@@ -553,5 +553,12 @@
       "title": "Menções Legais",
       "content": "Editor do site: HoldingAI LTD, registada em Inglaterra e País de Gales. Sede social: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Reino Unido. Contacto: info@holdingai.io | +44 7537106967. Alojado por: Vercel Inc."
     }
+  },
+  "imageReview": {
+    "eyebrow": "GPT IMAGE 2 · PRÉ-VISUALIZAÇÃO PRIVADA",
+    "title": "Visuais dos projetos — validar antes de usar",
+    "disclaimer": "Interfaces conceptuais geradas por IA com dados ilustrativos. Não são capturas de produtos publicados. Nada nesta página é usado no portfólio em produção.",
+    "status": "A aguardar a tua aprovação",
+    "concept": "Conceito visual"
   }
 }

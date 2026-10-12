@@ -553,5 +553,12 @@
       "title": "Oikeudelliset tiedot",
       "content": "Sivuston julkaisija: HoldingAI LTD, rekisteröity Englantiin ja Walesiin. Rekisteröity toimipaikka: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Iso-Britannia. Yhteystiedot: info@holdingai.io | +44 7537106967. Palveluntarjoaja: Vercel Inc."
     }
+  },
+  "imageReview": {
+    "eyebrow": "GPT IMAGE 2 · YKSITYINEN ESITTELY",
+    "title": "Projektikuvat — tarkista ennen käyttöä",
+    "disclaimer": "Tekoälyllä luotuja konseptikäyttöliittymiä ja esimerkkidataa. Nämä eivät ole julkaistujen tuotteiden kuvakaappauksia. Näitä kuvia ei käytetä live-portfoliossa.",
+    "status": "Odottaa hyväksyntääsi",
+    "concept": "Visuaalinen konsepti"
   }
 }

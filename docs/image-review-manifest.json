@@ -1,0 +1,38 @@
+{
+  "purpose": "Private preview only. AI-generated concept visuals, not screenshots of deployed products. Do not treat fictional sample data as real client results.",
+  "items": [
+    {
+      "file": "gpt2-converge-1200.jpg",
+      "project": "Converge",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-converge-raw.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "quality": 88,
+      "bytes": 206980,
+      "max_bytes": 235520,
+      "sha256": "6d909bcf87008dc5b4b9f991bfd7032183e60c1bcd95d77184c9dfd27a9fbbcf",
+      "alt_fr": "Concept d’interface Converge by HoldingAI : réseau de ventures et flux d’activité dans un dashboard ivoire."
+    },
+    {
+      "file": "gpt2-bloom-1200.jpg",
+      "project": "Bloom",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "quality": 76,
+      "bytes": 214294,
+      "max_bytes": 235520,
+      "sha256": "12d3524d8dede98fdcda9698775886960db98669c9a5f32a2947d86eaea2b0a1",
+      "alt_fr": "Concept Bloom by HoldingAI : plateforme de campagnes participatives et récompenses, campagne vedette et progression des participations."
+    }
+  ]
+}

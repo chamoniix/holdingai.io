@@ -553,5 +553,12 @@
       "title": "Impressum",
       "content": "Herausgeber der Website: HoldingAI LTD, eingetragen in England und Wales. Eingetragener Sitz: Lytchett House, Freeland Park, Wareham Road, Poole, Dorset, Vereinigtes Königreich. Kontakt: info@holdingai.io | +44 7537106967. Gehostet von: Vercel Inc."
     }
+  },
+  "imageReview": {
+    "eyebrow": "GPT IMAGE 2 · PRIVATE VORSCHAU",
+    "title": "Projektvisuals — vor Verwendung prüfen",
+    "disclaimer": "KI-generierte Konzeptoberflächen mit beispielhaften Daten. Dies sind keine Screenshots veröffentlichter Produkte. Nichts auf dieser Seite wird im Live-Portfolio verwendet.",
+    "status": "Wartet auf deine Freigabe",
+    "concept": "Visuelles Konzept"
   }
 }
