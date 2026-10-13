@@ -65,6 +65,23 @@
       "max_bytes": 235520,
       "sha256": "f5ced82b361c17680b5ee518dc2f50e18c1a9818c30729404c6b2d3f3c02214e",
       "alt_fr": "Concept d’interface Tandem de HoldingAI : marketplace éditoriale de prestataires avec portraits, disponibilités et réservation."
+    },
+    {
+      "file": "vault-gpt2.jpg",
+      "project": "Vault",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-vault-raw.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "bytes": 214766,
+      "max_bytes": 235520,
+      "sha256": "2ccaa35c3750cc9269b3c3331cf5e4ad2e58535c73ad50334c76b55bf3b60dbd",
+      "alt_fr": "Concept d’interface Vault de HoldingAI : registre financier éditorial pour suivre soldes, transactions, onboarding et revues.",
+      "review_note": "Generated dates, references, counts and statuses are illustrative only; never present them as real account data."
     }
   ]
 }
