@@ -8,6 +8,7 @@ const samples = [
   { key: 'perhomes', image: 'domus-gpt2.jpg', score: '8/10' },
   { key: 'janex', image: 'tandem-gpt2.jpg', score: '8.5/10' },
   { key: 'wallet', image: 'vault-gpt2.jpg', score: '8/10' },
+  { key: 'raffle', image: 'fortuna-gpt2.jpg', score: '8/10' },
 ] as const;
 
 export async function generateMetadata({

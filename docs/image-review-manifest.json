@@ -82,6 +82,23 @@
       "sha256": "2ccaa35c3750cc9269b3c3331cf5e4ad2e58535c73ad50334c76b55bf3b60dbd",
       "alt_fr": "Concept d’interface Vault de HoldingAI : registre financier éditorial pour suivre soldes, transactions, onboarding et revues.",
       "review_note": "Generated dates, references, counts and statuses are illustrative only; never present them as real account data."
+    },
+    {
+      "file": "fortuna-gpt2.jpg",
+      "project": "Fortuna",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-fortuna-raw.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "bytes": 205611,
+      "max_bytes": 235520,
+      "sha256": "1f9e09a6867333fb8268da1477f61f163242765e92b5d27d1b2d55b52b8c9a14",
+      "alt_fr": "Concept d’interface Fortuna de HoldingAI : tirage au sort avec jeton résultat encadré et étapes de vérification.",
+      "review_note": "Visible IDs 418 and 729 are generated placeholders; the page disclaimer identifies all sample data as illustrative."
     }
   ]
 }
