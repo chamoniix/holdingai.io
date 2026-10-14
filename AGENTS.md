@@ -8,7 +8,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # HoldingAI.io — mémoire projet (agents)
 
-> Dernière mise à jour : 2026-10-06. **À tenir à jour à chaque session.**
+> Dernière mise à jour : 2026-10-14. **À tenir à jour à chaque session.**
 > Ce fichier est la source de vérité pour l'état du projet. Le lire AVANT toute action.
 
 ## 1. Le projet en une ligne
@@ -59,7 +59,7 @@ git rev-list --left-right --count origin/main...origin/feature/full-site   # mai
 
 - 8 locales : `en` (défaut), `fr`, `de`, `es`, `it`, `pt`, `fi`, `no` — `localePrefix: 'always'`.
 - Routing : `src/i18n/routing.ts`. Traductions : `src/messages/*.json` (next-intl, `useTranslations('<namespace>')`).
-- **259 clés feuilles par langue, 8/8 parfaitement synchronisées** (0 manquante, 0 en trop) — vérifié le 2026-10-06.
+- **255 clés feuilles par langue, 8/8 parfaitement synchronisées** (0 manquante, 0 en trop) après retrait des libellés de validation de la galerie — vérifié le 2026-10-14.
 - Règle : **zéro texte en dur** dans les composants.
 
 ## 6. SEO
@@ -74,18 +74,20 @@ git rev-list --left-right --count origin/main...origin/feature/full-site   # mai
 - Dédup par `event_id` entre pixel et CAPI. Consent gate RGPD avant pixel.
 - Plan complet : **`local/ADS_PLAN_V2.md`** — **volontairement hors du repo public** (voir §12).
 
-## 8. État actuel (2026-10-06)
+## 8. État actuel (2026-10-14)
 
-- **En attente** : test du scroll par le fondateur sur la preview `feature/full-site` après suppression de l'essaim.
-- **En suspens** : merge en prod (décision du fondateur), génération IA des images (bloquée : crédits Google AI Studio épuisés / token RunComfy manquant), cleanup dead code phase 2, Search Console.
+- `feature/full-site` porte la refonte claire et les visuels d’accueil/projets révisés. **La production (`main`) n’a pas été modifiée** ; attendre le GO explicite du fondateur avant tout merge.
+- Les quatre portraits de `TeamSection` (`public/images/kosmos/equipe-1.webp`, `equipe-2.webp`, `equipe-5.webp`, `equipe-6-wide.webp`) sont des **placeholders fictifs générés par IA**, en attente de validation preview. Le fondateur fournira ensuite les vraies photos ; remplacer ces placeholders avant tout merge vers `main`/live. Ne jamais les présenter comme les vrais membres.
+- **En attente** : test complet du scroll par le fondateur sur la preview `feature/full-site`.
+- **En suspens** : merge en prod (décision du fondateur), remplacement des portraits TeamSection par les photos authentiques fournies, cleanup dead code phase 2, Search Console.
 
 ## 9. Prochains pas possibles
 
-1. Re-test scroll → si OK : merger `feature/full-site` dans `main`.
-2. Crédits AI Studio rechargés → régénérer les images en IA (angles/branding HoldingAI).
-3. Search Console : soumettre le sitemap.
-4. Cleanup phase 2 (dead code, voir §10).
-5. Relancer une campagne ads avec le plan V2.
+1. Vérifier la preview `feature/full-site`, notamment la section TeamSection.
+2. Quand le fondateur fournit les vraies photos de l’équipe, remplacer les quatre placeholders listés en §8.
+3. Attendre le GO explicite avant de merger `feature/full-site` vers `main`.
+4. Search Console : soumettre le sitemap.
+5. Cleanup phase 2 (dead code, voir §10) et relancer une campagne ads avec le plan V2.
 
 ## 10. Dead code connu (cleanup phase 2)
 
