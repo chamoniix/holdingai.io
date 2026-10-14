@@ -54,6 +54,7 @@
   "services": {
     "eyebrow": "VÅR EKSPERTISE",
     "title": "Seks kompetanseområder. Én partner.",
+    "imageAlt": "Fire AI-spesialister samarbeider ved skjermer med arbeidsflyter og produktgrensesnitt.",
     "items": {
       "agents": {
         "title": "KI-agenter og automatisering",

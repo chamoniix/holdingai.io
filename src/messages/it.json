@@ -54,6 +54,7 @@
   "services": {
     "eyebrow": "LA NOSTRA EXPERTISE",
     "title": "Sei aree di competenza. Un solo partner.",
+    "imageAlt": "Quattro specialisti IA collaborano davanti a schermi con workflow e interfacce di prodotto.",
     "items": {
       "agents": {
         "title": "Agenti IA e Automazione",

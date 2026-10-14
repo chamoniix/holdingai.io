@@ -54,6 +54,7 @@
   "services": {
     "eyebrow": "NOS EXPERTISES",
     "title": "Six expertises, un seul partenaire.",
+    "imageAlt": "Quatre spécialistes IA collaborent devant des écrans montrant des workflows et des interfaces produit.",
     "items": {
       "agents": {
         "title": "Agents IA & Automatisation",

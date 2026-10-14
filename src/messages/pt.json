@@ -54,6 +54,7 @@
   "services": {
     "eyebrow": "A NOSSA EXPERTISE",
     "title": "Seis áreas de especialização. Um só parceiro.",
+    "imageAlt": "Quatro especialistas de IA colaboram diante de ecrãs com fluxos de trabalho e interfaces de produto.",
     "items": {
       "agents": {
         "title": "Agentes de IA e Automação",

@@ -31,7 +31,7 @@ export default function Services() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/kosmos/six-expertises.webp"
-                alt=""
+                alt={t('imageAlt')}
                 className="w-full h-full object-cover"
               />
             </div>

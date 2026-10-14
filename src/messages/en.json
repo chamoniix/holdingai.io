@@ -54,6 +54,7 @@
   "services": {
     "eyebrow": "OUR EXPERTISE",
     "title": "Six areas of expertise. One partner.",
+    "imageAlt": "Four AI specialists collaborate around screens showing workflows and product interfaces.",
     "items": {
       "agents": {
         "title": "AI Agents & Automation",

@@ -54,6 +54,7 @@
   "services": {
     "eyebrow": "UNSERE EXPERTISE",
     "title": "Sechs Kompetenzbereiche. Ein Partner.",
+    "imageAlt": "Vier KI-Fachleute arbeiten gemeinsam an Bildschirmen mit Workflows und Produktoberflächen.",
     "items": {
       "agents": {
         "title": "KI-Agenten & Automatisierung",

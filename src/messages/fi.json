@@ -54,6 +54,7 @@
   "services": {
     "eyebrow": "OSAAMISEMME",
     "title": "Kuusi osaamisaluetta. Yksi kumppani.",
+    "imageAlt": "Neljä tekoälyn asiantuntijaa työskentelee yhdessä työnkulkuja ja tuotekäyttöliittymiä näyttävien näyttöjen äärellä.",
     "items": {
       "agents": {
         "title": "Tekoälyagentit ja automaatio",
