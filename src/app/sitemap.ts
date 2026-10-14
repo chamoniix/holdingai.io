@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
+import { blogArticleRoutes } from '@/data/blog-routes';
 
 const BASE_URL = 'https://www.holdingai.io';
 
@@ -14,6 +15,7 @@ const PATHS = [
   '/legal/privacy',
   '/legal/terms',
   '/legal/mentions-legales',
+  ...blogArticleRoutes.map(({ slug }) => `/blog/${slug}`),
 ];
 
 const LOCALES: string[] = [...routing.locales];

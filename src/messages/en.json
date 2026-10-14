@@ -258,6 +258,132 @@
     "title": "Our experts share.",
     "subtitle": "Practical guides to AI agents, automation, video generation, and using AI every day.",
     "readMore": "Read article",
+    "articles": {
+      "agents": {
+        "metaTitle": "AI Agents and Agentic AI: A Practical Guide | HoldingAI",
+        "metaDescription": "Understand AI agents, tool access and human approval. Learn when an agentic workflow makes sense and how to test it safely.",
+        "title": "AI Agents and Agentic AI: From Answers to Action",
+        "excerpt": "Move beyond conversation with clear goals, limited permissions and human checkpoints.",
+        "category": "AI Agents",
+        "readingTime": "4 min read",
+        "heroImage": "/images/kosmos/blog-mobile.webp",
+        "heroAlt": "Illustration accompanying the practical guide to AI agents.",
+        "intro": "An assistant can explain how to prepare a meeting. An agentic system can gather approved documents, suggest an agenda and prepare follow-up tasks using connected tools. The difference is not more convincing language: it is the ability to take successive actions. That ability needs boundaries before it needs ambition.",
+        "takeawayTitle": "Key takeaways",
+        "takeaways": ["Separate a useful answer from permission to act.", "Give each tool only the access it needs.", "Keep consequential decisions with a person."],
+        "sections": [
+          {"id": "assistant-or-agent", "heading": "An answer is not an action", "paragraphs": ["A conversational assistant usually returns text for you to use. An agent receives a goal, chooses an allowed next step, observes the result and continues or stops. The term agentic AI describes this action-oriented approach, not a guarantee of independent judgement. A fixed workflow may still be preferable when every step is already known and predictable."]},
+          {"id": "tools-and-permissions", "heading": "Define tools and permissions first", "paragraphs": ["Write down which documents the system may read and which records it may change. Reading a shared calendar does not require permission to invite external guests. Start with read-only access where possible. Treat retrieved messages and documents as untrusted information, not instructions that can override your rules. Limit attempts, execution time and spending before connecting real accounts."], "bullets": ["Use a dedicated account with narrow access.", "Record tool calls and their outcomes.", "Provide an immediate stop mechanism."]},
+          {"id": "human-review", "heading": "Make approval a real checkpoint", "paragraphs": ["Consider a support request: the agent may locate relevant guidance and draft a reply, while a colleague checks the context before sending. Approval should show the proposed action, recipient and supporting information. Purchases, deletion and sensitive communications deserve explicit review. If a tool fails or evidence conflicts, the system should stop and explain rather than improvise a successful outcome."]},
+          {"id": "pilot", "heading": "Choose a bounded pilot", "paragraphs": ["Pick a recurring task with clear inputs and an outcome you can inspect. Test it on representative examples, including missing documents, ambiguous requests and denied permissions. Compare total handling time, corrections and supervision with your current process. Expand access only when those observations justify it. If reviewing the agent takes more effort than doing the task, simplify the workflow instead of adding autonomy."]}
+        ],
+        "faqTitle": "Common questions",
+        "faqs": [
+          {"question": "Does every chatbot count as an agent?", "answer": "No. A chatbot may only generate responses. Look for actual tool use, successive actions and defined stopping rules rather than the product label."},
+          {"question": "Can an agent work without supervision?", "answer": "Some bounded tasks can run under predefined rules. The appropriate supervision depends on the impact, reversibility and reliability of each action."},
+          {"question": "Where should we start?", "answer": "Start with internal research or draft preparation, using approved data and read-only tools. Keep publication and changes to live systems behind human approval."}
+        ],
+        "relatedTitle": "Continue reading",
+        "related": [{"slug": "ai-automation-workflows", "title": "AI Automation: Useful Workflows for Everyday Tasks", "category": "Automation"}, {"slug": "everyday-ai-beginners", "title": "Everyday AI: A Practical Guide for Beginners", "category": "Getting Started"}],
+        "ctaTitle": "Find the right scope for your agent",
+        "ctaText": "Discuss your workflow, data boundaries and review requirements with HoldingAI before choosing an implementation.",
+        "ctaButton": "Discuss your project",
+        "backToBlogLabel": "Back to insights"
+      },
+      "automation": {
+        "metaTitle": "AI Automation: Build a Useful Workflow | HoldingAI",
+        "metaDescription": "Choose a practical AI workflow with a clear trigger, action and review. Protect private data, handle errors and evaluate the value of automation.",
+        "title": "AI Automation: Useful Workflows for Everyday Tasks",
+        "excerpt": "Start with one repeated task, then add clear rules and a dependable review step.",
+        "category": "Automation",
+        "readingTime": "4 min read",
+        "heroImage": "/images/kosmos/blog-retention.webp",
+        "heroAlt": "Illustration accompanying the guide to everyday AI automation.",
+        "intro": "Automation is useful when it removes a repeated handover, not merely when it connects several apps. AI can help interpret a message or prepare a draft where ordinary rules are too rigid. The practical question is which small part of your day can become easier without making mistakes harder to notice.",
+        "takeawayTitle": "Key takeaways",
+        "takeaways": ["Choose a recurring task with an observable result.", "Separate the trigger, action and review.", "Count corrections and maintenance when judging value."],
+        "sections": [
+          {"id": "choose", "heading": "Choose a workflow you understand", "paragraphs": ["List tasks you repeat: sorting requests, preparing meeting notes or copying approved information into a tracker. Choose one with stable inputs and clear ownership. Describe the manual process before automating it. If a simple rule can route a form by its selected category, use that rule; reserve AI for interpreting language or producing a draft that benefits from judgement."]},
+          {"id": "steps", "heading": "Connect trigger, action and review", "paragraphs": ["A trigger starts the process, an action produces something useful, and a review decides whether it can proceed. For example, an incoming enquiry can trigger a summary and proposed category, followed by a colleague checking the destination. Keep the original message available. Define what happens when required information is missing instead of letting the system invent a complete record."], "bullets": ["Trigger: a new approved input arrives.", "Action: prepare a summary or draft.", "Review: approve, correct or reject the result."]},
+          {"id": "everyday-examples", "heading": "Use drafts for everyday handovers", "paragraphs": ["Meeting notes can become proposed tasks, but a participant should confirm owners and deadlines. Customer messages can become draft replies, but policy exceptions need a person. A weekly digest can combine approved updates while linking back to each source. These examples work best when the output is reversible and the next person can see what the system used to produce it."]},
+          {"id": "safety-value", "heading": "Handle errors and measure real value", "paragraphs": ["Remove unnecessary personal information before sending content to a service. Check retention settings and access rights. Plan for duplicate triggers, unavailable tools and unexpected formats; failed runs should alert an owner rather than silently repeat external actions. Compare manual effort with setup, review and maintenance effort over representative cases. Keep the workflow only if its usefulness survives that comparison, and revisit it when inputs change."]}
+        ],
+        "faqTitle": "Common questions",
+        "faqs": [
+          {"question": "Do I need AI in every step?", "answer": "No. Deterministic rules are often easier to inspect for dates, routing and required fields. Use AI only where flexible interpretation adds something useful."},
+          {"question": "Should messages be sent automatically?", "answer": "Begin with drafts. Consider automatic sending only for narrowly defined situations with tested safeguards, appropriate permissions and a clear escalation path."},
+          {"question": "What should I measure?", "answer": "Track total handling effort, correction frequency and missed or duplicated items. Include the time spent monitoring and maintaining the workflow."}
+        ],
+        "relatedTitle": "Continue reading",
+        "related": [{"slug": "ai-agents-agentic-ai", "title": "AI Agents and Agentic AI: From Answers to Action", "category": "AI Agents"}, {"slug": "everyday-ai-beginners", "title": "Everyday AI: A Practical Guide for Beginners", "category": "Getting Started"}],
+        "ctaTitle": "Start with one useful workflow",
+        "ctaText": "Bring your current process to HoldingAI. We can help identify sensible automation boundaries and review points.",
+        "ctaButton": "Discuss your workflow",
+        "backToBlogLabel": "Back to insights"
+      },
+      "video": {
+        "metaTitle": "AI Video Generation: A Practical Production Guide | HoldingAI",
+        "metaDescription": "Plan an AI video from brief to final review: concepts, scenes, editing, brand consistency, rights and consent without provider-specific promises.",
+        "title": "AI Video Generation: From Prompt to Finished Clip",
+        "excerpt": "A clear brief and careful editing matter as much as the generation step.",
+        "category": "AI Video",
+        "readingTime": "4 min read",
+        "heroImage": "/images/kosmos/blog-ab.webp",
+        "heroAlt": "Illustration accompanying the practical AI video production guide.",
+        "intro": "A convincing clip starts with a communication goal, not a long prompt. AI-generated footage can support a concept, illustrate an idea or help explore visual directions. It still needs selection, editing and review. Treat generation as one stage in production rather than a replacement for planning or responsibility for what you publish.",
+        "takeawayTitle": "Key takeaways",
+        "takeaways": ["Write the brief before generating footage.", "Build short scenes around one visual idea.", "Review brand details, rights and consent before publication."],
+        "sections": [
+          {"id": "brief", "heading": "Turn a brief into a concept", "paragraphs": ["Define the audience, intended message, viewing context and desired next step. Decide whether the video explains, demonstrates or creates atmosphere. Write a simple concept in ordinary language, then sketch the beginning, middle and ending. Choose the format for the intended channel early so important subjects and captions do not end up outside the visible frame when you adapt the final edit."]},
+          {"id": "scenes", "heading": "Describe scenes, not everything at once", "paragraphs": ["Break the concept into scenes with a clear subject, setting, action and camera intention. Keep a reference sheet for colours, lighting, clothing and recurring objects. Change one instruction at a time when a result misses the brief. Cap experimentation and save the versions worth comparing. Generated material may contain visual inconsistencies, so plan alternatives rather than relying on a particular capability being available."], "bullets": ["Keep each scene focused on one action.", "Document approved references and their origin.", "Reserve space for text added during editing."]},
+          {"id": "edit", "heading": "Build consistency in the edit", "paragraphs": ["Select footage for clarity rather than novelty. Assemble the sequence, trim distracting moments and add approved typography, sound and captions in your editing workflow. Compare shots for continuity and check that products, faces and signs remain plausible throughout. Watch with and without sound. A beautiful isolated shot is not useful if it confuses the message or misrepresents the thing you are showing."]},
+          {"id": "review", "heading": "Check rights and meaning before release", "paragraphs": ["Confirm permission to use reference images, music, voices and recognisable people. Obtain appropriate consent rather than assuming generated likenesses are harmless. Review the chosen service's usage terms and relevant disclosure requirements for your context. Do not present a fictional scene as documentary proof. Have someone outside production watch the exported file for factual claims, caption errors and accidental brand elements before approving publication."]}
+        ],
+        "faqTitle": "Common questions",
+        "faqs": [
+          {"question": "Can a prompt replace a storyboard?", "answer": "A prompt describes a generation request. A storyboard organises the viewer's journey across scenes. Even a rough sketch helps you make editing decisions."},
+          {"question": "Will recurring characters always match?", "answer": "Do not assume consistency. Review every scene, use authorised references where supported, and be ready to simplify the concept or replace unsuitable footage."},
+          {"question": "Is generated content automatically free to use?", "answer": "No. Review service terms, source material rights and consent requirements. Obtain qualified advice when the intended use raises legal questions."}
+        ],
+        "relatedTitle": "Continue reading",
+        "related": [{"slug": "ai-automation-workflows", "title": "AI Automation: Useful Workflows for Everyday Tasks", "category": "Automation"}, {"slug": "everyday-ai-beginners", "title": "Everyday AI: A Practical Guide for Beginners", "category": "Getting Started"}],
+        "ctaTitle": "Give your video a clear direction",
+        "ctaText": "Discuss your audience, brand references and production constraints with HoldingAI before moving into generation.",
+        "ctaButton": "Discuss your video",
+        "backToBlogLabel": "Back to insights"
+      },
+      "everyday": {
+        "metaTitle": "Everyday AI: Getting Started Safely | HoldingAI",
+        "metaDescription": "Start using AI for everyday tasks with simple prompts, concrete examples, verification habits and privacy precautions. No technical jargon required.",
+        "title": "Everyday AI: A Practical Guide for Beginners",
+        "excerpt": "Choose a small task, explain what you need and check the result before using it.",
+        "category": "Getting Started",
+        "readingTime": "4 min read",
+        "heroImage": "/images/kosmos/blog-lidar.webp",
+        "heroAlt": "Illustration accompanying the beginner's guide to everyday AI.",
+        "intro": "You do not need to understand model architecture to try AI. Begin with a task you already know how to judge: rewriting a note, organising ideas or explaining an unfamiliar term. Think of the result as a proposal from a capable but fallible helper. You decide what is accurate, appropriate and worth keeping.",
+        "takeawayTitle": "Key takeaways",
+        "takeaways": ["Start with a small task you can check.", "Specify context, format and constraints.", "Protect private information and verify important details."],
+        "sections": [
+          {"id": "first-task", "heading": "Choose a concrete first task", "paragraphs": ["Try turning your own rough notes into a checklist, preparing questions for a meeting or rewriting a public announcement in plain language. Avoid starting with a decision about health, money or someone else's rights. A useful first attempt has a clear finish line and does not require sharing sensitive documents. Keep your original material beside the answer so differences are easy to spot."]},
+          {"id": "prompt", "heading": "Ask in ordinary language", "paragraphs": ["A prompt is simply your request. State the task, add the necessary context and describe the output. For example: 'Rewrite this public event notice for new visitors. Use a friendly tone, keep the practical details, and return one short paragraph. Do not add facts.' If something is missing, ask the assistant to list questions rather than fill the gaps with guesses."], "bullets": ["Say who the result is for.", "Specify a useful format, such as a checklist.", "Ask for a revision when the tone or detail is wrong."]},
+          {"id": "check", "heading": "Check before you copy", "paragraphs": ["Confident wording is not evidence. Compare names, dates and claims with reliable original sources. If the answer includes a link, open it and confirm that it supports the statement. For a summary, check that important qualifications remain and that no new facts appeared. Use professional advice for consequential questions. When you cannot verify something important, leave it out or label the uncertainty clearly."]},
+          {"id": "privacy", "heading": "Build a safe, repeatable habit", "paragraphs": ["Do not paste passwords, customer records or confidential work into an unapproved tool. Replace identifying details with neutral placeholders and check your organisation's rules. Review the service's data settings before uploading files. Save requests that worked, but adapt them to each situation. After several attempts, compare the effort of asking and checking with doing the task yourself; keep the uses that genuinely help."]}
+        ],
+        "faqTitle": "Common questions",
+        "faqs": [
+          {"question": "Do I need special prompt formulas?", "answer": "No. A clear request with context and an expected format is a good start. Improve it by describing what needs to change in the answer."},
+          {"question": "Can I trust a summary?", "answer": "Treat it as a draft. Compare it with the original, particularly numbers, exceptions and conclusions that could affect a decision."},
+          {"question": "What if the first result is poor?", "answer": "Narrow the task, provide a non-sensitive example and ask for one specific improvement. If checking remains difficult, choose a simpler task."}
+        ],
+        "relatedTitle": "Continue reading",
+        "related": [{"slug": "ai-automation-workflows", "title": "AI Automation: Useful Workflows for Everyday Tasks", "category": "Automation"}, {"slug": "ai-agents-agentic-ai", "title": "AI Agents and Agentic AI: From Answers to Action", "category": "AI Agents"}],
+        "ctaTitle": "Make AI useful in your daily work",
+        "ctaText": "Explore practical starting points and appropriate data boundaries with HoldingAI, based on the tasks your team actually performs.",
+        "ctaButton": "Discuss your needs",
+        "backToBlogLabel": "Back to insights"
+      }
+    },
     "items": {
       "agents": {
         "title": "AI Agents and Agentic AI: From Answers to Action",

@@ -8,7 +8,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # HoldingAI.io — mémoire projet (agents)
 
-> Dernière mise à jour : 2026-10-14. **À tenir à jour à chaque session.**
+> Dernière mise à jour : 2026-10-15. **À tenir à jour à chaque session.**
 > Ce fichier est la source de vérité pour l'état du projet. Le lire AVANT toute action.
 
 ## 1. Le projet en une ligne
@@ -59,12 +59,12 @@ git rev-list --left-right --count origin/main...origin/feature/full-site   # mai
 
 - 8 locales : `en` (défaut), `fr`, `de`, `es`, `it`, `pt`, `fi`, `no` — `localePrefix: 'always'`.
 - Routing : `src/i18n/routing.ts`. Traductions : `src/messages/*.json` (next-intl, `useTranslations('<namespace>')`).
-- **255 clés feuilles par langue, 8/8 parfaitement synchronisées** (0 manquante, 0 en trop) après retrait des libellés de validation de la galerie — vérifié le 2026-10-14.
+- **491 clés feuilles par langue, 8/8 parfaitement synchronisées** — blog et articles SEO localisés vérifiés le 2026-10-15.
 - Règle : **zéro texte en dur** dans les composants.
 
 ## 6. SEO
 
-- `src/app/sitemap.ts` → **80 URLs** (10 chemins × 8 langues, avec `alternates.languages` = hreflang).
+- `src/app/sitemap.ts` → **112 URLs** (14 chemins × 8 langues, avec `alternates.languages` = hreflang, dont 4 articles blog).
 - `src/app/robots.ts`, metadata par page × langue via les `layout.tsx` de segment, canonical, JSON-LD, Open Graph.
 
 ## 7. Tracking ads
@@ -74,16 +74,16 @@ git rev-list --left-right --count origin/main...origin/feature/full-site   # mai
 - Dédup par `event_id` entre pixel et CAPI. Consent gate RGPD avant pixel.
 - Plan complet : **`local/ADS_PLAN_V2.md`** — **volontairement hors du repo public** (voir §12).
 
-## 8. État actuel (2026-10-14)
+## 8. État actuel (2026-10-15)
 
-- `feature/full-site` porte la refonte claire et les visuels d’accueil/projets révisés. **La production (`main`) n’a pas été modifiée** ; attendre le GO explicite du fondateur avant tout merge.
-- Les quatre portraits de `TeamSection` (`public/images/kosmos/equipe-1.webp`, `equipe-2.webp`, `equipe-5.webp`, `equipe-6-wide.webp`) sont des **placeholders fictifs générés par IA**, en attente de validation preview. Le fondateur fournira ensuite les vraies photos ; remplacer ces placeholders avant tout merge vers `main`/live. Ne jamais les présenter comme les vrais membres.
-- **En attente** : test complet du scroll par le fondateur sur la preview `feature/full-site`.
+- `feature/full-site` porte la refonte claire, les visuels révisés et quatre articles IA complets en 8 langues, avec carousel horizontal, SEO, hreflang, données structurées et routes statiques. La preview est `noindex`; la production (`main`) n’a pas été modifiée.
+- Les quatre portraits de `TeamSection` (`public/images/kosmos/equipe-1.webp`, `equipe-2.webp`, `equipe-5.webp`, `equipe-6-wide.webp`) sont des **placeholders fictifs générés par IA**. Le fondateur fournira ensuite les vraies photos ; remplacer ces placeholders avant tout merge vers `main`/live. Ne jamais les présenter comme les vrais membres.
+- **En attente** : revue par le fondateur de la preview blog/articles et des portraits temporaires.
 - **En suspens** : merge en prod (décision du fondateur), remplacement des portraits TeamSection par les photos authentiques fournies, cleanup dead code phase 2, Search Console.
 
 ## 9. Prochains pas possibles
 
-1. Vérifier la preview `feature/full-site`, notamment la section TeamSection.
+1. Faire vérifier par le fondateur le carousel blog et les 4 articles localisés sur `feature/full-site`.
 2. Quand le fondateur fournit les vraies photos de l’équipe, remplacer les quatre placeholders listés en §8.
 3. Attendre le GO explicite avant de merger `feature/full-site` vers `main`.
 4. Search Console : soumettre le sitemap.

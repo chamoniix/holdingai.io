@@ -258,6 +258,102 @@
     "title": "Nos experts vous parlent.",
     "subtitle": "Des guides pratiques sur les agents IA, l’automatisation, la vidéo et l’IA au quotidien.",
     "readMore": "Lire l'article",
+    "articles": {
+      "agents": {
+        "metaTitle": "Agents IA et IA agentique : guide pratique | HoldingAI",
+        "metaDescription": "Comprendre les agents IA, leurs outils et la validation humaine. Choisir un premier usage, limiter les permissions et tester progressivement.",
+        "title": "Agents IA et IA agentique : de la réponse à l’action",
+        "excerpt": "Passer de la conversation à l’action demande un objectif précis et des permissions limitées.",
+        "category": "Agents IA", "readingTime": "4 min de lecture",
+        "heroImage": "/images/kosmos/blog-mobile.webp", "heroAlt": "Illustration du guide pratique consacré aux agents IA.",
+        "intro": "Un assistant peut expliquer comment préparer une réunion. Un système agentique peut consulter des documents autorisés, proposer un ordre du jour puis préparer des tâches avec des outils connectés. La différence tient à cette succession d’actions, pas à un discours plus convaincant. Avant de lui donner de l’autonomie, il faut définir ce qu’il peut faire.",
+        "takeawayTitle": "À retenir",
+        "takeaways": ["Une réponse utile ne vaut pas autorisation d’agir.", "Limiter les accès de chaque outil au strict nécessaire.", "Confier les décisions importantes à une personne."],
+        "sections": [
+          {"id": "assistant-or-agent", "heading": "Distinguer réponse et action", "paragraphs": ["Un assistant conversationnel fournit généralement un texte que vous utilisez ensuite. Un agent reçoit un objectif, choisit une étape autorisée, observe son résultat puis continue ou s’arrête. L’IA agentique désigne cette approche orientée vers l’action, sans garantir un jugement autonome fiable. Quand toutes les étapes sont connues et prévisibles, un workflow à règles fixes reste souvent plus simple à contrôler."]},
+          {"id": "tools-and-permissions", "heading": "Définir les outils et les permissions", "paragraphs": ["Précisez quels documents le système peut lire et quels éléments il peut modifier. Consulter un calendrier ne nécessite pas de pouvoir inviter des personnes externes. Commencez en lecture seule. Traitez les documents récupérés comme des informations non fiables, jamais comme des instructions capables de remplacer vos règles. Limitez également les tentatives, la durée d’exécution et les dépenses avant de connecter des comptes réels."], "bullets": ["Utiliser un compte dédié aux accès restreints.", "Journaliser les appels aux outils et leurs résultats.", "Prévoir un arrêt immédiat du processus."]},
+          {"id": "human-review", "heading": "Faire de la validation une vraie étape", "paragraphs": ["Pour une demande de support, l’agent peut rechercher une procédure et préparer une réponse. Un collègue vérifie ensuite le contexte avant envoi. La validation doit montrer l’action proposée, son destinataire et les éléments qui la justifient. Achats, suppressions et communications sensibles exigent un contrôle explicite. Si un outil échoue ou si les sources se contredisent, le système doit s’arrêter et expliquer le problème."]},
+          {"id": "pilot", "heading": "Commencer par un pilote délimité", "paragraphs": ["Choisissez une tâche récurrente dont les entrées et le résultat sont faciles à examiner. Testez des exemples représentatifs, mais aussi des documents absents, des demandes ambiguës et des permissions refusées. Comparez le temps total, les corrections et la supervision au processus actuel. Élargissez les accès seulement si ces observations le justifient. Si vérifier l’agent coûte plus d’effort que réaliser la tâche, simplifiez le workflow."]}
+        ],
+        "faqTitle": "Questions fréquentes",
+        "faqs": [
+          {"question": "Un chatbot est-il forcément un agent ?", "answer": "Non. Il peut seulement générer des réponses. Examinez les outils réellement utilisés, l’enchaînement des actions et les règles d’arrêt plutôt que le nom du produit."},
+          {"question": "Un agent peut-il travailler sans surveillance ?", "answer": "Certaines tâches délimitées peuvent suivre des règles prédéfinies. La supervision dépend de l’impact des actions, de leur réversibilité et de la fiabilité observée."},
+          {"question": "Quel premier usage choisir ?", "answer": "La recherche interne ou les brouillons, avec des données autorisées et des outils en lecture seule. Gardez publication et modifications réelles sous validation humaine."}
+        ],
+        "relatedTitle": "Pour aller plus loin",
+        "related": [{"slug": "ai-automation-workflows", "title": "Automatisation IA : des workflows utiles au quotidien", "category": "Automatisation"}, {"slug": "everyday-ai-beginners", "title": "L’IA au quotidien : guide pratique pour débuter", "category": "Débuter"}],
+        "ctaTitle": "Délimitez le rôle de votre agent", "ctaText": "Échangez avec HoldingAI sur votre processus, vos données et les validations nécessaires avant de choisir une implémentation.", "ctaButton": "Parler de votre projet", "backToBlogLabel": "Retour aux articles"
+      },
+      "automation": {
+        "metaTitle": "Automatisation IA : créer un workflow utile | HoldingAI",
+        "metaDescription": "Choisir un workflow IA avec déclencheur, action et validation. Protéger les données, traiter les erreurs et évaluer la valeur réelle de l’automatisation.",
+        "title": "Automatisation IA : des workflows utiles au quotidien",
+        "excerpt": "Partir d’une tâche répétée, puis ajouter des règles lisibles et un contrôle fiable.",
+        "category": "Automatisation", "readingTime": "4 min de lecture", "heroImage": "/images/kosmos/blog-retention.webp", "heroAlt": "Illustration du guide sur l’automatisation IA au quotidien.",
+        "intro": "Une automatisation devient utile lorsqu’elle simplifie un passage de relais, pas simplement lorsqu’elle relie plusieurs applications. L’IA peut interpréter un message ou préparer un brouillon là où des règles classiques seraient trop rigides. La bonne question : quelle petite partie de votre journée rendre plus simple sans rendre les erreurs moins visibles ?",
+        "takeawayTitle": "À retenir", "takeaways": ["Choisir une tâche récurrente au résultat observable.", "Séparer déclencheur, action et validation.", "Inclure corrections et maintenance dans le bilan."],
+        "sections": [
+          {"id": "choose", "heading": "Choisir un processus bien compris", "paragraphs": ["Listez les tâches répétées : trier des demandes, préparer des comptes rendus ou reporter des informations validées dans un tableau. Retenez un cas aux entrées stables et au responsable identifié. Décrivez d’abord sa réalisation manuelle. Si une règle peut orienter un formulaire selon sa catégorie, gardez cette règle. Réservez l’IA à l’interprétation du langage ou à la préparation d’un texte qui demande du jugement."]},
+          {"id": "steps", "heading": "Relier déclencheur, action et validation", "paragraphs": ["Le déclencheur lance le processus, l’action produit un résultat et la validation décide de la suite. Une demande entrante peut ainsi déclencher un résumé et une proposition de catégorie, qu’un collègue confirme avant transmission. Conservez le message original accessible. Définissez le traitement des informations manquantes au lieu de laisser le système inventer les détails pour compléter une fiche."], "bullets": ["Déclencheur : arrivée d’une entrée autorisée.", "Action : préparation d’un résumé ou brouillon.", "Validation : approbation, correction ou refus."]},
+          {"id": "everyday-examples", "heading": "Préparer les relais du quotidien", "paragraphs": ["Des notes de réunion peuvent devenir des propositions de tâches, mais un participant doit confirmer responsables et échéances. Des messages clients peuvent devenir des brouillons, tandis que les exceptions restent humaines. Une synthèse hebdomadaire peut réunir des mises à jour validées avec leurs sources. Ces usages sont plus faciles à maîtriser lorsque le résultat est réversible et que son destinataire voit les informations utilisées pour le produire."]},
+          {"id": "safety-value", "heading": "Traiter les erreurs et mesurer l’utilité", "paragraphs": ["Retirez les données personnelles inutiles avant tout envoi à un service. Vérifiez conservation et droits d’accès. Anticipez doublons, indisponibilités et formats inattendus : un échec doit alerter un responsable, pas répéter discrètement une action externe. Comparez l’effort manuel aux efforts de configuration, de relecture et de maintenance sur des cas représentatifs. Gardez le workflow si ce bilan reste favorable et réexaminez-le quand les entrées changent."]}
+        ],
+        "faqTitle": "Questions fréquentes",
+        "faqs": [
+          {"question": "Faut-il de l’IA à chaque étape ?", "answer": "Non. Des règles classiques sont souvent plus faciles à vérifier pour les dates, les destinations et les champs obligatoires. Utilisez l’IA quand l’interprétation souple apporte quelque chose."},
+          {"question": "Peut-on envoyer les messages automatiquement ?", "answer": "Commencez par des brouillons. Envisagez l’envoi automatique uniquement pour des situations précises, avec protections testées, permissions adaptées et procédure d’escalade."},
+          {"question": "Que faut-il mesurer ?", "answer": "L’effort total, les corrections et les éléments oubliés ou dupliqués. Comptez aussi le temps de surveillance et d’entretien du workflow."}
+        ],
+        "relatedTitle": "Pour aller plus loin",
+        "related": [{"slug": "ai-agents-agentic-ai", "title": "Agents IA et IA agentique : de la réponse à l’action", "category": "Agents IA"}, {"slug": "everyday-ai-beginners", "title": "L’IA au quotidien : guide pratique pour débuter", "category": "Débuter"}],
+        "ctaTitle": "Commencez par un workflow utile", "ctaText": "Présentez votre processus à HoldingAI pour repérer les étapes automatisables et les points de contrôle pertinents.", "ctaButton": "Parler de votre workflow", "backToBlogLabel": "Retour aux articles"
+      },
+      "video": {
+        "metaTitle": "Génération vidéo IA : guide de production | HoldingAI", "metaDescription": "Préparer une vidéo IA du brief au contrôle final : concept, scènes, montage, cohérence de marque, droits et consentement.",
+        "title": "Génération vidéo par IA : du prompt au résultat", "excerpt": "Le brief et le montage comptent autant que la génération des images.",
+        "category": "Vidéo IA", "readingTime": "4 min de lecture", "heroImage": "/images/kosmos/blog-ab.webp", "heroAlt": "Illustration du guide pratique de production vidéo avec l’IA.",
+        "intro": "Un clip convaincant commence par un objectif de communication, pas par un prompt interminable. Les séquences générées peuvent soutenir un concept, illustrer une idée ou explorer une direction visuelle. Elles demandent toujours sélection, montage et contrôle. La génération est une étape de production : elle ne remplace ni la préparation ni votre responsabilité sur le contenu publié.",
+        "takeawayTitle": "À retenir", "takeaways": ["Écrire le brief avant de générer les séquences.", "Construire chaque scène autour d’une idée visuelle.", "Vérifier marque, droits et consentement avant publication."],
+        "sections": [
+          {"id": "brief", "heading": "Transformer le brief en concept", "paragraphs": ["Définissez le public, le message, le contexte de visionnage et la prochaine action attendue. Décidez si la vidéo explique, démontre ou crée une ambiance. Résumez le concept simplement, puis esquissez début, développement et conclusion. Choisissez assez tôt le format du canal visé pour éviter que sujets importants et sous-titres sortent du cadre lors de l’adaptation du montage final."]},
+          {"id": "scenes", "heading": "Décrire des scènes plutôt que tout demander", "paragraphs": ["Découpez le concept en scènes avec sujet, décor, action et intention de caméra. Gardez une fiche de référence pour les couleurs, la lumière, les vêtements et les objets récurrents. Modifiez une instruction à la fois lorsqu’un résultat s’éloigne du brief. Limitez les essais et conservez les versions comparables. Prévoyez des alternatives : des incohérences restent possibles et aucune capacité particulière ne doit être tenue pour acquise."], "bullets": ["Une action principale par scène.", "Des références autorisées et documentées.", "Une place prévue pour les textes ajoutés au montage."]},
+          {"id": "edit", "heading": "Construire la cohérence au montage", "paragraphs": ["Sélectionnez les séquences pour leur clarté plutôt que leur nouveauté. Assemblez le récit, coupez les passages gênants et ajoutez typographie validée, son et sous-titres dans votre outil de montage. Comparez la continuité entre plans et inspectez produits, visages et inscriptions pendant toute leur apparition. Regardez avec et sans son. Un beau plan isolé reste inutile s’il brouille le message ou représente mal votre sujet."]},
+          {"id": "review", "heading": "Contrôler les droits et le sens", "paragraphs": ["Vérifiez les autorisations concernant images de référence, musique, voix et personnes reconnaissables. Obtenez le consentement approprié sans supposer qu’une ressemblance générée est inoffensive. Lisez les conditions du service et les obligations de transparence applicables à votre usage. Ne présentez pas une scène fictive comme une preuve documentaire. Faites relire le fichier exporté par une personne extérieure : affirmations, sous-titres et marques accidentelles méritent un dernier contrôle."]}
+        ],
+        "faqTitle": "Questions fréquentes",
+        "faqs": [
+          {"question": "Un prompt remplace-t-il le storyboard ?", "answer": "Le prompt décrit une demande de génération. Le storyboard organise le parcours entre les scènes. Même une esquisse aide à décider ce que le montage doit raconter."},
+          {"question": "Les personnages resteront-ils identiques ?", "answer": "Ne le supposez pas. Vérifiez chaque scène, utilisez des références autorisées si l’outil le permet et simplifiez le concept si nécessaire."},
+          {"question": "Un contenu généré est-il libre d’utilisation ?", "answer": "Pas automatiquement. Vérifiez les conditions du service, les droits des sources et les consentements. Demandez un avis qualifié si l’usage soulève une question juridique."}
+        ],
+        "relatedTitle": "Pour aller plus loin",
+        "related": [{"slug": "ai-automation-workflows", "title": "Automatisation IA : des workflows utiles au quotidien", "category": "Automatisation"}, {"slug": "everyday-ai-beginners", "title": "L’IA au quotidien : guide pratique pour débuter", "category": "Débuter"}],
+        "ctaTitle": "Donnez un cap clair à votre vidéo", "ctaText": "Échangez avec HoldingAI sur votre public, vos références de marque et vos contraintes avant de passer à la génération.", "ctaButton": "Parler de votre vidéo", "backToBlogLabel": "Retour aux articles"
+      },
+      "everyday": {
+        "metaTitle": "L’IA au quotidien : bien démarrer | HoldingAI", "metaDescription": "Découvrir l’IA avec des tâches concrètes, des prompts simples et de bonnes habitudes de vérification et de confidentialité, sans jargon technique.",
+        "title": "L’IA au quotidien : guide pratique pour débuter", "excerpt": "Choisir une petite tâche, expliquer son besoin et vérifier avant d’utiliser le résultat.",
+        "category": "Débuter", "readingTime": "4 min de lecture", "heroImage": "/images/kosmos/blog-lidar.webp", "heroAlt": "Illustration du guide pour découvrir l’IA au quotidien.",
+        "intro": "Pas besoin de comprendre l’architecture des modèles pour essayer l’IA. Commencez par une tâche que vous savez évaluer : reformuler une note, organiser des idées ou expliquer un terme inconnu. Considérez la réponse comme la proposition d’un assistant capable mais faillible. Vous décidez de ce qui est exact, adapté et suffisamment utile pour être conservé.",
+        "takeawayTitle": "À retenir", "takeaways": ["Commencer par une petite tâche vérifiable.", "Préciser contexte, format et contraintes.", "Protéger les informations privées et vérifier les détails importants."],
+        "sections": [
+          {"id": "first-task", "heading": "Choisir une première tâche concrète", "paragraphs": ["Transformez vos notes en liste de contrôle, préparez des questions pour une réunion ou reformulez une annonce publique dans un langage simple. Évitez de débuter par une décision touchant la santé, l’argent ou les droits d’autrui. Le premier essai doit avoir une fin claire et ne pas nécessiter de documents sensibles. Gardez l’original à côté de la réponse pour voir facilement les différences."]},
+          {"id": "prompt", "heading": "Demander avec des mots ordinaires", "paragraphs": ["Un prompt est simplement votre demande. Indiquez la tâche, le contexte nécessaire et le format attendu. Exemple : « Reformule cette annonce publique pour des nouveaux visiteurs. Garde les informations pratiques, adopte un ton accueillant et réponds en un court paragraphe. N’ajoute aucun fait. » S’il manque une information, demandez une liste de questions plutôt que de laisser l’assistant combler les trous par des suppositions."], "bullets": ["Préciser à qui le résultat s’adresse.", "Demander un format utile, comme une liste.", "Faire corriger le ton ou le niveau de détail."]},
+          {"id": "check", "heading": "Vérifier avant de copier", "paragraphs": ["Un ton assuré ne constitue pas une preuve. Comparez noms, dates et affirmations avec des sources originales fiables. Ouvrez les liens proposés pour vérifier qu’ils soutiennent réellement le texte. Dans un résumé, contrôlez les nuances importantes et l’absence de faits nouveaux. Pour une question lourde de conséquences, consultez un professionnel. Si un point important reste invérifiable, retirez-le ou indiquez clairement l’incertitude."]},
+          {"id": "privacy", "heading": "Installer une habitude prudente", "paragraphs": ["Ne collez pas de mots de passe, de fichiers clients ou d’informations professionnelles confidentielles dans un outil non autorisé. Remplacez les détails identifiants par des exemples neutres et respectez les règles de votre organisation. Vérifiez les paramètres de données avant tout fichier joint. Conservez les demandes qui fonctionnent, mais adaptez-les. Après plusieurs essais, comparez le temps de formulation et de contrôle à la réalisation manuelle pour garder les usages vraiment utiles."]}
+        ],
+        "faqTitle": "Questions fréquentes",
+        "faqs": [
+          {"question": "Faut-il connaître des formules de prompt ?", "answer": "Non. Une demande claire, du contexte et un format attendu suffisent pour commencer. Précisez ensuite ce qui doit changer dans la réponse."},
+          {"question": "Peut-on faire confiance à un résumé ?", "answer": "Traitez-le comme un brouillon. Comparez-le à l’original, notamment les chiffres, les exceptions et les conclusions qui pourraient influencer une décision."},
+          {"question": "Que faire si le premier résultat déçoit ?", "answer": "Réduisez la tâche, fournissez un exemple non sensible et demandez une amélioration précise. Si vérifier reste difficile, choisissez un cas plus simple."}
+        ],
+        "relatedTitle": "Pour aller plus loin",
+        "related": [{"slug": "ai-automation-workflows", "title": "Automatisation IA : des workflows utiles au quotidien", "category": "Automatisation"}, {"slug": "ai-agents-agentic-ai", "title": "Agents IA et IA agentique : de la réponse à l’action", "category": "Agents IA"}],
+        "ctaTitle": "Rendez l’IA utile à votre équipe", "ctaText": "Explorez avec HoldingAI des premiers usages concrets et des limites adaptées aux données que vous manipulez.", "ctaButton": "Parler de vos besoins", "backToBlogLabel": "Retour aux articles"
+      }
+    },
     "items": {
       "agents": {
         "title": "Agents IA et IA agentique : de la réponse à l’action",
