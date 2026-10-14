@@ -5,18 +5,18 @@ import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Reveal from '@/components/ui/Reveal';
 
-// key = message key (projectsIndex.items.*), slug = image slug (public/images/solutions/<slug>-{dark,light}.jpg)
+// key = message key (projectsIndex.items.*), image = approved square portfolio visual
 const projects = [
-  { key: 'dct', slug: 'converge' },
-  { key: 'dream', slug: 'bloom' },
-  { key: 'perhomes', slug: 'domus' },
-  { key: 'janex', slug: 'tandem' },
-  { key: 'wallet', slug: 'vault' },
-  { key: 'raffle', slug: 'fortuna' },
-  { key: 'salesai', slug: 'closer' },
-  { key: 'edai', slug: 'mentor' },
-  { key: 'dreamai', slug: 'reverie' },
-  { key: 'tradepulse', slug: 'meridian' },
+  { key: 'dct', slug: 'converge', image: 'converge-gpt2.jpg' },
+  { key: 'dream', slug: 'bloom', image: 'bloom-gpt2.jpg' },
+  { key: 'perhomes', slug: 'domus', image: 'domus-gpt2.jpg' },
+  { key: 'janex', slug: 'tandem', image: 'tandem-gpt2.jpg' },
+  { key: 'wallet', slug: 'vault', image: 'vault-gpt2.jpg' },
+  { key: 'raffle', slug: 'fortuna', image: 'fortuna-gpt2.jpg' },
+  { key: 'salesai', slug: 'closer', image: 'closer-gpt2.jpg' },
+  { key: 'edai', slug: 'mentor', image: 'mentor-gpt2.jpg' },
+  { key: 'dreamai', slug: 'reverie', image: 'reverie-gpt2.jpg' },
+  { key: 'tradepulse', slug: 'meridian', image: 'meridian-gpt2.jpg' },
 ] as const;
 
 export default function WorkPage() {
@@ -43,7 +43,7 @@ export default function WorkPage() {
 
         {/* Projects */}
         <div className="space-y-16 md:space-y-24">
-          {projects.map(({ key, slug }, index) => {
+          {projects.map(({ key, slug, image }, index) => {
             const name = t(`items.${key}.name` as never) as string;
             const tag = t(`items.${key}.tag` as never) as string;
             const desc = t(`items.${key}.desc` as never) as string;
@@ -60,27 +60,23 @@ export default function WorkPage() {
                   </div>
                   <p className="text-base md:text-lg text-[#4A4A4E] font-light max-w-2xl mb-8">{desc}</p>
 
-                  {/* Solution views: dark + light */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-                    {(['dark', 'light'] as const).map((theme, i) => (
-                      <motion.div
-                        key={theme}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: '-8%' }}
-                        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
-                        className="group overflow-hidden rounded-2xl border border-[#E5E5E5] bg-white shadow-[0_16px_40px_-24px_rgba(0,0,0,0.12)]"
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={`/images/solutions/${slug}-${theme}.jpg`}
-                          alt={`${name} — ${tag} (${theme})`}
-                          className="w-full h-auto transition-transform duration-[600ms] group-hover:scale-[1.02]"
-                          loading="lazy"
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-8%' }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    className="group max-w-3xl overflow-hidden rounded-2xl border border-[#E5E5E5] bg-white shadow-[0_16px_40px_-24px_rgba(0,0,0,0.12)]"
+                  >
+                    <div className="aspect-square overflow-hidden bg-[#F1F0EE]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/images/review/${image}`}
+                        alt={`${name} — ${tag}`}
+                        className="h-full w-full object-cover transition-transform duration-[600ms] group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </div>
+                  </motion.div>
                 </div>
               </Reveal>
             );
