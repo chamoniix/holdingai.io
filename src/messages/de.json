@@ -256,24 +256,24 @@
   "blog": {
     "eyebrow": "EINBLICKE",
     "title": "Unsere Experten teilen.",
-    "subtitle": "Wir erkunden das digitale Universum durch unsere Artikel.",
+    "subtitle": "Praxisnahe Leitfäden zu KI-Agenten, Automatisierung, Video und KI im Alltag.",
     "readMore": "Artikel lesen",
     "items": {
-      "mobile": {
-        "title": "Strategischer Einsatz einer mobilen Anwendung",
-        "tag": "Mobile"
+      "agents": {
+        "title": "KI-Agenten und agentische KI: Von Antworten zum Handeln",
+        "tag": "KI-Agenten"
       },
-      "retention": {
-        "title": "Nutzerbindung maximieren",
-        "tag": "Produkt"
+      "automation": {
+        "title": "KI-Automatisierung: Nützliche Workflows für den Alltag",
+        "tag": "Automatisierung"
       },
-      "ab": {
-        "title": "Der komplette Leitfaden zum A/B-Testing",
-        "tag": "Growth"
+      "video": {
+        "title": "KI-Videogenerierung: Vom Prompt zum fertigen Clip",
+        "tag": "KI-Video"
       },
-      "lidar": {
-        "title": "LIDAR und seine Integration in iOS-Apps",
-        "tag": "Innovation"
+      "everyday": {
+        "title": "KI im Alltag: Ein praktischer Leitfaden für Einsteiger",
+        "tag": "Erste Schritte"
       }
     }
   },

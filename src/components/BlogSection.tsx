@@ -5,10 +5,10 @@ import { useTranslations } from 'next-intl'
 import Reveal from './ui/Reveal'
 
 const posts = [
-  { key: 'mobile', img: '/images/kosmos/blog-mobile.webp' },
-  { key: 'retention', img: '/images/kosmos/blog-retention.webp' },
-  { key: 'ab', img: '/images/kosmos/blog-ab.webp' },
-  { key: 'lidar', img: '/images/kosmos/blog-lidar.webp' },
+  { key: 'agents', img: '/images/kosmos/blog-mobile.webp' },
+  { key: 'automation', img: '/images/kosmos/blog-retention.webp' },
+  { key: 'video', img: '/images/kosmos/blog-ab.webp' },
+  { key: 'everyday', img: '/images/kosmos/blog-lidar.webp' },
 ] as const
 
 export default function BlogSection() {

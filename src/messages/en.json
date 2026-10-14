@@ -256,24 +256,24 @@
   "blog": {
     "eyebrow": "INSIGHTS",
     "title": "Our experts share.",
-    "subtitle": "Exploring the digital universe through our articles.",
+    "subtitle": "Practical guides to AI agents, automation, video generation, and using AI every day.",
     "readMore": "Read article",
     "items": {
-      "mobile": {
-        "title": "Strategic deployment of a mobile application",
-        "tag": "Mobile"
+      "agents": {
+        "title": "AI Agents and Agentic AI: From Answers to Action",
+        "tag": "AI Agents"
       },
-      "retention": {
-        "title": "Maximizing user retention",
-        "tag": "Product"
+      "automation": {
+        "title": "AI Automation: Useful Workflows for Everyday Tasks",
+        "tag": "Automation"
       },
-      "ab": {
-        "title": "The complete guide to A/B testing",
-        "tag": "Growth"
+      "video": {
+        "title": "AI Video Generation: From Prompt to Finished Clip",
+        "tag": "AI Video"
       },
-      "lidar": {
-        "title": "LIDAR and its integration in iOS apps",
-        "tag": "Innovation"
+      "everyday": {
+        "title": "Everyday AI: A Practical Guide for Beginners",
+        "tag": "Getting Started"
       }
     }
   },

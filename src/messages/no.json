@@ -256,24 +256,24 @@
   "blog": {
     "eyebrow": "INNSIKT",
     "title": "Våre eksperter deler.",
-    "subtitle": "Utforsker det digitale universet gjennom artiklene våre.",
+    "subtitle": "Praktiske guider om KI-agenter, automatisering, video og KI i hverdagen.",
     "readMore": "Les artikkelen",
     "items": {
-      "mobile": {
-        "title": "Strategisk utrulling av en mobilapplikasjon",
-        "tag": "Mobile"
+      "agents": {
+        "title": "KI-agenter og agentisk KI: Fra svar til handling",
+        "tag": "KI-agenter"
       },
-      "retention": {
-        "title": "Maksimere brukerlojalitet",
-        "tag": "Produkt"
+      "automation": {
+        "title": "KI-automatisering: Nyttige arbeidsflyter i hverdagen",
+        "tag": "Automatisering"
       },
-      "ab": {
-        "title": "Den komplette guiden til A/B-testing",
-        "tag": "Growth"
+      "video": {
+        "title": "KI-videogenerering: Fra prompt til ferdig klipp",
+        "tag": "KI-video"
       },
-      "lidar": {
-        "title": "LIDAR og dets integrasjon i iOS-apper",
-        "tag": "Innovasjon"
+      "everyday": {
+        "title": "KI i hverdagen: Praktisk guide for nybegynnere",
+        "tag": "Kom i gang"
       }
     }
   },

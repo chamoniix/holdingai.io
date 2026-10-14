@@ -256,24 +256,24 @@
   "blog": {
     "eyebrow": "INSIGHTS",
     "title": "Nuestros expertos comparten.",
-    "subtitle": "Explorando el universo digital a través de nuestros artículos.",
+    "subtitle": "Guías prácticas sobre agentes de IA, automatización, vídeo e IA en el día a día.",
     "readMore": "Leer el artículo",
     "items": {
-      "mobile": {
-        "title": "Despliegue estratégico de una aplicación móvil",
-        "tag": "Mobile"
+      "agents": {
+        "title": "Agentes de IA e IA agéntica: de las respuestas a la acción",
+        "tag": "Agentes de IA"
       },
-      "retention": {
-        "title": "Maximizar la retención de usuarios",
-        "tag": "Producto"
+      "automation": {
+        "title": "Automatización con IA: flujos de trabajo útiles para el día a día",
+        "tag": "Automatización"
       },
-      "ab": {
-        "title": "La guía completa del A/B testing",
-        "tag": "Growth"
+      "video": {
+        "title": "Generación de vídeo con IA: del prompt al clip final",
+        "tag": "Vídeo con IA"
       },
-      "lidar": {
-        "title": "El LIDAR y su integración en las apps de iOS",
-        "tag": "Innovación"
+      "everyday": {
+        "title": "IA en el día a día: guía práctica para principiantes",
+        "tag": "Primeros pasos"
       }
     }
   },

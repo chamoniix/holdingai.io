@@ -256,24 +256,24 @@
   "blog": {
     "eyebrow": "NÄKEMYKSET",
     "title": "Asiantuntijamme jakavat.",
-    "subtitle": "Tutkimme digitaalista maailmankaikkeutta artikkeleidemme kautta.",
+    "subtitle": "Käytännön oppaita tekoälyagenteista, automaatiosta, videosta ja tekoälyn arkipäiväisestä käytöstä.",
     "readMore": "Lue artikkeli",
     "items": {
-      "mobile": {
-        "title": "Mobiilisovelluksen strateginen käyttöönotto",
-        "tag": "Mobile"
+      "agents": {
+        "title": "Tekoälyagentit ja agenttinen tekoäly: vastauksista toimintaan",
+        "tag": "Tekoälyagentit"
       },
-      "retention": {
-        "title": "Käyttäjien sitoutumisen maksimointi",
-        "tag": "Tuote"
+      "automation": {
+        "title": "Tekoälyautomaatio: hyödyllisiä työnkulkuja arkeen",
+        "tag": "Automaatio"
       },
-      "ab": {
-        "title": "Täydellinen opas A/B-testaukseen",
-        "tag": "Growth"
+      "video": {
+        "title": "Tekoälyvideon luonti: kehotteesta valmiiksi videoksi",
+        "tag": "Tekoälyvideo"
       },
-      "lidar": {
-        "title": "LIDAR ja sen integrointi iOS-sovelluksiin",
-        "tag": "Innovaatio"
+      "everyday": {
+        "title": "Tekoäly arjessa: käytännön opas aloittelijoille",
+        "tag": "Aloittaminen"
       }
     }
   },
