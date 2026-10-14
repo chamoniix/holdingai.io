@@ -30,7 +30,7 @@ export default function Services() {
             <div className="sticky top-24 rounded-3xl overflow-hidden border border-[#E5E5E5] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.18)] aspect-[4/5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/kosmos/showcase-ia.webp"
+                src="/images/kosmos/six-expertises.webp"
                 alt=""
                 className="w-full h-full object-cover"
               />
