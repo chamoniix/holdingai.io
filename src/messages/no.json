@@ -555,10 +555,6 @@
     }
   },
   "imageReview": {
-    "eyebrow": "GPT IMAGE 2 · PRIVAT FORHÅNDSVISNING",
-    "title": "Prosjektbilder — godkjenn før bruk",
-    "disclaimer": "AI-genererte konseptgrensesnitt med illustrasjonsdata. Dette er ikke skjermbilder av lanserte produkter. Ingenting på denne siden brukes i den aktive porteføljen.",
-    "status": "Venter på godkjenning",
-    "concept": "Visuelt konsept"
+    "title": "Våre prosjekter"
   }
 }

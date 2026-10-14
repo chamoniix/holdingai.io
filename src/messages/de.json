@@ -555,10 +555,6 @@
     }
   },
   "imageReview": {
-    "eyebrow": "GPT IMAGE 2 · PRIVATE VORSCHAU",
-    "title": "Projektvisuals — vor Verwendung prüfen",
-    "disclaimer": "KI-generierte Konzeptoberflächen mit beispielhaften Daten. Dies sind keine Screenshots veröffentlichter Produkte. Nichts auf dieser Seite wird im Live-Portfolio verwendet.",
-    "status": "Wartet auf deine Freigabe",
-    "concept": "Visuelles Konzept"
+    "title": "Unsere Projekte"
   }
 }

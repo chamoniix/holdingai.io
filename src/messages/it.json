@@ -555,10 +555,6 @@
     }
   },
   "imageReview": {
-    "eyebrow": "GPT IMAGE 2 · ANTEPRIMA PRIVATA",
-    "title": "Visual dei progetti — da approvare prima dell’uso",
-    "disclaimer": "Interfacce concettuali generate con IA e dati dimostrativi. Non sono schermate di prodotti pubblicati. Nulla di questa pagina è usato nel portfolio live.",
-    "status": "In attesa della tua approvazione",
-    "concept": "Concept visivo"
+    "title": "I nostri progetti"
   }
 }

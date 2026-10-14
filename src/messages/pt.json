@@ -555,10 +555,6 @@
     }
   },
   "imageReview": {
-    "eyebrow": "GPT IMAGE 2 · PRÉ-VISUALIZAÇÃO PRIVADA",
-    "title": "Visuais dos projetos — validar antes de usar",
-    "disclaimer": "Interfaces conceptuais geradas por IA com dados ilustrativos. Não são capturas de produtos publicados. Nada nesta página é usado no portfólio em produção.",
-    "status": "A aguardar a tua aprovação",
-    "concept": "Conceito visual"
+    "title": "Nossos projetos"
   }
 }
