@@ -9,6 +9,10 @@ const samples = [
   { key: 'janex', image: 'tandem-gpt2.jpg', score: '8.5/10' },
   { key: 'wallet', image: 'vault-gpt2.jpg', score: '8/10' },
   { key: 'raffle', image: 'fortuna-gpt2.jpg', score: '8/10' },
+  { key: 'salesai', image: 'closer-gpt2.jpg', score: '8/10' },
+  { key: 'edai', image: 'mentor-gpt2.jpg', score: '8.5/10' },
+  { key: 'dreamai', image: 'reverie-gpt2.jpg', score: '8/10' },
+  { key: 'tradepulse', image: 'meridian-gpt2.jpg', score: '9/10' },
 ] as const;
 
 export async function generateMetadata({

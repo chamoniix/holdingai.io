@@ -2,7 +2,7 @@
   "purpose": "Private preview only. AI-generated concept visuals, not screenshots of deployed products. Do not treat fictional sample data as real client results.",
   "items": [
     {
-      "file": "gpt2-converge-1200.jpg",
+      "file": "converge-gpt2.jpg",
       "project": "Converge",
       "model": "gpt-image-2 via local authenticated proxy",
       "source": "/tmp/gpt2-converge-raw.png",
@@ -19,7 +19,7 @@
       "alt_fr": "Concept d’interface Converge by HoldingAI : réseau de ventures et flux d’activité dans un dashboard ivoire."
     },
     {
-      "file": "gpt2-bloom-1200.jpg",
+      "file": "bloom-gpt2.jpg",
       "project": "Bloom",
       "model": "gpt-image-2 via local authenticated proxy",
       "source_size": [
@@ -99,6 +99,74 @@
       "sha256": "1f9e09a6867333fb8268da1477f61f163242765e92b5d27d1b2d55b52b8c9a14",
       "alt_fr": "Concept d’interface Fortuna de HoldingAI : tirage au sort avec jeton résultat encadré et étapes de vérification.",
       "review_note": "Visible IDs 418 and 729 are generated placeholders; the page disclaimer identifies all sample data as illustrative."
+    },
+    {
+      "file": "closer-gpt2.jpg",
+      "project": "Closer",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-closer-raw.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "bytes": 216552,
+      "max_bytes": 235520,
+      "sha256": "5b70dbf3d4c19c3a10c2f37e9d2d050acee5a2ad967b6dd34b2ec779dec44edf",
+      "alt_fr": "Concept d’interface Closer de HoldingAI : dossier lead, étapes de recherche et prochaine action assistée par IA.",
+      "review_note": "Generated lead score, dates, headcount and company name are illustrative placeholders."
+    },
+    {
+      "file": "mentor-gpt2.jpg",
+      "project": "Mentor",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-mentor-raw.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "bytes": 225518,
+      "max_bytes": 235520,
+      "sha256": "67ff0db2c5a7acf848d9b4962ebcf7f9330d12fee5e36e7a2d2121f54b578114",
+      "alt_fr": "Concept d’interface Mentor de HoldingAI : parcours d’apprentissage guidé avec exercice et indice du tuteur IA.",
+      "review_note": "Learner details and assessment data are fictional placeholders."
+    },
+    {
+      "file": "reverie-gpt2.jpg",
+      "project": "Reverie",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-reverie-raw.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "bytes": 216043,
+      "max_bytes": 235520,
+      "sha256": "a07b5d40dc8055b96ed1cfff951b9e6080010835297749093201433ced903003",
+      "alt_fr": "Concept d’interface Reverie de HoldingAI : atelier de planification guidée avec expérience personnalisée.",
+      "review_note": "The 'Four Days in Belmonte' itinerary and its details are fictional placeholders."
+    },
+    {
+      "file": "meridian-gpt2.jpg",
+      "project": "Meridian",
+      "model": "gpt-image-2 via local authenticated proxy",
+      "source": "/tmp/gpt2-meridian-v2-raw.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": "1200x1200",
+      "format": "JPEG RGB",
+      "bytes": 228504,
+      "max_bytes": 235520,
+      "sha256": "161eb56103c7a35801a54e103b4057ed4a90025388e0dcc3837f6eebf1716085",
+      "alt_fr": "Concept d’interface Meridian de HoldingAI : rubans de signaux abstraits convergeant vers un brief éditorial fictif.",
+      "review_note": "No numerical market data; prominently labeled illustrative scenario."
     }
   ]
 }
