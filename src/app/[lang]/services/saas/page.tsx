@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 
 const challenges = ['fragmented', 'manual', 'growth'] as const;
 const pillars = ['experience', 'architecture', 'operations'] as const;
@@ -11,14 +12,38 @@ const processSteps = ['discovery', 'prototype', 'engineering', 'launch'] as cons
 const faqs = ['mvp', 'existingProduct', 'ai', 'scaling', 'security'] as const;
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const reveal = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } },
-};
+function ProductVisual({
+  src,
+  className,
+  imageClassName = 'object-cover',
+}: {
+  src: string;
+  className: string;
+  imageClassName?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? [0, 0] : [12, -12]);
+
+  return (
+    <div ref={ref} aria-hidden="true" className={`relative overflow-hidden ${className}`}>
+      <motion.div style={{ y }} className="absolute -inset-y-3 inset-x-0">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt="" className={`h-full w-full ${imageClassName}`} loading="lazy" />
+      </motion.div>
+    </div>
+  );
+}
 
 export default function SaasPage() {
   const t = useTranslations('servicesPages');
   const locale = useLocale();
+  const reduceMotion = useReducedMotion();
+  const reveal = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: reduceMotion ? 0 : 0.65, ease: EASE } },
+  };
 
   return (
     <main className="relative isolate overflow-hidden bg-[#F7F7F5] pb-20 pt-28 text-[#11121A] md:pb-28 md:pt-36">
@@ -128,6 +153,20 @@ export default function SaasPage() {
             <div className="absolute -bottom-5 -left-4 h-20 w-20 rounded-full border border-white/90 bg-[#F4EFF9]/80 shadow-[0_12px_35px_rgba(54,34,82,0.12)] backdrop-blur md:-bottom-7 md:-left-7 md:h-28 md:w-28" />
           </motion.div>
         </motion.section>
+
+        <motion.figure
+          variants={reveal}
+          initial={reduceMotion ? false : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: '-8%' }}
+          className="relative mb-16 overflow-hidden rounded-[1.75rem] border border-white bg-white p-2 shadow-[0_28px_80px_-36px_rgba(45,30,68,0.24)] md:mb-24 md:rounded-[2.25rem] md:p-3"
+        >
+          <ProductVisual
+            src="/images/kosmos/saas-workspace.webp"
+            className="aspect-[16/9] rounded-[1.25rem] bg-[#F0EDF4] md:rounded-[1.75rem]"
+          />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-2 rounded-[1.25rem] ring-1 ring-inset ring-black/[0.04] md:inset-3 md:rounded-[1.75rem]" />
+        </motion.figure>
 
         <section aria-labelledby="saas-challenge-title" className="border-t border-[#E5E3E8] py-16 md:py-24">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
@@ -246,6 +285,30 @@ export default function SaasPage() {
             </ol>
           </div>
         </section>
+
+        <motion.figure
+          variants={reveal}
+          initial={reduceMotion ? false : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: '-10%' }}
+          className="my-16 grid overflow-hidden rounded-[1.75rem] border border-[#E7E3EA] bg-white shadow-[0_24px_70px_-36px_rgba(45,30,68,0.2)] md:my-24 md:grid-cols-[1.15fr_0.85fr] md:items-center md:rounded-[2.25rem]"
+        >
+          <ProductVisual
+            src="/images/kosmos/saas-in-context.webp"
+            className="aspect-[4/3] min-h-full bg-[#EEEAE4] md:aspect-auto md:h-full md:min-h-[24rem]"
+          />
+          <div aria-hidden="true" className="hidden space-y-5 p-7 md:block lg:p-10">
+            <span className="block h-2 w-16 rounded-full bg-[#B9A2D5]" />
+            <span className="block h-4 w-4/5 rounded-full bg-[#E2DEE7]" />
+            <span className="block h-3 w-full rounded-full bg-[#F0EDF2]" />
+            <span className="block h-3 w-11/12 rounded-full bg-[#F0EDF2]" />
+            <div className="grid grid-cols-3 gap-3 pt-4">
+              <span className="h-14 rounded-xl border border-[#ECE8F0] bg-[#FAF9FB]" />
+              <span className="h-14 rounded-xl border border-[#ECE8F0] bg-[#FAF9FB]" />
+              <span className="h-14 rounded-xl border border-[#ECE8F0] bg-[#FAF9FB]" />
+            </div>
+          </div>
+        </motion.figure>
 
         <section aria-labelledby="saas-faq-title" className="mx-auto max-w-5xl py-16 md:py-24">
           <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-10%' }} className="mb-8 md:mb-10">
