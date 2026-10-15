@@ -546,22 +546,59 @@
       }
     },
     "saas": {
-      "title": "Skalierbare SaaS-Entwicklung",
-      "description": "Modernste Softwarearchitekturen, die Millionen von Nutzern tragen und gleichzeitig ein flüssiges Erlebnis bieten.",
-      "features": {
-        "availability": {
-          "title": "Hohe Verfügbarkeit",
-          "desc": "Cloud-native Infrastruktur mit 99,99 % Uptime-Garantie, gebaut für Hyperwachstum."
-        },
-        "security": {
-          "title": "Sicherheit auf Militärniveau",
-          "desc": "End-to-End-Verschlüsselung und vollständige Konformität mit den strengsten Sicherheitsstandards (DSGVO, SOC2)."
-        },
-        "ux": {
-          "title": "Premium UX/UI-Design",
-          "desc": "Klare, intuitive und visuell beeindruckende Interfaces, die Ihre Nutzer binden."
+      "eyebrow": "INDIVIDUELLE SAAS-ENTWICKLUNG",
+      "title": "Von der Idee zum nutzbaren Produkt.",
+      "description": "HoldingAI gestaltet und entwickelt SaaS-Produkte für konkrete Arbeitsabläufe: Einstieg, gemeinsame Arbeitsbereiche, Nutzerrechte und vorhandene Geschäftswerkzeuge. Wir definieren eine sinnvolle erste Version und planen Betrieb und Weiterentwicklung.",
+      "primaryCta": "Produkt besprechen", "workCta": "Unsere Arbeit ansehen",
+      "challenge": {
+        "eyebrow": "DER AUSGANGSPUNKT", "title": "Erst den Ablauf klären, dann Funktionen ergänzen.",
+        "description": "Ein Produkt besteht nicht nur aus Oberflächen. Wir klären Aufgaben, benötigte Informationen und die Schwachstellen im heutigen Prozess.",
+        "items": {
+          "fragmented": { "title": "Verteilte Informationen", "desc": "Festlegen, wo Daten liegen, wie sie abgeglichen werden und welches System für welche Information maßgeblich ist." },
+          "manual": { "title": "Manuelle Übergaben", "desc": "Unnötiges Kopieren durch klare Schritte, Prüfungen und eine nachvollziehbare Behandlung von Ausnahmen ersetzen." },
+          "growth": { "title": "Mehr Nutzung, mehr Verantwortung", "desc": "Rollen, Organisationsgrenzen und Supportbedarf planen, bevor weitere Teams, Tarife oder Nutzungsmuster hinzukommen." }
         }
-      }
+      },
+      "system": {
+        "eyebrow": "EIN ZUSAMMENHÄNGENDES PRODUKT", "title": "Nutzererlebnis und Architektur gemeinsam entwerfen.",
+        "description": "Ein Nutzerablauf bestimmt Daten, Berechtigungen und Servicegrenzen. Wir treffen diese Entscheidungen gemeinsam, statt Oberfläche und Backend getrennt zu betrachten.",
+        "pillars": {
+          "experience": { "title": "Ein verständliches Nutzererlebnis", "desc": "Den nächsten Schritt sichtbar machen, leere Ansichten und Fehler erklären und zur ersten sinnvollen Aufgabe führen." },
+          "architecture": { "title": "Klare technische Grenzen", "desc": "Datenmodell, Mandantentrennung, Zugriffsregeln und APIs an den tatsächlich benötigten Abläufen ausrichten." },
+          "operations": { "title": "Vorbereiteter Betrieb", "desc": "Bereitstellung, Protokolle, Backups und Supportwerkzeuge mit passenden Verantwortlichkeiten und Wiederherstellungsabläufen planen." }
+        }
+      },
+      "useCases": {
+        "eyebrow": "MÖGLICHE PRODUKTBAUSTEINE", "title": "Von den Aufgaben der Nutzer ausgehen.",
+        "description": "Wählen Sie die Fähigkeiten für die erste Version. Zusätzliche Komplexität braucht einen bestätigten Bedarf.",
+        "items": {
+          "onboarding": { "title": "Registrierung und Einstieg", "desc": "Kontoerstellung, Einladungen und geführte Einrichtung verbinden, damit Nutzer wissen, wie sie beginnen." },
+          "workspace": { "title": "Arbeitsbereiche für mehrere Nutzer", "desc": "Gemeinsame Daten, Teamrollen und Rechte strukturieren, einschließlich Vergabe, Änderung und Entzug von Zugängen." },
+          "subscriptions": { "title": "Abonnements und Nutzungsrechte", "desc": "Tarife, Abrechnungsereignisse und Funktionszugang verbinden sowie Wechsel, Kündigungen und Zahlungsprobleme verständlich behandeln." },
+          "integrations": { "title": "Geschäftswerkzeuge und KI-Anbindungen", "desc": "Relevante APIs und KI-gestützte Aufgaben mit definierten Datenzugriffen, Prüfungen und einem Verhalten bei Dienstausfällen verbinden." }
+        }
+      },
+      "process": {
+        "eyebrow": "VON DER IDEE ZUM BETRIEB", "title": "Wichtige Fragen schrittweise beantworten.",
+        "description": "Jede Phase liefert eine prüfbare Grundlage für die nächste Entscheidung: Umfang, Prototyp, funktionierende Software und Startplan.",
+        "steps": {
+          "discovery": { "title": "Bedarf klären", "desc": "Nutzer, Abläufe, bestehende Systeme und Grenzen verstehen. Den ersten sinnvollen Umfang und seine Bewertung vereinbaren." },
+          "prototype": { "title": "Prototyp", "desc": "Die wichtigsten Abläufe erlebbar machen, Annahmen mit vorgesehenen Nutzern prüfen und schwierige Schritte vor der Umsetzung klären." },
+          "engineering": { "title": "Entwicklung", "desc": "Oberfläche, Dienste und Integrationen mit Tests für zentrale Abläufe, Berechtigungen und Fehlerfälle umsetzen." },
+          "launch": { "title": "Start und Weiterentwicklung", "desc": "Bereitstellung, Überwachung und Support vorbereiten. Tatsächliche Nutzung und Rückmeldungen für Korrekturen und nächste Versionen auswerten." }
+        }
+      },
+      "faq": {
+        "eyebrow": "VOR DER ENTWICKLUNG", "title": "Fragen zu Ihrem SaaS-Projekt",
+        "items": {
+          "mvp": { "question": "Was gehört in die erste Version?", "answer": "Ein vollständiger Ablauf für eine klar definierte Nutzergruppe. Die Bedarfsklärung trennt notwendige Funktionen für Nutzung und Betrieb von späteren Ergänzungen. Umfang und Zeitplan hängen unter anderem von Integrationen, Daten und erforderlichen Prüfungen ab." },
+          "existingProduct": { "question": "Können Sie ein bestehendes Produkt weiterentwickeln?", "answer": "Ja. Zunächst prüfen wir Nutzererlebnis, Code, Daten und Bereitstellung. Daraus ergibt sich, ob gezielte Verbesserungen, eine schrittweise Migration oder eine umfassendere Überarbeitung sinnvoll sind. Ein kompletter Ersatz ist nicht die Vorgabe." },
+          "ai": { "question": "Braucht das Produkt KI?", "answer": "Nicht unbedingt. Klare Probleme lösen wir auch mit gewöhnlichen Regeln. KI kann Suche, Entwürfe oder Klassifikation unterstützen, wenn sich ihr Nutzen prüfen lässt und Datenzugriff, Grenzen und menschliche Kontrollen feststehen." },
+          "scaling": { "question": "Wie planen Sie Wachstum?", "answer": "Wir ermitteln erwartete Nutzung, anspruchsvolle Abläufe und betriebliche Grenzen und testen passende Szenarien. Kapazität hängt von Architektur, Infrastruktur und tatsächlicher Last ab. Wir planen Überwachung und schrittweise Anpassungen statt unbegrenzte Nutzerzahlen zu versprechen." },
+          "security": { "question": "Wie behandeln Sie Sicherheit?", "answer": "Zugriffskontrollen, Mandantengrenzen, sensible Daten und betriebliche Schutzmaßnahmen richten sich nach den Projektrisiken. Tests, Hosting und gegebenenfalls spezialisierte Prüfungen werden gemeinsam festgelegt. Rechtliche Konformität und Zertifizierungen benötigen eine eigene Bewertung und entstehen nicht automatisch durch Entwicklung." }
+        }
+      },
+      "cta": { "title": "Die erste sinnvolle Version festlegen.", "description": "Bringen Sie Ihre Idee oder Ihr bestehendes Produkt mit. Gemeinsam klären wir Nutzer, Abläufe, Grenzen und Voraussetzungen für den Start.", "button": "SaaS-Projekt besprechen" }
     },
     "automation": {
       "title": "Enterprise-Automatisierung",
@@ -604,8 +641,8 @@
       "description": "Intelligente KI-Agenten, die autonom denken, lernen und handeln. Kontinuierliches Lernen, logisches Denken, nahtlose API-Integration."
     },
     "saas": {
-      "title": "Skalierbare SaaS-Entwicklung — Hochverfügbare Plattformen | HoldingAI",
-      "description": "Modernste SaaS-Architekturen für Millionen von Nutzern: 99,99 % Uptime, Sicherheit auf Militärniveau (DSGVO, SOC2) und Premium UX/UI-Design."
+      "title": "Individuelle SaaS-Entwicklung und Design | HoldingAI",
+      "description": "HoldingAI entwickelt Ihr SaaS-Produkt: Nutzerabläufe, Architektur, gemeinsame Arbeitsbereiche und Integrationen, von der Planung bis zum Betrieb."
     },
     "automation": {
       "title": "Enterprise-Automatisierung — Workflows & Systemintegration | HoldingAI",

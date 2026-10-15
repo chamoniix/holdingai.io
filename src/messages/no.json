@@ -545,22 +545,59 @@
       }
     },
     "saas": {
-      "title": "Skalerbar SaaS-utvikling",
-      "description": "Banebrytende programvarearkitekturer designet for å støtte millioner av brukere med en sømløs opplevelse.",
-      "features": {
-        "availability": {
-          "title": "Høy tilgjengelighet",
-          "desc": "Skybasert infrastruktur med garantert 99,99 % oppetid, bygget for hypervekst."
-        },
-        "security": {
-          "title": "Sikkerhet på militært nivå",
-          "desc": "Ende-til-ende-kryptering og full etterlevelse av de strengeste sikkerhetsstandardene (GDPR, SOC2)."
-        },
-        "ux": {
-          "title": "Premium UX/UI-design",
-          "desc": "Rene, intuitive og visuelt imponerende grensesnitt som holder på brukerne dine."
+      "eyebrow": "SKREDDERSYDD SAAS-UTVIKLING",
+      "title": "Fra idé til et produkt folk kan bruke.",
+      "description": "HoldingAI designer og utvikler SaaS-produkter rundt faktisk arbeid: oppstart, delte arbeidsområder, brukerrettigheter og verktøyene virksomheten allerede bruker. Vi avgrenser en nyttig første versjon og planlegger drift og videreutvikling.",
+      "primaryCta": "Snakk om produktet ditt", "workCta": "Se arbeidet vårt",
+      "challenge": {
+        "eyebrow": "UTGANGSPUNKTET", "title": "Gjør arbeidsflyten tydelig før funksjonene blir flere.",
+        "description": "Et produkt trenger mer enn skjermbilder. Vi avklarer hvem som gjør hva, hvilken informasjon de trenger, og hvor dagens prosess stopper opp.",
+        "items": {
+          "fragmented": { "title": "Informasjon spredt mellom verktøy", "desc": "Avklar hvor data ligger, hvordan de holdes oppdatert, og hvilket system som er kilden for hver opplysning." },
+          "manual": { "title": "Gjentatte manuelle overleveringer", "desc": "Erstatt unødvendig kopiering med tydelige steg, validering og håndtering av unntak som bevarer sammenhengen." },
+          "growth": { "title": "Flere brukere og mer ansvar", "desc": "Planlegg roller, organisasjonsgrenser og støttebehov før flere team, planer eller bruksmønstre legges til." }
         }
-      }
+      },
+      "system": {
+        "eyebrow": "ET SAMMENHENGENDE PRODUKT", "title": "Utform brukeropplevelse og arkitektur sammen.",
+        "description": "En brukerreise former data, rettigheter og tjenestegrenser. Vi behandler disse valgene samlet, ikke som to uavhengige produkter.",
+        "pillars": {
+          "experience": { "title": "En forståelig brukeropplevelse", "desc": "Gjør neste handling tydelig, forklar tomme visninger og feil, og hjelp brukeren frem til den første nyttige oppgaven." },
+          "architecture": { "title": "Tydelige tekniske grenser", "desc": "Definer datamodell, skille mellom organisasjoner, tilgangsregler og API-er rundt arbeidsflytene produktet skal støtte." },
+          "operations": { "title": "Forberedt daglig drift", "desc": "Planlegg utrulling, logger, sikkerhetskopier og støtteverktøy med ansvar og gjenopprettingsrutiner som passer produktet." }
+        }
+      },
+      "useCases": {
+        "eyebrow": "HVA PRODUKTET KAN INNEHOLDE", "title": "Bygg rundt arbeidet brukerne må få gjort.",
+        "description": "Velg funksjonene som støtter første versjon. Legg til kompleksitet når et bekreftet behov tilsier det.",
+        "items": {
+          "onboarding": { "title": "Registrering og oppstart", "desc": "Koble kontooppretting, invitasjoner og veiledet oppsett slik at brukerne forstår hvordan de kommer i gang." },
+          "workspace": { "title": "Arbeidsområder for flere brukere", "desc": "Organiser delte data, teamroller og rettigheter, inkludert hvordan tilganger gis, endres og fjernes." },
+          "subscriptions": { "title": "Abonnementer og bruksrettigheter", "desc": "Koble planer, faktureringshendelser og funksjonstilgang med tydelig håndtering av endringer, oppsigelser og betalingsproblemer." },
+          "integrations": { "title": "Forretningsverktøy og KI-integrasjoner", "desc": "Koble relevante API-er og KI-støttede oppgaver med avklart datatilgang, kontrollpunkter og oppførsel når en tjeneste svikter." }
+        }
+      },
+      "process": {
+        "eyebrow": "FRA IDÉ TIL DRIFT", "title": "Avklar de viktige spørsmålene i etapper.",
+        "description": "Hver etappe gir noe å vurdere før neste forpliktelse: omfang, prototype, fungerende programvare og lanseringsplan.",
+        "steps": {
+          "discovery": { "title": "Kartlegging", "desc": "Forstå brukere, arbeidsflyter, eksisterende systemer og rammer. Avtal første nyttige omfang og hvordan det skal vurderes." },
+          "prototype": { "title": "Prototype", "desc": "Gjør hovedreisene konkrete, prøv antakelser med de tiltenkte brukerne og avklar vanskelige steg før utviklingen." },
+          "engineering": { "title": "Utvikling", "desc": "Bygg grensesnitt, tjenester og integrasjoner med tester av sentrale arbeidsflyter, rettigheter og feilsituasjoner." },
+          "launch": { "title": "Lansering og videreutvikling", "desc": "Forbered utrulling, overvåking og støtte. Vurder faktisk bruk og tilbakemeldinger for å prioritere rettelser og neste versjoner." }
+        }
+      },
+      "faq": {
+        "eyebrow": "FØR UTVIKLINGEN", "title": "Spørsmål om SaaS-prosjektet ditt",
+        "items": {
+          "mvp": { "question": "Hva bør være med i første versjon?", "answer": "Én fullstendig arbeidsflyt for en definert brukergruppe. Kartleggingen skiller det som trengs for bruk og drift, fra funksjoner som kan vente. Omfang og tidsplan avhenger blant annet av integrasjoner, data og nødvendige kontroller." },
+          "existingProduct": { "question": "Kan dere jobbe med et eksisterende produkt?", "answer": "Ja. Vi begynner med å vurdere opplevelse, kode, data og utrulling. Det gir grunnlag for målrettede forbedringer, gradvis migrering eller en større ombygging. Full utskifting er ikke standardvalget." },
+          "ai": { "question": "Trenger produktet KI?", "answer": "Ikke nødvendigvis. Vi bruker vanlige regler når de løser problemet tydelig. KI kan støtte søk, utkast eller klassifisering når nytten kan vurderes og datatilgang, begrensninger og kontrollpunkter er avklart." },
+          "scaling": { "question": "Hvordan planlegger dere for vekst?", "answer": "Vi identifiserer forventet bruk, krevende arbeidsflyter og driftsrammer og tester relevante situasjoner. Kapasitet avhenger av arkitektur, infrastruktur og faktisk belastning. Vi planlegger overvåking og gradvise endringer fremfor å love et ubegrenset antall brukere." },
+          "security": { "question": "Hvordan håndteres sikkerhet?", "answer": "Tilgangskontroll, organisasjonsgrenser, sensitive data og driftstiltak defineres ut fra prosjektets risiko. Tester, hosting og eventuelle spesialistvurderinger avtales med deg. Juridisk etterlevelse og sertifiseringer krever egne vurderinger og følger ikke automatisk av utviklingsarbeidet." }
+        }
+      },
+      "cta": { "title": "La oss avgrense den første nyttige versjonen.", "description": "Ta med ideen eller produktet du allerede har. Vi kan avklare brukere, arbeidsflyter, rammer og forutsetninger før lansering.", "button": "Snakk om SaaS-prosjektet" }
     },
     "automation": {
       "title": "Bedriftsautomatisering",
@@ -603,8 +640,8 @@
       "description": "Vi utvikler intelligente KI-agenter som resonnerer, lærer og utfører komplekse oppgaver autonomt. Kontinuerlig læring, logisk resonnering og sømløs API-integrasjon."
     },
     "saas": {
-      "title": "Skalerbar SaaS-utvikling — plattformer med høy tilgjengelighet | HoldingAI",
-      "description": "Banebrytende SaaS-arkitekturer for millioner av brukere: 99,99 % oppetid, sikkerhet på militært nivå (GDPR, SOC2) og premium UX/UI-design."
+      "title": "Skreddersydd SaaS-design og utvikling | HoldingAI",
+      "description": "Bygg ditt SaaS-produkt med HoldingAI: brukerreiser, arkitektur, delte arbeidsområder og integrasjoner, fra avgrensning til lansering og videreutvikling."
     },
     "automation": {
       "title": "Bedriftsautomatisering — arbeidsflyter og systemintegrasjon | HoldingAI",

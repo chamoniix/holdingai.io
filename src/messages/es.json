@@ -545,22 +545,59 @@
       }
     },
     "saas": {
-      "title": "Desarrollo SaaS Escalable",
-      "description": "Arquitecturas de software de vanguardia diseñadas para soportar millones de usuarios ofreciendo una experiencia fluida.",
-      "features": {
-        "availability": {
-          "title": "Alta Disponibilidad",
-          "desc": "Infraestructura cloud-native con 99,99 % de uptime garantizado, construida para el hipercrecimiento."
-        },
-        "security": {
-          "title": "Seguridad de Grado Militar",
-          "desc": "Cifrado de extremo a extremo y cumplimiento total de los estándares de seguridad más estrictos (RGPD, SOC2)."
-        },
-        "ux": {
-          "title": "Diseño UX/UI Premium",
-          "desc": "Interfaces limpias, intuitivas y visualmente impresionantes que fidelizan a tus usuarios."
+      "eyebrow": "DESARROLLO SAAS A MEDIDA",
+      "title": "De la idea a un producto que se puede utilizar.",
+      "description": "HoldingAI diseña y desarrolla productos SaaS a partir del trabajo real: incorporación de usuarios, espacios compartidos, permisos y herramientas de negocio. Definimos una primera versión útil y preparamos su operación y evolución.",
+      "primaryCta": "Hablar de tu producto", "workCta": "Ver nuestros proyectos",
+      "challenge": {
+        "eyebrow": "EL PUNTO DE PARTIDA", "title": "Aclarar el proceso antes de añadir funciones.",
+        "description": "Un producto necesita más que pantallas. Definimos quién hace cada tarea, qué información necesita y dónde falla el proceso actual.",
+        "items": {
+          "fragmented": { "title": "Información repartida entre herramientas", "desc": "Identificar dónde están los datos, cómo se sincronizan y qué sistema es la referencia para cada información." },
+          "manual": { "title": "Traspasos manuales repetidos", "desc": "Sustituir copias innecesarias por pasos explícitos, validaciones y una gestión de excepciones que mantenga el contexto." },
+          "growth": { "title": "Más usuarios y responsabilidades", "desc": "Prever roles, separación entre organizaciones y necesidades de soporte antes de añadir equipos, planes o nuevos usos." }
         }
-      }
+      },
+      "system": {
+        "eyebrow": "UN MISMO SISTEMA DE PRODUCTO", "title": "Diseñar experiencia y arquitectura juntas.",
+        "description": "El recorrido del usuario determina datos, permisos y límites de los servicios. Tomamos esas decisiones juntas, no como productos independientes.",
+        "pillars": {
+          "experience": { "title": "Una experiencia comprensible", "desc": "Mostrar el siguiente paso, explicar estados vacíos y errores y acompañar al usuario hasta su primera tarea útil." },
+          "architecture": { "title": "Límites técnicos explícitos", "desc": "Definir modelo de datos, aislamiento entre organizaciones, reglas de acceso y API según los procesos que debe cubrir el producto." },
+          "operations": { "title": "Operación cotidiana preparada", "desc": "Planificar despliegue, registros, copias de seguridad y herramientas de soporte, con responsabilidades y procedimientos de recuperación adecuados." }
+        }
+      },
+      "useCases": {
+        "eyebrow": "QUÉ PUEDE INCLUIR EL PRODUCTO", "title": "Partir del trabajo que el usuario necesita terminar.",
+        "description": "Selecciona las capacidades de la primera versión. Añade complejidad cuando una necesidad validada lo justifique.",
+        "items": {
+          "onboarding": { "title": "Registro y primeros pasos", "desc": "Conectar creación de cuenta, invitaciones y configuración guiada para que cada usuario sepa cómo empezar." },
+          "workspace": { "title": "Espacios multiusuario", "desc": "Organizar datos compartidos, roles y permisos, incluida la concesión, modificación y retirada de accesos." },
+          "subscriptions": { "title": "Suscripciones y derechos de uso", "desc": "Conectar planes, eventos de facturación y acceso a funciones, con una gestión clara de cambios, bajas e incidencias de pago." },
+          "integrations": { "title": "Herramientas de negocio e integraciones de IA", "desc": "Conectar API relevantes y tareas asistidas por IA con accesos definidos, revisiones y una alternativa cuando un servicio falla." }
+        }
+      },
+      "process": {
+        "eyebrow": "DE LA IDEA A LA OPERACIÓN", "title": "Resolver las preguntas importantes por etapas.",
+        "description": "Cada etapa entrega algo que revisar antes del siguiente compromiso: alcance, prototipo, software funcional y plan de lanzamiento.",
+        "steps": {
+          "discovery": { "title": "Descubrimiento", "desc": "Entender usuarios, procesos, sistemas existentes y restricciones. Acordar el primer alcance útil y cómo evaluarlo." },
+          "prototype": { "title": "Prototipo", "desc": "Hacer tangibles los recorridos principales, contrastar hipótesis con los usuarios previstos y aclarar dificultades antes del desarrollo." },
+          "engineering": { "title": "Ingeniería", "desc": "Desarrollar interfaz, servicios e integraciones con pruebas de los recorridos clave, los permisos y los casos de fallo." },
+          "launch": { "title": "Lanzamiento e iteración", "desc": "Preparar despliegue, supervisión y soporte. Revisar uso real y comentarios para priorizar correcciones y versiones siguientes." }
+        }
+      },
+      "faq": {
+        "eyebrow": "ANTES DE DESARROLLAR", "title": "Preguntas sobre tu proyecto SaaS",
+        "items": {
+          "mvp": { "question": "¿Qué debe incluir la primera versión?", "answer": "Un recorrido completo para un grupo de usuarios definido. El descubrimiento separa lo necesario para utilizar y operar el producto de lo que puede esperar. El alcance y el calendario dependen de las integraciones, los datos y las revisiones requeridas." },
+          "existingProduct": { "question": "¿Podéis trabajar sobre un producto existente?", "answer": "Sí. Primero revisamos experiencia, código, datos y proceso de despliegue. Esa revisión orienta mejoras concretas, una migración gradual o una renovación más amplia; sustituirlo todo no es la opción por defecto." },
+          "ai": { "question": "¿El producto necesita IA?", "answer": "No necesariamente. Usamos reglas convencionales cuando resuelven el problema con claridad. La IA puede ayudar a buscar, redactar o clasificar si su utilidad es evaluable y se definen sus accesos, limitaciones y revisiones." },
+          "scaling": { "question": "¿Cómo preparáis el crecimiento?", "answer": "Identificamos el uso esperado, los procesos exigentes y las restricciones operativas, y probamos los escenarios relevantes. La capacidad depende de la arquitectura, la infraestructura y la carga real. Planificamos supervisión y cambios graduales, sin prometer usuarios ilimitados." },
+          "security": { "question": "¿Cómo abordáis la seguridad?", "answer": "Definimos control de acceso, separación entre organizaciones, tratamiento de datos sensibles y protecciones operativas según los riesgos del proyecto. Acordamos pruebas, alojamiento y posibles revisiones especializadas. El cumplimiento legal y cualquier certificación requieren su propia evaluación; no son consecuencias automáticas del desarrollo." }
+        }
+      },
+      "cta": { "title": "Definamos la primera versión útil.", "description": "Trae tu idea o producto actual. Podemos aclarar usuarios, procesos, restricciones y condiciones necesarias para el lanzamiento.", "button": "Hablar de tu proyecto SaaS" }
     },
     "automation": {
       "title": "Automatización Empresarial",
@@ -603,8 +640,8 @@
       "description": "Desarrollamos agentes de IA inteligentes que razonan, aprenden y ejecutan tareas complejas de forma autónoma. Aprendizaje continuo, razonamiento lógico e integración API."
     },
     "saas": {
-      "title": "Desarrollo SaaS Escalable — Plataformas de Alta Disponibilidad | HoldingAI",
-      "description": "Arquitecturas SaaS de vanguardia para millones de usuarios: 99,99 % de uptime, seguridad de grado militar (RGPD, SOC2) y diseño UX/UI premium."
+      "title": "Diseño y desarrollo SaaS a medida | HoldingAI",
+      "description": "Crea tu SaaS a medida con HoldingAI: experiencia, arquitectura, espacios compartidos e integraciones, desde la definición hasta el lanzamiento y la evolución."
     },
     "automation": {
       "title": "Automatización Empresarial — Workflows e Integración | HoldingAI",

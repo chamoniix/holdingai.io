@@ -545,22 +545,59 @@
       }
     },
     "saas": {
-      "title": "Sviluppo SaaS Scalabile",
-      "description": "Architetture software all'avanguardia, progettate per supportare milioni di utenti offrendo un'esperienza fluida.",
-      "features": {
-        "availability": {
-          "title": "Alta Disponibilità",
-          "desc": "Infrastruttura cloud-native con uptime garantito al 99,99%, costruita per l'iper-crescita."
-        },
-        "security": {
-          "title": "Sicurezza di Grado Militare",
-          "desc": "Crittografia end-to-end e piena conformità agli standard di sicurezza più severi (GDPR, SOC2)."
-        },
-        "ux": {
-          "title": "Design UX/UI Premium",
-          "desc": "Interfacce pulite, intuitive e visivamente straordinarie che fidelizzano i tuoi utenti."
+      "eyebrow": "SVILUPPO SAAS SU MISURA",
+      "title": "Dall’idea a un prodotto da usare davvero.",
+      "description": "HoldingAI progetta e sviluppa prodotti SaaS a partire dal lavoro reale: primi passi, spazi condivisi, permessi e strumenti aziendali. Definiamo una prima versione utile e prepariamo la sua gestione e le evoluzioni successive.",
+      "primaryCta": "Parliamo del tuo prodotto", "workCta": "Esplora i nostri lavori",
+      "challenge": {
+        "eyebrow": "IL PUNTO DI PARTENZA", "title": "Chiarire il processo prima di aggiungere funzioni.",
+        "description": "Un prodotto richiede più di qualche schermata. Definiamo chi fa cosa, quali informazioni servono e dove si interrompe il processo attuale.",
+        "items": {
+          "fragmented": { "title": "Informazioni sparse fra strumenti", "desc": "Individuare dove risiedono i dati, come sincronizzarli e quale sistema fa riferimento per ciascuna informazione." },
+          "manual": { "title": "Passaggi di consegne manuali", "desc": "Sostituire copie inutili con passaggi espliciti, validazioni e una gestione delle eccezioni che mantenga il contesto." },
+          "growth": { "title": "Più utenti e responsabilità", "desc": "Prevedere ruoli, separazione fra organizzazioni e assistenza prima di aggiungere gruppi, piani o nuovi utilizzi." }
         }
-      }
+      },
+      "system": {
+        "eyebrow": "UN UNICO SISTEMA DI PRODOTTO", "title": "Progettare insieme esperienza e architettura.",
+        "description": "Il percorso dell’utente determina dati, permessi e confini dei servizi. Affrontiamo queste scelte insieme, senza separare interfaccia e backend come prodotti distinti.",
+        "pillars": {
+          "experience": { "title": "Un’esperienza comprensibile", "desc": "Rendere chiara l’azione successiva, spiegare stati vuoti ed errori e accompagnare la prima attività utile." },
+          "architecture": { "title": "Confini tecnici espliciti", "desc": "Definire modello dei dati, isolamento fra organizzazioni, regole di accesso e API secondo i processi da supportare." },
+          "operations": { "title": "Gestione quotidiana preparata", "desc": "Pianificare rilascio, registri, backup e strumenti di assistenza, con responsabilità e procedure di ripristino adatte al prodotto." }
+        }
+      },
+      "useCases": {
+        "eyebrow": "COSA PUÒ INCLUDERE IL PRODOTTO", "title": "Partire dal lavoro che gli utenti devono completare.",
+        "description": "Scegli le capacità necessarie alla prima versione. Aggiungi complessità quando un bisogno verificato la giustifica.",
+        "items": {
+          "onboarding": { "title": "Registrazione e primi passi", "desc": "Collegare creazione dell’account, inviti e configurazione guidata perché ogni utente sappia come iniziare." },
+          "workspace": { "title": "Spazi multiutente", "desc": "Organizzare dati condivisi, ruoli e permessi, comprese concessione, modifica e revoca degli accessi." },
+          "subscriptions": { "title": "Abbonamenti e diritti di utilizzo", "desc": "Collegare piani, eventi di fatturazione e accesso alle funzioni, gestendo con chiarezza cambi, disdette e problemi di pagamento." },
+          "integrations": { "title": "Strumenti aziendali e integrazioni IA", "desc": "Collegare API pertinenti e attività assistite da IA, con accessi definiti, revisioni e un comportamento previsto se un servizio non risponde." }
+        }
+      },
+      "process": {
+        "eyebrow": "DALL’IDEA ALLA GESTIONE", "title": "Risolvere le domande importanti per fasi.",
+        "description": "Ogni fase produce qualcosa da valutare prima dell’impegno successivo: perimetro, prototipo, software funzionante e piano di lancio.",
+        "steps": {
+          "discovery": { "title": "Analisi iniziale", "desc": "Comprendere utenti, processi, sistemi esistenti e vincoli. Concordare il primo perimetro utile e come valutarlo." },
+          "prototype": { "title": "Prototipo", "desc": "Rendere concreti i percorsi principali, verificare ipotesi con gli utenti previsti e chiarire difficoltà prima dello sviluppo." },
+          "engineering": { "title": "Ingegneria", "desc": "Realizzare interfaccia, servizi e integrazioni con test dei percorsi chiave, dei permessi e dei casi di errore." },
+          "launch": { "title": "Lancio e iterazione", "desc": "Preparare rilascio, monitoraggio e assistenza. Esaminare utilizzo reale e riscontri per dare priorità a correzioni e versioni successive." }
+        }
+      },
+      "faq": {
+        "eyebrow": "PRIMA DI SVILUPPARE", "title": "Domande sul tuo progetto SaaS",
+        "items": {
+          "mvp": { "question": "Cosa deve contenere la prima versione?", "answer": "Un percorso completo per un gruppo di utenti definito. L’analisi iniziale separa ciò che serve per utilizzare e gestire il prodotto dalle funzioni rimandabili. Perimetro e tempi dipendono da integrazioni, dati e revisioni richieste." },
+          "existingProduct": { "question": "Potete lavorare su un prodotto esistente?", "answer": "Sì. Iniziamo esaminando esperienza, codice, dati e processo di rilascio. La valutazione orienta miglioramenti mirati, una migrazione graduale o una revisione più ampia; sostituire tutto non è la scelta predefinita." },
+          "ai": { "question": "Il prodotto deve includere IA?", "answer": "Non necessariamente. Usiamo regole tradizionali quando risolvono chiaramente il problema. L’IA può aiutare nella ricerca, nella scrittura o nella classificazione se il valore è valutabile e se accessi ai dati, limiti e revisioni sono definiti." },
+          "scaling": { "question": "Come preparate la crescita?", "answer": "Identifichiamo utilizzo atteso, processi impegnativi e vincoli operativi, poi testiamo scenari pertinenti. La capacità dipende da architettura, infrastruttura e carico reale. Prevediamo monitoraggio e modifiche graduali invece di promettere un numero illimitato di utenti." },
+          "security": { "question": "Come affrontate la sicurezza?", "answer": "Definiamo controlli di accesso, separazione fra organizzazioni, trattamento dei dati sensibili e protezioni operative in base ai rischi del progetto. Concordiamo test, hosting ed eventuali revisioni specialistiche. Conformità legale e certificazioni richiedono valutazioni specifiche e non derivano automaticamente dallo sviluppo." }
+        }
+      },
+      "cta": { "title": "Definiamo la prima versione utile.", "description": "Porta la tua idea o il prodotto esistente. Possiamo chiarire utenti, processi, vincoli e condizioni necessarie per il lancio.", "button": "Parliamo del progetto SaaS" }
     },
     "automation": {
       "title": "Automazione Aziendale",
@@ -603,8 +640,8 @@
       "description": "Sviluppiamo agenti AI intelligenti che ragionano, apprendono ed eseguono compiti complessi in autonomia. Apprendimento continuo, ragionamento logico e integrazione API."
     },
     "saas": {
-      "title": "Sviluppo SaaS Scalabile — Piattaforme ad Alta Disponibilità | HoldingAI",
-      "description": "Architetture SaaS all'avanguardia per milioni di utenti: uptime 99,99%, sicurezza di grado militare (GDPR, SOC2) e design UX/UI premium."
+      "title": "Progettazione e sviluppo SaaS su misura | HoldingAI",
+      "description": "Crea il tuo SaaS su misura con HoldingAI: percorsi, architettura, spazi condivisi e integrazioni, dalla definizione al lancio e alle evoluzioni del prodotto."
     },
     "automation": {
       "title": "Automazione Aziendale — Workflow e Integrazione dei Sistemi | HoldingAI",

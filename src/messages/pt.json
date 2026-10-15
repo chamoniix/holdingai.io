@@ -545,22 +545,59 @@
       }
     },
     "saas": {
-      "title": "Desenvolvimento SaaS Escalável",
-      "description": "Arquiteturas de software de ponta, concebidas para suportar milhões de utilizadores com uma experiência fluida.",
-      "features": {
-        "availability": {
-          "title": "Alta Disponibilidade",
-          "desc": "Infraestrutura cloud-native com 99,99% de uptime garantido, construída para o hipercrescimento."
-        },
-        "security": {
-          "title": "Segurança de Grau Militar",
-          "desc": "Encriptação de ponta a ponta e total conformidade com os padrões de segurança mais rigorosos (RGPD, SOC2)."
-        },
-        "ux": {
-          "title": "Design UX/UI Premium",
-          "desc": "Interfaces limpas, intuitivas e visualmente deslumbrantes que fidelizam os seus utilizadores."
+      "eyebrow": "DESENVOLVIMENTO SAAS À MEDIDA",
+      "title": "Da ideia a um produto pronto a utilizar.",
+      "description": "A HoldingAI concebe e desenvolve produtos SaaS a partir do trabalho real: primeiros passos, espaços partilhados, permissões e ferramentas de negócio. Definimos uma primeira versão útil e preparamos a sua operação e evolução.",
+      "primaryCta": "Falar sobre o seu produto", "workCta": "Ver os nossos projetos",
+      "challenge": {
+        "eyebrow": "O PONTO DE PARTIDA", "title": "Clarificar o processo antes de acrescentar funções.",
+        "description": "Um produto precisa de mais do que ecrãs. Definimos quem faz o quê, de que informação precisa e onde o processo atual falha.",
+        "items": {
+          "fragmented": { "title": "Informação dispersa por ferramentas", "desc": "Identificar onde estão os dados, como os sincronizar e qual é o sistema de referência para cada informação." },
+          "manual": { "title": "Passagens de trabalho manuais", "desc": "Substituir cópias desnecessárias por passos explícitos, validações e um tratamento de exceções que preserve o contexto." },
+          "growth": { "title": "Mais utilizadores e responsabilidades", "desc": "Prever papéis, separação entre organizações e necessidades de apoio antes de acrescentar equipas, planos ou novos usos." }
         }
-      }
+      },
+      "system": {
+        "eyebrow": "UM SISTEMA DE PRODUTO COERENTE", "title": "Conceber experiência e arquitetura em conjunto.",
+        "description": "O percurso do utilizador determina dados, permissões e limites dos serviços. Tratamos estas escolhas em conjunto, não como produtos independentes.",
+        "pillars": {
+          "experience": { "title": "Uma experiência compreensível", "desc": "Tornar a próxima ação clara, explicar estados vazios e erros e acompanhar a primeira tarefa útil." },
+          "architecture": { "title": "Limites técnicos explícitos", "desc": "Definir modelo de dados, isolamento entre organizações, regras de acesso e API segundo os processos a suportar." },
+          "operations": { "title": "Operação quotidiana preparada", "desc": "Planear publicação, registos, cópias de segurança e ferramentas de apoio, com responsabilidades e procedimentos de recuperação adequados." }
+        }
+      },
+      "useCases": {
+        "eyebrow": "O QUE O PRODUTO PODE INCLUIR", "title": "Partir do trabalho que o utilizador precisa de concluir.",
+        "description": "Escolha as capacidades necessárias à primeira versão. Acrescente complexidade quando uma necessidade validada a justificar.",
+        "items": {
+          "onboarding": { "title": "Registo e primeiros passos", "desc": "Ligar criação de conta, convites e configuração guiada para que cada utilizador compreenda como começar." },
+          "workspace": { "title": "Espaços multiutilizador", "desc": "Organizar dados partilhados, papéis e permissões, incluindo atribuição, alteração e remoção de acessos." },
+          "subscriptions": { "title": "Subscrições e direitos de utilização", "desc": "Ligar planos, eventos de faturação e acesso a funções, com tratamento claro de alterações, cancelamentos e problemas de pagamento." },
+          "integrations": { "title": "Ferramentas de negócio e integrações de IA", "desc": "Ligar API relevantes e tarefas assistidas por IA com acessos definidos, revisões e uma alternativa quando um serviço falha." }
+        }
+      },
+      "process": {
+        "eyebrow": "DA IDEIA À OPERAÇÃO", "title": "Resolver as questões importantes por etapas.",
+        "description": "Cada etapa produz algo para rever antes do compromisso seguinte: âmbito, protótipo, software funcional e plano de lançamento.",
+        "steps": {
+          "discovery": { "title": "Descoberta", "desc": "Compreender utilizadores, processos, sistemas existentes e restrições. Acordar o primeiro âmbito útil e como o avaliar." },
+          "prototype": { "title": "Protótipo", "desc": "Tornar os percursos concretos, testar hipóteses com os utilizadores previstos e clarificar dificuldades antes do desenvolvimento." },
+          "engineering": { "title": "Engenharia", "desc": "Desenvolver interface, serviços e integrações com testes dos percursos principais, permissões e situações de falha." },
+          "launch": { "title": "Lançamento e iteração", "desc": "Preparar publicação, monitorização e apoio. Rever utilização real e comentários para priorizar correções e versões seguintes." }
+        }
+      },
+      "faq": {
+        "eyebrow": "ANTES DE DESENVOLVER", "title": "Perguntas sobre o seu projeto SaaS",
+        "items": {
+          "mvp": { "question": "O que deve incluir a primeira versão?", "answer": "Um percurso completo para um grupo de utilizadores definido. A descoberta separa o necessário à utilização e operação do produto das funções que podem esperar. O âmbito e o calendário dependem das integrações, dos dados e das revisões necessárias." },
+          "existingProduct": { "question": "Podem trabalhar num produto existente?", "answer": "Sim. Começamos por analisar experiência, código, dados e processo de publicação. Essa análise orienta melhorias específicas, uma migração gradual ou uma reformulação mais ampla; substituir tudo não é a opção por defeito." },
+          "ai": { "question": "O produto precisa de IA?", "answer": "Não necessariamente. Usamos regras convencionais quando resolvem o problema com clareza. A IA pode apoiar pesquisa, escrita ou classificação se a utilidade puder ser avaliada e se acessos aos dados, limites e revisões estiverem definidos." },
+          "scaling": { "question": "Como preparam o crescimento?", "answer": "Identificamos a utilização prevista, os processos exigentes e as restrições operacionais, depois testamos os cenários relevantes. A capacidade depende da arquitetura, da infraestrutura e da carga real. Planeamos monitorização e alterações graduais, sem prometer um número ilimitado de utilizadores." },
+          "security": { "question": "Como abordam a segurança?", "answer": "Definimos controlo de acesso, separação entre organizações, tratamento de dados sensíveis e proteções operacionais segundo os riscos do projeto. Acordamos testes, alojamento e eventuais revisões especializadas. Conformidade legal e certificações exigem avaliações próprias e não resultam automaticamente do desenvolvimento." }
+        }
+      },
+      "cta": { "title": "Vamos definir a primeira versão útil.", "description": "Traga a sua ideia ou produto atual. Podemos clarificar utilizadores, processos, restrições e condições necessárias ao lançamento.", "button": "Falar sobre o projeto SaaS" }
     },
     "automation": {
       "title": "Automação Empresarial",
@@ -603,8 +640,8 @@
       "description": "Agentes de IA inteligentes que raciocinam, aprendem e executam tarefas complexas. Aprendizagem contínua, raciocínio lógico e integração de APIs."
     },
     "saas": {
-      "title": "Desenvolvimento SaaS Escalável — Alta Disponibilidade | HoldingAI",
-      "description": "Arquiteturas SaaS de ponta para milhões de utilizadores: 99,99% de uptime, segurança de grau militar (RGPD, SOC2) e design UX/UI premium."
+      "title": "Conceção e desenvolvimento SaaS à medida | HoldingAI",
+      "description": "Crie o seu SaaS à medida com a HoldingAI: experiência, arquitetura, espaços partilhados e integrações, da definição ao lançamento e à evolução do produto."
     },
     "automation": {
       "title": "Automação Empresarial — Workflows e Integração de Sistemas | HoldingAI",

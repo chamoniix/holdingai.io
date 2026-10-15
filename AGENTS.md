@@ -59,7 +59,7 @@ git rev-list --left-right --count origin/main...origin/feature/full-site   # mai
 
 - 8 locales : `en` (défaut), `fr`, `de`, `es`, `it`, `pt`, `fi`, `no` — `localePrefix: 'always'`.
 - Routing : `src/i18n/routing.ts`. Traductions : `src/messages/*.json` (next-intl, `useTranslations('<namespace>')`).
-- **491 clés feuilles par langue, 8/8 parfaitement synchronisées** — blog et articles SEO localisés vérifiés le 2026-10-15.
+- **543 clés feuilles par langue, 8/8 parfaitement synchronisées** — blog, articles SEO et page SaaS vérifiés le 2026-10-15.
 - Règle : **zéro texte en dur** dans les composants.
 
 ## 6. SEO
@@ -77,13 +77,14 @@ git rev-list --left-right --count origin/main...origin/feature/full-site   # mai
 ## 8. État actuel (2026-10-15)
 
 - `feature/full-site` porte la refonte claire, les visuels révisés et quatre articles IA complets en 8 langues, avec carousel horizontal, SEO, hreflang, données structurées et routes statiques. La preview est `noindex`; la production (`main`) n’a pas été modifiée.
+- La page `/services/saas` a été enrichie en 8 langues avec les enjeux, fondations produit, cas d’usage, processus, FAQ et CTA. Les anciennes affirmations non vérifiées sur l’uptime/SOC2 ont été retirées.
 - Les quatre portraits de `TeamSection` (`public/images/kosmos/equipe-1.webp`, `equipe-2.webp`, `equipe-5.webp`, `equipe-6-wide.webp`) sont des **placeholders fictifs générés par IA**. Le fondateur fournira ensuite les vraies photos ; remplacer ces placeholders avant tout merge vers `main`/live. Ne jamais les présenter comme les vrais membres.
 - **En attente** : revue par le fondateur de la preview blog/articles et des portraits temporaires.
 - **En suspens** : merge en prod (décision du fondateur), remplacement des portraits TeamSection par les photos authentiques fournies, cleanup dead code phase 2, Search Console.
 
 ## 9. Prochains pas possibles
 
-1. Faire vérifier par le fondateur le carousel blog et les 4 articles localisés sur `feature/full-site`.
+1. Faire vérifier par le fondateur la preview `feature/full-site` : SaaS, carousel blog et les 4 articles localisés.
 2. Quand le fondateur fournit les vraies photos de l’équipe, remplacer les quatre placeholders listés en §8.
 3. Attendre le GO explicite avant de merger `feature/full-site` vers `main`.
 4. Search Console : soumettre le sitemap.

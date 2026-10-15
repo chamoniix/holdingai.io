@@ -589,22 +589,60 @@
       }
     },
     "saas": {
-      "title": "Scalable SaaS Development",
-      "description": "Cutting-edge software architectures designed to support millions of users while providing a fluid experience.",
-      "features": {
-        "availability": {
-          "title": "High Availability",
-          "desc": "Cloud-native infrastructure guaranteed at 99.99% uptime, built for hyper-growth."
-        },
-        "security": {
-          "title": "Military-Grade Security",
-          "desc": "End-to-end encryption and total compliance with the strictest security standards (GDPR, SOC2)."
-        },
-        "ux": {
-          "title": "Premium UX/UI Design",
-          "desc": "Clean, intuitive, and visually stunning interfaces that retain your users."
+      "eyebrow": "CUSTOM SAAS DEVELOPMENT",
+      "title": "Turn an idea into a product people can use.",
+      "description": "HoldingAI designs and builds SaaS products around real workflows: onboarding, shared workspaces, user permissions and the tools your business already uses. We define the first useful release, then plan how to operate and improve it.",
+      "primaryCta": "Discuss your product",
+      "workCta": "Explore our work",
+      "challenge": {
+        "eyebrow": "THE STARTING POINT", "title": "Make the workflow clear before adding features.",
+        "description": "A product needs more than screens. We map who does what, which information they need and where the current process breaks down.",
+        "items": {
+          "fragmented": { "title": "Information spread across tools", "desc": "Identify where records live, how they stay in sync and which system should own each piece of information." },
+          "manual": { "title": "Repeated manual handovers", "desc": "Replace unnecessary copying with explicit steps, validation and a way to handle exceptions without losing context." },
+          "growth": { "title": "More users, more responsibilities", "desc": "Plan roles, organisation boundaries and support needs before adding teams, plans or new usage patterns." }
         }
-      }
+      },
+      "system": {
+        "eyebrow": "ONE PRODUCT SYSTEM", "title": "Design the experience and architecture together.",
+        "description": "A user journey shapes data, permissions and service boundaries. We work through these decisions together rather than treating the interface and backend as separate products.",
+        "pillars": {
+          "experience": { "title": "An understandable experience", "desc": "Make the next action clear, explain empty and error states, and help users complete their first useful task." },
+          "architecture": { "title": "Explicit technical boundaries", "desc": "Define the data model, tenant separation, access rules and APIs around the workflows the product must support." },
+          "operations": { "title": "Day-to-day operation", "desc": "Plan deployment, logging, backups and support tools, with responsibilities and recovery procedures appropriate to the product." }
+        }
+      },
+      "useCases": {
+        "eyebrow": "WHAT THE PRODUCT CAN INCLUDE", "title": "Build around the work users need to finish.",
+        "description": "Choose the capabilities that support your first release. Add complexity when a validated need justifies it.",
+        "items": {
+          "onboarding": { "title": "Account setup and onboarding", "desc": "Connect registration, invitations and guided setup so users understand what they need to do before getting started." },
+          "workspace": { "title": "Multi-user workspaces", "desc": "Organise shared records, team roles and permissions, including how access is granted, changed and removed." },
+          "subscriptions": { "title": "Subscriptions and entitlements", "desc": "Connect plans, billing events and feature access, with clear handling for upgrades, cancellations and payment issues." },
+          "integrations": { "title": "Business tools and AI integrations", "desc": "Connect relevant APIs and AI-assisted tasks with defined data access, review points and fallback behaviour when a service fails." }
+        }
+      },
+      "process": {
+        "eyebrow": "FROM IDEA TO OPERATION", "title": "Resolve the important questions in stages.",
+        "description": "Each stage produces something to review before the next commitment: scope, prototype, working software and a launch plan.",
+        "steps": {
+          "discovery": { "title": "Discovery", "desc": "Understand users, workflows, existing systems and constraints. Agree on the first useful scope and how to assess it." },
+          "prototype": { "title": "Prototype", "desc": "Make the main journeys tangible, test assumptions with intended users and clarify awkward steps before implementation." },
+          "engineering": { "title": "Engineering", "desc": "Build the interface, services and integrations with tests for key workflows, permissions and failure cases." },
+          "launch": { "title": "Launch and iteration", "desc": "Prepare deployment, monitoring and support. Review real usage and feedback to prioritise fixes and subsequent releases." }
+        }
+      },
+      "faq": {
+        "eyebrow": "BEFORE YOU BUILD", "title": "Questions about your SaaS project",
+        "items": {
+          "mvp": { "question": "What belongs in the first version?", "answer": "Start with one complete workflow for a defined user group. Discovery helps separate what is necessary to use and operate the product from features that can wait. Scope and timing depend on integrations, data and review requirements." },
+          "existingProduct": { "question": "Can you work on an existing product?", "answer": "Yes. We begin by reviewing the current experience, code, data and deployment process. That review informs whether to improve specific parts, migrate gradually or consider a broader rebuild; replacement is not the default." },
+          "ai": { "question": "Does the product need AI?", "answer": "Not necessarily. We use conventional rules when they solve the problem clearly. AI can support tasks such as search, drafting or classification when its value can be assessed and its data access, limitations and review steps are defined." },
+          "scaling": { "question": "How do you plan for growth?", "answer": "We identify expected usage, demanding workflows and operational constraints, then test relevant scenarios. Capacity depends on the architecture, infrastructure and actual workload. We plan monitoring and incremental changes rather than promise an unlimited user count." },
+          "security": { "question": "How is security addressed?", "answer": "We define access control, tenant boundaries, sensitive data handling and operational safeguards according to the project's risks. Testing, hosting choices and specialist reviews are scoped with you. Legal compliance and any certification require their own assessment; they are not automatic outcomes of development." }
+        }
+      },
+      "cta": { "title": "Define the first useful version.", "description": "Bring your idea or existing product. We can work through users, workflows, constraints and what needs to be true before launch.", "button": "Discuss your SaaS project" }
     },
     "automation": {
       "title": "Enterprise Automation",
@@ -661,8 +699,8 @@
       "description": "We develop intelligent AI agents that reason, learn and execute complex tasks autonomously. Continuous learning, logical reasoning and seamless API integration."
     },
     "saas": {
-      "title": "Scalable SaaS Development — High-Availability Platforms | HoldingAI",
-      "description": "Cutting-edge SaaS architectures designed for millions of users: 99.99% uptime, military-grade security (GDPR, SOC2) and premium UX/UI design."
+      "title": "Custom SaaS Design & Development | HoldingAI",
+      "description": "Build a custom SaaS product with HoldingAI: user journeys, architecture, shared workspaces and integrations, from initial scope to launch and iteration."
     },
     "automation": {
       "title": "Enterprise Automation — Workflow & Systems Integration | HoldingAI",

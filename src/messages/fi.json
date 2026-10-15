@@ -545,22 +545,59 @@
       }
     },
     "saas": {
-      "title": "Skaalautuva SaaS-kehitys",
-      "description": "Huippuluokan ohjelmistoarkkitehtuureja, jotka on suunniteltu miljoonille käyttäjille sujuvan kokemuksen kera.",
-      "features": {
-        "availability": {
-          "title": "Korkea käytettävyys",
-          "desc": "Cloud-native-infrastruktuuri 99,99 % käytettävyystakuulla, rakennettu hyperkasvuun."
-        },
-        "security": {
-          "title": "Sotilastason tietoturva",
-          "desc": "Päästä päähän -salaus ja täysi vaatimustenmukaisuus tiukimpien tietoturvastandardien kanssa (GDPR, SOC2)."
-        },
-        "ux": {
-          "title": "Premium UX/UI-suunnittelu",
-          "desc": "Puhtaita, intuitiivisia ja visuaalisesti häikäiseviä käyttöliittymiä, jotka sitouttavat käyttäjäsi."
+      "eyebrow": "RÄÄTÄLÖITY SAAS-KEHITYS",
+      "title": "Ideasta arjessa käytettäväksi tuotteeksi.",
+      "description": "HoldingAI suunnittelee ja kehittää SaaS-tuotteita todellisten työnkulkujen ympärille: käyttöönotto, yhteiset työtilat, käyttäjäoikeudet ja liiketoiminnan työkalut. Rajaamme ensimmäisen hyödyllisen version ja suunnittelemme sen ylläpidon sekä jatkokehityksen.",
+      "primaryCta": "Keskustellaan tuotteestasi", "workCta": "Tutustu töihimme",
+      "challenge": {
+        "eyebrow": "LÄHTÖTILANNE", "title": "Selkeytä työnkulku ennen uusien toimintojen lisäämistä.",
+        "description": "Tuote tarvitsee muutakin kuin näkymät. Selvitämme, kuka tekee mitä, mitä tietoa tarvitaan ja missä nykyinen prosessi katkeaa.",
+        "items": {
+          "fragmented": { "title": "Tieto on hajallaan eri työkaluissa", "desc": "Selvitetään tietojen sijainti, synkronointi ja se, mikä järjestelmä toimii kunkin tiedon ensisijaisena lähteenä." },
+          "manual": { "title": "Toistuvat käsin tehtävät siirrot", "desc": "Korvataan tarpeeton kopiointi selkeillä vaiheilla, tarkistuksilla ja poikkeusten käsittelyllä, jossa asiayhteys säilyy." },
+          "growth": { "title": "Lisää käyttäjiä ja vastuita", "desc": "Suunnitellaan roolit, organisaatioiden rajat ja tuen tarve ennen uusien tiimien, tilausten tai käyttötapojen lisäämistä." }
         }
-      }
+      },
+      "system": {
+        "eyebrow": "YKSI TUOTEKOKONAISUUS", "title": "Käyttökokemus ja arkkitehtuuri suunnitellaan yhdessä.",
+        "description": "Käyttäjän polku vaikuttaa tietoihin, oikeuksiin ja palvelujen rajoihin. Ratkaisemme nämä kysymykset yhdessä emmekä käsittele käyttöliittymää ja taustapalveluja erillisinä tuotteina.",
+        "pillars": {
+          "experience": { "title": "Ymmärrettävä käyttökokemus", "desc": "Tehdään seuraava toiminto selväksi, selitetään tyhjät näkymät ja virheet sekä ohjataan ensimmäiseen hyödylliseen tehtävään." },
+          "architecture": { "title": "Selkeät tekniset rajat", "desc": "Määritetään tietomalli, organisaatioiden erottelu, pääsysäännöt ja rajapinnat tarvittavien työnkulkujen perusteella." },
+          "operations": { "title": "Valmisteltu päivittäinen ylläpito", "desc": "Suunnitellaan julkaisu, lokit, varmuuskopiot ja tukityökalut sekä tuotteeseen sopivat vastuut ja palautusmenettelyt." }
+        }
+      },
+      "useCases": {
+        "eyebrow": "MAHDOLLISET TUOTTEEN OSAT", "title": "Lähde tehtävistä, jotka käyttäjän pitää saada valmiiksi.",
+        "description": "Valitse ensimmäisen version tarvitsemat toiminnot. Lisää monimutkaisuutta vasta vahvistetun tarpeen perusteella.",
+        "items": {
+          "onboarding": { "title": "Rekisteröityminen ja käyttöönotto", "desc": "Yhdistetään tilin luonti, kutsut ja ohjattu määritys niin, että käyttäjä tietää, miten pääsee alkuun." },
+          "workspace": { "title": "Usean käyttäjän työtilat", "desc": "Järjestetään yhteiset tiedot, tiimiroolit ja oikeudet sekä käyttöoikeuksien myöntäminen, muuttaminen ja poistaminen." },
+          "subscriptions": { "title": "Tilaukset ja käyttöoikeudet", "desc": "Yhdistetään tilaustasot, laskutustapahtumat ja toimintojen käyttö sekä käsitellään muutokset, peruutukset ja maksuhäiriöt selkeästi." },
+          "integrations": { "title": "Liiketoiminnan työkalut ja tekoälyliitännät", "desc": "Yhdistetään tarpeelliset rajapinnat ja tekoälytehtävät määritetyillä tietopääsyillä, tarkistuksilla ja toimintatavalla palvelun vikaantuessa." }
+        }
+      },
+      "process": {
+        "eyebrow": "IDEASTA YLLÄPIDETTÄVÄKSI TUOTTEEKSI", "title": "Ratkaise tärkeät kysymykset vaiheittain.",
+        "description": "Jokainen vaihe tuottaa tarkistettavan pohjan seuraavalle päätökselle: rajaus, prototyyppi, toimiva ohjelmisto ja julkaisusuunnitelma.",
+        "steps": {
+          "discovery": { "title": "Tarpeiden kartoitus", "desc": "Ymmärretään käyttäjät, työnkulut, nykyiset järjestelmät ja rajoitteet. Sovitaan ensimmäinen hyödyllinen rajaus ja sen arviointitapa." },
+          "prototype": { "title": "Prototyyppi", "desc": "Tehdään keskeiset polut kokeiltaviksi, testataan oletuksia tulevilla käyttäjillä ja selkeytetään vaikeat kohdat ennen toteutusta." },
+          "engineering": { "title": "Ohjelmistokehitys", "desc": "Toteutetaan käyttöliittymä, palvelut ja integraatiot sekä testataan tärkeät työnkulut, oikeudet ja virhetilanteet." },
+          "launch": { "title": "Julkaisu ja jatkokehitys", "desc": "Valmistellaan julkaisu, valvonta ja tuki. Todellinen käyttö ja palaute ohjaavat korjausten ja seuraavien versioiden priorisointia." }
+        }
+      },
+      "faq": {
+        "eyebrow": "ENNEN KEHITYSTÄ", "title": "Kysymyksiä SaaS-projektistasi",
+        "items": {
+          "mvp": { "question": "Mitä ensimmäiseen versioon kuuluu?", "answer": "Yksi kokonainen työnkulku selkeästi määritetylle käyttäjäryhmälle. Kartoitus erottaa käytön ja ylläpidon kannalta välttämättömät asiat myöhemmistä lisäyksistä. Rajaus ja aikataulu riippuvat muun muassa integraatioista, tiedoista ja tarvittavista tarkistuksista." },
+          "existingProduct": { "question": "Voitteko kehittää olemassa olevaa tuotetta?", "answer": "Kyllä. Aloitamme käyttökokemuksen, koodin, tietojen ja julkaisuprosessin arvioinnista. Sen perusteella valitaan kohdennetut parannukset, vaiheittainen siirtymä tai laajempi uudistus. Kaiken korvaaminen ei ole lähtöoletus." },
+          "ai": { "question": "Tarvitseeko tuote tekoälyä?", "answer": "Ei välttämättä. Käytämme tavallisia sääntöjä, kun ne ratkaisevat ongelman selkeästi. Tekoäly voi tukea hakua, luonnoksia tai luokittelua, jos hyötyä voidaan arvioida ja tietopääsyt, rajoitukset sekä tarkistukset on määritetty." },
+          "scaling": { "question": "Miten varaudutte kasvuun?", "answer": "Selvitämme odotetun käytön, kuormittavat työnkulut ja toiminnan rajoitteet sekä testaamme olennaiset tilanteet. Kapasiteetti riippuu arkkitehtuurista, infrastruktuurista ja todellisesta kuormasta. Suunnittelemme seurantaa ja vaiheittaisia muutoksia emmekä lupaa rajatonta käyttäjämäärää." },
+          "security": { "question": "Miten tietoturva huomioidaan?", "answer": "Pääsynhallinta, organisaatioiden erottelu, arkaluonteiset tiedot ja ylläpidon suojaukset määritetään projektin riskien mukaan. Testit, hosting ja mahdolliset asiantuntija-arviot sovitaan yhdessä. Lakienmukaisuus ja sertifioinnit vaativat erillisen arvioinnin eivätkä synny automaattisesti ohjelmistokehityksestä." }
+        }
+      },
+      "cta": { "title": "Rajataan ensimmäinen hyödyllinen versio.", "description": "Tuo ideasi tai nykyinen tuotteesi. Voimme selvittää käyttäjät, työnkulut, rajoitteet ja julkaisun edellytykset.", "button": "Keskustellaan SaaS-projektista" }
     },
     "automation": {
       "title": "Yritysautomaatio",
@@ -603,8 +640,8 @@
       "description": "Älykkäitä tekoälyagentteja, jotka päättelevät, oppivat ja toimivat autonomisesti. Jatkuva oppiminen, looginen päättely ja API-integraatio."
     },
     "saas": {
-      "title": "Skaalautuva SaaS-kehitys — korkean käytettävyyden alustat | HoldingAI",
-      "description": "Huippuluokan SaaS-arkkitehtuureja miljoonille käyttäjille: 99,99 % käytettävyys, sotilastason tietoturva (GDPR, SOC2) ja premium UX/UI-suunnittelu."
+      "title": "Räätälöity SaaS-suunnittelu ja kehitys | HoldingAI",
+      "description": "HoldingAI toteuttaa räätälöidyn SaaS-tuotteesi: käyttöpolut, arkkitehtuuri, yhteiset työtilat ja integraatiot suunnittelusta julkaisuun ja jatkokehitykseen."
     },
     "automation": {
       "title": "Yritysautomaatio — työnkulut ja järjestelmäintegraatio | HoldingAI",

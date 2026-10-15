@@ -559,22 +559,59 @@
       }
     },
     "saas": {
-      "title": "Développement SaaS Évolutif",
-      "description": "Des architectures logicielles de pointe, conçues pour supporter des millions d'utilisateurs tout en offrant une expérience fluide.",
-      "features": {
-        "availability": {
-          "title": "Haute Disponibilité",
-          "desc": "Infrastructure cloud native garantie à 99.99% d'uptime, conçue pour l'hyper-croissance."
-        },
-        "security": {
-          "title": "Sécurité Militaire",
-          "desc": "Chiffrement de bout en bout et conformité totale avec les normes de sécurité les plus strictes (RGPD, SOC2)."
-        },
-        "ux": {
-          "title": "Design UX/UI Premium",
-          "desc": "Des interfaces épurées, intuitives et visuellement époustouflantes qui fidélisent vos utilisateurs."
+      "eyebrow": "DÉVELOPPEMENT SAAS SUR MESURE",
+      "title": "De l’idée à un produit utilisable au quotidien.",
+      "description": "HoldingAI conçoit et développe des produits SaaS à partir des usages réels : prise en main, espaces partagés, droits utilisateurs et outils métier. Nous délimitons une première version utile, puis préparons son exploitation et ses évolutions.",
+      "primaryCta": "Parler de votre produit", "workCta": "Voir nos réalisations",
+      "challenge": {
+        "eyebrow": "LE POINT DE DÉPART", "title": "Clarifier le travail avant d’ajouter des fonctionnalités.",
+        "description": "Un produit ne se résume pas à ses écrans. Nous précisons qui fait quoi, avec quelles informations et où le processus actuel bloque.",
+        "items": {
+          "fragmented": { "title": "Des informations dispersées", "desc": "Identifier où vivent les données, comment les synchroniser et quel système fait référence pour chaque information." },
+          "manual": { "title": "Des passages de relais manuels", "desc": "Remplacer les recopies inutiles par des étapes explicites, des validations et un traitement des exceptions qui conserve le contexte." },
+          "growth": { "title": "Des usages et des responsabilités qui évoluent", "desc": "Prévoir les rôles, la séparation des organisations et les besoins de support avant d’ajouter équipes, offres ou nouveaux usages." }
         }
-      }
+      },
+      "system": {
+        "eyebrow": "UN MÊME SYSTÈME PRODUIT", "title": "Concevoir l’expérience et l’architecture ensemble.",
+        "description": "Un parcours utilisateur engage les données, les permissions et les limites des services. Nous traitons ces choix ensemble, pas comme deux produits indépendants.",
+        "pillars": {
+          "experience": { "title": "Une expérience compréhensible", "desc": "Rendre la prochaine action lisible, expliquer les états vides et les erreurs, et accompagner la première tâche utile." },
+          "architecture": { "title": "Des frontières techniques explicites", "desc": "Définir le modèle de données, l’isolation des organisations, les règles d’accès et les API selon les usages à couvrir." },
+          "operations": { "title": "Une exploitation préparée", "desc": "Prévoir déploiement, journaux, sauvegardes et outils de support, avec des responsabilités et des procédures de reprise adaptées au produit." }
+        }
+      },
+      "useCases": {
+        "eyebrow": "CE QUE LE PRODUIT PEUT COUVRIR", "title": "Partir des tâches que vos utilisateurs doivent terminer.",
+        "description": "Sélectionnez les fonctions nécessaires à la première version. Ajoutez de la complexité lorsqu’un besoin validé le justifie.",
+        "items": {
+          "onboarding": { "title": "Inscription et prise en main", "desc": "Relier création de compte, invitations et configuration guidée pour que chacun comprenne comment démarrer." },
+          "workspace": { "title": "Espaces multi-utilisateurs", "desc": "Organiser données partagées, rôles et permissions, y compris l’attribution, la modification et le retrait des accès." },
+          "subscriptions": { "title": "Abonnements et droits d’usage", "desc": "Relier offres, événements de facturation et accès aux fonctions, avec un traitement clair des changements, résiliations et incidents de paiement." },
+          "integrations": { "title": "Outils métier et intégrations IA", "desc": "Connecter les API utiles et les tâches assistées par IA, avec des accès définis, des validations et un comportement prévu en cas d’indisponibilité." }
+        }
+      },
+      "process": {
+        "eyebrow": "DE L’IDÉE À L’EXPLOITATION", "title": "Résoudre les questions importantes par étapes.",
+        "description": "Chaque étape produit un élément à examiner avant la suivante : périmètre, prototype, logiciel fonctionnel et plan de lancement.",
+        "steps": {
+          "discovery": { "title": "Découverte", "desc": "Comprendre utilisateurs, processus, systèmes existants et contraintes. Définir le premier périmètre utile et la façon de l’évaluer." },
+          "prototype": { "title": "Prototype", "desc": "Rendre les parcours concrets, tester les hypothèses avec les utilisateurs visés et clarifier les points difficiles avant le développement." },
+          "engineering": { "title": "Ingénierie", "desc": "Développer interface, services et intégrations, avec des tests des parcours clés, des permissions et des cas d’échec." },
+          "launch": { "title": "Lancement et itérations", "desc": "Préparer déploiement, supervision et support. Examiner usages réels et retours pour prioriser corrections et versions suivantes." }
+        }
+      },
+      "faq": {
+        "eyebrow": "AVANT DE DÉVELOPPER", "title": "Vos questions sur un projet SaaS",
+        "items": {
+          "mvp": { "question": "Que mettre dans une première version ?", "answer": "Un parcours complet pour un groupe d’utilisateurs précis. La découverte distingue ce qui est nécessaire à l’usage et à l’exploitation de ce qui peut attendre. Périmètre et calendrier dépendent notamment des intégrations, des données et des validations requises." },
+          "existingProduct": { "question": "Pouvez-vous intervenir sur un produit existant ?", "answer": "Oui. Nous commençons par examiner l’expérience, le code, les données et le déploiement actuels. Cette analyse oriente les améliorations ciblées, une migration progressive ou une refonte plus large ; remplacer l’existant n’est pas un préalable." },
+          "ai": { "question": "Le produit doit-il forcément intégrer de l’IA ?", "answer": "Non. Des règles classiques restent préférables lorsqu’elles répondent clairement au besoin. L’IA peut aider à rechercher, rédiger ou classer si son utilité est évaluable et si ses accès aux données, ses limites et les validations sont définis." },
+          "scaling": { "question": "Comment préparez-vous la montée en charge ?", "answer": "Nous identifions les usages attendus, les parcours exigeants et les contraintes d’exploitation, puis testons les scénarios pertinents. La capacité dépend de l’architecture, de l’infrastructure et de la charge réelle. Nous prévoyons une supervision et des évolutions graduelles, sans promettre un nombre illimité d’utilisateurs." },
+          "security": { "question": "Comment abordez-vous la sécurité ?", "answer": "Contrôles d’accès, séparation des organisations, traitement des données sensibles et protections d’exploitation sont définis selon les risques du projet. Tests, hébergement et éventuels audits spécialisés sont cadrés avec vous. La conformité juridique et toute certification nécessitent une évaluation distincte ; elles ne découlent pas automatiquement du développement." }
+        }
+      },
+      "cta": { "title": "Définissons la première version utile.", "description": "Présentez votre idée ou votre produit existant. Nous pouvons clarifier les utilisateurs, les processus, les contraintes et les conditions nécessaires au lancement.", "button": "Parler de votre projet SaaS" }
     },
     "automation": {
       "title": "Automatisation d'Entreprise",
@@ -631,8 +668,8 @@
       "description": "Nous développons des agents IA intelligents qui raisonnent, apprennent et exécutent des tâches complexes en autonomie. Apprentissage continu, raisonnement logique et intégration API transparente."
     },
     "saas": {
-      "title": "Développement SaaS Évolutif — Plateformes Haute Disponibilité | HoldingAI",
-      "description": "Des architectures SaaS de pointe conçues pour des millions d'utilisateurs : 99,99 % de disponibilité, sécurité renforcée (RGPD, SOC2) et design UX/UI premium."
+      "title": "Conception et développement SaaS sur mesure | HoldingAI",
+      "description": "HoldingAI conçoit votre SaaS sur mesure : parcours, architecture, espaces partagés et intégrations, du cadrage au lancement puis aux évolutions du produit."
     },
     "automation": {
       "title": "Automatisation d'Entreprise — Workflows & Intégration de Systèmes | HoldingAI",
