@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRef } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
@@ -15,10 +16,12 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 function ProductVisual({
   src,
   className,
+  sizes,
   imageClassName = 'object-cover',
 }: {
   src: string;
   className: string;
+  sizes: string;
   imageClassName?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -29,8 +32,14 @@ function ProductVisual({
   return (
     <div ref={ref} aria-hidden="true" className={`relative overflow-hidden ${className}`}>
       <motion.div style={{ y }} className="absolute -inset-y-3 inset-x-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt="" className={`h-full w-full ${imageClassName}`} loading="lazy" />
+        <Image
+          src={src}
+          alt=""
+          fill
+          sizes={sizes}
+          className={`h-full w-full ${imageClassName}`}
+          loading="lazy"
+        />
       </motion.div>
     </div>
   );
@@ -163,6 +172,7 @@ export default function SaasPage() {
         >
           <ProductVisual
             src="/images/kosmos/saas-workspace.webp"
+            sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) calc(100vw - 80px), (max-width: 1279px) calc(100vw - 96px), 1184px"
             className="aspect-[16/9] rounded-[1.25rem] bg-[#F0EDF4] md:rounded-[1.75rem]"
           />
           <div aria-hidden="true" className="pointer-events-none absolute inset-2 rounded-[1.25rem] ring-1 ring-inset ring-black/[0.04] md:inset-3 md:rounded-[1.75rem]" />
@@ -295,6 +305,7 @@ export default function SaasPage() {
         >
           <ProductVisual
             src="/images/kosmos/saas-in-context.webp"
+            sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) 58vw, (max-width: 1279px) 54vw, 681px"
             className="aspect-[4/3] min-h-full bg-[#EEEAE4] md:aspect-auto md:h-full md:min-h-[24rem]"
           />
           <div aria-hidden="true" className="hidden space-y-5 p-7 md:block lg:p-10">
