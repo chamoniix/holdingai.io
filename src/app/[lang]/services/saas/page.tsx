@@ -27,11 +27,11 @@ function ProductVisual({
   const ref = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? [0, 0] : [12, -12]);
+  const y = useTransform(scrollYProgress, [0, 1], reduceMotion ? [0, 0] : [24, -24]);
 
   return (
     <div ref={ref} aria-hidden="true" className={`relative overflow-hidden ${className}`}>
-      <motion.div style={{ y }} className="absolute -inset-y-3 inset-x-0">
+      <motion.div style={{ y }} className="absolute -inset-y-6 inset-x-0">
         <Image
           src={src}
           alt=""
@@ -58,14 +58,14 @@ export default function SaasPage() {
     <main className="relative isolate overflow-hidden bg-[#F7F7F5] pb-20 pt-28 text-[#11121A] md:pb-28 md:pt-36">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 top-0 -z-10 h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.10),transparent_68%)]"
+        className="pointer-events-none absolute -right-40 top-0 -z-10 h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.13),transparent_68%)]"
       />
 
       <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-12">
         <motion.section
-          initial="hidden"
+          initial={reduceMotion ? false : 'hidden'}
           animate="visible"
-          className="grid items-center gap-12 pb-20 md:gap-16 md:pb-28 lg:grid-cols-[1.03fr_0.97fr]"
+          className="grid items-center gap-10 pb-16 md:gap-16 md:pb-24 lg:grid-cols-[0.92fr_1.08fr]"
         >
           <div>
             <motion.p variants={reveal} className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7C3AED] md:text-sm">
@@ -73,7 +73,7 @@ export default function SaasPage() {
             </motion.p>
             <motion.h1
               variants={reveal}
-              className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.05em] md:text-6xl lg:text-[4.5rem]"
+              className="mt-5 max-w-3xl text-[2.65rem] font-semibold leading-[1.02] tracking-[-0.055em] md:text-6xl lg:text-[4.5rem]"
             >
               {t('saas.title')}
             </motion.h1>
@@ -98,59 +98,59 @@ export default function SaasPage() {
             </motion.div>
           </div>
 
-          <motion.div variants={reveal} aria-hidden="true" className="relative mx-auto w-full max-w-[38rem]">
-            <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-[#E9DFFF] via-[#F5F1FA] to-[#E8E4DC] blur-2xl" />
-            <div className="relative rotate-[1.5deg] rounded-[1.8rem] border border-white/80 bg-white p-3 shadow-[0_30px_90px_-35px_rgba(48,32,75,0.3)] md:rounded-[2.2rem] md:p-4">
-              <div className="overflow-hidden rounded-[1.25rem] border border-[#ECEAF0] bg-[#FAF9FB] md:rounded-[1.7rem]">
-                <div className="flex h-12 items-center justify-between border-b border-[#ECEAF0] bg-white px-4 md:h-14 md:px-6">
+          <motion.div variants={reveal} aria-hidden="true" className="relative mx-auto w-full max-w-[42rem] lg:translate-x-5">
+            <div className="absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(ellipse_at_55%_45%,rgba(124,58,237,0.24),transparent_70%)] blur-2xl md:-inset-10" />
+            <div className="relative rounded-[1.6rem] bg-[#211B2D] p-2.5 shadow-[0_34px_90px_-28px_rgba(39,24,58,0.52)] md:rotate-[1deg] md:rounded-[2rem] md:p-3">
+              <div className="overflow-hidden rounded-[1.1rem] border border-white/10 bg-[#2D2638] md:rounded-[1.5rem]">
+                <div className="flex h-11 items-center justify-between border-b border-white/10 bg-[#211B2D] px-3 md:h-14 md:px-5">
                   <div className="flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#7C3AED]" />
-                    <span className="h-2 w-16 rounded-full bg-[#E6E2EB] md:w-20" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#B99BFF]" />
+                    <span className="h-2 w-16 rounded-full bg-white/45 md:w-20" />
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="h-6 w-6 rounded-full bg-[#F1ECF8]" />
-                    <span className="hidden h-2 w-12 rounded-full bg-[#E6E2EB] sm:block" />
+                    <span className="h-6 w-6 rounded-full border border-white/15 bg-[#55466A]" />
+                    <span className="hidden h-2 w-12 rounded-full bg-white/25 sm:block" />
                   </div>
                 </div>
-                <div className="grid min-h-[19rem] grid-cols-[3.5rem_1fr] md:min-h-[25rem] md:grid-cols-[4.5rem_1fr]">
-                  <div className="space-y-4 border-r border-[#ECEAF0] bg-white px-3 py-5 md:space-y-5 md:px-4 md:py-7">
-                    <span className="mx-auto block h-7 w-7 rounded-lg bg-[#F0EAF8]" />
-                    <span className="mx-auto block h-5 w-5 rounded-md bg-[#EDEAF1]" />
-                    <span className="mx-auto block h-5 w-5 rounded-md bg-[#EDEAF1]" />
-                    <span className="mx-auto block h-5 w-5 rounded-md bg-[#EDEAF1]" />
-                    <span className="mx-auto block h-5 w-5 rounded-md bg-[#EDEAF1]" />
+                <div className="grid min-h-[17rem] grid-cols-[2.7rem_1fr] md:min-h-[25rem] md:grid-cols-[4rem_1fr]">
+                  <div className="space-y-4 border-r border-white/10 bg-[#241E30] px-2 py-5 md:space-y-5 md:px-4 md:py-7">
+                    <span className="mx-auto block h-7 w-7 rounded-lg bg-[#7859A5]" />
+                    <span className="mx-auto block h-5 w-5 rounded-md bg-white/20" />
+                    <span className="mx-auto block h-5 w-5 rounded-md bg-white/10" />
+                    <span className="mx-auto block h-5 w-5 rounded-md bg-white/10" />
+                    <span className="mx-auto block h-5 w-5 rounded-md bg-white/10" />
                   </div>
-                  <div className="space-y-5 p-4 md:space-y-7 md:p-7">
+                  <div className="space-y-4 p-3 md:space-y-7 md:p-7">
                     <div className="flex items-center justify-between gap-4">
                       <div className="space-y-2">
-                        <span className="block h-3 w-24 rounded-full bg-[#D9D5DF] md:w-36" />
-                        <span className="block h-2 w-36 rounded-full bg-[#ECEAF0] md:w-52" />
+                        <span className="block h-3 w-24 rounded-full bg-white/75 md:w-36" />
+                        <span className="block h-2 w-28 rounded-full bg-white/25 md:w-52" />
                       </div>
-                      <span className="h-8 w-20 rounded-full bg-[#EEE7F8] md:w-24" />
+                      <span className="h-8 w-16 rounded-full bg-[#9B78D2] md:w-24" />
                     </div>
                     <div className="grid grid-cols-2 gap-3 md:gap-4">
-                      <div className="rounded-xl border border-[#ECEAF0] bg-white p-3 md:p-4">
-                        <span className="block h-2 w-12 rounded-full bg-[#E4E0E9]" />
-                        <span className="mt-4 block h-5 w-20 rounded-md bg-[#EDE8F4] md:w-28" />
-                        <span className="mt-3 block h-2 w-16 rounded-full bg-[#F0EDF3]" />
+                      <div className="rounded-xl border border-white/10 bg-[#393044] p-3 md:p-4">
+                        <span className="block h-2 w-12 rounded-full bg-white/40" />
+                        <span className="mt-4 block h-5 w-20 rounded-md bg-[#B99BFF] md:w-28" />
+                        <span className="mt-3 block h-2 w-16 rounded-full bg-white/20" />
                       </div>
-                      <div className="rounded-xl border border-[#ECEAF0] bg-white p-3 md:p-4">
-                        <span className="block h-2 w-14 rounded-full bg-[#E4E0E9]" />
-                        <span className="mt-4 block h-5 w-16 rounded-md bg-[#EDE8F4] md:w-24" />
-                        <span className="mt-3 block h-2 w-20 rounded-full bg-[#F0EDF3]" />
+                      <div className="rounded-xl border border-white/10 bg-[#393044] p-3 md:p-4">
+                        <span className="block h-2 w-14 rounded-full bg-white/40" />
+                        <span className="mt-4 block h-5 w-16 rounded-md bg-[#59C6B5] md:w-24" />
+                        <span className="mt-3 block h-2 w-20 rounded-full bg-white/20" />
                       </div>
                     </div>
-                    <div className="rounded-xl border border-[#ECEAF0] bg-white p-3 md:p-5">
+                    <div className="rounded-xl border border-white/10 bg-[#393044] p-3 md:p-5">
                       <div className="flex items-center justify-between">
-                        <span className="h-2.5 w-24 rounded-full bg-[#E3DFE8] md:w-32" />
-                        <span className="h-6 w-16 rounded-full bg-[#F2EFF5]" />
+                        <span className="h-2.5 w-24 rounded-full bg-white/55 md:w-32" />
+                        <span className="h-6 w-16 rounded-full bg-white/10" />
                       </div>
                       <div className="mt-5 space-y-3">
                         {[0, 1, 2].map((row) => (
-                          <div key={row} className="flex items-center gap-3 border-t border-[#F0EEF2] pt-3">
-                            <span className="h-7 w-7 shrink-0 rounded-lg bg-[#F0ECF5]" />
-                            <span className="h-2 flex-1 rounded-full bg-[#EAE7ED]" />
-                            <span className="h-2 w-10 rounded-full bg-[#F0EDF3]" />
+                          <div key={row} className="flex items-center gap-3 border-t border-white/10 pt-3">
+                            <span className="h-7 w-7 shrink-0 rounded-lg bg-[#57476B]" />
+                            <span className="h-2 flex-1 rounded-full bg-white/30" />
+                            <span className="h-2 w-10 rounded-full bg-white/15" />
                           </div>
                         ))}
                       </div>
@@ -168,19 +168,19 @@ export default function SaasPage() {
           initial={reduceMotion ? false : 'hidden'}
           whileInView="visible"
           viewport={{ once: true, margin: '-8%' }}
-          className="relative mb-16 overflow-hidden rounded-[1.75rem] border border-white bg-white p-2 shadow-[0_28px_80px_-36px_rgba(45,30,68,0.24)] md:mb-24 md:rounded-[2.25rem] md:p-3"
+          className="relative mb-16 overflow-hidden rounded-[1.5rem] border border-white bg-white p-1.5 shadow-[0_28px_80px_-36px_rgba(45,30,68,0.3)] md:mb-24 md:rounded-[2.25rem] md:p-3"
         >
           <ProductVisual
             src="/images/kosmos/saas-workspace.webp"
             sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) calc(100vw - 80px), (max-width: 1279px) calc(100vw - 96px), 1184px"
-            className="aspect-[16/9] rounded-[1.25rem] bg-[#F0EDF4] md:rounded-[1.75rem]"
+            className="aspect-[1.18/1] rounded-[1.1rem] bg-[#F0EDF4] sm:aspect-[16/9] md:rounded-[1.75rem]"
           />
           <div aria-hidden="true" className="pointer-events-none absolute inset-2 rounded-[1.25rem] ring-1 ring-inset ring-black/[0.04] md:inset-3 md:rounded-[1.75rem]" />
         </motion.figure>
 
         <section aria-labelledby="saas-challenge-title" className="border-t border-[#E5E3E8] py-16 md:py-24">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-10%' }}>
+            <motion.div variants={reveal} initial={reduceMotion ? false : 'hidden'} whileInView="visible" viewport={{ once: true, margin: '-10%' }}>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7C3AED]">{t('saas.challenge.eyebrow')}</p>
               <h2 id="saas-challenge-title" className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] md:text-5xl">
                 {t('saas.challenge.title')}
@@ -192,7 +192,7 @@ export default function SaasPage() {
                 <motion.div
                   key={key}
                   variants={reveal}
-                  initial="hidden"
+                  initial={reduceMotion ? false : 'hidden'}
                   whileInView="visible"
                   viewport={{ once: true, margin: '-5%' }}
                   className="grid gap-2 border-b border-[#DCD9E0] py-6 md:grid-cols-[3rem_0.7fr_1.3fr] md:items-baseline md:gap-5 md:py-7"
@@ -212,7 +212,7 @@ export default function SaasPage() {
           <div aria-hidden="true" className="absolute -right-20 -top-28 h-80 w-80 rounded-full border border-[#D9CBE9]" />
           <div aria-hidden="true" className="absolute -right-8 -top-16 h-56 w-56 rounded-full border border-[#D9CBE9]" />
           <div className="relative grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-            <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-10%' }}>
+            <motion.div variants={reveal} initial={reduceMotion ? false : 'hidden'} whileInView="visible" viewport={{ once: true, margin: '-10%' }}>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6D35C5]">{t('saas.system.eyebrow')}</p>
               <h2 id="saas-system-title" className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] md:text-5xl">
                 {t('saas.system.title')}
@@ -224,7 +224,7 @@ export default function SaasPage() {
                 <motion.div
                   key={key}
                   variants={reveal}
-                  initial="hidden"
+                  initial={reduceMotion ? false : 'hidden'}
                   whileInView="visible"
                   viewport={{ once: true, margin: '-5%' }}
                   className="relative py-6 md:px-5 md:py-4 lg:px-7"
@@ -242,7 +242,7 @@ export default function SaasPage() {
 
         <section aria-labelledby="saas-usecases-title" className="py-16 md:py-24">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-10%' }}>
+            <motion.div variants={reveal} initial={reduceMotion ? false : 'hidden'} whileInView="visible" viewport={{ once: true, margin: '-10%' }}>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7C3AED]">{t('saas.useCases.eyebrow')}</p>
               <h2 id="saas-usecases-title" className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] md:text-5xl">
                 {t('saas.useCases.title')}
@@ -254,7 +254,7 @@ export default function SaasPage() {
                 <motion.article
                   key={key}
                   variants={reveal}
-                  initial="hidden"
+                  initial={reduceMotion ? false : 'hidden'}
                   whileInView="visible"
                   viewport={{ once: true, margin: '-5%' }}
                   className={`border-t border-[#DCD9E0] py-6 md:py-7 ${index > 1 ? 'sm:mt-2' : ''}`}
@@ -270,7 +270,7 @@ export default function SaasPage() {
 
         <section aria-labelledby="saas-process-title" className="border-y border-[#E5E3E8] py-16 md:py-24">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-10%' }}>
+            <motion.div variants={reveal} initial={reduceMotion ? false : 'hidden'} whileInView="visible" viewport={{ once: true, margin: '-10%' }}>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7C3AED]">{t('saas.process.eyebrow')}</p>
               <h2 id="saas-process-title" className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] md:text-5xl">
                 {t('saas.process.title')}
@@ -282,7 +282,7 @@ export default function SaasPage() {
                 <motion.li
                   key={key}
                   variants={reveal}
-                  initial="hidden"
+                  initial={reduceMotion ? false : 'hidden'}
                   whileInView="visible"
                   viewport={{ once: true, margin: '-5%' }}
                   className="relative pb-8 last:pb-0 md:pb-10"
@@ -306,7 +306,7 @@ export default function SaasPage() {
           <ProductVisual
             src="/images/kosmos/saas-in-context.webp"
             sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) 58vw, (max-width: 1279px) 54vw, 681px"
-            className="aspect-[4/3] min-h-full bg-[#EEEAE4] md:aspect-auto md:h-full md:min-h-[24rem]"
+            className="aspect-[1/1.08] min-h-full bg-[#EEEAE4] sm:aspect-[4/3] md:aspect-auto md:h-full md:min-h-[30rem]"
           />
           <div aria-hidden="true" className="hidden space-y-5 p-7 md:block lg:p-10">
             <span className="block h-2 w-16 rounded-full bg-[#B9A2D5]" />
@@ -322,7 +322,7 @@ export default function SaasPage() {
         </motion.figure>
 
         <section aria-labelledby="saas-faq-title" className="mx-auto max-w-5xl py-16 md:py-24">
-          <motion.div variants={reveal} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-10%' }} className="mb-8 md:mb-10">
+          <motion.div variants={reveal} initial={reduceMotion ? false : 'hidden'} whileInView="visible" viewport={{ once: true, margin: '-10%' }} className="mb-8 md:mb-10">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7C3AED]">{t('saas.faq.eyebrow')}</p>
             <h2 id="saas-faq-title" className="mt-4 text-3xl font-semibold tracking-[-0.04em] md:text-5xl">{t('saas.faq.title')}</h2>
           </motion.div>
@@ -341,7 +341,7 @@ export default function SaasPage() {
 
         <motion.section
           variants={reveal}
-          initial="hidden"
+          initial={reduceMotion ? false : 'hidden'}
           whileInView="visible"
           viewport={{ once: true, margin: '-8%' }}
           className="relative overflow-hidden rounded-[2rem] bg-[#17131F] px-6 py-10 text-white md:px-12 md:py-14 lg:px-16"
