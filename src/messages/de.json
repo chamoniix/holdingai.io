@@ -200,15 +200,15 @@
     "submit": "Senden"
   },
   "footer": {
-    "city": "London",
-    "country": "Vereinigtes Königreich",
-    "address1": "Lytchett House, Freeland Park",
-    "address2": "Wareham Road, Poole, Dorset",
+    "city": "Albuquerque",
+    "country": "Vereinigte Staaten",
+    "address1": "8206 Louisiana Blvd NE",
+    "address2": "Ste A #11028, New Mexico 87113",
     "work": "Unsere Arbeit",
     "services": "Services",
     "about": "Über uns",
     "xTwitter": "X (Twitter)",
-    "copyright": "© {year} HoldingAI LTD.",
+    "copyright": "© {year} OPTIMIZIA LLC",
     "legal": "Impressum",
     "privacy": "Datenschutzerklärung",
     "terms": "AGB"

@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="pt-6 flex flex-col space-y-2">
               {/* GAP: no email/phone keys in footer namespace — contact data kept hardcoded */}
               <a href="mailto:info@holdingai.io" className="text-white text-base font-light hover:text-[#2997FF] transition-colors">info@holdingai.io</a>
-              <a href="tel:+447537106967" className="text-white text-base font-light hover:text-[#2997FF] transition-colors">+44 7537106967</a>
+              <a href="tel:+15055425001" className="text-white text-base font-light hover:text-[#2997FF] transition-colors">+1 505 542 5001</a>
             </div>
           </div>
 
